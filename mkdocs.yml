@@ -1,0 +1,14 @@
+site_name: Soulweb Docs
+site_url: http://soulweb.docsvm.dev
+
+site_description: Soulweb documentation.
+site_author: Soulweb Team
+
+repo_url: https://github.com/mecmartini/soulweb-docs/
+
+pages:
+  - Home: 'index.md'
+  - Drupal Development:
+    - Development Envirorment: 'drupal/drupal_dev_env.md'
+
+theme: readthedocs
