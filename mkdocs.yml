@@ -15,6 +15,7 @@ pages:
       - 'Drupal VM': 'drupal/drupal_vm.md'
       - 'PhpStorm': 'drupal/drupal_vm_phpstorm.md'
       - 'Xdebug': 'drupal/drupal_vm_xdebug.md'
+      - 'Coder Sniffer': 'drupal/drupal_vm_codersniffer.md'
 
 theme: material
 
