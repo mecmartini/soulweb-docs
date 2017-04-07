@@ -27,7 +27,11 @@ extra:
     accent: 'cyan'
 
 markdown_extensions:
-  - admonition:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc(permalink=true)
 
 copyright: Copyright &copy; 2017 Soulweb Team.
 # google_analytics: ['UA-27795084-5', 'mkdocs.org']
