@@ -23,7 +23,7 @@ theme: material
 extra:
   logo: 'img/logo.svg'
   palette:
-    primary: 'blue grey'
+    primary: 'light blue'
     accent: 'cyan'
 
 markdown_extensions:
