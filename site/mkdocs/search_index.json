@@ -139,6 +139,21 @@
             "location": "/drupal/drupal_vm_codersniffer/#2-integrate-code-sniffer-in-phpstorm", 
             "text": "From below select  +  and add  Code Sniffer by Remote Interpreter . Select your vagrant  PHP interpreter  (see  Add GitHub repository and Initial Commit ). In  PHP Code Sniffer (phpcs) path  enter  /home/vagrant/.composer/vendor/bin/phpcs .\nClick on  Validate  to verify that has worked.    Go under  Settings  -   Inspections  to enable and set  PHP Code Sniffer Validation  as below:", 
             "title": "2. Integrate Code Sniffer in PhpStorm"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpunit/", 
+            "text": "PHPUnit\n\n\n1. Integrate PHPUnit in PhpStorm\n\n\nEnable the \nTesting\n module on your \ndrupal\n installation. Access on your \nvagrant\n machine (\nvagrant ssh\n), go under the \ndrupal\n installation directory and run:\n\n\ndrush en -y testing\n\n\n\nOpen the file \nweb/core/phpunit.xml.dist\n, under your \ndrupal\n installation directory, and fill in \nSIMPLETEST_DB\n, \nSIMPLETEST_BASE_URL\n and \nBROWSERTEST_OUTPUT_DIRECTORY\n.\nGo under \nSettings\n \n \nLanguage \n Frameworks\n \n \nPHP\n \n \nPHPUnit\n. Click on the \n+\n button and select \nBy Remote Interpreter\n\n\n\n\nSet the \nInterpreter\n as below. In \nPath to script\n and \nDefault configuration file\n enter the directory path of your \nvagrant\n machine\n\n\n\n\nTo run all \ndrupal\n tests go under \nEdit configurations\n. Click the \n+\n button and select \nPHPUnit\n\n\n\n\n\n\nSet only the \nName\n\n\n\n\nTo test if it works select your \nPHPUnit\n config and click on \nrun\n (\nplay button\n)", 
+            "title": "PHPUnit"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpunit/#phpunit", 
+            "text": "", 
+            "title": "PHPUnit"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpunit/#1-integrate-phpunit-in-phpstorm", 
+            "text": "Enable the  Testing  module on your  drupal  installation. Access on your  vagrant  machine ( vagrant ssh ), go under the  drupal  installation directory and run:  drush en -y testing  Open the file  web/core/phpunit.xml.dist , under your  drupal  installation directory, and fill in  SIMPLETEST_DB ,  SIMPLETEST_BASE_URL  and  BROWSERTEST_OUTPUT_DIRECTORY .\nGo under  Settings     Language   Frameworks     PHP     PHPUnit . Click on the  +  button and select  By Remote Interpreter   Set the  Interpreter  as below. In  Path to script  and  Default configuration file  enter the directory path of your  vagrant  machine   To run all  drupal  tests go under  Edit configurations . Click the  +  button and select  PHPUnit    Set only the  Name   To test if it works select your  PHPUnit  config and click on  run  ( play button )", 
+            "title": "1. Integrate PHPUnit in PhpStorm"
         }
     ]
 }
