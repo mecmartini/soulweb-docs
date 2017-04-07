@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation.">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_xdebug/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_codersniffer/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Xdebug - Soulweb Docs</title>
+        <title>Coder Sniffer - Soulweb Docs</title>
       
     
     
@@ -91,7 +91,7 @@
                 </span>
               
             
-            Xdebug
+            Coder Sniffer
           
         </span>
       </div>
@@ -297,6 +297,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../drupal_vm_xdebug/" title="Xdebug" class="md-nav__link">
+      Xdebug
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -308,11 +320,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Xdebug
+        Coder Sniffer
       </label>
     
-    <a href="./" title="Xdebug" class="md-nav__link md-nav__link--active">
-      Xdebug
+    <a href="./" title="Coder Sniffer" class="md-nav__link md-nav__link--active">
+      Coder Sniffer
     </a>
     
       
@@ -326,15 +338,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-enable-xdebug-on-your-vagrant-machine" title="1. Enable Xdebug on your Vagrant machine" class="md-nav__link">
-    1. Enable Xdebug on your Vagrant machine
+  <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
+    1. Add Coder Sniffer to your Vagrant machine
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-integrate-xdebug-in-phpstorm" title="2. Integrate Xdebug in PhpStorm" class="md-nav__link">
-    2. Integrate Xdebug in PhpStorm
+  <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
+    2. Integrate Code Sniffer in PhpStorm
   </a>
   
 </li>
@@ -345,18 +357,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../drupal_vm_codersniffer/" title="Coder Sniffer" class="md-nav__link">
-      Coder Sniffer
-    </a>
   </li>
 
         
@@ -396,15 +396,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-enable-xdebug-on-your-vagrant-machine" title="1. Enable Xdebug on your Vagrant machine" class="md-nav__link">
-    1. Enable Xdebug on your Vagrant machine
+  <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
+    1. Add Coder Sniffer to your Vagrant machine
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-integrate-xdebug-in-phpstorm" title="2. Integrate Xdebug in PhpStorm" class="md-nav__link">
-    2. Integrate Xdebug in PhpStorm
+  <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
+    2. Integrate Code Sniffer in PhpStorm
   </a>
   
 </li>
@@ -424,81 +424,27 @@
               
                 
                 
-                <h1 id="xdebug">Xdebug</h1>
-<h4 id="1-enable-xdebug-on-your-vagrant-machine">1. Enable Xdebug on your Vagrant machine</h4>
-<p>Open the vagrant machine <code>config.yml</code> file and be sure to have the xdebug line uncommented on <code>installed_extras</code></p>
-<pre><code>installed_extras:
-      - adminer
-      # - blackfire
-      - drupalconsole
-      - drush
-      # - elasticsearch
-      # - java
-      - mailhog
-      # - memcached
-      # - newrelic
-      # - nodejs
-      - pimpmylog
-      # - redis
-      # - ruby
-      # - selenium
-      # - solr
-      # - tideways
-      # - upload-progress
-      # - varnish
-      - xdebug
-      # - xhprof
-</code></pre>
-<p>Be sure to have the following lines set as:</p>
-<pre><code># XDebug configuration. XDebug is disabled by default for better performance.
-php_xdebug_default_enable: 1
-php_xdebug_coverage_enable: 1
-</code></pre>
-<p>Add the port <code>9000</code> to <code>firewall_allowed_tcp_ports</code></p>
-<pre><code>firewall_allowed_tcp_ports:
-  - "22"
-  - "25"
-  - "80"
-  - "81"
-  - "443"
-  - "4444"
-  - "8000"
-  - "8025"
-  - "8080"
-  - "8443"
-  - "8983"
-  - "9000"
-  - "9200"
+                <h1 id="coder-sniffer">Coder Sniffer</h1>
+<p><a href="https://www.drupal.org/node/1419988">Coder Sniffer</a> is a library that tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards. It works with Drupal 6, 7, or 8.</p>
+<h4 id="1-add-coder-sniffer-to-your-vagrant-machine">1. Add Coder Sniffer to your Vagrant machine</h4>
+<p>Open the vagrant machine <code>config.yml</code> file and add to <code>composer_global_packages</code> the line:</p>
+<pre><code>- { name: drupal/coder, release: ‘*' }
 </code></pre>
 <p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
-<h4 id="2-integrate-xdebug-in-phpstorm">2. Integrate Xdebug in PhpStorm</h4>
-<p>On <code>PhpStorm</code> go to <code>settings</code>.</p>
-<p>Be sure to have <code>Xdebug</code> -&gt; <code>Debug port</code> set to <code>9000</code>:</p>
-<p><img alt="PhpStorm debug port" src="../../img/drupal/phpstorm_21.png" title="PhpStorm debug port" /></p>
-<p>From <code>PhpStorm</code> click on <code>Edit Configurations…</code>:</p>
-<p><img alt="PhpStorm debug edit configuration" src="../../img/drupal/phpstorm_22.png" title="PhpStorm debug edit configuration" /></p>
-<p>Click on <code>+</code> button and select <code>PHP Remote Debug</code>:</p>
-<p><img alt="PHP Remote Debug" src="../../img/drupal/phpstorm_23.png" title="PHP Remote Debug" /></p>
-<p>Select you Server (see <a href="../drupal_vm_phpstorm/#2-integrate-vagrant">Add GitHub repository and Initial Commit</a>) and set <code>Ide key</code> to <code>PHPSTORM</code>.</p>
-<p>Install <code>Xdebug helper</code> as <code>Chrome</code> extension (also available on Firefox)</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>similar extensions are available also for <code>Firefox</code> (e.g. <code>theeasiestxdebug</code>).</p>
-</div>
-<p>A new icon should appear on <code>Chrome</code>. Right click on it and select <code>Options</code>.</p>
-<p><img alt="Xdebug helper" src="../../img/drupal/phpstorm_24.png" title="Xdebug helper" /></p>
-<p>Select <code>PhpStorm</code> on <code>IDE key</code> and save it</p>
-<p><img alt="Xdebug helper IDE key" src="../../img/drupal/phpstorm_25.png" title="Xdebug helper IDE key" /></p>
-<p>Click on <code>Xdebug helper</code> icon and select <code>Debug</code></p>
-<p><img alt="Xdebug helper debug" src="../../img/drupal/phpstorm_26.png" title="Xdebug helper debug" /></p>
-<p>Now you should be ready to debug. Set a breakpoint on your Drupal <code>index.php</code> clicking on the right of the code row number. A red point must appear.</p>
-<p><img alt="Xdebug breakpoint" src="../../img/drupal/phpstorm_27.png" title="Xdebug helper breakpoint" /></p>
-<p>To start to <code>debug</code> click on the <code>bug</code> icon</p>
-<p><img alt="Xdebug start debug" src="../../img/drupal/phpstorm_28.png" title="Xdebug stert debug" /></p>
-<p>Then navigate on your <code>Drupal</code> installation from the browser and you will see the debugger in action</p>
-<p><img alt="Xdebug in action" src="../../img/drupal/phpstorm_29.png" title="Xdebug in action" /></p>
-<p>To continue the execution of <code>Drupal</code> after the <code>breakpoint</code> click on <code>Resume Program</code> (<code>play</code> button on the left of <code>Debugger</code> tab).</p>
-<p>To stop the debugger click on <code>Stop</code> (<code>stop</code> button on the left of <code>Debugger</code> tab).</p>
+<p>Enter on your <code>vagrant</code> machine (<code>vagrant ssh</code>) and run:</p>
+<pre><code>phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+</code></pre>
+<p>You can verify this has worked with:</p>
+<pre><code>phpcs -i
+</code></pre>
+<p>The above command should include <code>DrupalPractice</code> and <code>Drupal</code> in the installed <code>coding standards</code> list.</p>
+<h4 id="2-integrate-code-sniffer-in-phpstorm">2. Integrate Code Sniffer in PhpStorm</h4>
+<p>From below select <code>+</code> and add <code>Code Sniffer by Remote Interpreter</code>. Select your vagrant <code>PHP interpreter</code> (see <a href="../drupal_vm_phpstorm/#2-integrate-vagrant">Add GitHub repository and Initial Commit</a>). In <code>PHP Code Sniffer (phpcs) path</code> enter <code>/home/vagrant/.composer/vendor/bin/phpcs</code>.
+Click on <code>Validate</code> to verify that has worked.</p>
+<p><img alt="Code Sniffer settings" src="../../img/drupal/phpstorm_30.png" title="Code Sniffer settings" /></p>
+<p><img alt="Code Sniffer settings" src="../../img/drupal/phpstorm_31.png" title="Code Sniffer settings" /></p>
+<p>Go under <code>Settings</code> -&gt; <code>Inspections</code> to enable and set <code>PHP Code Sniffer Validation</code> as below:</p>
+<p><img alt="PHP Code Sniffer Validation" src="../../img/drupal/phpstorm_31.png" title="PHP Code Sniffer Validation" /></p>
                 
                   
                 
@@ -517,7 +463,7 @@ php_xdebug_coverage_enable: 1
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_vm_phpstorm/" title="PhpStorm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_vm_xdebug/" title="Xdebug" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -526,25 +472,11 @@ php_xdebug_coverage_enable: 1
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                PhpStorm
+                Xdebug
               </span>
             </div>
           </a>
         
-        
-          <a href="../drupal_vm_codersniffer/" title="Coder Sniffer" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Coder Sniffer
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
