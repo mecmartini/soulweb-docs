@@ -49,9 +49,9 @@ Add the port `9000` to `firewall_allowed_tcp_ports`
       - "9000"
       - "9200"
       
-Run `vagrant up --provision` to apply the changes on your `vagrant` machine or run `vagrant provision` if your machine is already up.
+From your `terminal` go on the `vagrant` directory and run `vagrant up --provision`, to apply the changes on your `vagrant` machine, or run `vagrant provision` if your machine is already up.
 
-#### 2. Integrate Xdebug on PhpStorm
+#### 2. Integrate Xdebug in PhpStorm
 
 On `PhpStorm` go to `settings`.
 
