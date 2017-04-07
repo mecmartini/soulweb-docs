@@ -460,6 +460,33 @@ php_xdebug_coverage_enable: 1
 </code></pre>
 <p>Run <code>vagrant up --provision</code> to apply the changes on your <code>vagrant</code> machine or run <code>vagrant provision</code> if your machine is already up.</p>
 <h4 id="2-integrate-xdebug-on-phpstorm">2. Integrate Xdebug on PhpStorm</h4>
+<p>On <code>PhpStorm</code> go to <code>settings</code>.</p>
+<p>Be sure to have <code>Xdebug</code> -&gt; <code>Debug port</code> set to <code>9000</code>:</p>
+<p><img alt="PhpStorm debug port" src="../../img/drupal/phpstorm_21.png" title="PhpStorm debug port" /></p>
+<p>From <code>PhpStorm</code> click on <code>Edit Configurations…</code>:</p>
+<p><img alt="PhpStorm debug edit configuration" src="../../img/drupal/phpstorm_22.png" title="PhpStorm debug edit configuration" /></p>
+<p>Click on <code>+</code> button and select <code>PHP Remote Debug</code>:</p>
+<p><img alt="PHP Remote Debug" src="../../img/drupal/phpstorm_23.png" title="PHP Remote Debug" /></p>
+<p>Select you Server (see <a href="../drupal_vm_phpstorm/#2-integrate-vagrant">Add GitHub repository and Initial Commit</a>) and set <code>Ide key</code> to <code>PHPSTORM</code>.</p>
+<p>Install <code>Xdebug helper</code> as <code>Chrome</code> extension (also available on Firefox)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>similar extensions are available also for <code>Firefox</code> (e.g. <code>theeasiestxdebug</code>).</p>
+</div>
+<p>A new icon should appear on <code>Chrome</code>. Right click on it and select <code>Options</code>.</p>
+<p><img alt="Xdebug helper" src="../../img/drupal/phpstorm_24.png" title="Xdebug helper" /></p>
+<p>Select <code>PhpStorm</code> on <code>IDE key</code> and save it</p>
+<p><img alt="Xdebug helper IDE key" src="../../img/drupal/phpstorm_25.png" title="Xdebug helper IDE key" /></p>
+<p>Click on <code>Xdebug helper</code> icon and select <code>Debug</code></p>
+<p><img alt="Xdebug helper debug" src="../../img/drupal/phpstorm_26.png" title="Xdebug helper debug" /></p>
+<p>Now you should be ready to debug. Set a breakpoint on your Drupal <code>index.php</code> clicking on the right of the code row number. A red point must appear.</p>
+<p><img alt="Xdebug breakpoint" src="../../img/drupal/phpstorm_27.png" title="Xdebug helper breakpoint" /></p>
+<p>To start to <code>debug</code> click on the <code>bug</code> icon</p>
+<p><img alt="Xdebug start debug" src="../../img/drupal/phpstorm_28.png" title="Xdebug stert debug" /></p>
+<p>Then navigate on your <code>Drupal</code> installation from the browser and you will see the debugger in action</p>
+<p><img alt="Xdebug in action" src="../../img/drupal/phpstorm_29.png" title="Xdebug in action" /></p>
+<p>To continue the execution of <code>Drupal</code> after the <code>breakpoint</code> click on <code>Resume Program</code> (<code>play</code> button on the left of <code>Debugger</code> tab).</p>
+<p>To stop the debugger click on <code>Stop</code> (<code>stop</code> button on the left of <code>Debugger</code> tab).</p>
                 
                   
                 

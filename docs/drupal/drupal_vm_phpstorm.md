@@ -106,4 +106,4 @@ Set the `Remote` origin of the existing `git` repository adding the repository `
 
 ![Set git remote origin](../img/drupal/phpstorm_20.png "Set git remote origin")
 
-Push the `initial commit`, see the [Add GitHub repository and Initial Commit](drupal_vm_phpstorm.md#3-add-github-repository-and-initial-commit).
+Push the `initial commit` (see [Add GitHub repository and Initial Commit](drupal_vm_phpstorm.md#3-add-github-repository-and-initial-commit)).

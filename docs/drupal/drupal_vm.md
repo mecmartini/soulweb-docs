@@ -106,7 +106,7 @@ Open Terminal, `cd` to the vagrant directory (containing the Vagrantfile and the
 
 Type in `vagrant up`, and let `Vagrant` do its magic.
 
-When it’s done, open the browser and type your `vagrant_hostname` (e.g. `drupaltest.dev`), in the address bar, to navigate on your drupal installation
+When it’s done, open the browser and type your `vagrant_hostname` (e.g. `drupaltest.dev`), in the address bar, to navigate on your drupal installation.
 
 Default Drupal credentials to login are specified in your `config.yml`
 
