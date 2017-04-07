@@ -1,0 +1,124 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to Soulweb Documentations\n\n\nHere you can find the Soulweb Team documentation.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-soulweb-documentations", 
+            "text": "Here you can find the Soulweb Team documentation.", 
+            "title": "Welcome to Soulweb Documentations"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/", 
+            "text": "Development Envirorment\n\n\nDrupal VM\n\n\nDrupal VM\n is A VM for local Drupal development, built with Vagrant + Ansible.\n\n\n\n\nQuick Start Guide\n\n\nDrupal VM Documentation\n  \n\n\n\n\nRequirements\n\n\n1. Virtualbox and Vagrant\n\n\nDownload and install \nVagrant\n and \nVirtualBox\n and keep them updated.\n\n\n2. Xcode\n\n\nInstall \nXcode\n.\n\n\n3. Ansible\n\n\nInstall \nAnsible\n via \npip\n.\n\n\nOpen a \nTerminal\n and run:\n\n\nsudo easy_install pip\nsudo pip install ansible --quiet\n\n\n\nTo update \nAnsible\n:\n\n\nsudo pip install ansible --upgrade\n\n\n\n4. Vagrant Plugins\n\n\nInstall the needed Vagrant plugins.\n\n\nFrom a \nTerminal\n run:\n\n\nvagrant plugin install vagrant-vbguest\nvagrant plugin install vagrant-hostsupdater\nvagrant plugin install vagrant-auto_network\n\n\n\nBuild Drupal VM\n\n\n1. Download\n\n\nClone the Drupal VM project. From a \nTerminal\n run:\n\n\ngit clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm\n\n\n\nEnter on the created folder \nyourprojectnamevm\n.\n\n\n2. config.yml\n\n\nThe main configuration file of the project. Commonly this is a copy of \ndefault.config.yml\n with the values tweaked to your own project.\n\n\nCopy \ndefault.config.yml\n as \nconfig.yml\n.\n\n\nOpen the \nconfig.yml\n with your favorite editor and edit the following lines:\n\n\nvagrant_hostname: yourprojectnamevm.dev\nvagrant_machine_name: yourprojectnamevm\nvagrant_ip: 0.0.0.0\n\n\n\nSet the \nlocal\n and \nremote\n (\nvagrant\n) folders to sync:\n\n\nvagrant_synced_folders:\n  # The first synced folder will be used for the default Drupal installation, if\n  # any of the build_* settings are 'true'. By default the folder is set to\n  # the drupal-vm folder.\n  - local_path: ~/Sites/yourprojectnamevm\n    destination: /var/www/yourprojectnamevm\n    type: nfs\n    create: true\n\n\n\nConfigure the \ndrupal composer install dir\n to the directory destination of above:\n\n\ndrupal_composer_install_dir: \"/var/www/yourprojectnamevm/drupal\u201d\n\n\n\nBy default, the \nDrupal VM\n includes extras packages listed under \ninstalled_extras\n. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:\n\n\ninstalled_extras:\n  - adminer\n  # - blackfire\n  - drupalconsole\n  - drush\n  # - elasticsearch\n  # - java\n  - mailhog\n  # - memcached\n  # - newrelic\n  # - nodejs\n  - pimpmylog\n  # - redis\n  # - ruby\n  # - selenium\n  # - solr\n  # - tideways\n  # - upload-progress\n  # - varnish\n  - xdebug\n  # - xhprof\n\n\n\nSelect the desidered php version. Currently-supported versions: 5.6, 7.0, 7.1.:\n\n\nphp_version: \u201c7.1\"\n\n\n\nContinue to modify config.yml to your liking.\n\n\n2. Build up\n\n\nOpen Terminal, \ncd\n to the vagrant directory (containing the Vagrantfile and the config.yml file).\n\n\nType in \nvagrant up\n, and let \nVagrant\n do its magic.\n\n\nWhen it\u2019s done, open the browser and type your \nvagrant_hostname\n (e.g. \ndrupaltest.dev\n), in the address bar, to navigate on your drupal installation\n\n\nDefault Drupal credentials to login are specified in your \nconfig.yml\n\n\ndrupal_account_name: admin\ndrupal_account_pass: admin\n\n\n\nAt the address \ndashboard.your_vagrant_hostname.dev\n (e.g. \ndashboard.drupaltest.dev\n) you can see your \nDrupalVM\n dashboard.", 
+            "title": "Drupal VM"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#development-envirorment", 
+            "text": "", 
+            "title": "Development Envirorment"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#drupal-vm", 
+            "text": "Drupal VM  is A VM for local Drupal development, built with Vagrant + Ansible.   Quick Start Guide  Drupal VM Documentation", 
+            "title": "Drupal VM"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#requirements", 
+            "text": "", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#1-virtualbox-and-vagrant", 
+            "text": "Download and install  Vagrant  and  VirtualBox  and keep them updated.", 
+            "title": "1. Virtualbox and Vagrant"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#2-xcode", 
+            "text": "Install  Xcode .", 
+            "title": "2. Xcode"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#3-ansible", 
+            "text": "Install  Ansible  via  pip .  Open a  Terminal  and run:  sudo easy_install pip\nsudo pip install ansible --quiet  To update  Ansible :  sudo pip install ansible --upgrade", 
+            "title": "3. Ansible"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#4-vagrant-plugins", 
+            "text": "Install the needed Vagrant plugins.  From a  Terminal  run:  vagrant plugin install vagrant-vbguest\nvagrant plugin install vagrant-hostsupdater\nvagrant plugin install vagrant-auto_network", 
+            "title": "4. Vagrant Plugins"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#build-drupal-vm", 
+            "text": "", 
+            "title": "Build Drupal VM"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#1-download", 
+            "text": "Clone the Drupal VM project. From a  Terminal  run:  git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm  Enter on the created folder  yourprojectnamevm .", 
+            "title": "1. Download"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#2-configyml", 
+            "text": "The main configuration file of the project. Commonly this is a copy of  default.config.yml  with the values tweaked to your own project.  Copy  default.config.yml  as  config.yml .  Open the  config.yml  with your favorite editor and edit the following lines:  vagrant_hostname: yourprojectnamevm.dev\nvagrant_machine_name: yourprojectnamevm\nvagrant_ip: 0.0.0.0  Set the  local  and  remote  ( vagrant ) folders to sync:  vagrant_synced_folders:\n  # The first synced folder will be used for the default Drupal installation, if\n  # any of the build_* settings are 'true'. By default the folder is set to\n  # the drupal-vm folder.\n  - local_path: ~/Sites/yourprojectnamevm\n    destination: /var/www/yourprojectnamevm\n    type: nfs\n    create: true  Configure the  drupal composer install dir  to the directory destination of above:  drupal_composer_install_dir: \"/var/www/yourprojectnamevm/drupal\u201d  By default, the  Drupal VM  includes extras packages listed under  installed_extras . If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:  installed_extras:\n  - adminer\n  # - blackfire\n  - drupalconsole\n  - drush\n  # - elasticsearch\n  # - java\n  - mailhog\n  # - memcached\n  # - newrelic\n  # - nodejs\n  - pimpmylog\n  # - redis\n  # - ruby\n  # - selenium\n  # - solr\n  # - tideways\n  # - upload-progress\n  # - varnish\n  - xdebug\n  # - xhprof  Select the desidered php version. Currently-supported versions: 5.6, 7.0, 7.1.:  php_version: \u201c7.1\"  Continue to modify config.yml to your liking.", 
+            "title": "2. config.yml"
+        }, 
+        {
+            "location": "/drupal/drupal_vm/#2-build-up", 
+            "text": "Open Terminal,  cd  to the vagrant directory (containing the Vagrantfile and the config.yml file).  Type in  vagrant up , and let  Vagrant  do its magic.  When it\u2019s done, open the browser and type your  vagrant_hostname  (e.g.  drupaltest.dev ), in the address bar, to navigate on your drupal installation  Default Drupal credentials to login are specified in your  config.yml  drupal_account_name: admin\ndrupal_account_pass: admin  At the address  dashboard.your_vagrant_hostname.dev  (e.g.  dashboard.drupaltest.dev ) you can see your  DrupalVM  dashboard.", 
+            "title": "2. Build up"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpstorm/", 
+            "text": "PhpStorm Project\n\n\nMake sure to have the latest \nPhpStorm\n available for a better support.\n\n\n1. Create new project\n\n\nOpen \nPhpStorm\n and select \nCreate New Project from Existing File\n\n\n\n\nSelect \nSources file are in a local directory, no Web server is yet configured.\n\n\n\n\nSelect your \nDrupal\n installation directory on the local machine, make it the \nProject Root\n and click on \nFinish\n button\n\n\n\n\nOnce the project is created, \nPhpStorm\n will index your project files and must recognise it as a \nDrupal\n project. It should ask to enable the \nDrupal\n support. If not, enable it by yourself:\n\n\n\n\n2. Integrate Vagrant\n\n\nTo make \nPhpStorm\n find the vagrant executable run:\n\n\nsudo ln -s /usr/local/bin/vagrant /usr/bin/vagrant\n\n\n\n\n\nNote\n\n\nin case the executable is in a different path then \n/usr/local/bin\n change it, you can find the vagrant path with \nwhereis vagrant\n\n\n\n\nTo integrate \nVagrant\n set the \nIstance Folder\n on the \nVagrant\n settings:\n\n\n\n\nThen select the \nCurrent Vagrant\n on \nSSH Terminal\n settings:\n\n\n\n\nCreate the new Vagrant \nDeployment\n server clicking on \n+\n button in the following settings:\n\n\n\n\nEnter a \nName\n and select Type \nSFTP\n:\n\n\n\n\nClick \nOK\n button and configure the rest as:\n\n\nSFTP host: your vagrant_hostname\nRoot path: your Drupal installation path on the vagrant machine\nUsername: vagrant \nPassword: vagrant\n\n\n\nGo on the \nMappings\n tab and set only the \nDeployment path on server\n with your \nDrupal\n installation path on the \nvagrant machine\n\n\n\n\nSet your vagrant \nPHP interpreter\n. From the following click on \n\u2026\n of \nCLI Interpreter\n:\n\n\n\n\nClick on \n+\n button and select \nRemote\n. Set the interpreter as below, selecting \nVagrant\n and setting the \nVagrant Istance Folder\n to your \nVagrant\n folder:\n\n\n\n\nGo to \nSettings\n -\n \nPHP\n -\n \nServers\n and click on \n+\n button:\n\n\n\n\nSet your \nName\n and \nHost\n. Check \nUse path mappings\n and enter the \nAbsolute path on the server\n to your \ndrupal\n installation on vagrant machine.\n\n\n3. Add GitHub repository and Initial Commit\n\n\nModify \n.gitignore\n file on your \ndrupal\n installation adding to the end:\n\n\n# Custom\n/web/sites/*/settings.php\n/web/sites/*/services.yml\n\n\n\nShare the project on \nGitHub\n:\n\n\n\n\nWrite the \nNew repository name\n, select \nprivate\n, if needed, and click on \nShare\n\n\n\n\nAdd files for \ninitial commit\n and \npush\n on git by clicking on \nOK\n button\n\n\n\n\n4. Import to existing GitHub repository and Initial Commit\n\n\nEnable version control integration from PHPSTORM:\n\n\n\n\nSet the \nRemote\n origin of the existing \ngit\n repository adding the repository \nurl\n (e.g. \nhttps://github.com/mecmartini/soulweb-docs.git\n)\n\n\n\n\n\n\n\n\n\n\nPush the \ninitial commit\n, see the \nAdd GitHub repository and Initial Commit\n.", 
+            "title": "PhpStorm"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpstorm/#phpstorm-project", 
+            "text": "Make sure to have the latest  PhpStorm  available for a better support.", 
+            "title": "PhpStorm Project"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpstorm/#1-create-new-project", 
+            "text": "Open  PhpStorm  and select  Create New Project from Existing File   Select  Sources file are in a local directory, no Web server is yet configured.   Select your  Drupal  installation directory on the local machine, make it the  Project Root  and click on  Finish  button   Once the project is created,  PhpStorm  will index your project files and must recognise it as a  Drupal  project. It should ask to enable the  Drupal  support. If not, enable it by yourself:", 
+            "title": "1. Create new project"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpstorm/#2-integrate-vagrant", 
+            "text": "To make  PhpStorm  find the vagrant executable run:  sudo ln -s /usr/local/bin/vagrant /usr/bin/vagrant   Note  in case the executable is in a different path then  /usr/local/bin  change it, you can find the vagrant path with  whereis vagrant   To integrate  Vagrant  set the  Istance Folder  on the  Vagrant  settings:   Then select the  Current Vagrant  on  SSH Terminal  settings:   Create the new Vagrant  Deployment  server clicking on  +  button in the following settings:   Enter a  Name  and select Type  SFTP :   Click  OK  button and configure the rest as:  SFTP host: your vagrant_hostname\nRoot path: your Drupal installation path on the vagrant machine\nUsername: vagrant \nPassword: vagrant  Go on the  Mappings  tab and set only the  Deployment path on server  with your  Drupal  installation path on the  vagrant machine   Set your vagrant  PHP interpreter . From the following click on  \u2026  of  CLI Interpreter :   Click on  +  button and select  Remote . Set the interpreter as below, selecting  Vagrant  and setting the  Vagrant Istance Folder  to your  Vagrant  folder:   Go to  Settings  -   PHP  -   Servers  and click on  +  button:   Set your  Name  and  Host . Check  Use path mappings  and enter the  Absolute path on the server  to your  drupal  installation on vagrant machine.", 
+            "title": "2. Integrate Vagrant"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpstorm/#3-add-github-repository-and-initial-commit", 
+            "text": "Modify  .gitignore  file on your  drupal  installation adding to the end:  # Custom\n/web/sites/*/settings.php\n/web/sites/*/services.yml  Share the project on  GitHub :   Write the  New repository name , select  private , if needed, and click on  Share   Add files for  initial commit  and  push  on git by clicking on  OK  button", 
+            "title": "3. Add GitHub repository and Initial Commit"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_phpstorm/#4-import-to-existing-github-repository-and-initial-commit", 
+            "text": "Enable version control integration from PHPSTORM:   Set the  Remote  origin of the existing  git  repository adding the repository  url  (e.g.  https://github.com/mecmartini/soulweb-docs.git )      Push the  initial commit , see the  Add GitHub repository and Initial Commit .", 
+            "title": "4. Import to existing GitHub repository and Initial Commit"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_xdebug/", 
+            "text": "Xdebug\n\n\n1. Enable Xdebug on your Vagrant machine\n\n\nOpen the vagrant machine \nconfig.yml\n file and be sure to have the xdebug line uncommented on \ninstalled_extras\n\n\ninstalled_extras:\n      - adminer\n      # - blackfire\n      - drupalconsole\n      - drush\n      # - elasticsearch\n      # - java\n      - mailhog\n      # - memcached\n      # - newrelic\n      # - nodejs\n      - pimpmylog\n      # - redis\n      # - ruby\n      # - selenium\n      # - solr\n      # - tideways\n      # - upload-progress\n      # - varnish\n      - xdebug\n      # - xhprof\n\n\n\nBe sure to have the following lines set as:\n\n\n# XDebug configuration. XDebug is disabled by default for better performance.\nphp_xdebug_default_enable: 1\nphp_xdebug_coverage_enable: 1\n\n\n\nAdd the port \n9000\n to \nfirewall_allowed_tcp_ports\n\n\nfirewall_allowed_tcp_ports:\n  - \"22\"\n  - \"25\"\n  - \"80\"\n  - \"81\"\n  - \"443\"\n  - \"4444\"\n  - \"8000\"\n  - \"8025\"\n  - \"8080\"\n  - \"8443\"\n  - \"8983\"\n  - \"9000\"\n  - \"9200\"\n\n\n\nRun \nvagrant up --provision\n to apply the changes on your \nvagrant\n machine or run \nvagrant provision\n if your machine is already up.\n\n\n2. Integrate Xdebug on PhpStorm", 
+            "title": "Xdebug"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_xdebug/#xdebug", 
+            "text": "", 
+            "title": "Xdebug"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_xdebug/#1-enable-xdebug-on-your-vagrant-machine", 
+            "text": "Open the vagrant machine  config.yml  file and be sure to have the xdebug line uncommented on  installed_extras  installed_extras:\n      - adminer\n      # - blackfire\n      - drupalconsole\n      - drush\n      # - elasticsearch\n      # - java\n      - mailhog\n      # - memcached\n      # - newrelic\n      # - nodejs\n      - pimpmylog\n      # - redis\n      # - ruby\n      # - selenium\n      # - solr\n      # - tideways\n      # - upload-progress\n      # - varnish\n      - xdebug\n      # - xhprof  Be sure to have the following lines set as:  # XDebug configuration. XDebug is disabled by default for better performance.\nphp_xdebug_default_enable: 1\nphp_xdebug_coverage_enable: 1  Add the port  9000  to  firewall_allowed_tcp_ports  firewall_allowed_tcp_ports:\n  - \"22\"\n  - \"25\"\n  - \"80\"\n  - \"81\"\n  - \"443\"\n  - \"4444\"\n  - \"8000\"\n  - \"8025\"\n  - \"8080\"\n  - \"8443\"\n  - \"8983\"\n  - \"9000\"\n  - \"9200\"  Run  vagrant up --provision  to apply the changes on your  vagrant  machine or run  vagrant provision  if your machine is already up.", 
+            "title": "1. Enable Xdebug on your Vagrant machine"
+        }, 
+        {
+            "location": "/drupal/drupal_vm_xdebug/#2-integrate-xdebug-on-phpstorm", 
+            "text": "", 
+            "title": "2. Integrate Xdebug on PhpStorm"
+        }
+    ]
+}

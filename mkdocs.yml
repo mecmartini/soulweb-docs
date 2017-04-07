@@ -1,14 +1,31 @@
 site_name: Soulweb Docs
 site_url: http://soulweb.docsvm.dev
 
-site_description: Soulweb documentation.
+site_description: Soulweb Documentation.
 site_author: Soulweb Team
 
-repo_url: https://github.com/mecmartini/soulweb-docs/
+repo_name: 'mecmartini/soulweb-docs'
+repo_url: 'https://github.com/mecmartini/soulweb-docs'
 
 pages:
-  - Home: 'index.md'
-  - Drupal Development:
-    - Development Envirorment: 'drupal/drupal_dev_env.md'
+- Home: 'index.md'
+- Drupal Development:
+  - Local Development:
+    - macOS:
+      - 'Drupal VM': 'drupal/drupal_vm.md'
+      - 'PhpStorm': 'drupal/drupal_vm_phpstorm.md'
+      - 'Xdebug': 'drupal/drupal_vm_xdebug.md'
 
-theme: readthedocs
+theme: material
+
+extra:
+  logo: 'img/logo.svg'
+  palette:
+    primary: 'blue grey'
+    accent: 'cyan'
+
+markdown_extensions:
+  - admonition:
+
+copyright: Copyright &copy; 2017 Soulweb Team.
+# google_analytics: ['UA-27795084-5', 'mkdocs.org']
