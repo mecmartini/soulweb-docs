@@ -436,10 +436,10 @@
               
                 
                 
-                <h1 id="xdebug">Xdebug</h1>
-<h4 id="1-enable-xdebug-on-your-vagrant-machine">1. Enable Xdebug on your Vagrant machine</h4>
+                <h1 id="xdebug">Xdebug<a class="headerlink" href="#xdebug" title="Permanent link">&para;</a></h1>
+<h4 id="1-enable-xdebug-on-your-vagrant-machine">1. Enable Xdebug on your Vagrant machine<a class="headerlink" href="#1-enable-xdebug-on-your-vagrant-machine" title="Permanent link">&para;</a></h4>
 <p>Open the vagrant machine <code>config.yml</code> file and be sure to have the xdebug line uncommented on <code>installed_extras</code></p>
-<pre><code>installed_extras:
+<div class="codehilite"><pre><span></span>installed_extras:
       - adminer
       # - blackfire
       - drupalconsole
@@ -460,30 +460,36 @@
       # - varnish
       - xdebug
       # - xhprof
-</code></pre>
+</pre></div>
+
+
 <p>Be sure to have the following lines set as:</p>
-<pre><code># XDebug configuration. XDebug is disabled by default for better performance.
+<div class="codehilite"><pre><span></span># XDebug configuration. XDebug is disabled by default for better performance.
 php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 1
-</code></pre>
+</pre></div>
+
+
 <p>Add the port <code>9000</code> to <code>firewall_allowed_tcp_ports</code></p>
-<pre><code>firewall_allowed_tcp_ports:
-  - "22"
-  - "25"
-  - "80"
-  - "81"
-  - "443"
-  - "4444"
-  - "8000"
-  - "8025"
-  - "8080"
-  - "8443"
-  - "8983"
-  - "9000"
-  - "9200"
-</code></pre>
+<div class="codehilite"><pre><span></span>firewall_allowed_tcp_ports:
+  - &quot;22&quot;
+  - &quot;25&quot;
+  - &quot;80&quot;
+  - &quot;81&quot;
+  - &quot;443&quot;
+  - &quot;4444&quot;
+  - &quot;8000&quot;
+  - &quot;8025&quot;
+  - &quot;8080&quot;
+  - &quot;8443&quot;
+  - &quot;8983&quot;
+  - &quot;9000&quot;
+  - &quot;9200&quot;
+</pre></div>
+
+
 <p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
-<h4 id="2-integrate-xdebug-in-phpstorm">2. Integrate Xdebug in PhpStorm</h4>
+<h4 id="2-integrate-xdebug-in-phpstorm">2. Integrate Xdebug in PhpStorm<a class="headerlink" href="#2-integrate-xdebug-in-phpstorm" title="Permanent link">&para;</a></h4>
 <p>On <code>PhpStorm</code> go to <code>settings</code>.</p>
 <p>Be sure to have <code>Xdebug</code> -&gt; <code>Debug port</code> set to <code>9000</code>:</p>
 <p><img alt="PhpStorm debug port" src="../../img/drupal/phpstorm_21.png" title="PhpStorm debug port" /></p>

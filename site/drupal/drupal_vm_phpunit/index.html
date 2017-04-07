@@ -422,11 +422,13 @@
               
                 
                 
-                <h1 id="phpunit">PHPUnit</h1>
-<h4 id="1-integrate-phpunit-in-phpstorm">1. Integrate PHPUnit in PhpStorm</h4>
+                <h1 id="phpunit">PHPUnit<a class="headerlink" href="#phpunit" title="Permanent link">&para;</a></h1>
+<h4 id="1-integrate-phpunit-in-phpstorm">1. Integrate PHPUnit in PhpStorm<a class="headerlink" href="#1-integrate-phpunit-in-phpstorm" title="Permanent link">&para;</a></h4>
 <p>Enable the <code>Testing</code> module on your <code>drupal</code> installation. Access on your <code>vagrant</code> machine (<code>vagrant ssh</code>), go under the <code>drupal</code> installation directory and run:</p>
-<pre><code>drush en -y testing
-</code></pre>
+<div class="codehilite"><pre><span></span>drush en -y testing
+</pre></div>
+
+
 <p>Open the file <code>web/core/phpunit.xml.dist</code>, under your <code>drupal</code> installation directory, and fill in <code>SIMPLETEST_DB</code>, <code>SIMPLETEST_BASE_URL</code> and <code>BROWSERTEST_OUTPUT_DIRECTORY</code>.
 Go under <code>Settings</code> &gt; <code>Language &amp; Frameworks</code> &gt; <code>PHP</code> &gt; <code>PHPUnit</code>. Click on the <code>+</code> button and select <code>By Remote Interpreter</code></p>
 <p><img alt="PhpStorm PHPUnit settings" src="../../img/drupal/phpstorm_33.png" title="PhpStorm PHPUnit settings" /></p>

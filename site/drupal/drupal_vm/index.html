@@ -572,63 +572,77 @@
               
                 
                 
-                <h1 id="development-envirorment">Development Envirorment</h1>
-<h2 id="drupal-vm">Drupal VM</h2>
+                <h1 id="development-envirorment">Development Envirorment<a class="headerlink" href="#development-envirorment" title="Permanent link">&para;</a></h1>
+<h2 id="drupal-vm">Drupal VM<a class="headerlink" href="#drupal-vm" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.drupalvm.com/">Drupal VM</a> is A VM for local Drupal development, built with Vagrant + Ansible.</p>
 <ul>
 <li><a href="https://github.com/geerlingguy/drupal-vm#quick-start-guide">Quick Start Guide</a></li>
 <li><a href="http://docs.drupalvm.com/">Drupal VM Documentation</a>  </li>
 </ul>
-<h2 id="requirements">Requirements</h2>
-<h4 id="1-virtualbox-and-vagrant">1. Virtualbox and Vagrant</h4>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<h4 id="1-virtualbox-and-vagrant">1. Virtualbox and Vagrant<a class="headerlink" href="#1-virtualbox-and-vagrant" title="Permanent link">&para;</a></h4>
 <p>Download and install <a href="../Vagrant">Vagrant</a> and <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> and keep them updated.</p>
-<h4 id="2-xcode">2. Xcode</h4>
+<h4 id="2-xcode">2. Xcode<a class="headerlink" href="#2-xcode" title="Permanent link">&para;</a></h4>
 <p>Install <a href="https://developer.apple.com/xcode/">Xcode</a>.</p>
-<h4 id="3-ansible">3. Ansible</h4>
+<h4 id="3-ansible">3. Ansible<a class="headerlink" href="#3-ansible" title="Permanent link">&para;</a></h4>
 <p>Install <a href="https://valdhaus.co/writings/ansible-mac-osx/">Ansible</a> via <code>pip</code>.</p>
 <p>Open a <code>Terminal</code> and run:</p>
-<pre><code>sudo easy_install pip
+<div class="codehilite"><pre><span></span>sudo easy_install pip
 sudo pip install ansible --quiet
-</code></pre>
+</pre></div>
+
+
 <p>To update <code>Ansible</code>:</p>
-<pre><code>sudo pip install ansible --upgrade
-</code></pre>
-<h4 id="4-vagrant-plugins">4. Vagrant Plugins</h4>
+<div class="codehilite"><pre><span></span>sudo pip install ansible --upgrade
+</pre></div>
+
+
+<h4 id="4-vagrant-plugins">4. Vagrant Plugins<a class="headerlink" href="#4-vagrant-plugins" title="Permanent link">&para;</a></h4>
 <p>Install the needed Vagrant plugins.</p>
 <p>From a <code>Terminal</code> run:</p>
-<pre><code>vagrant plugin install vagrant-vbguest
+<div class="codehilite"><pre><span></span>vagrant plugin install vagrant-vbguest
 vagrant plugin install vagrant-hostsupdater
 vagrant plugin install vagrant-auto_network
-</code></pre>
-<h2 id="build-drupal-vm">Build Drupal VM</h2>
-<h4 id="1-download">1. Download</h4>
+</pre></div>
+
+
+<h2 id="build-drupal-vm">Build Drupal VM<a class="headerlink" href="#build-drupal-vm" title="Permanent link">&para;</a></h2>
+<h4 id="1-download">1. Download<a class="headerlink" href="#1-download" title="Permanent link">&para;</a></h4>
 <p>Clone the Drupal VM project. From a <code>Terminal</code> run:</p>
-<pre><code>git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
-</code></pre>
+<div class="codehilite"><pre><span></span>git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
+</pre></div>
+
+
 <p>Enter on the created folder <code>yourprojectnamevm</code>.</p>
-<h4 id="2-configyml">2. config.yml</h4>
+<h4 id="2-configyml">2. config.yml<a class="headerlink" href="#2-configyml" title="Permanent link">&para;</a></h4>
 <p>The main configuration file of the project. Commonly this is a copy of <code>default.config.yml</code> with the values tweaked to your own project.</p>
 <p>Copy <code>default.config.yml</code> as <code>config.yml</code>.</p>
 <p>Open the <code>config.yml</code> with your favorite editor and edit the following lines:</p>
-<pre><code>vagrant_hostname: yourprojectnamevm.dev
-vagrant_machine_name: yourprojectnamevm
-vagrant_ip: 0.0.0.0
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">vagrant_hostname</span><span class="o">:</span> <span class="n">yourprojectnamevm</span><span class="o">.</span><span class="na">dev</span>
+<span class="n">vagrant_machine_name</span><span class="o">:</span> <span class="n">yourprojectnamevm</span>
+<span class="n">vagrant_ip</span><span class="o">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>
+</pre></div>
+
+
 <p>Set the <code>local</code> and <code>remote</code> (<em>vagrant</em>) folders to sync:</p>
-<pre><code>vagrant_synced_folders:
+<div class="codehilite"><pre><span></span>vagrant_synced_folders:
   # The first synced folder will be used for the default Drupal installation, if
-  # any of the build_* settings are 'true'. By default the folder is set to
+  # any of the build_* settings are &#39;true&#39;. By default the folder is set to
   # the drupal-vm folder.
   - local_path: ~/Sites/yourprojectnamevm
     destination: /var/www/yourprojectnamevm
     type: nfs
     create: true
-</code></pre>
+</pre></div>
+
+
 <p>Configure the <code>drupal composer install dir</code> to the directory destination of above:</p>
-<pre><code>drupal_composer_install_dir: "/var/www/yourprojectnamevm/drupal”
-</code></pre>
+<div class="codehilite"><pre><span></span>drupal_composer_install_dir: &quot;/var/www/yourprojectnamevm/drupal”
+</pre></div>
+
+
 <p>By default, the <code>Drupal VM</code> includes extras packages listed under <code>installed_extras</code>. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:</p>
-<pre><code>installed_extras:
+<div class="codehilite"><pre><span></span>installed_extras:
   - adminer
   # - blackfire
   - drupalconsole
@@ -649,19 +663,25 @@ vagrant_ip: 0.0.0.0
   # - varnish
   - xdebug
   # - xhprof
-</code></pre>
+</pre></div>
+
+
 <p>Select the desidered php version. Currently-supported versions: 5.6, 7.0, 7.1.:</p>
-<pre><code>php_version: “7.1"
-</code></pre>
+<div class="codehilite"><pre><span></span>php_version: “7.1&quot;
+</pre></div>
+
+
 <p>Continue to modify config.yml to your liking.</p>
-<h4 id="2-build-up">2. Build up</h4>
+<h4 id="2-build-up">2. Build up<a class="headerlink" href="#2-build-up" title="Permanent link">&para;</a></h4>
 <p>Open Terminal, <code>cd</code> to the vagrant directory (containing the Vagrantfile and the config.yml file).</p>
 <p>Type in <code>vagrant up</code>, and let <code>Vagrant</code> do its magic.</p>
 <p>When it’s done, open the browser and type your <code>vagrant_hostname</code> (e.g. <code>drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
 <p>Default Drupal credentials to login are specified in your <code>config.yml</code></p>
-<pre><code>drupal_account_name: admin
-drupal_account_pass: admin
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">drupal_account_name</span><span class="o">:</span> <span class="n">admin</span>
+<span class="n">drupal_account_pass</span><span class="o">:</span> <span class="n">admin</span>
+</pre></div>
+
+
 <p>At the address <code>dashboard.your_vagrant_hostname.dev</code> (e.g. <code>dashboard.drupaltest.dev</code>) you can see your <code>DrupalVM</code> dashboard.</p>
                 
                   
