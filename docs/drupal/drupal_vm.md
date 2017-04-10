@@ -95,9 +95,14 @@ By default, the `Drupal VM` includes extras packages listed under `installed_ext
       - xdebug
       # - xhprof
 
-Select the desidered php version. Currently-supported versions: 5.6, 7.0, 7.1.:
+Select the desidered php version. Currently-supported versions: `5.6`, `7.0`, `7.1`. Our default for  `Drupal 8` projects is `7.1`:
 
     php_version: “7.1"
+
+Set `php memory limit` at least to `256M`:
+
+    php_memory_limit: "256M"
+    php_opcache_memory_consumption: "256"
 
 Continue to modify config.yml to your liking.
 
