@@ -2,7 +2,7 @@
 
 Make sure to have the latest [PhpStorm](https://www.jetbrains.com/phpstorm/download) available for a better support.
 
-#### 1. Create new project
+#### 1. Create new project Vagrant based
 
 Open `PhpStorm` and select `Create New Project from Existing File`
 

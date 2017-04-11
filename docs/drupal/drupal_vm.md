@@ -35,11 +35,12 @@ From a `Terminal` run:
     vagrant plugin install vagrant-vbguest
     vagrant plugin install vagrant-hostsupdater
     vagrant plugin install vagrant-auto_network
+    vagrant plugin install vagrant-cachier
 
-## Build Drupal VM
+## Build Drupal VM from scratch
 
 #### 1. Download
-Clone the Drupal VM project. From a `Terminal` run:
+Clone the `Drupal VM` project. From a `Terminal` run:
 
     git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
 
@@ -55,22 +56,22 @@ Open the `config.yml` with your favorite editor and edit the following lines:
     vagrant_hostname: yourprojectnamevm.dev
     vagrant_machine_name: yourprojectnamevm
     vagrant_ip: 0.0.0.0
-    
+
 Set the `local` and `remote` (*vagrant*) folders to sync:
-    
+
     vagrant_synced_folders:
       # The first synced folder will be used for the default Drupal installation, if
       # any of the build_* settings are 'true'. By default the folder is set to
       # the drupal-vm folder.
       - local_path: ~/Sites/yourprojectnamevm
-        destination: /var/www/yourprojectnamevm
+        destination: /var/www
         type: nfs
         create: true
-        
+
 Configure the `drupal composer install dir` to the directory destination of above:
 
     drupal_composer_install_dir: "/var/www/yourprojectnamevm/drupal”
-    
+
 By default, the `Drupal VM` includes extras packages listed under `installed_extras`. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:
 
     installed_extras:
@@ -106,7 +107,7 @@ Set `php memory limit` at least to `256M`:
 
 Continue to modify config.yml to your liking.
 
-#### 2. Build up
+#### 3. Build up
 Open Terminal, `cd` to the vagrant directory (containing the Vagrantfile and the config.yml file).
 
 Type in `vagrant up`, and let `Vagrant` do its magic.
@@ -120,3 +121,134 @@ Default Drupal credentials to login are specified in your `config.yml`
 
 At the address `dashboard.your_vagrant_hostname.dev` (e.g. `dashboard.drupaltest.dev`) you can see your `DrupalVM` dashboard.
 
+## Build Drupal VM from existing Drupal project
+
+This is in the scenario where you have an existing existing drupal project (`composer based`) on `git` and you want to start a new `Drupal VM` to local development.
+
+#### 1. Download
+Clone the `Drupal VM` project. From a `Terminal` run:
+
+    git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
+
+Enter on the created folder `yourprojectnamevm`.
+
+#### 2. config.yml
+The main configuration file of the project. Commonly this is a copy of `default.config.yml` with the values tweaked to your own project.
+
+Copy `default.config.yml` as `config.yml`.
+
+Open the `config.yml` with your favorite editor and edit the following lines:
+
+    vagrant_hostname: yourprojectnamevm.dev
+    vagrant_machine_name: yourprojectnamevm
+    vagrant_ip: 0.0.0.0
+
+Set the `local` and `remote` (*vagrant*) folders to sync:
+
+    vagrant_synced_folders:
+      # The first synced folder will be used for the default Drupal installation, if
+      # any of the build_* settings are 'true'. By default the folder is set to
+      # the drupal-vm folder.
+      - local_path: ~/Sites/yourprojectnamevm
+        destination: /var/www
+        type: nfs
+        create: true
+
+Configure the `drupal composer install dir` to the directory destination of above:
+
+    drupal_composer_install_dir: "/var/www/yourprojectnamevm/drupal”
+
+Set `Drupal VM` to use your `composer.json` in order to automatically install your `composer` dependencies:
+
+    drupal_build_makefile: false
+    drupal_composer_path: false
+    ...
+    drupal_build_composer: false
+    ...
+    drupal_build_composer_project: false
+
+We need to disable the automatic drupal install site because, forn now, in this scenario it doesn't work:
+
+    drupal_install_site: false
+
+By default, the `Drupal VM` includes extras packages listed under `installed_extras`. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:
+
+    installed_extras:
+      - adminer
+      # - blackfire
+      - drupalconsole
+      - drush
+      # - elasticsearch
+      # - java
+      - mailhog
+      # - memcached
+      # - newrelic
+      # - nodejs
+      - pimpmylog
+      # - redis
+      # - ruby
+      # - selenium
+      # - solr
+      # - tideways
+      # - upload-progress
+      # - varnish
+      - xdebug
+      # - xhprof
+
+Select the desidered php version. Currently-supported versions: `5.6`, `7.0`, `7.1`. Our default for  `Drupal 8` projects is `7.1`:
+
+    php_version: “7.1"
+
+Set `php memory limit` at least to `256M`:
+
+    php_memory_limit: "256M"
+    php_opcache_memory_consumption: "256"
+
+Continue to modify config.yml to your liking.
+
+#### 3. Download your Drupal project site
+
+Clone your `Drupal` project site in the folder set as `local_path` before on your `config.yml` (e.g. `~/Sites/yourprojectnamevm`):
+
+    git clone https://github.com/yourrepository/projectname.git yourprojectnamevm
+
+We'll use the [Configuration Installer](https://www.drupal.org/project/config_installer) profile to install your drupal site with your configuration.
+
+Be sure to have it in you `composer` dependencies. If not, add it to your `config.yml`:
+
+    drupal_composer_dependencies:
+      ...
+      - "drupal/config_installer"
+
+#### 4. Build up
+Open Terminal, `cd` to the vagrant directory (containing the Vagrantfile and the config.yml file).
+
+Type in `vagrant up`, and let `Vagrant` do its magic.
+
+#### 4. Install Drupal site
+
+When the `VM` is up and running, enter on it (`vagrant ssh`) and go to your drupal site folder:
+
+    cd /var/www/yourprojectnamevm/drupal/web
+
+Run the `drupal` installation (replace the `db` parameters):
+
+    drush site-install config_installer config_installer_sync_configure_form.sync_directory=sites/default/sync --db-url=mysql://dbuser:dbpass@127.0.0.1/dbname --account-name=admin --account-pass=admin -y
+
+where `config_installer_sync_configure_form.sync_directory` is set to the folder that contains your `drupal` default configuration.
+
+When it’s done, open the browser and type your `vagrant_hostname` (e.g. `drupaltest.dev`), in the address bar, to navigate on your drupal installation.
+
+!!! note "Split configuration"
+    in case your `drupal` config is split in different folder than the `default`, with [Configuration Split](https://www.drupal.org/project/config_split), and you need to import them too, for each of the split config you need to import run:
+
+        drush csim split_machine_name
+
+    Replace `split_machine_name` with your configuration split `machine name`
+
+Default Drupal credentials to login are specified in your `config.yml`
+
+    drupal_account_name: admin
+    drupal_account_pass: admin
+
+At the address `dashboard.your_vagrant_hostname.dev` (e.g. `dashboard.drupaltest.dev`) you can see your `DrupalVM` dashboard.
