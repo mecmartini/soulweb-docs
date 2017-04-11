@@ -30,7 +30,7 @@ To update `Ansible`:
 #### 4. Vagrant Plugins
 Install the needed Vagrant plugins.
 
-From a `Terminal` run:
+From the `Terminal` run:
 
     vagrant plugin install vagrant-vbguest
     vagrant plugin install vagrant-hostsupdater
@@ -40,7 +40,7 @@ From a `Terminal` run:
 ## Build Drupal VM from scratch
 
 #### 1. Download
-Clone the `Drupal VM` project. From a `Terminal` run:
+Clone the `Drupal VM` project. From the `Terminal` run:
 
     git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
 
@@ -123,10 +123,10 @@ At the address `dashboard.your_vagrant_hostname.dev` (e.g. `dashboard.drupaltest
 
 ## Build Drupal VM from existing Drupal project
 
-This is in the scenario where you have an existing existing drupal project (`composer based`) on `git` and you want to start a new `Drupal VM` to local development.
+This is in the scenario where you have an existing existing drupal project (`composer` based) on `git` and you want to start a new `Drupal VM` to local development.
 
 #### 1. Download
-Clone the `Drupal VM` project. From a `Terminal` run:
+Clone the `Drupal VM` project. From the `Terminal` run:
 
     git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
 
@@ -167,9 +167,11 @@ Set `Drupal VM` to use your `composer.json` in order to automatically install yo
     ...
     drupal_build_composer_project: false
 
-We need to disable the automatic drupal install site because, forn now, in this scenario it doesn't work:
+We need to disable the automatic drupal install site because, for now, in this scenario it doesn't work:
 
     drupal_install_site: false
+
+We'll manually install it later (see [Manually install Drupal site](drupal_vm.md#5-manually-install-drupal-site))
 
 By default, the `Drupal VM` includes extras packages listed under `installed_extras`. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:
 
@@ -225,7 +227,7 @@ Open Terminal, `cd` to the vagrant directory (containing the Vagrantfile and the
 
 Type in `vagrant up`, and let `Vagrant` do its magic.
 
-#### 4. Install Drupal site
+#### 5. Manually install Drupal site
 
 When the `VM` is up and running, enter on it (`vagrant ssh`) and go to your drupal site folder:
 

@@ -420,8 +420,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-install-drupal-site" title="4. Install Drupal site" class="md-nav__link">
-    4. Install Drupal site
+  <a href="#5-manually-install-drupal-site" title="5. Manually install Drupal site" class="md-nav__link">
+    5. Manually install Drupal site
   </a>
   
 </li>
@@ -642,8 +642,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-install-drupal-site" title="4. Install Drupal site" class="md-nav__link">
-    4. Install Drupal site
+  <a href="#5-manually-install-drupal-site" title="5. Manually install Drupal site" class="md-nav__link">
+    5. Manually install Drupal site
   </a>
   
 </li>
@@ -695,7 +695,7 @@ sudo pip install ansible --quiet
 
 <h4 id="4-vagrant-plugins">4. Vagrant Plugins<a class="headerlink" href="#4-vagrant-plugins" title="Permanent link">&para;</a></h4>
 <p>Install the needed Vagrant plugins.</p>
-<p>From a <code>Terminal</code> run:</p>
+<p>From the <code>Terminal</code> run:</p>
 <div class="codehilite"><pre><span></span>vagrant plugin install vagrant-vbguest
 vagrant plugin install vagrant-hostsupdater
 vagrant plugin install vagrant-auto_network
@@ -705,7 +705,7 @@ vagrant plugin install vagrant-cachier
 
 <h2 id="build-drupal-vm-from-scratch">Build Drupal VM from scratch<a class="headerlink" href="#build-drupal-vm-from-scratch" title="Permanent link">&para;</a></h2>
 <h4 id="1-download">1. Download<a class="headerlink" href="#1-download" title="Permanent link">&para;</a></h4>
-<p>Clone the <code>Drupal VM</code> project. From a <code>Terminal</code> run:</p>
+<p>Clone the <code>Drupal VM</code> project. From the <code>Terminal</code> run:</p>
 <div class="codehilite"><pre><span></span>git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
 </pre></div>
 
@@ -787,9 +787,9 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 <p>At the address <code>dashboard.your_vagrant_hostname.dev</code> (e.g. <code>dashboard.drupaltest.dev</code>) you can see your <code>DrupalVM</code> dashboard.</p>
 <h2 id="build-drupal-vm-from-existing-drupal-project">Build Drupal VM from existing Drupal project<a class="headerlink" href="#build-drupal-vm-from-existing-drupal-project" title="Permanent link">&para;</a></h2>
-<p>This is in the scenario where you have an existing existing drupal project (<code>composer based</code>) on <code>git</code> and you want to start a new <code>Drupal VM</code> to local development.</p>
+<p>This is in the scenario where you have an existing existing drupal project (<code>composer</code> based) on <code>git</code> and you want to start a new <code>Drupal VM</code> to local development.</p>
 <h4 id="1-download_1">1. Download<a class="headerlink" href="#1-download_1" title="Permanent link">&para;</a></h4>
-<p>Clone the <code>Drupal VM</code> project. From a <code>Terminal</code> run:</p>
+<p>Clone the <code>Drupal VM</code> project. From the <code>Terminal</code> run:</p>
 <div class="codehilite"><pre><span></span>git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
 </pre></div>
 
@@ -832,11 +832,12 @@ php_opcache_memory_consumption: &quot;256&quot;
 </pre></div>
 
 
-<p>We need to disable the automatic drupal install site because, forn now, in this scenario it doesn't work:</p>
+<p>We need to disable the automatic drupal install site because, for now, in this scenario it doesn't work:</p>
 <div class="codehilite"><pre><span></span><span class="n">drupal_install_site</span><span class="o">:</span> <span class="kc">false</span>
 </pre></div>
 
 
+<p>We'll manually install it later (see <a href="./#5-manually-install-drupal-site">Manually install Drupal site</a>)</p>
 <p>By default, the <code>Drupal VM</code> includes extras packages listed under <code>installed_extras</code>. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:</p>
 <div class="codehilite"><pre><span></span>installed_extras:
   - adminer
@@ -891,7 +892,7 @@ php_opcache_memory_consumption: &quot;256&quot;
 <h4 id="4-build-up">4. Build up<a class="headerlink" href="#4-build-up" title="Permanent link">&para;</a></h4>
 <p>Open Terminal, <code>cd</code> to the vagrant directory (containing the Vagrantfile and the config.yml file).</p>
 <p>Type in <code>vagrant up</code>, and let <code>Vagrant</code> do its magic.</p>
-<h4 id="4-install-drupal-site">4. Install Drupal site<a class="headerlink" href="#4-install-drupal-site" title="Permanent link">&para;</a></h4>
+<h4 id="5-manually-install-drupal-site">5. Manually install Drupal site<a class="headerlink" href="#5-manually-install-drupal-site" title="Permanent link">&para;</a></h4>
 <p>When the <code>VM</code> is up and running, enter on it (<code>vagrant ssh</code>) and go to your drupal site folder:</p>
 <div class="codehilite"><pre><span></span>cd /var/www/yourprojectnamevm/drupal/web
 </pre></div>
