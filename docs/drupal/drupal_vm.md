@@ -235,13 +235,13 @@ When the `VM` is up and running, enter on it (`vagrant ssh`) and go to your drup
 
 Run the `drupal` installation (replace the `db` parameters):
 
-    drush site-install config_installer config_installer_sync_configure_form.sync_directory=sites/default/sync --db-url=mysql://dbuser:dbpass@127.0.0.1/dbname --account-name=admin --account-pass=admin -y
+    drush site-install config_installer config_installer_sync_configure_form.sync_directory=sites/default/config/sync --db-url=mysql://dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y
 
-where `config_installer_sync_configure_form.sync_directory` is set to the folder that contains your `drupal` default configuration.
+where `config_installer_sync_configure_form.sync_directory` is set to the folder that contains your `drupal` default configuration. Our projects use `sites/default/config/sync` as default.
 
 When it’s done, open the browser and type your `vagrant_hostname` (e.g. `drupaltest.dev`), in the address bar, to navigate on your drupal installation.
 
-!!! note "Split configuration"
+!!! note "Configuration Split"
     in case your `drupal` config is split in different folder than the `default`, with [Configuration Split](https://www.drupal.org/project/config_split), and you need to import them too, for each of the split config you need to import run:
 
         drush csim split_machine_name
@@ -254,3 +254,13 @@ Default Drupal credentials to login are specified in your `config.yml`
     drupal_account_pass: admin
 
 At the address `dashboard.your_vagrant_hostname.dev` (e.g. `dashboard.drupaltest.dev`) you can see your `DrupalVM` dashboard.
+
+## Updating Drupal VM
+
+Drupal VM follows semantic versioning, which means your configuration should continue working (potentially with very minor modifications) throughout a major release cycle. Here is the process to follow when updating Drupal VM between minor releases:
+
+  1. Read through the [release notes](https://github.com/geerlingguy/drupal-vm/releases) and add/modify `config.yml` variables mentioned therein.
+  2. Do a diff of your `config.yml` with the updated `default.config.yml` (e.g. `curl https://raw.githubusercontent.com/geerlingguy/drupal-vm/master/default.config.yml | git diff --no-index config.yml -`).
+  3. Run `vagrant provision` to provision the VM, incorporating all the latest changes.
+
+For major version upgrades (e.g. 3.x.x to 4.x.x), it may be simpler to destroy the VM (`vagrant destroy`) then build a fresh new VM (`vagrant up`) using the new version of Drupal VM.

@@ -431,6 +431,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updating-drupal-vm" title="Updating Drupal VM" class="md-nav__link">
+    Updating Drupal VM
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -650,6 +657,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-drupal-vm" title="Updating Drupal VM" class="md-nav__link">
+    Updating Drupal VM
+  </a>
   
 </li>
       
@@ -899,14 +913,14 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 
 <p>Run the <code>drupal</code> installation (replace the <code>db</code> parameters):</p>
-<div class="codehilite"><pre><span></span><span class="n">drush</span> <span class="n">site</span><span class="o">-</span><span class="n">install</span> <span class="n">config_installer</span> <span class="n">config_installer_sync_configure_form</span><span class="p">.</span><span class="n">sync_directory</span><span class="o">=</span><span class="n">sites</span><span class="o">/</span><span class="k">default</span><span class="o">/</span><span class="n">sync</span> <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="nl">mysql</span><span class="p">:</span><span class="c1">//dbuser:dbpass@127.0.0.1/dbname --account-name=admin --account-pass=admin -y</span>
+<div class="codehilite"><pre><span></span><span class="n">drush</span> <span class="n">site</span><span class="o">-</span><span class="n">install</span> <span class="n">config_installer</span> <span class="n">config_installer_sync_configure_form</span><span class="p">.</span><span class="n">sync_directory</span><span class="o">=</span><span class="n">sites</span><span class="o">/</span><span class="k">default</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">sync</span> <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="nl">mysql</span><span class="p">:</span><span class="c1">//dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y</span>
 </pre></div>
 
 
-<p>where <code>config_installer_sync_configure_form.sync_directory</code> is set to the folder that contains your <code>drupal</code> default configuration.</p>
+<p>where <code>config_installer_sync_configure_form.sync_directory</code> is set to the folder that contains your <code>drupal</code> default configuration. Our projects use <code>sites/default/config/sync</code> as default.</p>
 <p>When it’s done, open the browser and type your <code>vagrant_hostname</code> (e.g. <code>drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
 <div class="admonition note">
-<p class="admonition-title">Split configuration</p>
+<p class="admonition-title">Configuration Split</p>
 <p>in case your <code>drupal</code> config is split in different folder than the <code>default</code>, with <a href="https://www.drupal.org/project/config_split">Configuration Split</a>, and you need to import them too, for each of the split config you need to import run:</p>
 <div class="codehilite"><pre><span></span>drush csim split_machine_name
 </pre></div>
@@ -921,6 +935,14 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 
 <p>At the address <code>dashboard.your_vagrant_hostname.dev</code> (e.g. <code>dashboard.drupaltest.dev</code>) you can see your <code>DrupalVM</code> dashboard.</p>
+<h2 id="updating-drupal-vm">Updating Drupal VM<a class="headerlink" href="#updating-drupal-vm" title="Permanent link">&para;</a></h2>
+<p>Drupal VM follows semantic versioning, which means your configuration should continue working (potentially with very minor modifications) throughout a major release cycle. Here is the process to follow when updating Drupal VM between minor releases:</p>
+<ol>
+<li>Read through the <a href="https://github.com/geerlingguy/drupal-vm/releases">release notes</a> and add/modify <code>config.yml</code> variables mentioned therein.</li>
+<li>Do a diff of your <code>config.yml</code> with the updated <code>default.config.yml</code> (e.g. <code>curl https://raw.githubusercontent.com/geerlingguy/drupal-vm/master/default.config.yml | git diff --no-index config.yml -</code>).</li>
+<li>Run <code>vagrant provision</code> to provision the VM, incorporating all the latest changes.</li>
+</ol>
+<p>For major version upgrades (e.g. 3.x.x to 4.x.x), it may be simpler to destroy the VM (<code>vagrant destroy</code>) then build a fresh new VM (<code>vagrant up</code>) using the new version of Drupal VM.</p>
                 
                   
                 
