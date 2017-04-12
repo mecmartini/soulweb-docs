@@ -9,7 +9,7 @@ repo_url: 'https://github.com/mecmartini/soulweb-docs'
 
 pages:
 - Home: 'index.md'
-- Drupal Development:
+- Drupal 8 Development:
   - Local Development:
     - macOS:
       - 'Drupal VM': 'drupal/drupal_vm.md'
@@ -17,6 +17,7 @@ pages:
       - 'Xdebug': 'drupal/drupal_vm_xdebug.md'
       - 'Coder Sniffer': 'drupal/drupal_vm_codersniffer.md'
       - 'PHPUnit': 'drupal/drupal_vm_phpunit.md'
+  - 'Basic Configuration': 'drupal/drupal_basic_configuration.md'
 
 theme: material
 
@@ -33,5 +34,5 @@ markdown_extensions:
   - meta
   - toc(permalink=true)
 
-copyright: Copyright &copy; 2017 Soulweb Team.
+copyright: Copyright &copy; 2017 Soulweb Solutions Ltd.
 # google_analytics: ['UA-27795084-5', 'mkdocs.org']

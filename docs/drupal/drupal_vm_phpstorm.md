@@ -2,7 +2,9 @@
 
 Make sure to have the latest [PhpStorm](https://www.jetbrains.com/phpstorm/download) available for a better support.
 
-#### 1. Create new project Vagrant based
+## Create new project Vagrant based
+
+#### 1. Create new project
 
 Open `PhpStorm` and select `Create New Project from Existing File`
 
@@ -70,12 +72,10 @@ Go to `Settings` -> `PHP` -> `Servers` and click on `+` button:
 
 Set your `Name` and `Host`. Check `Use path mappings` and enter the `Absolute path on the server` to your `drupal` installation on vagrant machine.
 
-#### 3. Add GitHub repository and Initial Commit
+## Add GitHub repository and Initial Commit
 
-Modify `.gitignore` file on your `drupal` installation adding to the end:
+Edit `.gitignore` file on your `drupal` installation adding:
 
-    # Custom
-    /web/sites/*/settings.php
     /web/sites/*/services.yml
 
 Share the project on `GitHub`:
@@ -90,7 +90,7 @@ Add files for `initial commit` and `push` on git by clicking on `OK` button
 
 ![Initial commit](../img/drupal/phpstorm_15.png "Initial commit")
 
-#### 4. Import to existing GitHub repository and Initial Commit
+## Import to existing GitHub repository and Initial Commit
 
 Enable version control integration from PHPSTORM:
 

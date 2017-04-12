@@ -218,11 +218,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
-      Drupal Development
+      Drupal 8 Development
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Drupal Development
+        Drupal 8 Development
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -314,29 +314,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-create-new-project-vagrant-based" title="1. Create new project Vagrant based" class="md-nav__link">
-    1. Create new project Vagrant based
+  <a href="#create-new-project-vagrant-based" title="Create new project Vagrant based" class="md-nav__link">
+    Create new project Vagrant based
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-new-project" title="1. Create new project" class="md-nav__link">
+    1. Create new project
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-integrate-vagrant" title="2. Integrate Vagrant" class="md-nav__link">
     2. Integrate Vagrant
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#3-add-github-repository-and-initial-commit" title="3. Add GitHub repository and Initial Commit" class="md-nav__link">
-    3. Add GitHub repository and Initial Commit
+  <a href="#add-github-repository-and-initial-commit" title="Add GitHub repository and Initial Commit" class="md-nav__link">
+    Add GitHub repository and Initial Commit
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-import-to-existing-github-repository-and-initial-commit" title="4. Import to existing GitHub repository and Initial Commit" class="md-nav__link">
-    4. Import to existing GitHub repository and Initial Commit
+  <a href="#import-to-existing-github-repository-and-initial-commit" title="Import to existing GitHub repository and Initial Commit" class="md-nav__link">
+    Import to existing GitHub repository and Initial Commit
   </a>
   
 </li>
@@ -396,6 +409,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drupal_basic_configuration/" title="Basic Configuration" class="md-nav__link">
+      Basic Configuration
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -422,29 +447,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-create-new-project-vagrant-based" title="1. Create new project Vagrant based" class="md-nav__link">
-    1. Create new project Vagrant based
+  <a href="#create-new-project-vagrant-based" title="Create new project Vagrant based" class="md-nav__link">
+    Create new project Vagrant based
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-new-project" title="1. Create new project" class="md-nav__link">
+    1. Create new project
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-integrate-vagrant" title="2. Integrate Vagrant" class="md-nav__link">
     2. Integrate Vagrant
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#3-add-github-repository-and-initial-commit" title="3. Add GitHub repository and Initial Commit" class="md-nav__link">
-    3. Add GitHub repository and Initial Commit
+  <a href="#add-github-repository-and-initial-commit" title="Add GitHub repository and Initial Commit" class="md-nav__link">
+    Add GitHub repository and Initial Commit
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-import-to-existing-github-repository-and-initial-commit" title="4. Import to existing GitHub repository and Initial Commit" class="md-nav__link">
-    4. Import to existing GitHub repository and Initial Commit
+  <a href="#import-to-existing-github-repository-and-initial-commit" title="Import to existing GitHub repository and Initial Commit" class="md-nav__link">
+    Import to existing GitHub repository and Initial Commit
   </a>
   
 </li>
@@ -466,7 +504,8 @@
                 
                 <h1 id="phpstorm-project">PhpStorm Project<a class="headerlink" href="#phpstorm-project" title="Permanent link">&para;</a></h1>
 <p>Make sure to have the latest <a href="https://www.jetbrains.com/phpstorm/download">PhpStorm</a> available for a better support.</p>
-<h4 id="1-create-new-project-vagrant-based">1. Create new project Vagrant based<a class="headerlink" href="#1-create-new-project-vagrant-based" title="Permanent link">&para;</a></h4>
+<h2 id="create-new-project-vagrant-based">Create new project Vagrant based<a class="headerlink" href="#create-new-project-vagrant-based" title="Permanent link">&para;</a></h2>
+<h4 id="1-create-new-project">1. Create new project<a class="headerlink" href="#1-create-new-project" title="Permanent link">&para;</a></h4>
 <p>Open <code>PhpStorm</code> and select <code>Create New Project from Existing File</code></p>
 <p><img alt="Create New Project from Existing File" src="../../img/drupal/phpstorm_1.png" title="Create New Project from Existing File" /></p>
 <p>Select <code>Sources file are in a local directory, no Web server is yet configured.</code></p>
@@ -510,11 +549,9 @@ Password: vagrant
 <p>Go to <code>Settings</code> -&gt; <code>PHP</code> -&gt; <code>Servers</code> and click on <code>+</code> button:</p>
 <p><img alt="Vagrant server settings" src="../../img/drupal/phpstorm_12.png" title="Vagrant server settings" /></p>
 <p>Set your <code>Name</code> and <code>Host</code>. Check <code>Use path mappings</code> and enter the <code>Absolute path on the server</code> to your <code>drupal</code> installation on vagrant machine.</p>
-<h4 id="3-add-github-repository-and-initial-commit">3. Add GitHub repository and Initial Commit<a class="headerlink" href="#3-add-github-repository-and-initial-commit" title="Permanent link">&para;</a></h4>
-<p>Modify <code>.gitignore</code> file on your <code>drupal</code> installation adding to the end:</p>
-<div class="codehilite"><pre><span></span># Custom
-/web/sites/*/settings.php
-/web/sites/*/services.yml
+<h2 id="add-github-repository-and-initial-commit">Add GitHub repository and Initial Commit<a class="headerlink" href="#add-github-repository-and-initial-commit" title="Permanent link">&para;</a></h2>
+<p>Edit <code>.gitignore</code> file on your <code>drupal</code> installation adding:</p>
+<div class="codehilite"><pre><span></span>/web/sites/*/services.yml
 </pre></div>
 
 
@@ -524,7 +561,7 @@ Password: vagrant
 <p><img alt="Share github project" src="../../img/drupal/phpstorm_14.png" title="Share github project" /></p>
 <p>Add files for <code>initial commit</code> and <code>push</code> on git by clicking on <code>OK</code> button</p>
 <p><img alt="Initial commit" src="../../img/drupal/phpstorm_15.png" title="Initial commit" /></p>
-<h4 id="4-import-to-existing-github-repository-and-initial-commit">4. Import to existing GitHub repository and Initial Commit<a class="headerlink" href="#4-import-to-existing-github-repository-and-initial-commit" title="Permanent link">&para;</a></h4>
+<h2 id="import-to-existing-github-repository-and-initial-commit">Import to existing GitHub repository and Initial Commit<a class="headerlink" href="#import-to-existing-github-repository-and-initial-commit" title="Permanent link">&para;</a></h2>
 <p>Enable version control integration from PHPSTORM:</p>
 <p><img alt="Enable version control integrations" src="../../img/drupal/phpstorm_16.png" title="Enable version control integrations" /></p>
 <p>Set the <code>Remote</code> origin of the existing <code>git</code> repository adding the repository <code>url</code> (e.g. <code>https://github.com/mecmartini/soulweb-docs.git</code>)</p>
@@ -588,7 +625,7 @@ Password: vagrant
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017 Soulweb Team.
+            Copyright &copy; 2017 Soulweb Solutions Ltd.
           </div>
         
         powered by
