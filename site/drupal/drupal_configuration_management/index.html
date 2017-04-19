@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation.">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_codersniffer/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_configuration_management/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Coder Sniffer - Soulweb Docs</title>
+        <title>Configuration Management - Soulweb Docs</title>
       
     
     
@@ -83,15 +83,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Local Development
-                </span>
-              
-                <span class="md-header-nav__parent">
-                  macOS
+                  Drupal 8 Development
                 </span>
               
             
-            Coder Sniffer
+            Configuration Management
           
         </span>
       </div>
@@ -231,12 +227,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
     
     <label class="md-nav__link" for="nav-2-1">
       Local Development
@@ -252,12 +246,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
     
     <label class="md-nav__link" for="nav-2-1-1">
       macOS
@@ -309,54 +301,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Coder Sniffer
-      </label>
-    
-    <a href="./" title="Coder Sniffer" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../drupal_vm_codersniffer/" title="Coder Sniffer" class="md-nav__link">
       Coder Sniffer
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
-    1. Add Coder Sniffer to your Vagrant machine
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
-    2. Integrate Code Sniffer in PhpStorm
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -410,11 +359,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../drupal_configuration_management/" title="Configuration Management" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Configuration Management" class="md-nav__link md-nav__link--active">
       Configuration Management
     </a>
+    
   </li>
 
         
@@ -440,27 +398,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
-    1. Add Coder Sniffer to your Vagrant machine
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
-    2. Integrate Code Sniffer in PhpStorm
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -472,33 +409,7 @@
               
                 
                 
-                <h1 id="coder-sniffer">Coder Sniffer<a class="headerlink" href="#coder-sniffer" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.drupal.org/node/1419988">Coder Sniffer</a> is a library that tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards. It works with Drupal 6, 7, or 8.</p>
-<h4 id="1-add-coder-sniffer-to-your-vagrant-machine">1. Add Coder Sniffer to your Vagrant machine<a class="headerlink" href="#1-add-coder-sniffer-to-your-vagrant-machine" title="Permanent link">&para;</a></h4>
-<p>Open the vagrant machine <code>config.yml</code> file and add to <code>composer_global_packages</code> the line:</p>
-<div class="codehilite"><pre><span></span>- { name: drupal/coder, release: ‘*&#39; }
-</pre></div>
-
-
-<p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
-<p>Enter on your <code>vagrant</code> machine (<code>vagrant ssh</code>) and run:</p>
-<div class="codehilite"><pre><span></span>phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
-</pre></div>
-
-
-<p>You can verify this has worked with:</p>
-<div class="codehilite"><pre><span></span>phpcs -i
-</pre></div>
-
-
-<p>The above command should include <code>DrupalPractice</code> and <code>Drupal</code> in the installed <code>coding standards</code> list.</p>
-<h4 id="2-integrate-code-sniffer-in-phpstorm">2. Integrate Code Sniffer in PhpStorm<a class="headerlink" href="#2-integrate-code-sniffer-in-phpstorm" title="Permanent link">&para;</a></h4>
-<p>From below select <code>+</code> and add <code>Code Sniffer by Remote Interpreter</code>. Select your vagrant <code>PHP interpreter</code> (see <a href="../drupal_vm_phpstorm/#2-integrate-vagrant">Add GitHub repository and Initial Commit</a>). In <code>PHP Code Sniffer (phpcs) path</code> enter <code>/home/vagrant/.composer/vendor/bin/phpcs</code>.
-Click on <code>Validate</code> to verify that has worked.</p>
-<p><img alt="Code Sniffer settings" src="../../img/drupal/phpstorm_30.png" title="Code Sniffer settings" /></p>
-<p><img alt="Code Sniffer settings" src="../../img/drupal/phpstorm_31.png" title="Code Sniffer settings" /></p>
-<p>Go under <code>Settings</code> -&gt; <code>Inspections</code> to enable and set <code>PHP Code Sniffer Validation</code> as below:</p>
-<p><img alt="PHP Code Sniffer Validation" src="../../img/drupal/phpstorm_31.png" title="PHP Code Sniffer Validation" /></p>
+                <h1 id="configuration-management">Configuration Management<a class="headerlink" href="#configuration-management" title="Permanent link">&para;</a></h1>
                 
                   
                 
@@ -517,7 +428,7 @@ Click on <code>Validate</code> to verify that has worked.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_vm_xdebug/" title="Xdebug" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_composer/" title="Using Composer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -526,25 +437,11 @@ Click on <code>Validate</code> to verify that has worked.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Xdebug
+                Using Composer
               </span>
             </div>
           </a>
         
-        
-          <a href="../drupal_vm_phpunit/" title="PHPUnit" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                PHPUnit
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

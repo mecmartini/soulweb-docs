@@ -294,6 +294,16 @@
             "location": "/drupal/drupal_composer/#apply-patches-to-downloaded-modules", 
             "text": "If you need to apply patches (depending on the project being modified, a pull request is often a better solution), you can do so with the composer-patches plugin.  To add a patch to drupal module foobar insert the patches section in the extra section of composer.json:  extra : {\n     patches : {\n         drupal/foobar : {\n             Patch description :  URL to patch \n        }\n    }\n}", 
             "title": "Apply patches to downloaded modules"
+        }, 
+        {
+            "location": "/drupal/drupal_configuration_management/", 
+            "text": "Configuration Management", 
+            "title": "Configuration Management"
+        }, 
+        {
+            "location": "/drupal/drupal_configuration_management/#configuration-management", 
+            "text": "", 
+            "title": "Configuration Management"
         }
     ]
 }
