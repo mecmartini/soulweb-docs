@@ -371,8 +371,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-enable-local-development-settings" title="2. Enable local development settings" class="md-nav__link">
-    2. Enable local development settings
+  <a href="#2-enable-shared-settings" title="2. Enable shared settings" class="md-nav__link">
+    2. Enable shared settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-and-enable-local-settings" title="3. Create and enable local settings" class="md-nav__link">
+    3. Create and enable local settings
   </a>
   
 </li>
@@ -440,8 +447,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-enable-local-development-settings" title="2. Enable local development settings" class="md-nav__link">
-    2. Enable local development settings
+  <a href="#2-enable-shared-settings" title="2. Enable shared settings" class="md-nav__link">
+    2. Enable shared settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-and-enable-local-settings" title="3. Create and enable local settings" class="md-nav__link">
+    3. Create and enable local settings
   </a>
   
 </li>
@@ -510,10 +524,24 @@
 
 
 <p>You can add more if you need. You must not remove the defaults.</p>
-<h4 id="2-enable-local-development-settings">2. Enable local development settings<a class="headerlink" href="#2-enable-local-development-settings" title="Permanent link">&para;</a></h4>
+<h4 id="2-enable-shared-settings">2. Enable shared settings<a class="headerlink" href="#2-enable-shared-settings" title="Permanent link">&para;</a></h4>
 <p>You have to make the site settings directory (e.g. <code>default</code>) and is <code>settings.php</code> writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default
 chmod +w sites/default/settings.php
+</pre></div>
+
+
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
+<div class="codehilite"><pre><span></span>if (file_exists(__DIR__ . &#39;/settings.shared.php&#39;)) {
+  include __DIR__ . &#39;/settings.shared.php&#39;;
+}
+</pre></div>
+
+
+<p>This will include the shared settings file as part of Drupal's settings file.</p>
+<h4 id="3-create-and-enable-local-settings">3. Create and enable local settings<a class="headerlink" href="#3-create-and-enable-local-settings" title="Permanent link">&para;</a></h4>
+<p>You have to make the site settings directory (e.g. <code>default</code>) writable to do this. Drupal will restore permissions in a later moment:</p>
+<div class="codehilite"><pre><span></span>chmod +w sites/default
 </pre></div>
 
 
@@ -522,14 +550,13 @@ chmod +w sites/default/settings.php
 </pre></div>
 
 
-<p>Open <code>settings.php</code> file in <code>sites/default</code> and uncomment these lines:</p>
-<div class="codehilite"><pre><span></span>if (file_exists(__DIR__ . &#39;/settings.local.php&#39;)) {
-  include __DIR__ . &#39;/settings.local.php&#39;;
-}
+<p>This will include the local settings file as part of Drupal's settings file.</p>
+<p>Open the <code>settings.local.php</code> created and add your local local <code>host</code> to on <code>trusted host patterns</code> adding these lines to the end:</p>
+<div class="codehilite"><pre><span></span>$settings[&#39;trusted_host_patterns&#39;][] = &#39;yourprojectnamevm.dev&#39;;
 </pre></div>
 
 
-<p>This will include the local settings file as part of Drupal's settings file.</p>
+<p>If you have more then one host (e.g. for <code>multisite</code>) add all of them.</p>
 <h4 id="3-disable-drupal-caching">3. Disable Drupal caching<a class="headerlink" href="#3-disable-drupal-caching" title="Permanent link">&para;</a></h4>
 <p>Open <code>settings.local.php</code> and uncomment (or add) this line to enable the null cache service:</p>
 <div class="codehilite"><pre><span></span>$settings[&#39;container_yamls&#39;][] = DRUPAL_ROOT . &#39;/sites/development.services.yml&#39;;

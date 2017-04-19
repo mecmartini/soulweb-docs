@@ -28,24 +28,38 @@ Default `.gitignore` to use on our Drupal 8 projects:
 
 You can add more if you need. You must not remove the defaults.
 
-#### 2. Enable local development settings
+#### 2. Enable shared settings
 
 You have to make the site settings directory (e.g. `default`) and is `settings.php` writable to do this. Drupal will restore permissions in a later moment:
 
     chmod +w sites/default
     chmod +w sites/default/settings.php
 
+Open `settings.php` file in `sites/default` and add these lines to the end:
+
+    if (file_exists(__DIR__ . '/settings.shared.php')) {
+      include __DIR__ . '/settings.shared.php';
+    }
+
+This will include the shared settings file as part of Drupal's settings file.
+
+#### 3. Create and enable local settings
+
+You have to make the site settings directory (e.g. `default`) writable to do this. Drupal will restore permissions in a later moment:
+
+    chmod +w sites/default
+
 Copy and rename the `sites/example.settings.local.php` to `sites/default/settings.local.php`:
 
     cp sites/example.settings.local.php sites/default/settings.local.php
 
-Open `settings.php` file in `sites/default` and uncomment these lines:
-
-    if (file_exists(__DIR__ . '/settings.local.php')) {
-      include __DIR__ . '/settings.local.php';
-    }
-
 This will include the local settings file as part of Drupal's settings file.
+
+Open the `settings.local.php` created and add your local local `host` to on `trusted host patterns` adding these lines to the end:
+
+    $settings['trusted_host_patterns'][] = 'yourprojectnamevm.dev';
+
+If you have more then one host (e.g. for `multisite`) add all of them.
 
 #### 3. Disable Drupal caching
 
