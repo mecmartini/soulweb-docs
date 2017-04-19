@@ -405,15 +405,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-merging-in-additional-composerjson-files" title="1. Merging in additional composer.json files" class="md-nav__link">
-    1. Merging in additional composer.json files
+  <a href="#1-add-composerjson-to-your-project" title="1. Add composer.json to your project" class="md-nav__link">
+    1. Add composer.json to your project
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-include-project-dependencies-in-root-composerjson" title="2. Include project dependencies in root composer.json" class="md-nav__link">
-    2. Include project dependencies in root composer.json
+  <a href="#2-merging-in-additional-composerjson-files" title="2. Merging in additional composer.json files" class="md-nav__link">
+    2. Merging in additional composer.json files
   </a>
   
 </li>
@@ -534,15 +534,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-merging-in-additional-composerjson-files" title="1. Merging in additional composer.json files" class="md-nav__link">
-    1. Merging in additional composer.json files
+  <a href="#1-add-composerjson-to-your-project" title="1. Add composer.json to your project" class="md-nav__link">
+    1. Add composer.json to your project
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-include-project-dependencies-in-root-composerjson" title="2. Include project dependencies in root composer.json" class="md-nav__link">
-    2. Include project dependencies in root composer.json
+  <a href="#2-merging-in-additional-composerjson-files" title="2. Merging in additional composer.json files" class="md-nav__link">
+    2. Merging in additional composer.json files
   </a>
   
 </li>
@@ -643,8 +643,11 @@
 <p>In case you are adding a drupal contrib module, remember to exclude it's drupal configuration from the default sync folder through <code>Configuration Split</code></p>
 <h2 id="managing-dependencies-for-a-custom-project-module-theme-profile-etc">Managing dependencies for a custom project (module, theme, profile, etc.)<a class="headerlink" href="#managing-dependencies-for-a-custom-project-module-theme-profile-etc" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.drupal.org/node/2822349">Managing dependencies for a custom project</a></p>
-<p>You can use Composer to manage dependencies for your custom modules. To do this, your Drupal site's composer.json (located in the repo root) must have a way to read your custom project's composer.json file. Since your custom project is not hosted on Packagist or Drupal.org, you must use the wikimedia/composer-merge-plugin` package to accomplish this.</p>
-<h4 id="1-merging-in-additional-composerjson-files">1. Merging in additional composer.json files<a class="headerlink" href="#1-merging-in-additional-composerjson-files" title="Permanent link">&para;</a></h4>
+<p>You can use Composer to manage dependencies for your custom modules.</p>
+<h4 id="1-add-composerjson-to-your-project">1. Add composer.json to your project<a class="headerlink" href="#1-add-composerjson-to-your-project" title="Permanent link">&para;</a></h4>
+<p>Add a <code>composer.json</code> file to your custom project where you can define your custom library dependencies.</p>
+<h4 id="2-merging-in-additional-composerjson-files">2. Merging in additional composer.json files<a class="headerlink" href="#2-merging-in-additional-composerjson-files" title="Permanent link">&para;</a></h4>
+<p>To do this, your Drupal site's composer.json (located in the repo root) must have a way to read your custom project's composer.json file. Since your custom project is not hosted on Packagist or Drupal.org, you must use the wikimedia/composer-merge-plugin` package to accomplish this.</p>
 <p>Require the <code>wikimedia/composer-merge-pluginin</code> your Drupal site's <code>composer.json</code> (located in the repo root).</p>
 <div class="codehilite"><pre><span></span>composer require wikimedia/composer-merge-plugin
 </pre></div>
@@ -666,16 +669,6 @@
 </pre></div>
 
 
-<h4 id="2-include-project-dependencies-in-root-composerjson">2. Include project dependencies in root composer.json<a class="headerlink" href="#2-include-project-dependencies-in-root-composerjson" title="Permanent link">&para;</a></h4>
-<p>If you wish to avoid using merge-plugin in the process of developing a Drupal module that needs composer package dependencies, you can follow this process to get the packages working in your local development environment.</p>
-<p>Simply take the dependencies from your module in development, and add them to the root composer.json file:</p>
-<div class="codehilite"><pre><span></span>composer require &lt;vendor&gt;/&lt;modulename&gt;
-</pre></div>
-
-
-<p>After you save the composer.json file, run `composer update from the same directory as the composer.json file.</p>
-<p>Your dependencies will be added to the root /vendor directory, and will be detected by the autoloader as expected.</p>
-<p>Be sure to also run <code>drush cr</code> or otherwise clear caches for best results.</p>
 <h2 id="update-drupal-core">Update Drupal core<a class="headerlink" href="#update-drupal-core" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>composer update drupal/core --with-dependencies
 </pre></div>

@@ -39,9 +39,15 @@ In case you are adding a drupal contrib module, remember to exclude it's drupal 
 
 [Managing dependencies for a custom project](https://www.drupal.org/node/2822349)
 
-You can use Composer to manage dependencies for your custom modules. To do this, your Drupal site's composer.json (located in the repo root) must have a way to read your custom project's composer.json file. Since your custom project is not hosted on Packagist or Drupal.org, you must use the wikimedia/composer-merge-plugin` package to accomplish this.
+You can use Composer to manage dependencies for your custom modules.
 
-#### 1. Merging in additional composer.json files
+#### 1. Add composer.json to your project
+
+Add a `composer.json` file to your custom project where you can define your custom library dependencies.
+
+#### 2. Merging in additional composer.json files
+
+To do this, your Drupal site's composer.json (located in the repo root) must have a way to read your custom project's composer.json file. Since your custom project is not hosted on Packagist or Drupal.org, you must use the wikimedia/composer-merge-plugin` package to accomplish this.
 
 Require the `wikimedia/composer-merge-pluginin` your Drupal site's `composer.json` (located in the repo root).
 
@@ -60,20 +66,6 @@ Reference your additional composer.json files in the extra section of your root 
 Update your Drupal site dependencies:
 
     composer update
-
-#### 2. Include project dependencies in root composer.json
-
-If you wish to avoid using merge-plugin in the process of developing a Drupal module that needs composer package dependencies, you can follow this process to get the packages working in your local development environment.
-
-Simply take the dependencies from your module in development, and add them to the root composer.json file:
-
-    composer require <vendor>/<modulename>
-
-After you save the composer.json file, run `composer update from the same directory as the composer.json file.
-
-Your dependencies will be added to the root /vendor directory, and will be detected by the autoloader as expected.
-
-Be sure to also run `drush cr` or otherwise clear caches for best results.
 
 ## Update Drupal core
 
