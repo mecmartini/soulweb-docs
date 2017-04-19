@@ -390,6 +390,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#development-dependencies" title="Development dependencies" class="md-nav__link">
+    Development dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#managing-dependencies-for-a-custom-project-module-theme-profile-etc" title="Managing dependencies for a custom project (module, theme, profile, etc.)" class="md-nav__link">
     Managing dependencies for a custom project (module, theme, profile, etc.)
   </a>
@@ -512,6 +519,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#development-dependencies" title="Development dependencies" class="md-nav__link">
+    Development dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#managing-dependencies-for-a-custom-project-module-theme-profile-etc" title="Managing dependencies for a custom project (module, theme, profile, etc.)" class="md-nav__link">
     Managing dependencies for a custom project (module, theme, profile, etc.)
   </a>
@@ -618,6 +632,15 @@
 </pre></div>
 
 
+<h2 id="development-dependencies">Development dependencies<a class="headerlink" href="#development-dependencies" title="Permanent link">&para;</a></h2>
+<p>There are often components of your project that you need when doing development work, but you don't need on production. For example, Devel, XHProf, and Stage File Proxy are helpful to have on your local environment, but if you don't need them in production, you should exclude them from your codebase entirely (not only for minor performance reasons and keeping your build artifacts smaller—non-installed modules can still be a security risk if they have vulnerabilities).</p>
+<p>Composer lets you track 'dev dependencies' (using require-dev instead of require) that are installed by default, but can be excluded when building the final deployable codebase (by passing --no-dev when running composer install or composer update).</p>
+<p>To add these components only for dev you should run:</p>
+<div class="codehilite"><pre><span></span>composer require --dev &lt;vendor&gt;/&lt;modulename&gt;
+</pre></div>
+
+
+<p>In case you are adding a drupal contrib module, remember to exclude it's drupal configuration from the default sync folder through <code>Configuration Split</code></p>
 <h2 id="managing-dependencies-for-a-custom-project-module-theme-profile-etc">Managing dependencies for a custom project (module, theme, profile, etc.)<a class="headerlink" href="#managing-dependencies-for-a-custom-project-module-theme-profile-etc" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.drupal.org/node/2822349">Managing dependencies for a custom project</a></p>
 <p>You can use Composer to manage dependencies for your custom modules. To do this, your Drupal site's composer.json (located in the repo root) must have a way to read your custom project's composer.json file. Since your custom project is not hosted on Packagist or Drupal.org, you must use the wikimedia/composer-merge-plugin` package to accomplish this.</p>

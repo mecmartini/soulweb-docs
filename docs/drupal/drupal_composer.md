@@ -23,6 +23,18 @@ If you wish to select the `module` version:
 
     composer require <vendor>/<modulename>
 
+## Development dependencies
+
+There are often components of your project that you need when doing development work, but you don't need on production. For example, Devel, XHProf, and Stage File Proxy are helpful to have on your local environment, but if you don't need them in production, you should exclude them from your codebase entirely (not only for minor performance reasons and keeping your build artifacts smaller—non-installed modules can still be a security risk if they have vulnerabilities).
+
+Composer lets you track 'dev dependencies' (using require-dev instead of require) that are installed by default, but can be excluded when building the final deployable codebase (by passing --no-dev when running composer install or composer update).
+
+To add these components only for dev you should run:
+
+    composer require --dev <vendor>/<modulename>
+
+In case you are adding a drupal contrib module, remember to exclude it's drupal configuration from the default sync folder through `Configuration Split`
+
 ## Managing dependencies for a custom project (module, theme, profile, etc.)
 
 [Managing dependencies for a custom project](https://www.drupal.org/node/2822349)
