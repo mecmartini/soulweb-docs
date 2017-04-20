@@ -21,7 +21,7 @@
     
     
       
-        <title>Configuration Management - Soulweb Docs</title>
+        <title>Configuration Management (CMI) - Soulweb Docs</title>
       
     
     
@@ -87,7 +87,7 @@
                 </span>
               
             
-            Configuration Management
+            Configuration Management (CMI)
           
         </span>
       </div>
@@ -369,9 +369,56 @@
       
     
     
-    <a href="./" title="Configuration Management" class="md-nav__link md-nav__link--active">
-      Configuration Management
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Configuration Management (CMI)
+      </label>
+    
+    <a href="./" title="Configuration Management (CMI)" class="md-nav__link md-nav__link--active">
+      Configuration Management (CMI)
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-drupal-cmi" title="Introduction to Drupal CMI" class="md-nav__link">
+    Introduction to Drupal CMI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-configurations-on-dev-stage-prod-environments" title="Different configurations on Dev / Stage / Prod environments" class="md-nav__link">
+    Different configurations on Dev / Stage / Prod environments
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -398,6 +445,40 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-drupal-cmi" title="Introduction to Drupal CMI" class="md-nav__link">
+    Introduction to Drupal CMI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-configurations-on-dev-stage-prod-environments" title="Different configurations on Dev / Stage / Prod environments" class="md-nav__link">
+    Different configurations on Dev / Stage / Prod environments
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -410,6 +491,35 @@
                 
                 
                 <h1 id="configuration-management">Configuration Management<a class="headerlink" href="#configuration-management" title="Permanent link">&para;</a></h1>
+<h2 id="introduction-to-drupal-cmi">Introduction to Drupal CMI<a class="headerlink" href="#introduction-to-drupal-cmi" title="Permanent link">&para;</a></h2>
+<p>First of all, you need to understand, how the configuration management in Drupal 8 works. CMI allows you to export all configurations and its dependencies from the database into yml text files. To make sure, you never end up in an inconsistent state, CMI always exports everything. By default, you cannot exclude certain configurations.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<p>If you change some configuration on the live database, these configurations will be reverted in the next deployment when you use:</p>
+<div class="codehilite"><pre><span></span>drush config-import
+</pre></div>
+
+
+<p>This is helpful and will make sure, you have the same configuration on all your systems.</p>
+<h2 id="different-configurations-on-dev-stage-prod-environments">Different configurations on Dev / Stage / Prod environments<a class="headerlink" href="#different-configurations-on-dev-stage-prod-environments" title="Permanent link">&para;</a></h2>
+<p>You want to have different configurations on your environments. For example, we have installed a “devel” module only on our local environment but we want to have it disabled on the live environment.</p>
+<p>This can be achieved by using the <a href="https://www.drupal.org/project/config_split">Configuration Split</a> module.</p>
+<p>Configuration split exposes a configuration entity which controls what you want to split off. Currently you can</p>
+<ul>
+<li><code>blacklist modules</code>: any configuration that this module owns will automatically be blacklisted too.</li>
+<li><code>blacklist configuration</code>: settings or configuration entities. These will be removed from the active sync directory.</li>
+<li><code>graylist configuration</code>: settings or configuration entities. These will not be removed if they are in the active sync directory, but also not exported if they are not there yet.</li>
+</ul>
+<p>As default, we have <code>Dev</code> / <code>Stage</code> / <code>Prod</code> config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the <code>Dev</code> environment on your local environment to import / export is config. Open the <code>settings.local.php</code> and add this line:</p>
+<div class="codehilite"><pre><span></span>$config[&#39;config_split.config_split.dev&#39;][&#39;status&#39;] = TRUE;
+</pre></div>
+
+
+<p>Now you can use normal <code>drush</code> import /export commands and <code>Configuration Split</code> we'll do the magic for you:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># To export configuration</span>
+<span class="n">drush</span> <span class="n">cex</span> <span class="o">-</span><span class="n">y</span>
+<span class="c1"># To import configuration</span>
+<span class="n">drush</span> <span class="n">cim</span> <span class="o">-</span><span class="n">y</span>
+</pre></div>
                 
                   
                 
