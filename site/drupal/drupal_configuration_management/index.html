@@ -468,7 +468,7 @@
 <h2 id="introduction-to-drupal-cmi">Introduction to Drupal CMI<a class="headerlink" href="#introduction-to-drupal-cmi" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.drupal.org/docs/8/configuration-management">Configuration Management</a></p>
 <p>First of all, you need to understand, how the configuration management in Drupal 8 works. CMI allows you to export all configurations and its dependencies from the database into yml text files. To make sure, you never end up in an inconsistent state, CMI always exports everything. By default, you cannot exclude certain configurations.</p>
-<p>To export the configuration you must set the export directory in your settings.php. See <a href="../drupal_basic_configuration/#5-configuration-directory">Configuration directory</a>.</p>
+<p>To export the configuration you must set the export directory in your Drupal settings. See <a href="../drupal_basic_configuration/#5-configuration-directory">Configuration directory</a>.</p>
 <p>Than you can export with:</p>
 <div class="codehilite"><pre><span></span>drush config-export
 </pre></div>
@@ -494,6 +494,13 @@
 </pre></div>
 
 
+<p>If those config environments are not yet set, you can create them when needed but be sure to name them with the following <code>machine name</code>:</p>
+<ul>
+<li><code>dev</code></li>
+<li><code>stage</code></li>
+<li><code>prod</code></li>
+</ul>
+<p>as those are the defaults for our projects.</p>
 <p>Now you can use normal <code>drush</code> import /export commands and <code>Configuration Split</code> we'll do the magic for you:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># To export configuration</span>
 <span class="n">drush</span> <span class="n">cex</span> <span class="o">-</span><span class="n">y</span>

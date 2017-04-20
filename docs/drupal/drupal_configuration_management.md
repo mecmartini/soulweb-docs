@@ -6,7 +6,7 @@
 
 First of all, you need to understand, how the configuration management in Drupal 8 works. CMI allows you to export all configurations and its dependencies from the database into yml text files. To make sure, you never end up in an inconsistent state, CMI always exports everything. By default, you cannot exclude certain configurations.
 
-To export the configuration you must set the export directory in your settings.php. See [Configuration directory](drupal_basic_configuration.md#5-configuration-directory).
+To export the configuration you must set the export directory in your Drupal settings. See [Configuration directory](drupal_basic_configuration.md#5-configuration-directory).
 
 Than you can export with:
 
@@ -33,6 +33,14 @@ Configuration split exposes a configuration entity which controls what you want 
 As default, we have `Dev` / `Stage` / `Prod` config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the `Dev` environment on your local environment to import / export is config. Open the `settings.local.php` and add this line:
 
     $config['config_split.config_split.dev']['status'] = TRUE;
+
+If those config environments are not yet set, you can create them when needed but be sure to name them with the following `machine name`:
+
+* `dev`
+* `stage`
+* `prod`
+
+as those are the defaults for our projects.
 
 Now you can use normal `drush` import /export commands and `Configuration Split` we'll do the magic for you:
 
