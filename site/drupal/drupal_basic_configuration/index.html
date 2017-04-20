@@ -645,13 +645,8 @@ chmod +w sites/default/settings.php
 
 
 <h4 id="5-configuration-directory">5. Configuration directory<a class="headerlink" href="#5-configuration-directory" title="Permanent link">&para;</a></h4>
-<p>You have to make the site settings directory (e.g. <code>default</code>) and is <code>settings.php</code> writable to do this. Drupal will restore permissions in a later moment:</p>
-<div class="codehilite"><pre><span></span>chmod +w sites/default
-chmod +w sites/default/settings.php
-</pre></div>
-
-
-<p>Open <code>settings.php</code> and uncomment, edit or add this line to set the configration directory to our default:</p>
+<p>The configuration directory on our project is already set in the <code>settings.shared.php</code> file on the project directory.</p>
+<p>Our default is:</p>
 <div class="codehilite"><pre><span></span>$config_directories[&#39;sync&#39;] = &#39;../config/sync&#39;;
 </pre></div>
                 

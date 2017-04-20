@@ -123,11 +123,8 @@ Caches need to be cleared when this value is changed to make the `private://` st
 
 #### 5. Configuration directory
 
-You have to make the site settings directory (e.g. `default`) and is `settings.php` writable to do this. Drupal will restore permissions in a later moment:
+The configuration directory on our project is already set in the `settings.shared.php` file on the project directory.
 
-    chmod +w sites/default
-    chmod +w sites/default/settings.php
-
-Open `settings.php` and uncomment, edit or add this line to set the configration directory to our default:
+Our default is:
 
     $config_directories['sync'] = '../config/sync';

@@ -392,19 +392,6 @@
     Introduction to Drupal CMI
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -453,19 +440,6 @@
     Introduction to Drupal CMI
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example" title="Example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -492,9 +466,15 @@
                 
                 <h1 id="configuration-management">Configuration Management<a class="headerlink" href="#configuration-management" title="Permanent link">&para;</a></h1>
 <h2 id="introduction-to-drupal-cmi">Introduction to Drupal CMI<a class="headerlink" href="#introduction-to-drupal-cmi" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.drupal.org/docs/8/configuration-management">Configuration Management</a></p>
 <p>First of all, you need to understand, how the configuration management in Drupal 8 works. CMI allows you to export all configurations and its dependencies from the database into yml text files. To make sure, you never end up in an inconsistent state, CMI always exports everything. By default, you cannot exclude certain configurations.</p>
-<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
-<p>If you change some configuration on the live database, these configurations will be reverted in the next deployment when you use:</p>
+<p>To export the configuration you must set the export directory in your settings.php. See <a href="../drupal_basic_configuration/#5-configuration-directory">Configuration directory</a>.</p>
+<p>Than you can export with:</p>
+<div class="codehilite"><pre><span></span>drush config-export
+</pre></div>
+
+
+<p>If you change some configuration on the database, these configurations will be reverted in the next deployment when you use:</p>
 <div class="codehilite"><pre><span></span>drush config-import
 </pre></div>
 

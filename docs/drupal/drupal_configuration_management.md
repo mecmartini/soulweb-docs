@@ -2,11 +2,17 @@
 
 ## Introduction to Drupal CMI
 
+[Configuration Management](https://www.drupal.org/docs/8/configuration-management)
+
 First of all, you need to understand, how the configuration management in Drupal 8 works. CMI allows you to export all configurations and its dependencies from the database into yml text files. To make sure, you never end up in an inconsistent state, CMI always exports everything. By default, you cannot exclude certain configurations.
 
-#### Example
+To export the configuration you must set the export directory in your settings.php. See [Configuration directory](drupal_basic_configuration.md#5-configuration-directory).
 
-If you change some configuration on the live database, these configurations will be reverted in the next deployment when you use:
+Than you can export with:
+
+    drush config-export
+
+If you change some configuration on the database, these configurations will be reverted in the next deployment when you use:
 
     drush config-import
 
