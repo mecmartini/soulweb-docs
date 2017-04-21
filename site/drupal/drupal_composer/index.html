@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Soulweb Documentation.">
+        <meta name="description" content="Soulweb Documentation">
       
       
         <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_composer/">
@@ -693,32 +693,32 @@
 
 <h2 id="define-the-directories-to-which-drupal-projects-should-be-downloaded">Define the directories to which Drupal projects should be downloaded<a class="headerlink" href="#define-the-directories-to-which-drupal-projects-should-be-downloaded" title="Permanent link">&para;</a></h2>
 <p>By default, Composer will download all packages to the "vendor" directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:</p>
-<div class="codehilite"><pre><span></span><span class="x">&quot;extra&quot;: </span><span class="cp">{</span>
-    <span class="s2">&quot;installer-paths&quot;</span><span class="o">:</span> <span class="cp">{</span>
-        <span class="s2">&quot;core&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-core&quot;</span><span class="o">],</span>
-        <span class="s2">&quot;libraries/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-library&quot;</span><span class="o">],</span>
-        <span class="s2">&quot;modules/contrib/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-module&quot;</span><span class="o">],</span>
-        <span class="s2">&quot;profiles/contrib/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-profile&quot;</span><span class="o">],</span>
-        <span class="s2">&quot;themes/contrib/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-theme&quot;</span><span class="o">],</span>
-        <span class="s2">&quot;drush/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-drush&quot;</span><span class="o">],</span>
-        <span class="s2">&quot;modules/custom/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-custom-module&quot;</span><span class="o">],</span>
-        <span class="s2">&quot;themes/custom/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-custom-theme&quot;</span><span class="o">]</span>
-    <span class="cp">}</span>
-<span class="cp">}</span><span class="x"></span>
+<div class="codehilite"><pre><span></span>&quot;extra&quot;: {
+    &quot;installer-paths&quot;: {
+        &quot;core&quot;: [&quot;type:drupal-core&quot;],
+        &quot;libraries/{$name}&quot;: [&quot;type:drupal-library&quot;],
+        &quot;modules/contrib/{$name}&quot;: [&quot;type:drupal-module&quot;],
+        &quot;profiles/contrib/{$name}&quot;: [&quot;type:drupal-profile&quot;],
+        &quot;themes/contrib/{$name}&quot;: [&quot;type:drupal-theme&quot;],
+        &quot;drush/{$name}&quot;: [&quot;type:drupal-drush&quot;],
+        &quot;modules/custom/{$name}&quot;: [&quot;type:drupal-custom-module&quot;],
+        &quot;themes/custom/{$name}&quot;: [&quot;type:drupal-custom-theme&quot;]
+    }
+}
 </pre></div>
 
 
 <h2 id="define-the-directories-for-arbitrary-packages-that-do-not-have-a-drupal-type">Define the directories for arbitrary packages that do not have a "drupal-*" type<a class="headerlink" href="#define-the-directories-for-arbitrary-packages-that-do-not-have-a-drupal-type" title="Permanent link">&para;</a></h2>
 <p>If you would like to place an arbitrary Composer package in a custom directory, you may use the Composer Installers Extender.</p>
 <p>For instance, if you'd like to place the Dropzone package (which does not have a type of drupal-library) in the same directory as other Drupal libraries, you would first composer require oomphinc/composer-installers-extender, then add the following configuration to your composer.json file:</p>
-<div class="codehilite"><pre><span></span><span class="x">&quot;extra&quot;: </span><span class="cp">{</span>
-    <span class="s2">&quot;installer-paths&quot;</span><span class="o">:</span> <span class="cp">{</span>
-        <span class="s2">&quot;libraries/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span>
-            <span class="s2">&quot;type:drupal-library&quot;</span><span class="o">,</span>
-            <span class="s2">&quot;enyo/dropzone&quot;</span>
-        <span class="o">],</span>
-    <span class="cp">}</span>
-<span class="cp">}</span><span class="x"></span>
+<div class="codehilite"><pre><span></span>&quot;extra&quot;: {
+    &quot;installer-paths&quot;: {
+        &quot;libraries/{$name}&quot;: [
+            &quot;type:drupal-library&quot;,
+            &quot;enyo/dropzone&quot;
+        ],
+    }
+}
 </pre></div>
 
 

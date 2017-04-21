@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Soulweb Documentation.">
+        <meta name="description" content="Soulweb Documentation">
       
       
         <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_development_workflow/">
@@ -546,25 +546,25 @@
 <h3 id="2-developing-a-feature">2. Developing a feature<a class="headerlink" href="#2-developing-a-feature" title="Permanent link">&para;</a></h3>
 <p>When you feature branch is up you can develop your code and building up the feature with as many commits as necessary.</p>
 <p>When you need to commit your code you must follow a safe sequence to be sure to merge it without breaking the code and your local <code>drupal</code> installation:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># export drupal configuration</span>
-<span class="n">drush</span> <span class="n">cex</span> <span class="o">-</span><span class="n">y</span>
-<span class="c1"># commit code</span>
-<span class="n">git</span> <span class="n">add</span> <span class="o">...</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;...&#39;</span>
-<span class="c1"># merge</span>
-<span class="n">git</span> <span class="n">pull</span>
-<span class="c1"># update dependencies</span>
-<span class="n">composer</span> <span class="n">install</span>
-<span class="c1"># clear drush cache</span>
-<span class="n">drush</span> <span class="n">cc</span> <span class="n">drush</span>
-<span class="c1"># update database</span>
-<span class="n">drush</span> <span class="n">updb</span> <span class="o">-</span><span class="n">y</span> <span class="o">--</span><span class="n">entity</span><span class="o">-</span><span class="n">updates</span>
-<span class="c1"># import drupal configuration</span>
-<span class="n">drush</span> <span class="n">cim</span> <span class="o">-</span><span class="n">y</span>
-<span class="c1"># clear drupal cache</span>
-<span class="n">drush</span> <span class="n">cr</span>
-<span class="c1"># push code</span>
-<span class="n">git</span> <span class="n">push</span>
+<div class="codehilite"><pre><span></span># export drupal configuration
+drush cex -y
+# commit code
+git add ...
+git commit -m &#39;...&#39;
+# merge
+git pull
+# update dependencies
+composer install
+# clear drush cache
+drush cc drush
+# update database
+drush updb -y --entity-updates
+# import drupal configuration
+drush cim -y
+# clear drupal cache
+drush cr
+# push code
+git push
 </pre></div>
 
 

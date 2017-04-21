@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Soulweb Documentation.">
+        <meta name="description" content="Soulweb Documentation">
       
       
         <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm/">
@@ -777,9 +777,9 @@ vagrant plugin install vagrant-cachier
 <p>The main configuration file of the project. Commonly this is a copy of <code>default.config.yml</code> with the values tweaked to your own project.</p>
 <p>Copy <code>default.config.yml</code> as <code>config.yml</code>.</p>
 <p>Open the <code>config.yml</code> with your favorite editor and edit the following lines:</p>
-<div class="codehilite"><pre><span></span><span class="n">vagrant_hostname</span><span class="o">:</span> <span class="n">yourprojectnamevm</span><span class="o">.</span><span class="na">dev</span>
-<span class="n">vagrant_machine_name</span><span class="o">:</span> <span class="n">yourprojectnamevm</span>
-<span class="n">vagrant_ip</span><span class="o">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>
+<div class="codehilite"><pre><span></span>vagrant_hostname: yourprojectnamevm.dev
+vagrant_machine_name: yourprojectnamevm
+vagrant_ip: 0.0.0.0
 </pre></div>
 
 
@@ -842,8 +842,8 @@ php_opcache_memory_consumption: &quot;256&quot;
 <p>Type in <code>vagrant up</code>, and let <code>Vagrant</code> do its magic.</p>
 <p>When it’s done, open the browser and type your <code>vagrant_hostname</code> (e.g. <code>drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
 <p>Default Drupal credentials to login are specified in your <code>config.yml</code></p>
-<div class="codehilite"><pre><span></span><span class="n">drupal_account_name</span><span class="o">:</span> <span class="n">admin</span>
-<span class="n">drupal_account_pass</span><span class="o">:</span> <span class="n">admin</span>
+<div class="codehilite"><pre><span></span>drupal_account_name: admin
+drupal_account_pass: admin
 </pre></div>
 
 
@@ -861,9 +861,9 @@ php_opcache_memory_consumption: &quot;256&quot;
 <p>The main configuration file of the project. Commonly this is a copy of <code>default.config.yml</code> with the values tweaked to your own project.</p>
 <p>Copy <code>default.config.yml</code> as <code>config.yml</code>.</p>
 <p>Open the <code>config.yml</code> with your favorite editor and edit the following lines:</p>
-<div class="codehilite"><pre><span></span><span class="n">vagrant_hostname</span><span class="o">:</span> <span class="n">yourprojectnamevm</span><span class="o">.</span><span class="na">dev</span>
-<span class="n">vagrant_machine_name</span><span class="o">:</span> <span class="n">yourprojectnamevm</span>
-<span class="n">vagrant_ip</span><span class="o">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>
+<div class="codehilite"><pre><span></span>vagrant_hostname: yourprojectnamevm.dev
+vagrant_machine_name: yourprojectnamevm
+vagrant_ip: 0.0.0.0
 </pre></div>
 
 
@@ -885,17 +885,17 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 
 <p>Set <code>Drupal VM</code> to use your <code>composer.json</code> in order to automatically install your <code>composer</code> dependencies:</p>
-<div class="codehilite"><pre><span></span><span class="n">drupal_build_makefile</span><span class="o">:</span> <span class="kc">false</span>
-<span class="n">drupal_composer_path</span><span class="o">:</span> <span class="kc">false</span>
-<span class="o">...</span>
-<span class="n">drupal_build_composer</span><span class="o">:</span> <span class="kc">false</span>
-<span class="o">...</span>
-<span class="n">drupal_build_composer_project</span><span class="o">:</span> <span class="kc">false</span>
+<div class="codehilite"><pre><span></span>drupal_build_makefile: false
+drupal_composer_path: false
+...
+drupal_build_composer: false
+...
+drupal_build_composer_project: false
 </pre></div>
 
 
 <p>We need to disable the automatic drupal install site because, for now, in this scenario it doesn't work:</p>
-<div class="codehilite"><pre><span></span><span class="n">drupal_install_site</span><span class="o">:</span> <span class="kc">false</span>
+<div class="codehilite"><pre><span></span>drupal_install_site: false
 </pre></div>
 
 
@@ -961,7 +961,7 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 
 <p>Run the <code>drupal</code> installation (replace the <code>db</code> parameters):</p>
-<div class="codehilite"><pre><span></span><span class="n">drush</span> <span class="n">site</span><span class="o">-</span><span class="n">install</span> <span class="n">config_installer</span> <span class="n">config_installer_sync_configure_form</span><span class="p">.</span><span class="n">sync_directory</span><span class="o">=</span><span class="p">..</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">sync</span> <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="nl">mysql</span><span class="p">:</span><span class="c1">//dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y</span>
+<div class="codehilite"><pre><span></span>drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y
 </pre></div>
 
 
@@ -977,8 +977,8 @@ php_opcache_memory_consumption: &quot;256&quot;
 <p>Replace <code>split_machine_name</code> with your configuration split <code>machine name</code></p>
 </div>
 <p>Default Drupal credentials to login are specified in your <code>config.yml</code></p>
-<div class="codehilite"><pre><span></span><span class="n">drupal_account_name</span><span class="o">:</span> <span class="n">admin</span>
-<span class="n">drupal_account_pass</span><span class="o">:</span> <span class="n">admin</span>
+<div class="codehilite"><pre><span></span>drupal_account_name: admin
+drupal_account_pass: admin
 </pre></div>
 
 

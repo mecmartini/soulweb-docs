@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Soulweb Documentation.">
+        <meta name="description" content="Soulweb Documentation">
       
       
         <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_basic_configuration/">
@@ -606,11 +606,11 @@ $settings[&#39;cache&#39;][&#39;bins&#39;][&#39;dynamic_page_cache&#39;] = &#39;
 
 
 <p>Open <code>development.services.yml</code> in the sites folder and add the following block to disable the <code>twig</code> cache:</p>
-<div class="codehilite"><pre><span></span><span class="n">parameters</span><span class="o">:</span>
-  <span class="n">twig</span><span class="o">.</span><span class="na">config</span><span class="o">:</span>
-    <span class="n">debug</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="n">auto_reload</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="n">cache</span><span class="o">:</span> <span class="kc">false</span>
+<div class="codehilite"><pre><span></span>parameters:
+  twig.config:
+    debug: true
+    auto_reload: true
+    cache: false
 </pre></div>
 
 
