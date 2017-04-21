@@ -4,7 +4,7 @@
     
     <url>
      <loc>http://soulweb.docsvm.dev/</loc>
-     <lastmod>2017-04-20</lastmod>
+     <lastmod>2017-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -19,19 +19,25 @@
         
     <url>
      <loc>http://soulweb.docsvm.dev/drupal/drupal_basic_configuration/</loc>
-     <lastmod>2017-04-20</lastmod>
+     <lastmod>2017-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://soulweb.docsvm.dev/drupal/drupal_composer/</loc>
-     <lastmod>2017-04-20</lastmod>
+     <lastmod>2017-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://soulweb.docsvm.dev/drupal/drupal_configuration_management/</loc>
-     <lastmod>2017-04-20</lastmod>
+     <lastmod>2017-04-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://soulweb.docsvm.dev/drupal/drupal_development_workflow/</loc>
+     <lastmod>2017-04-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

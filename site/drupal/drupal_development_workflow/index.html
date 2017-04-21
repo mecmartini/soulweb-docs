@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation.">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_phpstorm/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_development_workflow/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>PhpStorm - Soulweb Docs</title>
+        <title>Development Workflow - Soulweb Docs</title>
       
     
     
@@ -83,15 +83,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Local Development
-                </span>
-              
-                <span class="md-header-nav__parent">
-                  macOS
+                  Drupal 8 Development
                 </span>
               
             
-            PhpStorm
+            Development Workflow
           
         </span>
       </div>
@@ -231,12 +227,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
     
     <label class="md-nav__link" for="nav-2-1">
       Local Development
@@ -252,12 +246,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
     
     <label class="md-nav__link" for="nav-2-1-1">
       macOS
@@ -285,81 +277,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        PhpStorm
-      </label>
-    
-    <a href="./" title="PhpStorm" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../drupal_vm_phpstorm/" title="PhpStorm" class="md-nav__link">
       PhpStorm
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-project-vagrant-based" title="Create new project Vagrant based" class="md-nav__link">
-    Create new project Vagrant based
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-new-project" title="1. Create new project" class="md-nav__link">
-    1. Create new project
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-integrate-vagrant" title="2. Integrate Vagrant" class="md-nav__link">
-    2. Integrate Vagrant
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-github-repository-and-initial-commit" title="Add GitHub repository and Initial Commit" class="md-nav__link">
-    Add GitHub repository and Initial Commit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-to-existing-github-repository-and-initial-commit" title="Import to existing GitHub repository and Initial Commit" class="md-nav__link">
-    Import to existing GitHub repository and Initial Commit
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -449,11 +371,74 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../drupal_development_workflow/" title="Development Workflow" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Development Workflow
+      </label>
+    
+    <a href="./" title="Development Workflow" class="md-nav__link md-nav__link--active">
       Development Workflow
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gitflow" title="Gitflow" class="md-nav__link">
+    Gitflow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-begin-start-to-developing-a-new-feature" title="1. Begin start to developing a new feature" class="md-nav__link">
+    1. Begin start to developing a new feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-developing-a-feature" title="2. Developing a feature" class="md-nav__link">
+    2. Developing a feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-finish-developing-a-feature" title="3. Finish developing a feature" class="md-nav__link">
+    3. Finish developing a feature
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -483,43 +468,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-new-project-vagrant-based" title="Create new project Vagrant based" class="md-nav__link">
-    Create new project Vagrant based
+  <a href="#gitflow" title="Gitflow" class="md-nav__link">
+    Gitflow
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-new-project" title="1. Create new project" class="md-nav__link">
-    1. Create new project
+  <a href="#1-begin-start-to-developing-a-new-feature" title="1. Begin start to developing a new feature" class="md-nav__link">
+    1. Begin start to developing a new feature
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-integrate-vagrant" title="2. Integrate Vagrant" class="md-nav__link">
-    2. Integrate Vagrant
+  <a href="#2-developing-a-feature" title="2. Developing a feature" class="md-nav__link">
+    2. Developing a feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-finish-developing-a-feature" title="3. Finish developing a feature" class="md-nav__link">
+    3. Finish developing a feature
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-github-repository-and-initial-commit" title="Add GitHub repository and Initial Commit" class="md-nav__link">
-    Add GitHub repository and Initial Commit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-to-existing-github-repository-and-initial-commit" title="Import to existing GitHub repository and Initial Commit" class="md-nav__link">
-    Import to existing GitHub repository and Initial Commit
-  </a>
   
 </li>
       
@@ -538,74 +516,62 @@
               
                 
                 
-                <h1 id="phpstorm-project">PhpStorm Project<a class="headerlink" href="#phpstorm-project" title="Permanent link">&para;</a></h1>
-<p>Make sure to have the latest <a href="https://www.jetbrains.com/phpstorm/download">PhpStorm</a> available for a better support.</p>
-<h2 id="create-new-project-vagrant-based">Create new project Vagrant based<a class="headerlink" href="#create-new-project-vagrant-based" title="Permanent link">&para;</a></h2>
-<h4 id="1-create-new-project">1. Create new project<a class="headerlink" href="#1-create-new-project" title="Permanent link">&para;</a></h4>
-<p>Open <code>PhpStorm</code> and select <code>Create New Project from Existing File</code></p>
-<p><img alt="Create New Project from Existing File" src="../../img/drupal/phpstorm_1.png" title="Create New Project from Existing File" /></p>
-<p>Select <code>Sources file are in a local directory, no Web server is yet configured.</code></p>
-<p><img alt="Sources file are in a local directory, no Web server is yet configured" src="../../img/drupal/phpstorm_2.png" title="Sources file are in a local directory, no Web server is yet configured" /></p>
-<p>Select your <code>Drupal</code> installation directory on the local machine, make it the <code>Project Root</code> and click on <code>Finish</code> button</p>
-<p><img alt="Choose Project Directory" src="../../img/drupal/phpstorm_3.png" title="Choose Project Directory" /></p>
-<p>Once the project is created, <code>PhpStorm</code> will index your project files and must recognise it as a <code>Drupal</code> project. It should ask to enable the <code>Drupal</code> support. If not, enable it by yourself:</p>
-<p><img alt="Enable Drupal support" src="../../img/drupal/phpstorm_4.png" title="Enable Drupal support" /></p>
-<h4 id="2-integrate-vagrant">2. Integrate Vagrant<a class="headerlink" href="#2-integrate-vagrant" title="Permanent link">&para;</a></h4>
-<p>To make <code>PhpStorm</code> find the vagrant executable run:</p>
-<div class="codehilite"><pre><span></span>sudo ln -s /usr/local/bin/vagrant /usr/bin/vagrant
+                <h1 id="develpment-workflow">Develpment Workflow<a class="headerlink" href="#develpment-workflow" title="Permanent link">&para;</a></h1>
+<p>In this section is described the development workflow to adopt to handle the parallel development on our projects.</p>
+<h2 id="gitflow">Gitflow<a class="headerlink" href="#gitflow" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow">Gitflow Workflow</a> defines a strict branching model designed around the project release. It's based on <a href="https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow">Feature Branch Workflow</a>.</p>
+<p>The core idea behind this workflow is that all feature development should take place in a dedicated branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase.</p>
+<p>The central repository will have two main branches:</p>
+<ul>
+<li><code>master</code> branch stores the official release history</li>
+<li><code>develop</code> branch serves as an integration branch for features during development</li>
+</ul>
+<h3 id="1-begin-start-to-developing-a-new-feature">1. Begin start to developing a new feature<a class="headerlink" href="#1-begin-start-to-developing-a-new-feature" title="Permanent link">&para;</a></h3>
+<p>Before to start developing a feature, you need an isolated branch to work on. You can request a new branch with the following command:</p>
+<div class="codehilite"><pre><span></span>git checkout -b issue-#1060 develop
 </pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>in case the executable is in a different path then <code>/usr/local/bin</code> change it, you can find the vagrant path with <code>whereis vagrant</code></p>
-</div>
-<p>To integrate <code>Vagrant</code> set the <code>Istance Folder</code> on the <code>Vagrant</code> settings:</p>
-<p><img alt="Vagrant settings" src="../../img/drupal/phpstorm_5.png" title="Vagrant settings" /></p>
-<p>Then select the <code>Current Vagrant</code> on <code>SSH Terminal</code> settings:</p>
-<p><img alt="SSH Terminal settings" src="../../img/drupal/phpstorm_6.png" title="SSH Terminal settings" /></p>
-<p>Create the new Vagrant <code>Deployment</code> server clicking on <code>+</code> button in the following settings:</p>
-<p><img alt="Deployment server" src="../../img/drupal/phpstorm_7.png" title="Deployment server" /></p>
-<p>Enter a <code>Name</code> and select Type <code>SFTP</code>:</p>
-<p><img alt="Add server" src="../../img/drupal/phpstorm_8.png" title="Add server" /></p>
-<p>Click <code>OK</code> button and configure the rest as:</p>
-<div class="codehilite"><pre><span></span>SFTP host: your vagrant_hostname
-Root path: your Drupal installation path on the vagrant machine
-Username: vagrant 
-Password: vagrant
+<p>This checks out a branch called <code>issue-#1060</code> based on <code>develop</code>, and the -b flag tells <code>Git</code> to create the branch if it doesn’t already exist.</p>
+<p>Note that the feature branch should have descriptive names:</p>
+<ul>
+<li><code>issue</code> the title of the issue on your ticketing system</li>
+<li><code>#1060</code> the ID of the issue on your ticketing system</li>
+</ul>
+<p>As example:</p>
+<div class="codehilite"><pre><span></span>git checkout -b animated-main-menu-#8091 develop
 </pre></div>
 
 
-<p>Go on the <code>Mappings</code> tab and set only the <code>Deployment path on server</code> with your <code>Drupal</code> installation path on the <code>vagrant machine</code></p>
-<p><img alt="Deployment path on server" src="../../img/drupal/phpstorm_9.png" title="Deployment path on server" /></p>
-<p>Set your vagrant <code>PHP interpreter</code>. From the following click on <code>…</code> of <code>CLI Interpreter</code>:</p>
-<p><img alt="CLI Interpreter" src="../../img/drupal/phpstorm_10.png" title="CLI Interpreter" /></p>
-<p>Click on <code>+</code> button and select <code>Remote</code>. Set the interpreter as below, selecting <code>Vagrant</code> and setting the <code>Vagrant Istance Folder</code> to your <code>Vagrant</code> folder:</p>
-<p><img alt="CLI Interpreter settings" src="../../img/drupal/phpstorm_11.png" title="CLI Interpreter settings" /></p>
-<p>Go to <code>Settings</code> -&gt; <code>PHP</code> -&gt; <code>Servers</code> and click on <code>+</code> button:</p>
-<p><img alt="Vagrant server settings" src="../../img/drupal/phpstorm_12.png" title="Vagrant server settings" /></p>
-<p>Set your <code>Name</code> and <code>Host</code>. Check <code>Use path mappings</code> and enter the <code>Absolute path on the server</code> to your <code>drupal</code> installation on vagrant machine.</p>
-<h2 id="add-github-repository-and-initial-commit">Add GitHub repository and Initial Commit<a class="headerlink" href="#add-github-repository-and-initial-commit" title="Permanent link">&para;</a></h2>
-<p>Edit <code>.gitignore</code> file on your <code>drupal</code> installation adding:</p>
-<div class="codehilite"><pre><span></span>/web/sites/*/services.yml
+<h3 id="2-developing-a-feature">2. Developing a feature<a class="headerlink" href="#2-developing-a-feature" title="Permanent link">&para;</a></h3>
+<p>When you feature branch is up you can develop your code and building up the feature with as many commits as necessary.</p>
+<p>When you need to commit your code you must follow a safe sequence to be sure to merge it without breaking the code and your local <code>drupal</code> installation:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># export drupal configuration</span>
+<span class="n">drush</span> <span class="n">cex</span> <span class="o">-</span><span class="n">y</span>
+<span class="c1"># commit code</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">...</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;...&#39;</span>
+<span class="c1"># merge</span>
+<span class="n">git</span> <span class="n">pull</span>
+<span class="c1"># update dependencies</span>
+<span class="n">composer</span> <span class="n">install</span>
+<span class="c1"># clear drush cache</span>
+<span class="n">drush</span> <span class="n">cc</span> <span class="n">drush</span>
+<span class="c1"># update database</span>
+<span class="n">drush</span> <span class="n">updb</span> <span class="o">-</span><span class="n">y</span> <span class="o">--</span><span class="n">entity</span><span class="o">-</span><span class="n">updates</span>
+<span class="c1"># import drupal configuration</span>
+<span class="n">drush</span> <span class="n">cim</span> <span class="o">-</span><span class="n">y</span>
+<span class="c1"># clear drupal cache</span>
+<span class="n">drush</span> <span class="n">cr</span>
+<span class="c1"># push code</span>
+<span class="n">git</span> <span class="n">push</span>
 </pre></div>
 
 
-<p>Share the project on <code>GitHub</code>:</p>
-<p><img alt="Share github project" src="../../img/drupal/phpstorm_13.png" title="Share github project" /></p>
-<p>Write the <code>New repository name</code>, select <code>private</code>, if needed, and click on <code>Share</code></p>
-<p><img alt="Share github project" src="../../img/drupal/phpstorm_14.png" title="Share github project" /></p>
-<p>Add files for <code>initial commit</code> and <code>push</code> on git by clicking on <code>OK</code> button</p>
-<p><img alt="Initial commit" src="../../img/drupal/phpstorm_15.png" title="Initial commit" /></p>
-<h2 id="import-to-existing-github-repository-and-initial-commit">Import to existing GitHub repository and Initial Commit<a class="headerlink" href="#import-to-existing-github-repository-and-initial-commit" title="Permanent link">&para;</a></h2>
-<p>Enable version control integration from PHPSTORM:</p>
-<p><img alt="Enable version control integrations" src="../../img/drupal/phpstorm_16.png" title="Enable version control integrations" /></p>
-<p>Set the <code>Remote</code> origin of the existing <code>git</code> repository adding the repository <code>url</code> (e.g. <code>https://github.com/mecmartini/soulweb-docs.git</code>)</p>
-<p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_17.png" title="Set git remote origin" /></p>
-<p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_18.png" title="Set git remote origin" /></p>
-<p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_19.png" title="Set git remote origin" /></p>
-<p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_20.png" title="Set git remote origin" /></p>
-<p>Push the <code>initial commit</code> (see <a href="./#3-add-github-repository-and-initial-commit">Add GitHub repository and Initial Commit</a>).</p>
+<h3 id="3-finish-developing-a-feature">3. Finish developing a feature<a class="headerlink" href="#3-finish-developing-a-feature" title="Permanent link">&para;</a></h3>
+<p>When the feature is complete you must file a pull request letting the rest of the team know your work is done and ready to be merged on <code>develop</code> branch.</p>
+<p><a href="https://help.github.com/articles/about-pull-requests/">Pull requests</a> let you tell others about changes you've pushed. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before the changes are merged into the repository.</p>
+<p>The pull request is managed through <code>github</code> UI. For more information, see <a href="https://help.github.com/articles/creating-a-pull-request/">Creating a pull request</a>.</p>
                 
                   
                 
@@ -624,7 +590,7 @@ Password: vagrant
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_vm/" title="Drupal VM" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_configuration_management/" title="Configuration Management (CMI)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -633,25 +599,11 @@ Password: vagrant
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Drupal VM
+                Configuration Management (CMI)
               </span>
             </div>
           </a>
         
-        
-          <a href="../drupal_vm_xdebug/" title="Xdebug" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Xdebug
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
