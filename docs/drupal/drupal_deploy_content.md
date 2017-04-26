@@ -17,3 +17,7 @@ In `drupal` 8 there is a post update hook specifically designed to work with con
     function hook_post_update_NAME(&$sandbox) { }
 
 New with proof of concept module [Config Import N](https://github.com/bircher/drupal-config_import_n).
+
+## Content Synchronization module
+
+[Content Synchronization](https://www.drupal.org/project/content_sync) module provides a mechanism to export single content items, or all content items, from an environment, and move them to another, effortlessly.

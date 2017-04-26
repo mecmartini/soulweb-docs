@@ -357,7 +357,7 @@
         }, 
         {
             "location": "/drupal/drupal_deploy_content/", 
-            "text": "Deploy Content\n\n\nTo deploy configuration that depends on content such as nodes, blocks, taxonomy terms, etc.\n\n\nDefault Content module\n\n\nDefault Content\n module gives your module and install profile a way to ship default content as well as configuration.\n\n\nDeploy module\n\n\nDeploy\n module is designed to allow users to easily stage and preview content for a Drupal site. Deploy automatically manages dependencies between entities (like node references). It is designed to have a rich API which can be easily extended to be used in a variety of content staging situations.\n\n\nUpdating content\n\n\nIn \ndrupal\n 8 there is a post update hook specifically designed to work with content:\n\n\nfunction hook_post_update_NAME(\n$sandbox) { }\n\n\n\n\n\nNew with proof of concept module \nConfig Import N\n.", 
+            "text": "Deploy Content\n\n\nTo deploy configuration that depends on content such as nodes, blocks, taxonomy terms, etc.\n\n\nDefault Content module\n\n\nDefault Content\n module gives your module and install profile a way to ship default content as well as configuration.\n\n\nDeploy module\n\n\nDeploy\n module is designed to allow users to easily stage and preview content for a Drupal site. Deploy automatically manages dependencies between entities (like node references). It is designed to have a rich API which can be easily extended to be used in a variety of content staging situations.\n\n\nUpdating content\n\n\nIn \ndrupal\n 8 there is a post update hook specifically designed to work with content:\n\n\nfunction hook_post_update_NAME(\n$sandbox) { }\n\n\n\n\n\nNew with proof of concept module \nConfig Import N\n.\n\n\nContent Synchronization module\n\n\nContent Synchronization\n module provides a mechanism to export single content items, or all content items, from an environment, and move them to another, effortlessly.", 
             "title": "Deploy Content"
         }, 
         {
@@ -379,6 +379,11 @@
             "location": "/drupal/drupal_deploy_content/#updating-content", 
             "text": "In  drupal  8 there is a post update hook specifically designed to work with content:  function hook_post_update_NAME( $sandbox) { }  New with proof of concept module  Config Import N .", 
             "title": "Updating content"
+        }, 
+        {
+            "location": "/drupal/drupal_deploy_content/#content-synchronization-module", 
+            "text": "Content Synchronization  module provides a mechanism to export single content items, or all content items, from an environment, and move them to another, effortlessly.", 
+            "title": "Content Synchronization module"
         }
     ]
 }
