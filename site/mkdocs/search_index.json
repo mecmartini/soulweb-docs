@@ -356,34 +356,24 @@
             "title": "3. Finish developing a feature"
         }, 
         {
-            "location": "/drupal/drupal_development_workflow/", 
-            "text": "Develpment Workflow\n\n\nIn this section is described the development workflow to adopt to handle the parallel development on our projects.\n\n\nGitflow\n\n\nThe \nGitflow Workflow\n defines a strict branching model designed around the project release. It's based on \nFeature Branch Workflow\n.\n\n\nThe core idea behind this workflow is that all feature development should take place in a dedicated branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase.\n\n\nThe central repository will have two main branches:\n\n\n\n\nmaster\n branch stores the official release history\n\n\ndevelop\n branch serves as an integration branch for features during development\n\n\n\n\n1. Begin start to developing a new feature\n\n\nBefore to start developing a feature, you need an isolated branch to work on. You can request a new branch with the following command:\n\n\ngit checkout -b issue-#1060 develop\n\n\n\n\n\nThis checks out a branch called \nissue-#1060\n based on \ndevelop\n, and the -b flag tells \nGit\n to create the branch if it doesn\u2019t already exist.\n\n\nNote that the feature branch should have descriptive names:\n\n\n\n\nissue\n the title of the issue on your ticketing system\n\n\n#1060\n the ID of the issue on your ticketing system\n\n\n\n\nAs example:\n\n\ngit checkout -b animated-main-menu-#8091 develop\n\n\n\n\n\n2. Developing a feature\n\n\nWhen you feature branch is up you can develop your code and building up the feature with as many commits as necessary.\n\n\nWhen you need to commit your code you must follow a safe sequence to be sure to merge it without breaking the code and your local \ndrupal\n installation:\n\n\n# export drupal configuration\ndrush cex -y\n# commit code\ngit add ...\ngit commit -m \n...\n\n# merge\ngit pull\n# update dependencies\ncomposer install\n# clear drush cache\ndrush cc drush\n# update database\ndrush updb -y --entity-updates\n# import drupal configuration\ndrush cim -y\n# clear drupal cache\ndrush cr\n# push code\ngit push\n\n\n\n\n\n3. Finish developing a feature\n\n\nWhen the feature is complete you must file a pull request letting the rest of the team know your work is done and ready to be merged on \ndevelop\n branch.\n\n\nPull requests\n let you tell others about changes you've pushed. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before the changes are merged into the repository.\n\n\nThe pull request is managed through \ngithub\n UI. For more information, see \nCreating a pull request\n.", 
-            "title": "Deploy Conten"
+            "location": "/drupal/drupal_deploy_content/", 
+            "text": "Deploy Content\n\n\nTo deploy configuration that depends on content such as nodes, blocks, taxonomy terms, etc.\n\n\nDefault Content module\n\n\nDefault Content\n module gives your module and install profile a way to ship default content as well as configuration.\n\n\nDeploy module\n\n\nDeploy\n module is designed to allow users to easily stage and preview content for a Drupal site. Deploy automatically manages dependencies between entities (like node references). It is designed to have a rich API which can be easily extended to be used in a variety of content staging situations.", 
+            "title": "Deploy Content"
         }, 
         {
-            "location": "/drupal/drupal_development_workflow/#develpment-workflow", 
-            "text": "In this section is described the development workflow to adopt to handle the parallel development on our projects.", 
-            "title": "Develpment Workflow"
+            "location": "/drupal/drupal_deploy_content/#deploy-content", 
+            "text": "To deploy configuration that depends on content such as nodes, blocks, taxonomy terms, etc.", 
+            "title": "Deploy Content"
         }, 
         {
-            "location": "/drupal/drupal_development_workflow/#gitflow", 
-            "text": "The  Gitflow Workflow  defines a strict branching model designed around the project release. It's based on  Feature Branch Workflow .  The core idea behind this workflow is that all feature development should take place in a dedicated branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase.  The central repository will have two main branches:   master  branch stores the official release history  develop  branch serves as an integration branch for features during development", 
-            "title": "Gitflow"
+            "location": "/drupal/drupal_deploy_content/#default-content-module", 
+            "text": "Default Content  module gives your module and install profile a way to ship default content as well as configuration.", 
+            "title": "Default Content module"
         }, 
         {
-            "location": "/drupal/drupal_development_workflow/#1-begin-start-to-developing-a-new-feature", 
-            "text": "Before to start developing a feature, you need an isolated branch to work on. You can request a new branch with the following command:  git checkout -b issue-#1060 develop  This checks out a branch called  issue-#1060  based on  develop , and the -b flag tells  Git  to create the branch if it doesn\u2019t already exist.  Note that the feature branch should have descriptive names:   issue  the title of the issue on your ticketing system  #1060  the ID of the issue on your ticketing system   As example:  git checkout -b animated-main-menu-#8091 develop", 
-            "title": "1. Begin start to developing a new feature"
-        }, 
-        {
-            "location": "/drupal/drupal_development_workflow/#2-developing-a-feature", 
-            "text": "When you feature branch is up you can develop your code and building up the feature with as many commits as necessary.  When you need to commit your code you must follow a safe sequence to be sure to merge it without breaking the code and your local  drupal  installation:  # export drupal configuration\ndrush cex -y\n# commit code\ngit add ...\ngit commit -m  ... \n# merge\ngit pull\n# update dependencies\ncomposer install\n# clear drush cache\ndrush cc drush\n# update database\ndrush updb -y --entity-updates\n# import drupal configuration\ndrush cim -y\n# clear drupal cache\ndrush cr\n# push code\ngit push", 
-            "title": "2. Developing a feature"
-        }, 
-        {
-            "location": "/drupal/drupal_development_workflow/#3-finish-developing-a-feature", 
-            "text": "When the feature is complete you must file a pull request letting the rest of the team know your work is done and ready to be merged on  develop  branch.  Pull requests  let you tell others about changes you've pushed. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before the changes are merged into the repository.  The pull request is managed through  github  UI. For more information, see  Creating a pull request .", 
-            "title": "3. Finish developing a feature"
+            "location": "/drupal/drupal_deploy_content/#deploy-module", 
+            "text": "Deploy  module is designed to allow users to easily stage and preview content for a Drupal site. Deploy automatically manages dependencies between entities (like node references). It is designed to have a rich API which can be easily extended to be used in a variety of content staging situations.", 
+            "title": "Deploy module"
         }
     ]
 }
