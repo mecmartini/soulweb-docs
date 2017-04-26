@@ -59,7 +59,7 @@ The `$config` array allows run-time overriding: configuration is still there, bu
 
 These customizations must be added to:
 
-* `settings.local.php` if they are needed only for your local environment (see [Create and enable local settings](drupal#3-create-and-enable-local-settings))
+* `settings.local.php` if they are needed only for your local environment (see [Create and enable local settings](drupal_basic_configuration.md#3-create-and-enable-local-settings))
 * `settings.dev.php` if they are needed for all dev environments (already available on the repository)
 
 As example, to enable verbose error logging on your instance add:
