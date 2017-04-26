@@ -425,6 +425,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updating-content" title="Updating content" class="md-nav__link">
+    Updating content
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -473,6 +480,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updating-content" title="Updating content" class="md-nav__link">
+    Updating content
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -494,6 +508,13 @@
 <p><a href="https://www.drupal.org/project/default_content">Default Content</a> module gives your module and install profile a way to ship default content as well as configuration.</p>
 <h2 id="deploy-module">Deploy module<a class="headerlink" href="#deploy-module" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.drupal.org/project/deploy">Deploy</a> module is designed to allow users to easily stage and preview content for a Drupal site. Deploy automatically manages dependencies between entities (like node references). It is designed to have a rich API which can be easily extended to be used in a variety of content staging situations.</p>
+<h2 id="updating-content">Updating content<a class="headerlink" href="#updating-content" title="Permanent link">&para;</a></h2>
+<p>In <code>drupal</code> 8 there is a post update hook specifically designed to work with content:</p>
+<div class="codehilite"><pre><span></span>function hook_post_update_NAME(&amp;$sandbox) { }
+</pre></div>
+
+
+<p>New with proof of concept module <a href="https://github.com/bircher/drupal-config_import_n">Config Import N</a>.</p>
                 
                   
                 
