@@ -49,5 +49,21 @@ Now you can use normal `drush` import /export commands and `Configuration Split`
     # To import configuration
     drush cim -y
 
+## Override Configuration
 
+In development, it's convenient to have different configuration then on the production site (e.g. different error reporting, different API keys, different site email, etc.):
 
+These customizations are not to be exported.
+
+The `$config` array allows run-time overriding: configuration is still there, but it gets overridden.
+
+These customizations must be added to:
+
+* `settings.local.php` if they are needed only for your local environment (see [Create and enable local settings](drupal#3-create-and-enable-local-settings))
+* `settings.dev.php` if they are needed for all dev environments (already available on the repository)
+
+As example, to enable verbose error logging on your instance add:
+
+    $config['system.logging']['error_level'] = 'verbose';
+
+After the override, the `drupal` backend UI still shows the original (non-overridden) settings. This is wanted to prevent you from submitting overriden configuration. So, even after the override, `drupal` exports the original settings.

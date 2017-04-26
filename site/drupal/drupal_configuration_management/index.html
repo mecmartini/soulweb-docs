@@ -401,6 +401,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#override-configuration" title="Override Configuration" class="md-nav__link">
+    Override Configuration
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -418,6 +425,18 @@
   <li class="md-nav__item">
     <a href="../drupal_development_workflow/" title="Development Workflow" class="md-nav__link">
       Development Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drupal_development_workflow/" title="Deploy Conten" class="md-nav__link">
+      Deploy Conten
     </a>
   </li>
 
@@ -457,6 +476,13 @@
         <li class="md-nav__item">
   <a href="#different-configurations-on-dev-stage-prod-environments" title="Different configurations on Dev / Stage / Prod environments" class="md-nav__link">
     Different configurations on Dev / Stage / Prod environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#override-configuration" title="Override Configuration" class="md-nav__link">
+    Override Configuration
   </a>
   
 </li>
@@ -519,6 +545,23 @@ drush cex -y
 # To import configuration
 drush cim -y
 </pre></div>
+
+
+<h2 id="override-configuration">Override Configuration<a class="headerlink" href="#override-configuration" title="Permanent link">&para;</a></h2>
+<p>In development, it's convenient to have different configuration then on the production site (e.g. different error reporting, different API keys, different site email, etc.):</p>
+<p>These customizations are not to be exported.</p>
+<p>The <code>$config</code> array allows run-time overriding: configuration is still there, but it gets overridden.</p>
+<p>These customizations must be added to:</p>
+<ul>
+<li><code>settings.local.php</code> if they are needed only for your local environment (see <a href="../drupal#3-create-and-enable-local-settings">Create and enable local settings</a>)</li>
+<li><code>settings.dev.php</code> if they are needed for all dev environments (already available on the repository)</li>
+</ul>
+<p>As example, to enable verbose error logging on your instance add:</p>
+<div class="codehilite"><pre><span></span>$config[&#39;system.logging&#39;][&#39;error_level&#39;] = &#39;verbose&#39;;
+</pre></div>
+
+
+<p>After the override, the <code>drupal</code> backend UI still shows the original (non-overridden) settings. This is wanted to prevent you from submitting overriden configuration. So, even after the override, <code>drupal</code> exports the original settings.</p>
                 
                   
                 
