@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_phpunit/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_cors/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>PHPUnit - Soulweb Docs</title>
+        <title>CORS Configuration - Soulweb Docs</title>
       
     
     
@@ -83,15 +83,11 @@
             
               
                 <span class="md-header-nav__parent">
-                  Local Development
-                </span>
-              
-                <span class="md-header-nav__parent">
-                  macOS
+                  Drupal 8 Development
                 </span>
               
             
-            PHPUnit
+            CORS Configuration
           
         </span>
       </div>
@@ -231,12 +227,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
     
     <label class="md-nav__link" for="nav-2-1">
       Local Development
@@ -252,12 +246,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
     
     <label class="md-nav__link" for="nav-2-1-1">
       macOS
@@ -321,47 +313,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        PHPUnit
-      </label>
-    
-    <a href="./" title="PHPUnit" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../drupal_vm_phpunit/" title="PHPUnit" class="md-nav__link">
       PHPUnit
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-integrate-phpunit-in-phpstorm" title="1. Integrate PHPUnit in PhpStorm" class="md-nav__link">
-    1. Integrate PHPUnit in PhpStorm
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -439,11 +395,68 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../drupal_cors/" title="CORS Configuration" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        CORS Configuration
+      </label>
+    
+    <a href="./" title="CORS Configuration" class="md-nav__link md-nav__link--active">
       CORS Configuration
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cors-module" title="CORS Module" class="md-nav__link">
+    CORS Module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-servicesyml" title="CORS services.yml" class="md-nav__link">
+    CORS services.yml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-settingsenvironmentphp" title="CORS settings.environment.php" class="md-nav__link">
+    CORS settings.environment.php
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-multi-origin" title="CORS multi-origin" class="md-nav__link">
+    CORS multi-origin
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -473,8 +486,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-integrate-phpunit-in-phpstorm" title="1. Integrate PHPUnit in PhpStorm" class="md-nav__link">
-    1. Integrate PHPUnit in PhpStorm
+  <a href="#cors-module" title="CORS Module" class="md-nav__link">
+    CORS Module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-servicesyml" title="CORS services.yml" class="md-nav__link">
+    CORS services.yml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-settingsenvironmentphp" title="CORS settings.environment.php" class="md-nav__link">
+    CORS settings.environment.php
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-multi-origin" title="CORS multi-origin" class="md-nav__link">
+    CORS multi-origin
   </a>
   
 </li>
@@ -494,26 +528,65 @@
               
                 
                 
-                <h1 id="phpunit">PHPUnit<a class="headerlink" href="#phpunit" title="Permanent link">&para;</a></h1>
-<h4 id="1-integrate-phpunit-in-phpstorm">1. Integrate PHPUnit in PhpStorm<a class="headerlink" href="#1-integrate-phpunit-in-phpstorm" title="Permanent link">&para;</a></h4>
-<p>Enable the <code>Testing</code> module on your <code>drupal</code> installation. Access on your <code>vagrant</code> machine (<code>vagrant ssh</code>), go under the <code>drupal</code> installation directory and run:</p>
-<div class="codehilite"><pre><span></span>drush en -y testing
+                <h1 id="cors-configuration">CORS Configuration<a class="headerlink" href="#cors-configuration" title="Permanent link">&para;</a></h1>
+<p><code>Cross-origin resource sharing</code> (<code>CORS</code>) is a mechanism that allows a web page to make XMLHttpRequests to another domain. Such <code>cross-domain</code> requests would otherwise be forbidden by web browsers, per the same origin security policy.</p>
+<p>To enable `CORS in your Drupal installation three methods are available:</p>
+<ul>
+<li><a href="./#cors-module">CORS Module</a></li>
+<li><a href="./#cors-servicesyml">CORS services.yml</a></li>
+<li><a href="./#cors-settingenvironmentphp">CORS settings.environment.php</a></li>
+</ul>
+<h2 id="cors-module">CORS Module<a class="headerlink" href="#cors-module" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.drupal.org/project/cors">CORS</a> module provides a configuration page to map domains to paths and add the necessary Access-Control-Allow-Origin header.</p>
+<h2 id="cors-servicesyml">CORS services.yml<a class="headerlink" href="#cors-servicesyml" title="Permanent link">&para;</a></h2>
+<p>Drupal <code>services.yml</code> (located in <code>sites/default</code>) contain the drupal default method to enable and configure CORS.</p>
+<p>Below a configuration example:</p>
+<div class="codehilite"><pre><span></span>   # Configure Cross-Site HTTP requests (CORS).
+   # Read https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+   # for more information about the topic in general.
+   # Note: By default the configuration is disabled.
+  cors.config:
+    enabled: true
+    # Specify allowed headers, like &#39;x-allowed-header&#39;.
+    allowedHeaders: [&#39;Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&#39;]
+    # Specify allowed request methods, specify [&#39;*&#39;] to allow all possible ones.
+    allowedMethods: [&#39;POST,GET,PUT,DELETE,OPTIONS&#39;]
+    # Configure requests allowed from specific origins.
+    allowedOrigins: [&#39;http://example.dev&#39;]
+    # Sets the Access-Control-Expose-Headers header.
+    exposedHeaders: false
+    # Sets the Access-Control-Max-Age header.
+    maxAge: false
+    # Sets the Access-Control-Allow-Credentials header.
+    supportsCredentials: true
 </pre></div>
 
 
-<p>Open the file <code>web/core/phpunit.xml.dist</code>, under your <code>drupal</code> installation directory, and fill in <code>SIMPLETEST_DB</code>, <code>SIMPLETEST_BASE_URL</code> and <code>BROWSERTEST_OUTPUT_DIRECTORY</code>.
-Go under <code>Settings</code> &gt; <code>Language &amp; Frameworks</code> &gt; <code>PHP</code> &gt; <code>PHPUnit</code>. Click on the <code>+</code> button and select <code>By Remote Interpreter</code></p>
-<p><img alt="PhpStorm PHPUnit settings" src="../../img/drupal/phpstorm_33.png" title="PhpStorm PHPUnit settings" /></p>
-<p>Set the <code>Interpreter</code> as below. In <code>Path to script</code> and <code>Default configuration file</code> enter the directory path of your <code>vagrant</code> machine</p>
-<p><img alt="PHPUnit By Remote Interpreter" src="../../img/drupal/phpstorm_34.png" title="PHPUnit By Remote Interpreter" /></p>
-<p>To run all <code>drupal</code> tests go under <code>Edit configurations</code>. Click the <code>+</code> button and select <code>PHPUnit</code></p>
-<p><img alt="PHPUnit Edit configurations" src="../../img/drupal/phpstorm_35.png" title="PHPUnit Edit configurations" /></p>
-<p><img alt="PHPUnit Add New Configuration" src="../../img/drupal/phpstorm_36.png" title="PHPUnit Add New Configuration" /></p>
-<p>Set only the <code>Name</code></p>
-<p><img alt="PHPUnit Configuration" src="../../img/drupal/phpstorm_37.png" title="PHPUnit Configuration" /></p>
-<p>To test if it works select your <code>PHPUnit</code> config and click on <code>run</code> (<code>play button</code>)</p>
-<p><img alt="PHPUnit Run" src="../../img/drupal/phpstorm_38.png" title="PHPUnit Run" /></p>
-<p><img alt="PHPUnit in execution" src="../../img/drupal/phpstorm_39.png" title="PHPUnit in execution" /></p>
+<h2 id="cors-settingsenvironmentphp">CORS settings.environment.php<a class="headerlink" href="#cors-settingsenvironmentphp" title="Permanent link">&para;</a></h2>
+<p>For complex <code>CORS</code> configuration you can use one of <code>settings.environment.php</code> in your Drupal installation (e.g. <code>settings.shared.php</code>, <code>settings.local.php</code>, <code>settings.dev.php</code>, etc.) to add your <code>CORS</code> configuration.</p>
+<p>Below a configuration example:</p>
+<div class="codehilite"><pre><span></span>header(&quot;Access-Control-Allow-Origin: http://example.dev&quot;);
+header(&quot;Access-Control-Allow-Credentials: true&quot;);
+header(&quot;Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS&quot;);
+header(&quot;Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&quot;);
+</pre></div>
+
+
+<h2 id="cors-multi-origin">CORS multi-origin<a class="headerlink" href="#cors-multi-origin" title="Permanent link">&para;</a></h2>
+<p>For multi-origin CORS configuration the best way is to configure it through <a href="./#cors-settingenvironmentphp">CORS settings.environment.php</a>.</p>
+<p>Below a configuration example:</p>
+<div class="codehilite"><pre><span></span>$allowed_origin = array(
+  &#39;http://example.one.dev&#39;,
+  &#39;http://example.two.dev&#39;,
+);
+
+if (in_array($_SERVER[&#39;HTTP_ORIGIN&#39;], $allowed_origin)) {
+  header(&quot;Access-Control-Allow-Origin: &quot; . $_SERVER[&#39;HTTP_ORIGIN&#39;]);
+  header(&quot;Access-Control-Allow-Credentials: true&quot;);
+  header(&quot;Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS&quot;);
+  header(&quot;Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&quot;);
+}
+</pre></div>
                 
                   
                 
@@ -532,7 +605,7 @@ Go under <code>Settings</code> &gt; <code>Language &amp; Frameworks</code> &gt; 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_vm_codersniffer/" title="Coder Sniffer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_deploy_content/" title="Deploy Content" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -541,25 +614,11 @@ Go under <code>Settings</code> &gt; <code>Language &amp; Frameworks</code> &gt; 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Coder Sniffer
+                Deploy Content
               </span>
             </div>
           </a>
         
-        
-          <a href="../drupal_basic_configuration/" title="Basic Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Basic Configuration
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

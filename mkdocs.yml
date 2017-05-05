@@ -22,6 +22,7 @@ pages:
   - 'Configuration Management (CMI)': 'drupal/drupal_configuration_management.md'
   - 'Development Workflow': 'drupal/drupal_development_workflow.md'
   - 'Deploy Content': 'drupal/drupal_deploy_content.md'
+  - 'CORS Configuration': 'drupal/drupal_cors.md'
 
 theme: 'material'
 
