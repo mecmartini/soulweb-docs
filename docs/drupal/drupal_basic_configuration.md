@@ -43,7 +43,22 @@ Open `settings.php` file in `sites/default` and add these lines to the end:
 
 This will include the shared settings file as part of Drupal's settings file.
 
-#### 3. Create and enable local settings
+#### 3. Enable dev settings
+
+You have to make the site settings directory (e.g. `default`) and is `settings.php` writable to do this. Drupal will restore permissions in a later moment:
+
+    chmod +w sites/default
+    chmod +w sites/default/settings.php
+
+Open `settings.php` file in `sites/default` and add these lines to the end:
+
+    if (file_exists($app_root . '/' . $site_path . '/settings.dev.php')) {
+      include $app_root . '/' . $site_path . '/settings.dev.php';
+    }
+
+This will include the shared settings file as part of Drupal's settings file.
+
+#### 4. Create and enable local settings
 
 You have to make the site settings directory (e.g. `default`) writable to do this. Drupal will restore permissions in a later moment:
 
@@ -67,7 +82,7 @@ Open `settings.php` file in `sites/default` and add these lines to the end:
        include $app_root . '/' . $site_path . '/settings.local.php';
     }
 
-#### 3. Disable Drupal caching
+#### 5. Disable Drupal caching
 
 Open `settings.local.php` and uncomment (or add) this line to enable the null cache service:
 
@@ -108,7 +123,7 @@ Your final `development.services.yml` should look as follows (mind the indentati
       cache.backend.null:
         class: Drupal\Core\Cache\NullBackendFactory
 
-#### 4. Private files
+#### 6. Private files
 
 To use private files on `drupal` you must edit your `settings.php`.
 
@@ -127,7 +142,7 @@ Caches need to be cleared when this value is changed to make the `private://` st
 
     drush cr
 
-#### 5. Configuration directory
+#### 7. Configuration directory
 
 The configuration directory on our project is already set in the `settings.shared.php` file on the project directory.
 
