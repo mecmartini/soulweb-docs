@@ -37,8 +37,8 @@ You have to make the site settings directory (e.g. `default`) and is `settings.p
 
 Open `settings.php` file in `sites/default` and add these lines to the end:
 
-    if (file_exists(__DIR__ . '/settings.shared.php')) {
-      include __DIR__ . '/settings.shared.php';
+    if (file_exists($app_root . '/' . $site_path . '/settings.shared.php')) {
+      include $app_root . '/' . $site_path . '/settings.shared.php';
     }
 
 This will include the shared settings file as part of Drupal's settings file.
@@ -60,6 +60,12 @@ Open the `settings.local.php` created and add your local local `host` to on `tru
     $settings['trusted_host_patterns'][] = 'yourprojectnamevm.dev';
 
 If you have more then one host (e.g. for `multisite`) add all of them.
+
+Open `settings.php` file in `sites/default` and add these lines to the end:
+
+    if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+       include $app_root . '/' . $site_path . '/settings.local.php';
+    }
 
 #### 3. Disable Drupal caching
 
