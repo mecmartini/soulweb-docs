@@ -81,6 +81,7 @@ Uncomment these lines in `settings.local.php` to disable the render cache and di
 Open `development.services.yml` in the sites folder and add the following block to disable the `twig` cache:
 
     parameters:
+      ...
       twig.config:
         debug: true
         auto_reload: true

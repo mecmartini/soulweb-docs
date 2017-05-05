@@ -638,6 +638,7 @@ $settings[&#39;cache&#39;][&#39;bins&#39;][&#39;dynamic_page_cache&#39;] = &#39;
 
 <p>Open <code>development.services.yml</code> in the sites folder and add the following block to disable the <code>twig</code> cache:</p>
 <div class="codehilite"><pre><span></span>parameters:
+  ...
   twig.config:
     debug: true
     auto_reload: true
