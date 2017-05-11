@@ -432,6 +432,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#build-drupal-vm-for-multisite" title="Build Drupal VM for multisite" class="md-nav__link">
+    Build Drupal VM for multisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#updating-drupal-vm" title="Updating Drupal VM" class="md-nav__link">
     Updating Drupal VM
   </a>
@@ -733,6 +740,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#build-drupal-vm-for-multisite" title="Build Drupal VM for multisite" class="md-nav__link">
+    Build Drupal VM for multisite
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#updating-drupal-vm" title="Updating Drupal VM" class="md-nav__link">
     Updating Drupal VM
   </a>
@@ -1007,6 +1021,46 @@ drupal_account_pass: admin
 
 
 <p>At the address <code>dashboard.your_vagrant_hostname.dev</code> (e.g. <code>dashboard.drupaltest.dev</code>) you can see your <code>DrupalVM</code> dashboard.</p>
+<h2 id="build-drupal-vm-for-multisite">Build Drupal VM for multisite<a class="headerlink" href="#build-drupal-vm-for-multisite" title="Permanent link">&para;</a></h2>
+<p>For <code>multisite</code> installations, make the changes outlined above, but, using the <code>apache_vhosts</code> variable, configure as many domains pointing to the same <code>docroot</code> as you need:</p>
+<div class="codehilite"><pre><span></span>apache_vhosts:
+  # Drupal VM&#39;s default domain, evaluating to whatever `vagrant_hostname` is set to (drupalvm.dev by default).
+  - servername: &quot;{{ drupal_domain }}&quot;
+    serveralias: &quot;www.{{ drupal_domain }}&quot;
+    documentroot: &quot;{{ drupal_core_path }}&quot;
+    extra_parameters: &quot;{{ apache_vhost_php_fpm_parameters }}&quot;
+
+  - servername: &quot;local.second-drupal-site.com&quot;
+    documentroot: &quot;{{ drupal_core_path }}&quot;
+    extra_parameters: &quot;{{ apache_vhost_php_fpm_parameters }}&quot;
+
+  - servername: &quot;local.third-drupal-site.com&quot;
+    documentroot: &quot;{{ drupal_core_path }}&quot;
+    extra_parameters: &quot;{{ apache_vhost_php_fpm_parameters }}&quot;
+</pre></div>
+
+
+<p>If you need additional databases and database users, add them to the list of mysql_databases and mysql_users:</p>
+<div class="codehilite"><pre><span></span>mysql_databases:
+  - name: drupal
+    encoding: utf8
+    collation: utf8_general_ci
+  - name: drupal_two
+    encoding: utf8
+    collation: utf8_general_ci
+
+mysql_users:
+  - name: drupal
+    host: &quot;%&quot;
+    password: drupal
+    priv: &quot;drupal.*:ALL&quot;
+  - name: drupal-two
+    host: &quot;%&quot;
+    password: drupal-two
+    priv: &quot;drupal_two.*:ALL&quot;
+</pre></div>
+
+
 <h2 id="updating-drupal-vm">Updating Drupal VM<a class="headerlink" href="#updating-drupal-vm" title="Permanent link">&para;</a></h2>
 <p>Drupal VM follows semantic versioning, which means your configuration should continue working (potentially with very minor modifications) throughout a major release cycle. Here is the process to follow when updating Drupal VM between minor releases:</p>
 <ol>

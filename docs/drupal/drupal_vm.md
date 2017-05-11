@@ -255,6 +255,45 @@ Default Drupal credentials to login are specified in your `config.yml`
 
 At the address `dashboard.your_vagrant_hostname.dev` (e.g. `dashboard.drupaltest.dev`) you can see your `DrupalVM` dashboard.
 
+## Build Drupal VM for multisite
+
+For `multisite` installations, make the changes outlined above, but, using the `apache_vhosts` variable, configure as many domains pointing to the same `docroot` as you need:
+
+    apache_vhosts:
+      # Drupal VM's default domain, evaluating to whatever `vagrant_hostname` is set to (drupalvm.dev by default).
+      - servername: "{{ drupal_domain }}"
+        serveralias: "www.{{ drupal_domain }}"
+        documentroot: "{{ drupal_core_path }}"
+        extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+
+      - servername: "local.second-drupal-site.com"
+        documentroot: "{{ drupal_core_path }}"
+        extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+
+      - servername: "local.third-drupal-site.com"
+        documentroot: "{{ drupal_core_path }}"
+        extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
+
+If you need additional databases and database users, add them to the list of mysql_databases and mysql_users:
+
+    mysql_databases:
+      - name: drupal
+        encoding: utf8
+        collation: utf8_general_ci
+      - name: drupal_two
+        encoding: utf8
+        collation: utf8_general_ci
+
+    mysql_users:
+      - name: drupal
+        host: "%"
+        password: drupal
+        priv: "drupal.*:ALL"
+      - name: drupal-two
+        host: "%"
+        password: drupal-two
+        priv: "drupal_two.*:ALL"
+
 ## Updating Drupal VM
 
 Drupal VM follows semantic versioning, which means your configuration should continue working (potentially with very minor modifications) throughout a major release cycle. Here is the process to follow when updating Drupal VM between minor releases:
