@@ -274,7 +274,7 @@ For `multisite` installations, make the changes outlined above, but, using the `
         documentroot: "{{ drupal_core_path }}"
         extra_parameters: "{{ apache_vhost_php_fpm_parameters }}"
 
-If you need additional databases and database users, add them to the list of mysql_databases and mysql_users:
+If you need additional databases and database users, add them to the list of `mysql_databases` and `mysql_users`:
 
     mysql_databases:
       - name: drupal
@@ -293,6 +293,12 @@ If you need additional databases and database users, add them to the list of mys
         host: "%"
         password: drupal-two
         priv: "drupal_two.*:ALL"
+
+If you let the `VM` to install your main `drupal` site (`drupal_install_site: true`), be sure to set the appropriate `drupal` DB for the installation:
+
+    drupal_db_user: drupal
+    drupal_db_password: drupal
+    drupal_db_name: drupal
 
 ## Updating Drupal VM
 

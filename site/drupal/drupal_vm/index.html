@@ -1040,7 +1040,7 @@ drupal_account_pass: admin
 </pre></div>
 
 
-<p>If you need additional databases and database users, add them to the list of mysql_databases and mysql_users:</p>
+<p>If you need additional databases and database users, add them to the list of <code>mysql_databases</code> and <code>mysql_users</code>:</p>
 <div class="codehilite"><pre><span></span>mysql_databases:
   - name: drupal
     encoding: utf8
@@ -1058,6 +1058,13 @@ mysql_users:
     host: &quot;%&quot;
     password: drupal-two
     priv: &quot;drupal_two.*:ALL&quot;
+</pre></div>
+
+
+<p>If you let the <code>VM</code> to install your main <code>drupal</code> site (<code>drupal_install_site: true</code>), be sure to set the appropriate <code>drupal</code> DB for the installation:</p>
+<div class="codehilite"><pre><span></span>drupal_db_user: drupal
+drupal_db_password: drupal
+drupal_db_name: drupal
 </pre></div>
 
 
