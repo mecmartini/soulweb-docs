@@ -53,6 +53,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>http://soulweb.docsvm.dev/drupal/drupal_multisite/</loc>
+     <lastmod>2017-05-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>

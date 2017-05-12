@@ -459,6 +459,21 @@
             "location": "/drupal/drupal_cors/#cors-multi-origin", 
             "text": "For multi-origin CORS configuration the best way is to configure it through  CORS settings.environment.php .  Below a configuration example:  $allowed_origin = array(\n   http://example.one.dev ,\n   http://example.two.dev ,\n);\n\nif (in_array($_SERVER[ HTTP_ORIGIN ], $allowed_origin)) {\n  header( Access-Control-Allow-Origin:   . $_SERVER[ HTTP_ORIGIN ]);\n  header( Access-Control-Allow-Credentials: true );\n  header( Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS );\n  header( Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token );\n}", 
             "title": "CORS multi-origin"
+        }, 
+        {
+            "location": "/drupal/drupal_multisite/", 
+            "text": "Multisite Configuration\n\n\nFrom scratch", 
+            "title": "Multisite Configuration"
+        }, 
+        {
+            "location": "/drupal/drupal_multisite/#multisite-configuration", 
+            "text": "", 
+            "title": "Multisite Configuration"
+        }, 
+        {
+            "location": "/drupal/drupal_multisite/#from-scratch", 
+            "text": "", 
+            "title": "From scratch"
         }
     ]
 }
