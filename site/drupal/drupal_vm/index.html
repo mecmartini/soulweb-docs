@@ -1061,8 +1061,10 @@ mysql_users:
 </pre></div>
 
 
-<p>If you let the <code>VM</code> to install your main <code>drupal</code> site (<code>drupal_install_site: true</code>), be sure to set the appropriate <code>drupal</code> DB for the installation:</p>
-<div class="codehilite"><pre><span></span>drupal_db_user: drupal
+<p>If you let the <code>VM</code> to install your main <code>drupal</code> site (<code>drupal_install_site: true</code>), be sure to set the appropriate <code>drupal</code> host and database for the installation:</p>
+<div class="codehilite"><pre><span></span>drupal_domain: &quot;{{ vagrant_hostname }}&quot;
+...
+drupal_db_user: drupal
 drupal_db_password: drupal
 drupal_db_name: drupal
 </pre></div>

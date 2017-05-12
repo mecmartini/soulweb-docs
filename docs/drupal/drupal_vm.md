@@ -294,8 +294,10 @@ If you need additional databases and database users, add them to the list of `my
         password: drupal-two
         priv: "drupal_two.*:ALL"
 
-If you let the `VM` to install your main `drupal` site (`drupal_install_site: true`), be sure to set the appropriate `drupal` DB for the installation:
+If you let the `VM` to install your main `drupal` site (`drupal_install_site: true`), be sure to set the appropriate `drupal` host and database for the installation:
 
+    drupal_domain: "{{ vagrant_hostname }}"
+    ...
     drupal_db_user: drupal
     drupal_db_password: drupal
     drupal_db_name: drupal
