@@ -13,8 +13,8 @@ To enable `CORS in your Drupal installation three methods are available:
 [CORS](https://www.drupal.org/project/cors) module provides a configuration page to map domains to paths and add the necessary Access-Control-Allow-Origin header.
 
 ## CORS services.yml
-
-Drupal `services.yml` (located in `sites/default`) contain the drupal default method to enable and configure CORS.
+`
+Drupal `services.yml` (located in `sites/default) contain the drupal default method to enable and configure CORS.
 
 Below a configuration example:
 
