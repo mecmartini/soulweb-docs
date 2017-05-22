@@ -159,21 +159,36 @@ Now you can install your custom package:
 
 ## Manage project assets from NPM or Bower
 
-If you would like to manage your project `assets` (css, js, etc.) in your `composer.json` without installing `NPM` or `Bower`, you may user the [Composer Asset Plugin](https://github.com/fxpio/composer-asset-plugin/blob/master/Resources/doc/index.md).
+If you would like to manage your project `assets` (css, js, etc.) in your `composer.json` without installing `NPM` or `Bower`, you may user the `composer` repository [Asset Packagist](https://asset-packagist.org/).
 
-    composer require fxp/composer-asset-plugin
+Add the repository to `composer.json`:
 
-This plugin works by transposing package information from `NPM` or `Bower` to a compatible version for `Composer`. This allows you to manage asset dependencies in a `PHP` based project very easily.
-
-Define a custom directory for the assets installation, according to the standard drupal libraries directory:
-
-    "config": {
+    "repositories": [
         ...
-        "fxp-asset": {
-            "installer-paths": {
-                "npm-asset-library": "web/libraries",
-                "bower-asset-library": "web/libraries"
-            }
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+
+This repository works by transposing package information from `NPM` or `Bower` to a compatible version for `Composer`. This allows you to manage asset dependencies in a `PHP` based project very easily.
+
+To install those packages in the `drupal` libraries directory, it's needed the `drupal-library-mapping` package:
+
+    composer require bmcclure/drupal-library-mapping
+
+Now you can define the custom directory for the assets installation, according to the standard drupal libraries directory:
+
+    "extra": {
+        "installer-types": ["library", "drupal-library", "bower-asset", "npm-asset"],
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            ...
         }
     }
 

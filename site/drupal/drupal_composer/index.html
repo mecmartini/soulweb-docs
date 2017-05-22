@@ -841,20 +841,35 @@ composer require oomphinc/composer-installers-extender
 
 
 <h2 id="manage-project-assets-from-npm-or-bower">Manage project assets from NPM or Bower<a class="headerlink" href="#manage-project-assets-from-npm-or-bower" title="Permanent link">&para;</a></h2>
-<p>If you would like to manage your project <code>assets</code> (css, js, etc.) in your <code>composer.json</code> without installing <code>NPM</code> or <code>Bower</code>, you may user the <a href="https://github.com/fxpio/composer-asset-plugin/blob/master/Resources/doc/index.md">Composer Asset Plugin</a>.</p>
-<div class="codehilite"><pre><span></span>composer require fxp/composer-asset-plugin
+<p>If you would like to manage your project <code>assets</code> (css, js, etc.) in your <code>composer.json</code> without installing <code>NPM</code> or <code>Bower</code>, you may user the <code>composer</code> repository <a href="https://asset-packagist.org/">Asset Packagist</a>.</p>
+<p>Add the repository to <code>composer.json</code>:</p>
+<div class="codehilite"><pre><span></span>&quot;repositories&quot;: [
+    ...
+    {
+        &quot;type&quot;: &quot;composer&quot;,
+        &quot;url&quot;: &quot;https://asset-packagist.org&quot;
+    }
+],
 </pre></div>
 
 
-<p>This plugin works by transposing package information from <code>NPM</code> or <code>Bower</code> to a compatible version for <code>Composer</code>. This allows you to manage asset dependencies in a <code>PHP</code> based project very easily.</p>
-<p>Define a custom directory for the assets installation, according to the standard drupal libraries directory:</p>
-<div class="codehilite"><pre><span></span>&quot;config&quot;: {
-    ...
-    &quot;fxp-asset&quot;: {
-        &quot;installer-paths&quot;: {
-            &quot;npm-asset-library&quot;: &quot;web/libraries&quot;,
-            &quot;bower-asset-library&quot;: &quot;web/libraries&quot;
-        }
+<p>This repository works by transposing package information from <code>NPM</code> or <code>Bower</code> to a compatible version for <code>Composer</code>. This allows you to manage asset dependencies in a <code>PHP</code> based project very easily.</p>
+<p>To install those packages in the <code>drupal</code> libraries directory, it's needed the <code>drupal-library-mapping</code> package:</p>
+<div class="codehilite"><pre><span></span>composer require bmcclure/drupal-library-mapping
+</pre></div>
+
+
+<p>Now you can define the custom directory for the assets installation, according to the standard drupal libraries directory:</p>
+<div class="codehilite"><pre><span></span>&quot;extra&quot;: {
+    &quot;installer-types&quot;: [&quot;library&quot;, &quot;drupal-library&quot;, &quot;bower-asset&quot;, &quot;npm-asset&quot;],
+    &quot;installer-paths&quot;: {
+        &quot;web/core&quot;: [&quot;type:drupal-core&quot;],
+        &quot;web/libraries/{$name}&quot;: [
+            &quot;type:drupal-library&quot;,
+            &quot;type:bower-asset&quot;,
+            &quot;type:npm-asset&quot;
+        ],
+        ...
     }
 }
 </pre></div>
