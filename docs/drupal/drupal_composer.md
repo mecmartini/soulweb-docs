@@ -200,6 +200,21 @@ It must be prefixed with `{asset-type}-asset/`:
     ...
     composer require bower-asset/bootstrap
 
+To avoid the download of dependencies already present in `drupal` core:
+
+    "replace": {
+        "bower-asset/jquery": "*",
+        "bower-asset/jqueryui": "*",
+        "bower-asset/jquery-ui": "*",
+        "bower-asset/backbone": "*",
+        "bower-asset/underscore": "*",
+        "npm-asset/jquery": "*",
+        "npm-asset/jqueryui": "*",
+        "npm-asset/jquery-ui": "*",
+        "npm-asset/backbone": "*",
+        "npm-asset/underscore": "*"
+    },
+
 ## Apply patches to downloaded modules
 
 If you need to apply patches (depending on the project being modified, a pull request is often a better solution), you can do so with the composer-patches plugin.
