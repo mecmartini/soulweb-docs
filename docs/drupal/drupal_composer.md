@@ -77,7 +77,7 @@ Update your Drupal site dependencies:
 
 ## Define the directories to which Drupal projects should be downloaded
 
-By default, Composer will download all packages to the "vendor" directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:
+By default, Composer will download all packages to the `vendor` directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:
 
     "extra": {
         "installer-paths": {
@@ -113,9 +113,10 @@ Finally, you would composer require enyo/dropzone.
 
 ## Define a 3rd party library as a custom composer package
 
-If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the Composer Installers Extender:
+If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the `Composer Installers Extender`:
 
     composer require composer/installers
+    composer require oomphinc/composer-installers-extender
 
 Define your custom repositories:
 
@@ -130,8 +131,7 @@ Define your custom repositories:
                 "source": {
                     "url": "https://github.com/enyo/dropzone.git",
                     "type": "git",
-                    "reference": "master"
-                },
+                    "reference": "master"                },
                 "dist": {
                     "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
                     "type": "zip"
@@ -153,6 +153,25 @@ Be sure to have set the libraries installer path:
         ...
     }
 
+Now you can install your custom package:
+
+    composer require enyo/dropzone
+
+## Manage project assets from NPM or Bower
+
+If you would like to manage your project `assets` (css, js, etc.) in your `composer.json` without installing `NPM` or `Bower`, you may user the [Composer Asset Plugin](https://github.com/fxpio/composer-asset-plugin/blob/master/Resources/doc/index.md).
+
+    composer require fxp/composer-asset-plugin
+
+This plugin works by transposing package information from `NPM` or `Bower` to a compatible version for `Composer`. This allows you to manage asset dependencies in a `PHP` based project very easily.
+
+Adding a dependency on an asset, you must add the asset to the property require of the `composer.json` of your project.
+
+It must be prefixed with `{asset-type}-asset/`:
+
+    composer require npm-asset/bootstrap
+    ...
+    composer require bower-asset/bootstrap
 
 ## Apply patches to downloaded modules
 

@@ -471,6 +471,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#manage-project-assets-from-npm-or-bower" title="Manage project assets from NPM or Bower" class="md-nav__link">
+    Manage project assets from NPM or Bower
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#apply-patches-to-downloaded-modules" title="Apply patches to downloaded modules" class="md-nav__link">
     Apply patches to downloaded modules
   </a>
@@ -643,6 +650,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#manage-project-assets-from-npm-or-bower" title="Manage project assets from NPM or Bower" class="md-nav__link">
+    Manage project assets from NPM or Bower
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#apply-patches-to-downloaded-modules" title="Apply patches to downloaded modules" class="md-nav__link">
     Apply patches to downloaded modules
   </a>
@@ -742,7 +756,7 @@
 
 
 <h2 id="define-the-directories-to-which-drupal-projects-should-be-downloaded">Define the directories to which Drupal projects should be downloaded<a class="headerlink" href="#define-the-directories-to-which-drupal-projects-should-be-downloaded" title="Permanent link">&para;</a></h2>
-<p>By default, Composer will download all packages to the "vendor" directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:</p>
+<p>By default, Composer will download all packages to the <code>vendor</code> directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:</p>
 <div class="codehilite"><pre><span></span>&quot;extra&quot;: {
     &quot;installer-paths&quot;: {
         &quot;core&quot;: [&quot;type:drupal-core&quot;],
@@ -778,8 +792,9 @@
 
 <p>Finally, you would composer require enyo/dropzone.</p>
 <h2 id="define-a-3rd-party-library-as-a-custom-composer-package">Define a 3rd party library as a custom composer package<a class="headerlink" href="#define-a-3rd-party-library-as-a-custom-composer-package" title="Permanent link">&para;</a></h2>
-<p>If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the Composer Installers Extender:</p>
+<p>If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the <code>Composer Installers Extender</code>:</p>
 <div class="codehilite"><pre><span></span>composer require composer/installers
+composer require oomphinc/composer-installers-extender
 </pre></div>
 
 
@@ -795,8 +810,7 @@
             &quot;source&quot;: {
                 &quot;url&quot;: &quot;https://github.com/enyo/dropzone.git&quot;,
                 &quot;type&quot;: &quot;git&quot;,
-                &quot;reference&quot;: &quot;master&quot;
-            },
+                &quot;reference&quot;: &quot;master&quot;                },
             &quot;dist&quot;: {
                 &quot;url&quot;: &quot;https://github.com/enyo/dropzone/archive/v4.3.0.zip&quot;,
                 &quot;type&quot;: &quot;zip&quot;
@@ -818,6 +832,26 @@
             ],
     ...
 }
+</pre></div>
+
+
+<p>Now you can install your custom package:</p>
+<div class="codehilite"><pre><span></span>composer require enyo/dropzone
+</pre></div>
+
+
+<h2 id="manage-project-assets-from-npm-or-bower">Manage project assets from NPM or Bower<a class="headerlink" href="#manage-project-assets-from-npm-or-bower" title="Permanent link">&para;</a></h2>
+<p>If you would like to manage your project <code>assets</code> (css, js, etc.) in your <code>composer.json</code> without installing <code>NPM</code> or <code>Bower</code>, you may user the <a href="https://github.com/fxpio/composer-asset-plugin/blob/master/Resources/doc/index.md">Composer Asset Plugin</a>.</p>
+<div class="codehilite"><pre><span></span>composer require fxp/composer-asset-plugin
+</pre></div>
+
+
+<p>This plugin works by transposing package information from <code>NPM</code> or <code>Bower</code> to a compatible version for <code>Composer</code>. This allows you to manage asset dependencies in a <code>PHP</code> based project very easily.</p>
+<p>Adding a dependency on an asset, you must add the asset to the property require of the <code>composer.json</code> of your project.</p>
+<p>It must be prefixed with <code>{asset-type}-asset/</code>:</p>
+<div class="codehilite"><pre><span></span>composer require npm-asset/bootstrap
+...
+composer require bower-asset/bootstrap
 </pre></div>
 
 
