@@ -165,6 +165,18 @@ If you would like to manage your project `assets` (css, js, etc.) in your `compo
 
 This plugin works by transposing package information from `NPM` or `Bower` to a compatible version for `Composer`. This allows you to manage asset dependencies in a `PHP` based project very easily.
 
+Define a custom directory for the assets installation, according to the standard drupal libraries directory:
+
+    "config": {
+        ...
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "web/libraries",
+                "bower-asset-library": "web/libraries"
+            }
+        }
+    }
+
 Adding a dependency on an asset, you must add the asset to the property require of the `composer.json` of your project.
 
 It must be prefixed with `{asset-type}-asset/`:

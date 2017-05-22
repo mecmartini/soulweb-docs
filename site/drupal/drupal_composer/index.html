@@ -847,6 +847,19 @@ composer require oomphinc/composer-installers-extender
 
 
 <p>This plugin works by transposing package information from <code>NPM</code> or <code>Bower</code> to a compatible version for <code>Composer</code>. This allows you to manage asset dependencies in a <code>PHP</code> based project very easily.</p>
+<p>Define a custom directory for the assets installation, according to the standard drupal libraries directory:</p>
+<div class="codehilite"><pre><span></span>&quot;config&quot;: {
+    ...
+    &quot;fxp-asset&quot;: {
+        &quot;installer-paths&quot;: {
+            &quot;npm-asset-library&quot;: &quot;web/libraries&quot;,
+            &quot;bower-asset-library&quot;: &quot;web/libraries&quot;
+        }
+    }
+}
+</pre></div>
+
+
 <p>Adding a dependency on an asset, you must add the asset to the property require of the <code>composer.json</code> of your project.</p>
 <p>It must be prefixed with <code>{asset-type}-asset/</code>:</p>
 <div class="codehilite"><pre><span></span>composer require npm-asset/bootstrap
