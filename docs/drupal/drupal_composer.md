@@ -96,6 +96,8 @@ By default, Composer will download all packages to the "vendor" directory. Clear
 
 If you would like to place an arbitrary Composer package in a custom directory, you may use the Composer Installers Extender.
 
+    composer require composer/installers
+
 For instance, if you'd like to place the Dropzone package (which does not have a type of drupal-library) in the same directory as other Drupal libraries, you would first composer require oomphinc/composer-installers-extender, then add the following configuration to your composer.json file:
 
     "extra": {
@@ -108,6 +110,49 @@ For instance, if you'd like to place the Dropzone package (which does not have a
     }
 
 Finally, you would composer require enyo/dropzone.
+
+## Define a 3rd party library as a custom composer package
+
+If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the Composer Installers Extender:
+
+    composer require composer/installers
+
+Define your custom repositories:
+
+    "repositories": [
+        ...
+        {
+            "type": "package",
+            "package": {
+                "name": "enyo/dropzone",
+                "version": "4.3",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/enyo/dropzone.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "dist": {
+                    "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        }
+    ]
+
+Be sure to have set the libraries installer path:
+
+    "installer-paths": {
+        ...
+        "web/libraries/{$name}": [
+                    "type:drupal-library"
+                ],
+        ...
+    }
+
 
 ## Apply patches to downloaded modules
 

@@ -464,6 +464,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#define-a-3rd-party-library-as-a-custom-composer-package" title="Define a 3rd party library as a custom composer package" class="md-nav__link">
+    Define a 3rd party library as a custom composer package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#apply-patches-to-downloaded-modules" title="Apply patches to downloaded modules" class="md-nav__link">
     Apply patches to downloaded modules
   </a>
@@ -629,6 +636,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#define-a-3rd-party-library-as-a-custom-composer-package" title="Define a 3rd party library as a custom composer package" class="md-nav__link">
+    Define a 3rd party library as a custom composer package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#apply-patches-to-downloaded-modules" title="Apply patches to downloaded modules" class="md-nav__link">
     Apply patches to downloaded modules
   </a>
@@ -746,6 +760,10 @@
 
 <h2 id="define-the-directories-for-arbitrary-packages-that-do-not-have-a-drupal-type">Define the directories for arbitrary packages that do not have a "drupal-*" type<a class="headerlink" href="#define-the-directories-for-arbitrary-packages-that-do-not-have-a-drupal-type" title="Permanent link">&para;</a></h2>
 <p>If you would like to place an arbitrary Composer package in a custom directory, you may use the Composer Installers Extender.</p>
+<div class="codehilite"><pre><span></span>composer require composer/installers
+</pre></div>
+
+
 <p>For instance, if you'd like to place the Dropzone package (which does not have a type of drupal-library) in the same directory as other Drupal libraries, you would first composer require oomphinc/composer-installers-extender, then add the following configuration to your composer.json file:</p>
 <div class="codehilite"><pre><span></span>&quot;extra&quot;: {
     &quot;installer-paths&quot;: {
@@ -759,6 +777,50 @@
 
 
 <p>Finally, you would composer require enyo/dropzone.</p>
+<h2 id="define-a-3rd-party-library-as-a-custom-composer-package">Define a 3rd party library as a custom composer package<a class="headerlink" href="#define-a-3rd-party-library-as-a-custom-composer-package" title="Permanent link">&para;</a></h2>
+<p>If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the Composer Installers Extender:</p>
+<div class="codehilite"><pre><span></span>composer require composer/installers
+</pre></div>
+
+
+<p>Define your custom repositories:</p>
+<div class="codehilite"><pre><span></span>&quot;repositories&quot;: [
+    ...
+    {
+        &quot;type&quot;: &quot;package&quot;,
+        &quot;package&quot;: {
+            &quot;name&quot;: &quot;enyo/dropzone&quot;,
+            &quot;version&quot;: &quot;4.3&quot;,
+            &quot;type&quot;: &quot;drupal-library&quot;,
+            &quot;source&quot;: {
+                &quot;url&quot;: &quot;https://github.com/enyo/dropzone.git&quot;,
+                &quot;type&quot;: &quot;git&quot;,
+                &quot;reference&quot;: &quot;master&quot;
+            },
+            &quot;dist&quot;: {
+                &quot;url&quot;: &quot;https://github.com/enyo/dropzone/archive/v4.3.0.zip&quot;,
+                &quot;type&quot;: &quot;zip&quot;
+            },
+            &quot;require&quot;: {
+                &quot;composer/installers&quot;: &quot;~1.0&quot;
+            }
+        }
+    }
+]
+</pre></div>
+
+
+<p>Be sure to have set the libraries installer path:</p>
+<div class="codehilite"><pre><span></span>&quot;installer-paths&quot;: {
+    ...
+    &quot;web/libraries/{$name}&quot;: [
+                &quot;type:drupal-library&quot;
+            ],
+    ...
+}
+</pre></div>
+
+
 <h2 id="apply-patches-to-downloaded-modules">Apply patches to downloaded modules<a class="headerlink" href="#apply-patches-to-downloaded-modules" title="Permanent link">&para;</a></h2>
 <p>If you need to apply patches (depending on the project being modified, a pull request is often a better solution), you can do so with the composer-patches plugin.</p>
 <p>To add a patch to drupal module foobar insert the patches section in the extra section of composer.json:</p>
