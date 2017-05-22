@@ -134,7 +134,7 @@ You have to make the site settings directory (e.g. `default`) writable to do thi
 Copy and rename the `sites/default/default.services.yml` to `sites/default/services.yml`:
 
     cp sites/default/default.services.yml sites/default/services.yml
-   6
+
 #### 4. Disable Drupal caching
 
 Open `settings.local.php` and uncomment (or add) this line to enable the null cache service:
