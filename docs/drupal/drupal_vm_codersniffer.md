@@ -29,6 +29,6 @@ Click on `Validate` to verify that has worked.
 
 ![Code Sniffer settings](../img/drupal/phpstorm_31.png "Code Sniffer settings")
 
-Go under `Settings` -> `Inspections` to enable and set `PHP Code Sniffer Validation` as below:
+Go under `Settings` -> `Editor` ->  `Inspections` to enable and set `PHP Code Sniffer Validation` as below:
 
 ![PHP Code Sniffer Validation](../img/drupal/phpstorm_32.png "PHP Code Sniffer Validation")
