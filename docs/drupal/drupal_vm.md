@@ -225,8 +225,6 @@ Clone your `Drupal` project site into the created folder:
 
     git clone https://github.com/yourrepository/projectname.git drupal
 
-We'll use the [Configuration Installer](https://www.drupal.org/project/config_installer) profile to install your drupal site with your configuration.
-
 #### 4. Build up
 Open Terminal, `cd` to the vagrant directory (containing the Vagrantfile and the config.yml file).
 
@@ -240,6 +238,8 @@ Install the `composer` dependencies:
 
     cd /var/www/yourprojectnamevm/drupal
     composer install
+
+We'll use the [Configuration Installer](https://www.drupal.org/project/config_installer) profile to install your drupal site with your configuration.
 
 Be sure to already have it in your `Drupal` project as `composer` dependencies (check the `composer.json`). If not, add it to your `composer` requirements:
 
