@@ -211,17 +211,21 @@ Continue to modify config.yml to your liking.
 
 #### 3. Download your Drupal project site
 
-Clone your `Drupal` project site in the folder set as `local_path` before on your `config.yml` (e.g. `~/Sites/yourprojectnamevm`):
+Create, on your local machine, the folder where to clone the  `Drupal` project site into the directory set as `local_path` on your `config.yml` (e.g. `~/Sites/yourprojectnamevm`). The folder name must match the one set on your `config.yml` at the line:
 
-    git clone https://github.com/yourrepository/projectname.git yourprojectnamevm
+    drupal_composer_install_dir: "/var/www/yourprojectnamevm/drupal"
+
+Create the folder:
+
+    cd ~/Sites/yourprojectnamevm
+    mkdir yourprojectnamevm
+    cd yourprojectnamevm
+
+Clone your `Drupal` project site into the created folder:
+
+    git clone https://github.com/yourrepository/projectname.git drupal
 
 We'll use the [Configuration Installer](https://www.drupal.org/project/config_installer) profile to install your drupal site with your configuration.
-
-Be sure to already have it in your `Drupal` project as `composer` dependencies (check the `composer.json`). If not, add it to your `config.yml`:
-
-    drupal_composer_dependencies:
-      ...
-      - "drupal/config_installer"
 
 #### 4. Build up
 Open Terminal, `cd` to the vagrant directory (containing the Vagrantfile and the config.yml file).
@@ -230,15 +234,30 @@ Type in `vagrant up`, and let `Vagrant` do its magic.
 
 #### 5. Manually install Drupal site
 
-When the `VM` is up and running, enter on it (`vagrant ssh`) and go to your drupal site folder:
+When the `VM` is up and running, enter on it (`vagrant ssh`).
+
+Install the `composer` dependencies:
+
+    cd /var/www/yourprojectnamevm/drupal
+    composer install
+
+Be sure to already have it in your `Drupal` project as `composer` dependencies (check the `composer.json`). If not, add it to your `composer` requirements:
+
+    composer require drupal/config_installer
+
+Go to your drupal site folder:
 
     cd /var/www/yourprojectnamevm/drupal/web
 
-Run the `drupal` installation (replace the `db` parameters):
+Run the `drupal` installation (replace the `db` parameters) from your `vagrant` machine:
 
     drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y
 
 where `config_installer_sync_configure_form.sync_directory` is set to the folder that contains your `drupal` default configuration. Our projects `default` is `../config/sync`.
+
+If you didn't change the standard `mysql` db settings in your `vagrant` machine the command should be:
+
+    drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://drupal:drupal@127.0.0.1/drupal --account-name=admin --account-pass=admin -y
 
 When it’s done, open the browser and type your `vagrant_hostname` (e.g. `drupaltest.dev`), in the address bar, to navigate on your drupal installation.
 

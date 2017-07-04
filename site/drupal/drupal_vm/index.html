@@ -989,34 +989,56 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 <p>Continue to modify config.yml to your liking.</p>
 <h4 id="3-download-your-drupal-project-site">3. Download your Drupal project site<a class="headerlink" href="#3-download-your-drupal-project-site" title="Permanent link">&para;</a></h4>
-<p>Clone your <code>Drupal</code> project site in the folder set as <code>local_path</code> before on your <code>config.yml</code> (e.g. <code>~/Sites/yourprojectnamevm</code>):</p>
-<div class="codehilite"><pre><span></span>git clone https://github.com/yourrepository/projectname.git yourprojectnamevm
+<p>Create, on your local machine, the folder where to clone the  <code>Drupal</code> project site into the directory set as <code>local_path</code> on your <code>config.yml</code> (e.g. <code>~/Sites/yourprojectnamevm</code>). The folder name must match the one set on your <code>config.yml</code> at the line:</p>
+<div class="codehilite"><pre><span></span>drupal_composer_install_dir: &quot;/var/www/yourprojectnamevm/drupal&quot;
+</pre></div>
+
+
+<p>Create the folder:</p>
+<div class="codehilite"><pre><span></span>cd ~/Sites/yourprojectnamevm
+mkdir yourprojectnamevm
+cd yourprojectnamevm
+</pre></div>
+
+
+<p>Clone your <code>Drupal</code> project site into the created folder:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/yourrepository/projectname.git drupal
 </pre></div>
 
 
 <p>We'll use the <a href="https://www.drupal.org/project/config_installer">Configuration Installer</a> profile to install your drupal site with your configuration.</p>
-<p>Be sure to already have it in your <code>Drupal</code> project as <code>composer</code> dependencies (check the <code>composer.json</code>). If not, add it to your <code>config.yml</code>:</p>
-<div class="codehilite"><pre><span></span>drupal_composer_dependencies:
-  ...
-  - &quot;drupal/config_installer&quot;
-</pre></div>
-
-
 <h4 id="4-build-up">4. Build up<a class="headerlink" href="#4-build-up" title="Permanent link">&para;</a></h4>
 <p>Open Terminal, <code>cd</code> to the vagrant directory (containing the Vagrantfile and the config.yml file).</p>
 <p>Type in <code>vagrant up</code>, and let <code>Vagrant</code> do its magic.</p>
 <h4 id="5-manually-install-drupal-site">5. Manually install Drupal site<a class="headerlink" href="#5-manually-install-drupal-site" title="Permanent link">&para;</a></h4>
-<p>When the <code>VM</code> is up and running, enter on it (<code>vagrant ssh</code>) and go to your drupal site folder:</p>
+<p>When the <code>VM</code> is up and running, enter on it (<code>vagrant ssh</code>).</p>
+<p>Install the <code>composer</code> dependencies:</p>
+<div class="codehilite"><pre><span></span>cd /var/www/yourprojectnamevm/drupal
+composer install
+</pre></div>
+
+
+<p>Be sure to already have it in your <code>Drupal</code> project as <code>composer</code> dependencies (check the <code>composer.json</code>). If not, add it to your <code>composer</code> requirements:</p>
+<div class="codehilite"><pre><span></span>composer require drupal/config_installer
+</pre></div>
+
+
+<p>Go to your drupal site folder:</p>
 <div class="codehilite"><pre><span></span>cd /var/www/yourprojectnamevm/drupal/web
 </pre></div>
 
 
-<p>Run the <code>drupal</code> installation (replace the <code>db</code> parameters):</p>
+<p>Run the <code>drupal</code> installation (replace the <code>db</code> parameters) from your <code>vagrant</code> machine:</p>
 <div class="codehilite"><pre><span></span>drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y
 </pre></div>
 
 
 <p>where <code>config_installer_sync_configure_form.sync_directory</code> is set to the folder that contains your <code>drupal</code> default configuration. Our projects <code>default</code> is <code>../config/sync</code>.</p>
+<p>If you didn't change the standard <code>mysql</code> db settings in your <code>vagrant</code> machine the command should be:</p>
+<div class="codehilite"><pre><span></span>drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://drupal:drupal@127.0.0.1/drupal --account-name=admin --account-pass=admin -y
+</pre></div>
+
+
 <p>When it’s done, open the browser and type your <code>vagrant_hostname</code> (e.g. <code>drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
 <div class="admonition note">
 <p class="admonition-title">Configuration Split</p>
