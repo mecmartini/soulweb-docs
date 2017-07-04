@@ -31,7 +31,7 @@ To let `PhpStorm` find the vagrant executable run the following on your local ma
 !!! note "Note"
     in case the executable is in a different path then `/usr/local/bin` change it, you can find the vagrant path with `whereis vagrant`
     
-To integrate `Vagrant` set the `Istance Folder` on the `Vagrant` settings:
+To integrate `Vagrant` set the `Instance Folder` on the `Vagrant` settings:
 
 ![Vagrant settings](../img/drupal/phpstorm_5.png "Vagrant settings")
 
@@ -62,7 +62,7 @@ Set your vagrant `PHP interpreter`. From the following click on `…` of `CLI In
 
 ![CLI Interpreter](../img/drupal/phpstorm_10.png "CLI Interpreter")
 
-Click on `+` button and select `Remote`. Set the interpreter as below, selecting `Vagrant` and setting the `Vagrant Istance Folder` to your `Vagrant` folder:
+Click on `+` button and select `Remote`. Set the interpreter as below, selecting `Vagrant` and setting the `Vagrant Instance Folder` to your `Vagrant` folder:
 
 ![CLI Interpreter settings](../img/drupal/phpstorm_11.png "CLI Interpreter settings")
 
