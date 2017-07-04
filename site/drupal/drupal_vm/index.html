@@ -936,6 +936,7 @@ vagrant_ip: 0.0.0.0
 
 <p>Set <code>Drupal VM</code> to use your <code>composer.json</code> in order to automatically install your <code>composer</code> dependencies:</p>
 <div class="codehilite"><pre><span></span>drupal_build_makefile: false
+...
 drupal_composer_path: false
 ...
 drupal_build_composer: false
@@ -994,7 +995,7 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 
 <p>We'll use the <a href="https://www.drupal.org/project/config_installer">Configuration Installer</a> profile to install your drupal site with your configuration.</p>
-<p>Be sure to have it in you <code>composer</code> dependencies. If not, add it to your <code>config.yml</code>:</p>
+<p>Be sure to already have it in your <code>Drupal</code> project as <code>composer</code> dependencies (check the <code>composer.json</code>). If not, add it to your <code>config.yml</code>:</p>
 <div class="codehilite"><pre><span></span>drupal_composer_dependencies:
   ...
   - &quot;drupal/config_installer&quot;

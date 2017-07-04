@@ -161,6 +161,7 @@ Configure the `drupal composer install dir` to the directory destination of abov
 Set `Drupal VM` to use your `composer.json` in order to automatically install your `composer` dependencies:
 
     drupal_build_makefile: false
+    ...
     drupal_composer_path: false
     ...
     drupal_build_composer: false
@@ -216,7 +217,7 @@ Clone your `Drupal` project site in the folder set as `local_path` before on you
 
 We'll use the [Configuration Installer](https://www.drupal.org/project/config_installer) profile to install your drupal site with your configuration.
 
-Be sure to have it in you `composer` dependencies. If not, add it to your `config.yml`:
+Be sure to already have it in your `Drupal` project as `composer` dependencies (check the `composer.json`). If not, add it to your `config.yml`:
 
     drupal_composer_dependencies:
       ...

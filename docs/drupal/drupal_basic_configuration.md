@@ -47,6 +47,8 @@ This will include the shared settings file as part of Drupal's settings file.
 
 In `sites/default` create the file `settings.shared.php` with this code:
 
+    <?php
+
     /**
      * Trusted host configuration.
      *
@@ -137,7 +139,7 @@ Copy and rename the `sites/default/default.services.yml` to `sites/default/servi
 
 #### 4. Disable Drupal caching
 
-Open `settings.local.php` and uncomment (or add) this line to enable the null cache service:
+Open `settings.local.php` and be sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
 
     $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
@@ -179,14 +181,14 @@ Your final `development.services.yml` should look as follows (mind the indentati
 
 #### 7. Private files
 
-To use private files on `drupal` you must edit your `settings.php`.
+To use private files on `drupal` you must edit your `settings.shared.php`.
 
-You have to make the site settings directory (e.g. `default`) and is `settings.php` writable to do this. Drupal will restore permissions in a later moment:
+You have to make the site settings directory (e.g. `default`) and is `settings.shared.php` writable to do this. Drupal will restore permissions in a later moment:
 
     chmod +w sites/default
-    chmod +w sites/default/settings.php
+    chmod +w sites/default/settings.shared.php
 
-Open the site `settings.php`. Uncomment and set the following line with a local file system path where private files will be stored:
+Open the site `settings.shared.php`. Add and set the following line with a local file system path where private files will be stored:
 
     $settings['file_private_path'] = '/var/www/yourprojectnamevm/drupal/private';
 
@@ -267,7 +269,7 @@ Open `settings.php` file in `sites/default` and add these lines to the end:
 
 #### 4. Disable Drupal caching
 
-Open `settings.local.php` and uncomment (or add) this line to enable the null cache service:
+Open `settings.local.php` and be sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
 
     $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
@@ -309,14 +311,14 @@ Your final `development.services.yml` should look as follows (mind the indentati
 
 #### 5. Private files
 
-To use private files on `drupal` you must edit your `settings.php`.
+To use private files on `drupal` you must edit your `settings.shared.php`.
 
-You have to make the site settings directory (e.g. `default`) and is `settings.php` writable to do this. Drupal will restore permissions in a later moment:
+You have to make the site settings directory (e.g. `default`) and is `settings.shared.php` writable to do this. Drupal will restore permissions in a later moment:
 
     chmod +w sites/default
-    chmod +w sites/default/settings.php
+    chmod +w sites/default/settings.shared.php
 
-Open the site `settings.php`. Uncomment and set the following line with a local file system path where private files will be stored:
+Open the site `settings.shared.php`. Add and set the following line with a local file system path where private files will be stored:
 
     $settings['file_private_path'] = '/var/www/yourprojectnamevm/drupal/private';
 

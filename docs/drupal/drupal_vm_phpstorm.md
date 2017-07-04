@@ -24,7 +24,7 @@ Once the project is created, `PhpStorm` will index your project files and must r
 
 #### 2. Integrate Vagrant
 
-To make `PhpStorm` find the vagrant executable run:
+To let `PhpStorm` find the vagrant executable run the following on your local machine:
 
     sudo ln -s /usr/local/bin/vagrant /usr/bin/vagrant
 
@@ -73,10 +73,6 @@ Go to `Settings` -> `PHP` -> `Servers` and click on `+` button:
 Set your `Name` and `Host`. Check `Use path mappings` and enter the `Absolute path on the server` to your `drupal` installation on vagrant machine.
 
 ## Add GitHub repository and Initial Commit
-
-Edit `.gitignore` file on your `drupal` installation adding:
-
-    /web/sites/*/services.yml
 
 Share the project on `GitHub`:
 

@@ -587,7 +587,7 @@
 <p>Once the project is created, <code>PhpStorm</code> will index your project files and must recognise it as a <code>Drupal</code> project. It should ask to enable the <code>Drupal</code> support. If not, enable it by yourself:</p>
 <p><img alt="Enable Drupal support" src="../../img/drupal/phpstorm_4.png" title="Enable Drupal support" /></p>
 <h4 id="2-integrate-vagrant">2. Integrate Vagrant<a class="headerlink" href="#2-integrate-vagrant" title="Permanent link">&para;</a></h4>
-<p>To make <code>PhpStorm</code> find the vagrant executable run:</p>
+<p>To let <code>PhpStorm</code> find the vagrant executable run the following on your local machine:</p>
 <div class="codehilite"><pre><span></span>sudo ln -s /usr/local/bin/vagrant /usr/bin/vagrant
 </pre></div>
 
@@ -622,11 +622,6 @@ Password: vagrant
 <p><img alt="Vagrant server settings" src="../../img/drupal/phpstorm_12.png" title="Vagrant server settings" /></p>
 <p>Set your <code>Name</code> and <code>Host</code>. Check <code>Use path mappings</code> and enter the <code>Absolute path on the server</code> to your <code>drupal</code> installation on vagrant machine.</p>
 <h2 id="add-github-repository-and-initial-commit">Add GitHub repository and Initial Commit<a class="headerlink" href="#add-github-repository-and-initial-commit" title="Permanent link">&para;</a></h2>
-<p>Edit <code>.gitignore</code> file on your <code>drupal</code> installation adding:</p>
-<div class="codehilite"><pre><span></span>/web/sites/*/services.yml
-</pre></div>
-
-
 <p>Share the project on <code>GitHub</code>:</p>
 <p><img alt="Share github project" src="../../img/drupal/phpstorm_13.png" title="Share github project" /></p>
 <p>Write the <code>New repository name</code>, select <code>private</code>, if needed, and click on <code>Share</code></p>

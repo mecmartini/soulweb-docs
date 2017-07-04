@@ -6,7 +6,7 @@
 
 Open the vagrant machine `config.yml` file and add to `composer_global_packages` the line:
 
-    - { name: drupal/coder, release: ‘*' }
+    - { name: drupal/coder, release: '*' }
       
 From your `terminal` go on the `vagrant` directory and run `vagrant up --provision`, to apply the changes on your `vagrant` machine, or run `vagrant provision` if your machine is already up.
 
@@ -31,4 +31,4 @@ Click on `Validate` to verify that has worked.
 
 Go under `Settings` -> `Inspections` to enable and set `PHP Code Sniffer Validation` as below:
 
-![PHP Code Sniffer Validation](../img/drupal/phpstorm_31.png "PHP Code Sniffer Validation")
+![PHP Code Sniffer Validation](../img/drupal/phpstorm_32.png "PHP Code Sniffer Validation")

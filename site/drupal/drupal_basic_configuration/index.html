@@ -749,7 +749,9 @@ chmod +w sites/default/settings.php
 
 <p>This will include the shared settings file as part of Drupal's settings file.</p>
 <p>In <code>sites/default</code> create the file <code>settings.shared.php</code> with this code:</p>
-<div class="codehilite"><pre><span></span>/**
+<div class="codehilite"><pre><span></span>&lt;?php
+
+/**
  * Trusted host configuration.
  *
  * Drupal core can use the Symfony trusted host mechanism to prevent HTTP Host
@@ -841,7 +843,7 @@ $settings[&#39;trusted_host_patterns&#39;] = array(
 
 
 <h4 id="4-disable-drupal-caching">4. Disable Drupal caching<a class="headerlink" href="#4-disable-drupal-caching" title="Permanent link">&para;</a></h4>
-<p>Open <code>settings.local.php</code> and uncomment (or add) this line to enable the null cache service:</p>
+<p>Open <code>settings.local.php</code> and be sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:</p>
 <div class="codehilite"><pre><span></span>$settings[&#39;container_yamls&#39;][] = DRUPAL_ROOT . &#39;/sites/development.services.yml&#39;;
 </pre></div>
 
@@ -886,14 +888,14 @@ services:
 
 
 <h4 id="7-private-files">7. Private files<a class="headerlink" href="#7-private-files" title="Permanent link">&para;</a></h4>
-<p>To use private files on <code>drupal</code> you must edit your <code>settings.php</code>.</p>
-<p>You have to make the site settings directory (e.g. <code>default</code>) and is <code>settings.php</code> writable to do this. Drupal will restore permissions in a later moment:</p>
+<p>To use private files on <code>drupal</code> you must edit your <code>settings.shared.php</code>.</p>
+<p>You have to make the site settings directory (e.g. <code>default</code>) and is <code>settings.shared.php</code> writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default
-chmod +w sites/default/settings.php
+chmod +w sites/default/settings.shared.php
 </pre></div>
 
 
-<p>Open the site <code>settings.php</code>. Uncomment and set the following line with a local file system path where private files will be stored:</p>
+<p>Open the site <code>settings.shared.php</code>. Add and set the following line with a local file system path where private files will be stored:</p>
 <div class="codehilite"><pre><span></span>$settings[&#39;file_private_path&#39;] = &#39;/var/www/yourprojectnamevm/drupal/private&#39;;
 </pre></div>
 
@@ -973,7 +975,7 @@ chmod +w sites/default/settings.php
 
 
 <h4 id="4-disable-drupal-caching_1">4. Disable Drupal caching<a class="headerlink" href="#4-disable-drupal-caching_1" title="Permanent link">&para;</a></h4>
-<p>Open <code>settings.local.php</code> and uncomment (or add) this line to enable the null cache service:</p>
+<p>Open <code>settings.local.php</code> and be sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:</p>
 <div class="codehilite"><pre><span></span>$settings[&#39;container_yamls&#39;][] = DRUPAL_ROOT . &#39;/sites/development.services.yml&#39;;
 </pre></div>
 
@@ -1018,14 +1020,14 @@ services:
 
 
 <h4 id="5-private-files">5. Private files<a class="headerlink" href="#5-private-files" title="Permanent link">&para;</a></h4>
-<p>To use private files on <code>drupal</code> you must edit your <code>settings.php</code>.</p>
-<p>You have to make the site settings directory (e.g. <code>default</code>) and is <code>settings.php</code> writable to do this. Drupal will restore permissions in a later moment:</p>
+<p>To use private files on <code>drupal</code> you must edit your <code>settings.shared.php</code>.</p>
+<p>You have to make the site settings directory (e.g. <code>default</code>) and is <code>settings.shared.php</code> writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default
-chmod +w sites/default/settings.php
+chmod +w sites/default/settings.shared.php
 </pre></div>
 
 
-<p>Open the site <code>settings.php</code>. Uncomment and set the following line with a local file system path where private files will be stored:</p>
+<p>Open the site <code>settings.shared.php</code>. Add and set the following line with a local file system path where private files will be stored:</p>
 <div class="codehilite"><pre><span></span>$settings[&#39;file_private_path&#39;] = &#39;/var/www/yourprojectnamevm/drupal/private&#39;;
 </pre></div>
 
