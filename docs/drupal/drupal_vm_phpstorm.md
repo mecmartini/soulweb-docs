@@ -103,3 +103,33 @@ Set the `Remote` origin of the existing `git` repository adding the repository `
 ![Set git remote origin](../img/drupal/phpstorm_20.png "Set git remote origin")
 
 Push the `initial commit` (see [Add GitHub repository and Initial Commit](drupal_vm_phpstorm.md#3-add-github-repository-and-initial-commit)).
+
+## Plugin Requirements
+
+Here are listed the required PhpStorm plugins for our development workflow.
+
+#### Install/Enable PhpStorm Plugin
+
+From your project `settings` go to `Plugin`:
+
+![PhpStorm Plugin Settings](../img/drupal/phpstorm_40.png "PhpStorm Plugin Settings")
+
+Search the required `plugin` on the list and enable it (click on the right checkbox of the `plugin` name).
+
+If it's not listed  you must install it. Press on `Browse Repositories`, search for your `plugin`, select it and click on `Install` on the right side:
+
+![PhpStorm Plugin Browse Repositories](../img/drupal/phpstorm_41.png "PhpStorm Plugin Browse Repositories")
+
+Close the `Browse Repositories` window. Now you'll find it on the list to enable it.
+
+#### Drupal Symfony Bridge Plugin
+
+[Drupal Symfony Bridge Plugin](https://github.com/Haehnchen/idea-php-drupal-symfony2-bridge)
+
+Provides Symfony components support for Drupal in PhpStorm.
+
+#### Pre Commit Hook Plugin
+
+[Pre Commit Hook Plugin](https://github.com/yahely/PreCommitHookPlugin)
+
+Plugin that allows you to run a hook prior commiting changes to any Version Control System. Good for Version Control Systems that doesn't allow you to run pre-commit-hook on the client side.
