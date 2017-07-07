@@ -350,16 +350,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
     1. Add Coder Sniffer to your Vagrant machine
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
     2. Integrate Code Sniffer in PhpStorm
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-inspect-code" title="3. Inspect Code" class="md-nav__link">
+    3. Inspect Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-a-git-pre-commit-hook-to-check-drupal-coding-standards" title="Setup a Git pre-commit hook to check Drupal Coding Standards" class="md-nav__link">
+    Setup a Git pre-commit hook to check Drupal Coding Standards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-drupal-code-check-package" title="1. Install Drupal Code Check Package" class="md-nav__link">
+    1. Install Drupal Code Check Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pre-commit-hook-script" title="2. Pre Commit Hook Script" class="md-nav__link">
+    2. Pre Commit Hook Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-the-pre-commit-code-analysis" title="3. Run the Pre Commit Code Analysis" class="md-nav__link">
+    3. Run the Pre Commit Code Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -492,16 +546,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
     1. Add Coder Sniffer to your Vagrant machine
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
     2. Integrate Code Sniffer in PhpStorm
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-inspect-code" title="3. Inspect Code" class="md-nav__link">
+    3. Inspect Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-a-git-pre-commit-hook-to-check-drupal-coding-standards" title="Setup a Git pre-commit hook to check Drupal Coding Standards" class="md-nav__link">
+    Setup a Git pre-commit hook to check Drupal Coding Standards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-drupal-code-check-package" title="1. Install Drupal Code Check Package" class="md-nav__link">
+    1. Install Drupal Code Check Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pre-commit-hook-script" title="2. Pre Commit Hook Script" class="md-nav__link">
+    2. Pre Commit Hook Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-the-pre-commit-code-analysis" title="3. Run the Pre Commit Code Analysis" class="md-nav__link">
+    3. Run the Pre Commit Code Analysis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -522,6 +630,7 @@
                 
                 <h1 id="coder-sniffer">Coder Sniffer<a class="headerlink" href="#coder-sniffer" title="Permanent link">&para;</a></h1>
 <p><a href="https://www.drupal.org/node/1419988">Coder Sniffer</a> is a library that tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards. It works with Drupal 6, 7, or 8.</p>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
 <h4 id="1-add-coder-sniffer-to-your-vagrant-machine">1. Add Coder Sniffer to your Vagrant machine<a class="headerlink" href="#1-add-coder-sniffer-to-your-vagrant-machine" title="Permanent link">&para;</a></h4>
 <p>Open the vagrant machine <code>config.yml</code> file and add to <code>composer_global_packages</code> the line:</p>
 <div class="codehilite"><pre><span></span>- { name: drupal/coder, release: &#39;*&#39; }
@@ -547,6 +656,64 @@ Click on <code>Validate</code> to verify that has worked.</p>
 <p><img alt="Code Sniffer settings" src="../../img/drupal/phpstorm_31.png" title="Code Sniffer settings" /></p>
 <p>Go under <code>Settings</code> -&gt; <code>Editor</code> -&gt;  <code>Inspections</code> to enable and set <code>PHP Code Sniffer Validation</code> as below:</p>
 <p><img alt="PHP Code Sniffer Validation" src="../../img/drupal/phpstorm_32.png" title="PHP Code Sniffer Validation" /></p>
+<h4 id="3-inspect-code">3. Inspect Code<a class="headerlink" href="#3-inspect-code" title="Permanent link">&para;</a></h4>
+<p>To inspect your code select, from the menu, <code>Code</code> -&gt; <code>Inspect Code</code>. On the shown window select what you wanna inspect and click <code>OK</code>.</p>
+<p><img alt="PHP Code Sniffer Validation Inspect Code" src="../../img/drupal/phpstorm_42.png" title="PHP Code Sniffer Validation Inspect Code" /></p>
+<h2 id="setup-a-git-pre-commit-hook-to-check-drupal-coding-standards">Setup a Git pre-commit hook to check Drupal Coding Standards<a class="headerlink" href="#setup-a-git-pre-commit-hook-to-check-drupal-coding-standards" title="Permanent link">&para;</a></h2>
+<p>The <code>PhpStorm</code> commit window already integrate the <code>Perform code analysis</code> tool but, for some reason, it's not able to run the <code>PHP Code Sniffer Validation</code> as when you launch the normal <code>Inspect Code</code>.</p>
+<p>So we need an alternative way to do it properly.</p>
+<p>First of all be sure to have the <a href="../drupal_vm_phpstorm/#pre-commit-hook-plugin">Pre Commit Hook Plugin</a> installed and enabled.</p>
+<p>The following instructions are to setup the <code>pre-commit</code> hook script at the init of the project. If you are not sure that your project was already init for it you must check for:</p>
+<ul>
+<li>your <code>composer.json</code> and look for the package <code>jover_be/drupal-code-check</code> (probably it's under <code>require-dev</code>)</li>
+<li>your <code>drupal</code> root directory and look for the <code>pre-commit-hook.sh</code> file</li>
+</ul>
+<p>If you have both you can jump directly to <a href="./#3-run-the-pre-commit-code-analysis">Run the Pre Commit Code Analysis</a>.</p>
+<h4 id="1-install-drupal-code-check-package">1. Install Drupal Code Check Package<a class="headerlink" href="#1-install-drupal-code-check-package" title="Permanent link">&para;</a></h4>
+<p><a href="https://packagist.org/packages/jover_be/drupal-code-check">Drupal Code CHeck</a></p>
+<p>From your <code>vagrant</code> machine on your <code>drupal</code> root directory run:</p>
+<div class="codehilite"><pre><span></span>composer require --dev jover_be/drupal-code-check
+</pre></div>
+
+
+<p>Be sure the <code>pre-commit</code> scripts of the installed package are executable:</p>
+<div class="codehilite"><pre><span></span>chmod +x vendor/jover_be/drupal-code-check/git-hooks/pre-commit
+chmod +x vendor/jover_be/drupal-code-check/git-hooks/pre-commit.php
+</pre></div>
+
+
+<h4 id="2-pre-commit-hook-script">2. Pre Commit Hook Script<a class="headerlink" href="#2-pre-commit-hook-script" title="Permanent link">&para;</a></h4>
+<p>The <code>Pre Commit Hook Plugin</code> looks for the <code>pre-commit-hook.sh</code> file script on your project root directory. So let's create it as a relative link to the <code>Drupal Code Check</code> script:</p>
+<div class="codehilite"><pre><span></span>ln -s vendor/jover_be/drupal-code-check/git-hooks/pre-commit pre-commit-hook.sh
+</pre></div>
+
+
+<p>Let's link the script also on the default git hooks folder, in case you manually commit from the shell:</p>
+<div class="codehilite"><pre><span></span>cd .git/hooks
+ln -s ../../vendor/jover_be/drupal-code-check/git-hooks/pre-commit pre-commit
+</pre></div>
+
+
+<h4 id="3-run-the-pre-commit-code-analysis">3. Run the Pre Commit Code Analysis<a class="headerlink" href="#3-run-the-pre-commit-code-analysis" title="Permanent link">&para;</a></h4>
+<p>If everything is well set, when you perform a commit <code>PhpStorm</code> auto-run the <code>Code Sniffer Validation</code> and, in case of <code>errors</code>/<code>warnings</code>, it's gonna show you something like this:</p>
+<p><img alt="PHP Code Sniffer Validation" src="../../img/drupal/phpstorm_43.png" title="PHP Code Sniffer Validation" /></p>
+<p>So you can refuse to commit and check the issues with the <code>Inspect Code</code>.</p>
+<p>Things which will be checked in the <code>pre-commit</code> hook:</p>
+<ul>
+<li>Syntax checking using PHP Linter</li>
+<li>Automatically try to match code style via PHP Code Sniffer Beautifier and Fixer</li>
+<li>Coding standards checking using PHP Code Sniffer</li>
+<li>Blacklisted strings checking/validation</li>
+</ul>
+<p>Note that files of the following origins are not checked:</p>
+<ul>
+<li>Drupal Core</li>
+<li>Contributed Modules</li>
+<li>Contributed Libraries</li>
+<li>Contributed Themes</li>
+<li>Contributed Profiles</li>
+</ul>
+<p>In case of <code>errors</code>/<code>warnings</code> it's suggested to undone the commit and manually run the <code>Inspect Code</code> to fix all the possible issues. A better workflow is to manually run the <code>Inspect Code</code> before to commit.</p>
                 
                   
                 
