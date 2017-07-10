@@ -101,3 +101,16 @@ Then navigate on your `Drupal` installation from the browser and you will see th
 To continue the execution of `Drupal` after the `breakpoint` click on `Resume Program` (`play` button on the left of `Debugger` tab).
 
 To stop the debugger click on `Stop` (`stop` button on the left of `Debugger` tab).
+
+#### 3. Xdebug and Twig
+
+To use `Xdebug` on `Twig` templates make sure that:
+
+1. you have installed and enabled the contrib `module` [devel](https://www.drupal.org/project/devel) (installed by default on `DrupalVM`)
+2. `Twig` debug is enabled (see [Disable Drupal Caching](drupal_basic_configuration.md#4-disable-drupal-caching))
+
+Then set a breakpoint into your template adding:
+
+    {{ devel_breakpoint() }}
+
+Reference on [Drupal 8, Xdebug, and Twig](https://www.chapterthree.com/blog/drupal-8-xdebug-and-twig-an-update).

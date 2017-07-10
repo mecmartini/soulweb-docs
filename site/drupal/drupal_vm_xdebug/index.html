@@ -351,6 +351,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-xdebug-and-twig" title="3. Xdebug and Twig" class="md-nav__link">
+    3. Xdebug and Twig
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -505,6 +512,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-xdebug-and-twig" title="3. Xdebug and Twig" class="md-nav__link">
+    3. Xdebug and Twig
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -601,6 +615,18 @@ php_xdebug_coverage_enable: 1
 <p><img alt="Xdebug in action" src="../../img/drupal/phpstorm_29.png" title="Xdebug in action" /></p>
 <p>To continue the execution of <code>Drupal</code> after the <code>breakpoint</code> click on <code>Resume Program</code> (<code>play</code> button on the left of <code>Debugger</code> tab).</p>
 <p>To stop the debugger click on <code>Stop</code> (<code>stop</code> button on the left of <code>Debugger</code> tab).</p>
+<h4 id="3-xdebug-and-twig">3. Xdebug and Twig<a class="headerlink" href="#3-xdebug-and-twig" title="Permanent link">&para;</a></h4>
+<p>To use <code>Xdebug</code> on <code>Twig</code> templates make sure that:</p>
+<ol>
+<li>you have installed and enabled the contrib <code>module</code> <a href="https://www.drupal.org/project/devel">devel</a> (installed by default on <code>DrupalVM</code>)</li>
+<li><code>Twig</code> debug is enabled (see <a href="../drupal_basic_configuration/#4-disable-drupal-caching">Disable Drupal Caching</a>)</li>
+</ol>
+<p>Then set a breakpoint into your template adding:</p>
+<div class="codehilite"><pre><span></span>{{ devel_breakpoint() }}
+</pre></div>
+
+
+<p>Reference on <a href="https://www.chapterthree.com/blog/drupal-8-xdebug-and-twig-an-update">Drupal 8, Xdebug, and Twig</a>.</p>
                 
                   
                 
