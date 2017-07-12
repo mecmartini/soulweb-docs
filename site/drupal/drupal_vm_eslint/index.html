@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_codersniffer/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_eslint/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Coder Sniffer - Soulweb Docs</title>
+        <title>ESLint - Soulweb Docs</title>
       
     
     
@@ -91,7 +91,7 @@
                 </span>
               
             
-            Coder Sniffer
+            ESLint
           
         </span>
       </div>
@@ -321,6 +321,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../drupal_vm_codersniffer/" title="Coder Sniffer" class="md-nav__link">
+      Coder Sniffer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -332,11 +344,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Coder Sniffer
+        ESLint
       </label>
     
-    <a href="./" title="Coder Sniffer" class="md-nav__link md-nav__link--active">
-      Coder Sniffer
+    <a href="./" title="ESLint" class="md-nav__link md-nav__link--active">
+      ESLint
     </a>
     
       
@@ -350,23 +362,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-and-configure-coder-sniffer" title="Install and configure Coder Sniffer" class="md-nav__link">
-    Install and configure Coder Sniffer
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
-    1. Add Coder Sniffer to your Vagrant machine
+  <a href="#1-install-nodejs-using-nvm" title="1. Install Node.js using Nvm" class="md-nav__link">
+    1. Install Node.js using Nvm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-configure-eslint" title="Install and configure ESLint" class="md-nav__link">
+    Install and configure ESLint
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-eslint" title="1. Install ESLint" class="md-nav__link">
+    1. Install ESLint
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
-    2. Integrate Code Sniffer in PhpStorm
+  <a href="#2-integrate-eslint-in-phpstorm" title="2. Integrate ESLint in PhpStorm" class="md-nav__link">
+    2. Integrate ESLint in PhpStorm
   </a>
   
 </li>
@@ -389,18 +421,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../drupal_vm_eslint/" title="ESLint" class="md-nav__link">
-      ESLint
-    </a>
   </li>
 
         
@@ -536,23 +556,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-and-configure-coder-sniffer" title="Install and configure Coder Sniffer" class="md-nav__link">
-    Install and configure Coder Sniffer
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-add-coder-sniffer-to-your-vagrant-machine" title="1. Add Coder Sniffer to your Vagrant machine" class="md-nav__link">
-    1. Add Coder Sniffer to your Vagrant machine
+  <a href="#1-install-nodejs-using-nvm" title="1. Install Node.js using Nvm" class="md-nav__link">
+    1. Install Node.js using Nvm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-configure-eslint" title="Install and configure ESLint" class="md-nav__link">
+    Install and configure ESLint
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-eslint" title="1. Install ESLint" class="md-nav__link">
+    1. Install ESLint
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-integrate-code-sniffer-in-phpstorm" title="2. Integrate Code Sniffer in PhpStorm" class="md-nav__link">
-    2. Integrate Code Sniffer in PhpStorm
+  <a href="#2-integrate-eslint-in-phpstorm" title="2. Integrate ESLint in PhpStorm" class="md-nav__link">
+    2. Integrate ESLint in PhpStorm
   </a>
   
 </li>
@@ -584,34 +624,100 @@
               
                 
                 
-                <h1 id="coder-sniffer">Coder Sniffer<a class="headerlink" href="#coder-sniffer" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.drupal.org/node/1419988">Coder Sniffer</a> is a library that tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards. It works with Drupal 6, 7, or 8.</p>
-<h2 id="install-and-configure-coder-sniffer">Install and configure Coder Sniffer<a class="headerlink" href="#install-and-configure-coder-sniffer" title="Permanent link">&para;</a></h2>
-<h4 id="1-add-coder-sniffer-to-your-vagrant-machine">1. Add Coder Sniffer to your Vagrant machine<a class="headerlink" href="#1-add-coder-sniffer-to-your-vagrant-machine" title="Permanent link">&para;</a></h4>
-<p>Open the vagrant machine <code>config.yml</code> file and add to <code>composer_global_packages</code> the line:</p>
-<div class="codehilite"><pre><span></span>- { name: drupal/coder, release: &#39;*&#39; }
+                <h1 id="eslint">ESLint<a class="headerlink" href="#eslint" title="Permanent link">&para;</a></h1>
+<p><a href="http://eslint.org/">ESLint</a> is a tool to detect errors and potential problems in <code>JavaScript</code> code.</p>
+<p>We use it to make sure our <code>JavaScript</code> code is consistent and free from syntax error and leaking variables and that it can be properly minified.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<h4 id="1-install-nodejs-using-nvm">1. Install Node.js using Nvm<a class="headerlink" href="#1-install-nodejs-using-nvm" title="Permanent link">&para;</a></h4>
+<p>Ensure your system has the appropriate <code>C++</code> compiler:</p>
+<ol>
+<li>Open your terminal of choice</li>
+<li>Run <code>xcode-select --install</code> as a command:<ul>
+<li>A popup will appear</li>
+<li>Select Install</li>
+</ul>
+</li>
+<li>Allow the download to run to completion</li>
+</ol>
+<p>To install <code>nvm</code> with the <code>cURL</code> method, run the following command in your terminal:</p>
+<div class="codehilite"><pre><span></span>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 </pre></div>
 
 
-<p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
-<p>Enter on your <code>vagrant</code> machine (<code>vagrant ssh</code>) and run:</p>
-<div class="codehilite"><pre><span></span>phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+<p>After running the above install script, <code>nvm</code> should have successfully installed. To ensure that nvm is up and running on your machine, you can test it with the following command:</p>
+<div class="codehilite"><pre><span></span>nvm --version
 </pre></div>
 
 
-<p>You can verify this has worked with:</p>
-<div class="codehilite"><pre><span></span>phpcs -i
+<p>If you are kissing the <code>nvm</code> command, after running the install script, you may be missing a <code>.bash_profile</code>.</p>
+<p>Run <code>touch ~/.bash_profile</code> in your command line and re-run the installer script.</p>
+<p>If the problem persists after that, you can open the existing <code>.bash_profile</code> file (using your favorite text editor) and add the following line to it:</p>
+<div class="codehilite"><pre><span></span>export NVM_DIR=&quot;~/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
 </pre></div>
 
 
-<p>The above command should include <code>DrupalPractice</code> and <code>Drupal</code> in the installed <code>coding standards</code> list.</p>
-<h4 id="2-integrate-code-sniffer-in-phpstorm">2. Integrate Code Sniffer in PhpStorm<a class="headerlink" href="#2-integrate-code-sniffer-in-phpstorm" title="Permanent link">&para;</a></h4>
-<p>From below select <code>+</code> and add <code>Code Sniffer by Remote Interpreter</code>. Select your vagrant <code>PHP interpreter</code> (see <a href="../drupal_vm_phpstorm/#2-integrate-vagrant">Add GitHub repository and Initial Commit</a>). In <code>PHP Code Sniffer (phpcs) path</code> enter <code>/home/vagrant/.composer/vendor/bin/phpcs</code>.
-Click on <code>Validate</code> to verify that has worked.</p>
-<p><img alt="Code Sniffer settings" src="../../img/drupal/phpstorm_30.png" title="Code Sniffer settings" /></p>
-<p><img alt="Code Sniffer settings" src="../../img/drupal/phpstorm_31.png" title="Code Sniffer settings" /></p>
-<p>Go under <code>Settings</code> -&gt; <code>Editor</code> -&gt;  <code>Inspections</code> to enable and set <code>PHP Code Sniffer Validation</code> as below:</p>
-<p><img alt="PHP Code Sniffer Validation" src="../../img/drupal/phpstorm_32.png" title="PHP Code Sniffer Validation" /></p>
+<p>Now you can use <code>nvm</code> to install <code>node.js</code>. To install the latest available version of <code>node.js</code>, you can use the following command:</p>
+<div class="codehilite"><pre><span></span>nvm install node
+</pre></div>
+
+
+<p>Next, to use that version of <code>node.js</code> in any new shell, you can simply run the use command:</p>
+<div class="codehilite"><pre><span></span>nvm use node
+</pre></div>
+
+
+<p>Nvm is great and makes switching between node versions easy and convenient. However, there's one caveat. If you type:</p>
+<div class="codehilite"><pre><span></span>which node
+</pre></div>
+
+
+<p>you will see something interesting. <code>Nvm</code> installs <code>node.js</code> inside your user's home directory. It's best to install one copy of node globally so that other users can access it, and use <code>nvm</code> to switch between your development versions.</p>
+<p>To do this, run the following command (entering your user's password at the prompt):</p>
+<div class="codehilite"><pre><span></span>n=$(which node);n=${n%/bin/node}; chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
+</pre></div>
+
+
+<p>The above command is a bit complicated, but all it's doing is copying whatever version of <code>node</code> you have active via <code>nvm</code> into the <code>/usr/local/</code> directory (where user installed global files should live on a linux <code>VPS</code>) and setting the permissions so that all users can access them.</p>
+<div class="admonition note">
+<p class="admonition-title">Change node.js version</p>
+<p>If you ever want to change the version of <code>node</code> that's installed system wide, just do another <code>nvm</code> use <code>vXX.XX.XX</code> to switch your user's node to the version you want, and then re-run the above command to copy it to the system directory.</p>
+</div>
+<h2 id="install-and-configure-eslint">Install and configure ESLint<a class="headerlink" href="#install-and-configure-eslint" title="Permanent link">&para;</a></h2>
+<h4 id="1-install-eslint">1. Install ESLint<a class="headerlink" href="#1-install-eslint" title="Permanent link">&para;</a></h4>
+<p>We are gonna install <code>ESLint</code> as part of our project build locally:</p>
+<p>Open your terminal of choice and move to local <code>drupal/web</code> direcory of your project and run:</p>
+<div class="codehilite"><pre><span></span>npm install eslint --save-dev
+</pre></div>
+
+
+<p>Make sure the <code>ESLint</code> is executable:</p>
+<div class="codehilite"><pre><span></span>chmod +x ./node_modules/.bin/eslint
+</pre></div>
+
+
+<p>You should then setup a configuration file:</p>
+<div class="codehilite"><pre><span></span>./node_modules/.bin/eslint --init
+</pre></div>
+
+
+<p>To ensure that ESLint is working on your machine, you can test it with the following command:</p>
+<div class="codehilite"><pre><span></span>./node_modules/.bin/eslint --version
+</pre></div>
+
+
+<h4 id="2-integrate-eslint-in-phpstorm">2. Integrate ESLint in PhpStorm<a class="headerlink" href="#2-integrate-eslint-in-phpstorm" title="Permanent link">&para;</a></h4>
+<p>Open your settings and go to <code>Language &amp; Frameworks &gt; JavaScript &gt; Code Quality Tools &gt; ESLint</code>.</p>
+<p><img alt="Enable PhpStorm ESLint" src="../../img/drupal/phpstorm_44.png" title="Enable PhpStorm ESLint" /></p>
+<ul>
+<li>check <code>Enable</code></li>
+<li><code>Node interpreter</code> should be pre populated, if not choose yours</li>
+<li>populate <code>ESLint package</code> with <code>{yourlocalprojectdirectory}/drupal/web/node_modules/eslint</code></li>
+<li><code>IDE</code> should automatically find your  configuration file, but you can specify path to it</li>
+<li>all other options you can left empty</li>
+</ul>
+<p>Now head to <code>Editor &gt; Inspections &gt; JavaScript &gt; Code quality tools &gt; ESLint</code> and enable it.</p>
+<p><img alt="Enable PhpStorm ESLint Inspections" src="../../img/drupal/phpstorm_45.png" title="Enable PhpStorm ESLint Inspections" /></p>
 <h2 id="inspect-code">Inspect Code<a class="headerlink" href="#inspect-code" title="Permanent link">&para;</a></h2>
 <p>To inspect your code select, from the menu, <code>Code</code> -&gt; <code>Inspect Code</code>. On the shown window select what you wanna inspect and click <code>OK</code>.</p>
 <p><img alt="PHP Code Sniffer Validation Inspect Code" src="../../img/drupal/phpstorm_42.png" title="PHP Code Sniffer Validation Inspect Code" /></p>
@@ -633,7 +739,7 @@ Click on <code>Validate</code> to verify that has worked.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_vm_xdebug/" title="Xdebug" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_vm_codersniffer/" title="Coder Sniffer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -642,19 +748,19 @@ Click on <code>Validate</code> to verify that has worked.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Xdebug
+                Coder Sniffer
               </span>
             </div>
           </a>
         
         
-          <a href="../drupal_vm_eslint/" title="ESLint" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../drupal_vm_precommit/" title="Pre Commit Hook" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ESLint
+                Pre Commit Hook
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
