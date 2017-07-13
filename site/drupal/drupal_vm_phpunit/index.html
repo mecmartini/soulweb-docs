@@ -564,6 +564,20 @@
 <p>You can create as many <code>PHPUnit</code> configuration do you need, to run subset of test, setting the <code>Test Runner options</code>.</p>
 <p>The example below shows how to setup it to run only the test of the group <code>devel</code>:</p>
 <p><img alt="PHPUnit run group devel test" src="../../img/drupal/phpstorm_51.png" title="PHPUnit run group devel test" /></p>
+<p>The <code>--group devel</code> options is added to the <code>Test Runner options</code>.</p>
+<p>To run multiple groups of tests:</p>
+<div class="codehilite"><pre><span></span>--group Group1,Group2,..
+</pre></div>
+
+
+<p>To exclude tests:</p>
+<div class="codehilite"><pre><span></span>--exclude-group Groupname
+</pre></div>
+
+
+<p>To run a specific method:</p>
+<div class="codehilite"><pre><span></span>--filter=MyMethodTest
+</pre></div>
                 
                   
                 
