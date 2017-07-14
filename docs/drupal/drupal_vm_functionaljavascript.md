@@ -16,7 +16,7 @@ Open the vagrant machine `config.yml` file and add `phantomjs` to `extra_package
 
 From your `terminal` go on the `vagrant` directory and run `vagrant up --provision`, to apply the changes on your `vagrant` machine, or run `vagrant provision` if your machine is already up.
 
-Enter in your `vagrant` machine (`vagrant ssh`) and run:
+Enter in your `vagrant` machine (`vagrant ssh`) and edit the file `/home/vagrant/.bashrc` adding at the end:
 
     export QT_QPA_PLATFORM=offscreen
 
