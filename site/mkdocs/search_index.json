@@ -347,7 +347,7 @@
         }, 
         {
             "location": "/drupal/drupal_vm_functionaljavascript/", 
-            "text": "Functional Javascript Testing\n\n\n1 Requirements\n\n\nMake sure you have correctly set your phpunit.xml, see \nIntegrate PHPUnit in PhpStorm\n.\n\n\n2. Install PhantomJS\n\n\nThe tests are run on a headless browser called \nPhantomJS\n. The first step is to install \nPhantomJS\n on your computer.\n\n\nOpen the vagrant machine \nconfig.yml\n file and add \nphantomjs\n to \nextra_packages\n:\n\n\nextra_packages:\n  ...\n  - phantomjs\n\n\n\n\n\nFrom your \nterminal\n go on the \nvagrant\n directory and run \nvagrant up --provision\n, to apply the changes on your \nvagrant\n machine, or run \nvagrant provision\n if your machine is already up.\n\n\nEnter in your \nvagrant\n machine (\nvagrant ssh\n) and run:\n\n\nexport QT_QPA_PLATFORM=offscreen\n\n\n\n\n\n3. Run Tests\n\n\nOnce you've got \nPhantomJS\n you need start it to run your tests.\n\n\nFrom your vagrant machine move to your \ndrupal\n webroot (i.e. \n/var/www/drupaltestvm/drupal/web\n) and run:\n\n\nphantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768\n\n\n\n\n\nNow, if everything is fine, PhantomJS is up and running. Leave this terminal open and move to a new terminal to run your tests.\n\n\nLet's run an example test to check everything works fine.\n\n\n# move to your drupal web root\ncd /var/www/drupaltestvm/drupal/web\n# run test\nphp ./core/scripts/run-tests.sh --sqlite /tmp/test.sqlite --file core/modules/views/tests/src/FunctionalJavascript/ClickSortingAJAXTest.php", 
+            "text": "Functional Javascript Testing\n\n\n1 Requirements\n\n\nMake sure you have correctly set your \nphpunit.xml\n, see \nIntegrate PHPUnit in PhpStorm\n.\n\n\n2. Install PhantomJS\n\n\nThe tests are run on a headless browser called \nPhantomJS\n. The first step is to install \nPhantomJS\n on your computer.\n\n\nOpen the vagrant machine \nconfig.yml\n file and add \nphantomjs\n to \nextra_packages\n:\n\n\nextra_packages:\n  ...\n  - phantomjs\n\n\n\n\n\nFrom your \nterminal\n go on the \nvagrant\n directory and run \nvagrant up --provision\n, to apply the changes on your \nvagrant\n machine, or run \nvagrant provision\n if your machine is already up.\n\n\nEnter in your \nvagrant\n machine (\nvagrant ssh\n) and run:\n\n\nexport QT_QPA_PLATFORM=offscreen\n\n\n\n\n\n3. Run Tests\n\n\nOnce you've got \nPhantomJS\n you need start it to run your tests.\n\n\nFrom your vagrant machine move to your \ndrupal\n webroot (i.e. \n/var/www/drupaltestvm/drupal/web\n) and run:\n\n\nphantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768\n\n\n\n\n\nNow, if everything is fine, \nPhantomJS\n is up and running. Leave this terminal open and move to a new terminal to run your tests.\n\n\nLet's run an example test to check everything works fine.\n\n\n# move to your drupal web root\ncd /var/www/drupaltestvm/drupal/web\n# run test\nphp ./core/scripts/run-tests.sh --sqlite /tmp/test.sqlite --file core/modules/views/tests/src/FunctionalJavascript/ClickSortingAJAXTest.php", 
             "title": "Functional Javascript Testing"
         }, 
         {
@@ -357,7 +357,7 @@
         }, 
         {
             "location": "/drupal/drupal_vm_functionaljavascript/#1-requirements", 
-            "text": "Make sure you have correctly set your phpunit.xml, see  Integrate PHPUnit in PhpStorm .", 
+            "text": "Make sure you have correctly set your  phpunit.xml , see  Integrate PHPUnit in PhpStorm .", 
             "title": "1 Requirements"
         }, 
         {
@@ -367,7 +367,7 @@
         }, 
         {
             "location": "/drupal/drupal_vm_functionaljavascript/#3-run-tests", 
-            "text": "Once you've got  PhantomJS  you need start it to run your tests.  From your vagrant machine move to your  drupal  webroot (i.e.  /var/www/drupaltestvm/drupal/web ) and run:  phantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768  Now, if everything is fine, PhantomJS is up and running. Leave this terminal open and move to a new terminal to run your tests.  Let's run an example test to check everything works fine.  # move to your drupal web root\ncd /var/www/drupaltestvm/drupal/web\n# run test\nphp ./core/scripts/run-tests.sh --sqlite /tmp/test.sqlite --file core/modules/views/tests/src/FunctionalJavascript/ClickSortingAJAXTest.php", 
+            "text": "Once you've got  PhantomJS  you need start it to run your tests.  From your vagrant machine move to your  drupal  webroot (i.e.  /var/www/drupaltestvm/drupal/web ) and run:  phantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768  Now, if everything is fine,  PhantomJS  is up and running. Leave this terminal open and move to a new terminal to run your tests.  Let's run an example test to check everything works fine.  # move to your drupal web root\ncd /var/www/drupaltestvm/drupal/web\n# run test\nphp ./core/scripts/run-tests.sh --sqlite /tmp/test.sqlite --file core/modules/views/tests/src/FunctionalJavascript/ClickSortingAJAXTest.php", 
             "title": "3. Run Tests"
         }, 
         {

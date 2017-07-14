@@ -2,7 +2,7 @@
 
 #### 1 Requirements
 
-Make sure you have correctly set your phpunit.xml, see [Integrate PHPUnit in PhpStorm](drupal_vm_phpunit.md#1-integrate-phpunit-in-phpstorm).
+Make sure you have correctly set your `phpunit.xml`, see [Integrate PHPUnit in PhpStorm](drupal_vm_phpunit.md#1-integrate-phpunit-in-phpstorm).
 
 #### 2. Install PhantomJS
 
@@ -28,7 +28,7 @@ From your vagrant machine move to your `drupal` webroot (i.e. `/var/www/drupalte
 
     phantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768
 
-Now, if everything is fine, PhantomJS is up and running. Leave this terminal open and move to a new terminal to run your tests.
+Now, if everything is fine, `PhantomJS` is up and running. Leave this terminal open and move to a new terminal to run your tests.
 
 Let's run an example test to check everything works fine.
 
