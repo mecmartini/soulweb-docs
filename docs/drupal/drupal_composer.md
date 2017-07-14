@@ -143,7 +143,7 @@ Define your custom repositories:
         }
     ]
 
-Be sure to have set the libraries installer path:
+Make sure to have set the libraries installer path:
 
     "installer-paths": {
         ...

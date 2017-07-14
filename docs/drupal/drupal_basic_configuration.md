@@ -89,7 +89,7 @@ In `sites/default` create the file `settings.shared.php` with this code:
       '^yourprojectnamevm\.dev$',
     );
 
-Be sure to edit the setting with your host.
+Make sure to edit the setting with your host.
 
 #### 3. Create and enable local settings
 
@@ -139,7 +139,7 @@ Copy and rename the `sites/default/default.services.yml` to `sites/default/servi
 
 #### 4. Disable Drupal caching
 
-Open `settings.local.php` and be sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
+Open `settings.local.php` and make sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
 
     $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
@@ -269,7 +269,7 @@ Open `settings.php` file in `sites/default` and add these lines to the end:
 
 #### 4. Disable Drupal caching
 
-Open `settings.local.php` and be sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
+Open `settings.local.php` and make sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
 
     $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 

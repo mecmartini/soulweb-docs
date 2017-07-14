@@ -6,7 +6,7 @@ So we need to setup an alternative way to do it properly through the git pre-com
 
 ## Setup a Git pre-commit hook to check Coding Standards
 
-First of all be sure to have the [Pre Commit Hook Plugin](drupal_vm_phpstorm.md#pre-commit-hook-plugin) for `PhpStorm` installed and enabled.
+First of all make sure to have the [Pre Commit Hook Plugin](drupal_vm_phpstorm.md#pre-commit-hook-plugin) for `PhpStorm` installed and enabled.
 
 The following instructions are to setup the `pre-commit` hook script at the init of the project. If you are not sure that your project was already init for it you must check for:
 

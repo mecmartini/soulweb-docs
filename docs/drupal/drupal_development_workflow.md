@@ -34,7 +34,7 @@ As example:
 
 When you feature branch is up you can develop your code and building up the feature with as many commits as necessary.
 
-When you need to commit your code you must follow a safe sequence to be sure to merge it without breaking the code and your local `drupal` installation:
+When you need to commit your code you must follow a safe sequence to make sure to merge it without breaking the code and your local `drupal` installation:
 
     # export drupal configuration
     drush cex -y

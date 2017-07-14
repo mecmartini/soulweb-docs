@@ -34,7 +34,7 @@ As default, we have `Dev` / `Stage` / `Prod` config environments already set up 
 
     $config['config_split.config_split.dev']['status'] = TRUE;
 
-If those config environments are not yet set, you can create them when needed but be sure to name them with the following `machine name`:
+If those config environments are not yet set, you can create them when needed but make sure to name them with the following `machine name`:
 
 * `dev`
 * `stage`

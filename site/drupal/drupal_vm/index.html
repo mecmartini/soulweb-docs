@@ -538,6 +538,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drupal_vm_functionaljavascript/" title="Functional Javascript Testing" class="md-nav__link">
+      Functional Javascript Testing
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1042,7 +1054,7 @@ composer install
 
 
 <p>We'll use the <a href="https://www.drupal.org/project/config_installer">Configuration Installer</a> profile to install your drupal site with your configuration.</p>
-<p>Be sure to already have it in your <code>Drupal</code> project as <code>composer</code> dependencies (check the <code>composer.json</code>). If not, add it to your <code>composer</code> requirements:</p>
+<p>Make sure to already have it in your <code>Drupal</code> project as <code>composer</code> dependencies (check the <code>composer.json</code>). If not, add it to your <code>composer</code> requirements:</p>
 <div class="codehilite"><pre><span></span>composer require drupal/config_installer
 </pre></div>
 
@@ -1120,7 +1132,7 @@ mysql_users:
 </pre></div>
 
 
-<p>If you let the <code>VM</code> to install your main <code>drupal</code> site (<code>drupal_install_site: true</code>), be sure to set the appropriate <code>drupal</code> host and database for the installation:</p>
+<p>If you let the <code>VM</code> to install your main <code>drupal</code> site (<code>drupal_install_site: true</code>), make sure to set the appropriate <code>drupal</code> host and database for the installation:</p>
 <div class="codehilite"><pre><span></span>drupal_domain: &quot;{{ vagrant_hostname }}&quot;
 ...
 drupal_db_user: drupal

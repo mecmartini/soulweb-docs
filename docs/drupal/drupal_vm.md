@@ -241,7 +241,7 @@ Install the `composer` dependencies:
 
 We'll use the [Configuration Installer](https://www.drupal.org/project/config_installer) profile to install your drupal site with your configuration.
 
-Be sure to already have it in your `Drupal` project as `composer` dependencies (check the `composer.json`). If not, add it to your `composer` requirements:
+Make sure to already have it in your `Drupal` project as `composer` dependencies (check the `composer.json`). If not, add it to your `composer` requirements:
 
     composer require drupal/config_installer
 
@@ -314,7 +314,7 @@ If you need additional databases and database users, add them to the list of `my
         password: drupal-two
         priv: "drupal_two.*:ALL"
 
-If you let the `VM` to install your main `drupal` site (`drupal_install_site: true`), be sure to set the appropriate `drupal` host and database for the installation:
+If you let the `VM` to install your main `drupal` site (`drupal_install_site: true`), make sure to set the appropriate `drupal` host and database for the installation:
 
     drupal_domain: "{{ vagrant_hostname }}"
     ...

@@ -2,7 +2,7 @@
 
 #### 1. Enable Xdebug on your Vagrant machine
 
-Open the vagrant machine `config.yml` file and be sure to have the xdebug line uncommented on `installed_extras`
+Open the vagrant machine `config.yml` file and make sure to have the xdebug line uncommented on `installed_extras`
 
     installed_extras:
           - adminer
@@ -26,7 +26,7 @@ Open the vagrant machine `config.yml` file and be sure to have the xdebug line u
           - xdebug
           # - xhprof
 
-Be sure to have the following lines set as:
+Make sure to have the following lines set as:
 
     # XDebug configuration. XDebug is disabled by default for better performance.
     php_xdebug_default_enable: 1
@@ -55,7 +55,7 @@ From your `terminal` go on the `vagrant` directory and run `vagrant up --provisi
 
 On `PhpStorm` go to `settings`.
 
-Be sure to have `Xdebug` -> `Debug port` set to `9000`:
+Make sure to have `Xdebug` -> `Debug port` set to `9000`:
 
 ![PhpStorm debug port](../img/drupal/phpstorm_21.png "PhpStorm debug port")
 

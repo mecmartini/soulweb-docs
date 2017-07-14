@@ -4,7 +4,7 @@
 
 Copy the `web/core/phpunit.xml.dist` file to `web/core/phpunit.xml` under your `drupal` installation directory.
 
-Edit the created file with your favorite editor and full fill the parameters `SIMPLETEST_DB`, `SIMPLETEST_BASE_URL` and `BROWSERTEST_OUTPUT_DIRECTORY` (see the eamples provided into the file).
+Edit the created file with your favorite editor and full fill the parameters `SIMPLETEST_DB`, `SIMPLETEST_BASE_URL` and `BROWSERTEST_OUTPUT_DIRECTORY`. See the examples provided into the file and make sure `BROWSERTEST_OUTPUT_DIRECTORY` is set as the example.
 
 Go under `Settings` > `Language & Frameworks` > `PHP` > `PHPUnit`. Click on the `+` button and select `By Remote Interpreter`
 

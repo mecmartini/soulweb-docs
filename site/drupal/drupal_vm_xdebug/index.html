@@ -415,6 +415,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drupal_vm_functionaljavascript/" title="Functional Javascript Testing" class="md-nav__link">
+      Functional Javascript Testing
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -560,7 +572,7 @@
                 
                 <h1 id="xdebug">Xdebug<a class="headerlink" href="#xdebug" title="Permanent link">&para;</a></h1>
 <h4 id="1-enable-xdebug-on-your-vagrant-machine">1. Enable Xdebug on your Vagrant machine<a class="headerlink" href="#1-enable-xdebug-on-your-vagrant-machine" title="Permanent link">&para;</a></h4>
-<p>Open the vagrant machine <code>config.yml</code> file and be sure to have the xdebug line uncommented on <code>installed_extras</code></p>
+<p>Open the vagrant machine <code>config.yml</code> file and make sure to have the xdebug line uncommented on <code>installed_extras</code></p>
 <div class="codehilite"><pre><span></span>installed_extras:
       - adminer
       # - blackfire
@@ -585,7 +597,7 @@
 </pre></div>
 
 
-<p>Be sure to have the following lines set as:</p>
+<p>Make sure to have the following lines set as:</p>
 <div class="codehilite"><pre><span></span># XDebug configuration. XDebug is disabled by default for better performance.
 php_xdebug_default_enable: 1
 php_xdebug_coverage_enable: 1
@@ -613,7 +625,7 @@ php_xdebug_coverage_enable: 1
 <p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
 <h4 id="2-integrate-xdebug-in-phpstorm">2. Integrate Xdebug in PhpStorm<a class="headerlink" href="#2-integrate-xdebug-in-phpstorm" title="Permanent link">&para;</a></h4>
 <p>On <code>PhpStorm</code> go to <code>settings</code>.</p>
-<p>Be sure to have <code>Xdebug</code> -&gt; <code>Debug port</code> set to <code>9000</code>:</p>
+<p>Make sure to have <code>Xdebug</code> -&gt; <code>Debug port</code> set to <code>9000</code>:</p>
 <p><img alt="PhpStorm debug port" src="../../img/drupal/phpstorm_21.png" title="PhpStorm debug port" /></p>
 <p>From <code>PhpStorm</code> click on <code>Edit Configurations…</code>:</p>
 <p><img alt="PhpStorm debug edit configuration" src="../../img/drupal/phpstorm_22.png" title="PhpStorm debug edit configuration" /></p>
