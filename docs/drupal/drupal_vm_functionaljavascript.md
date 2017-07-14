@@ -36,3 +36,5 @@ Let's run an example test to check everything works fine.
     cd /var/www/drupaltestvm/drupal/web
     # run test
     php ./core/scripts/run-tests.sh --sqlite /tmp/test.sqlite --file core/modules/views/tests/src/FunctionalJavascript/ClickSortingAJAXTest.php
+
+With `PhantomJS` up you can run your Functional Javascript Tests as in [Set and Run PHPUnit Test](drupal_vm_phpunit.md#2-set-and-run-phpunit-test).
