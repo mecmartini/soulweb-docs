@@ -410,8 +410,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-requirements" title="1 Requirements" class="md-nav__link">
-    1 Requirements
+  <a href="#1-requirements" title="1. Requirements" class="md-nav__link">
+    1. Requirements
   </a>
   
 </li>
@@ -436,6 +436,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../drupal_vm_galen/" title="Responsive Testing with Galen" class="md-nav__link">
+      Responsive Testing with Galen
+    </a>
   </li>
 
         
@@ -547,8 +559,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-requirements" title="1 Requirements" class="md-nav__link">
-    1 Requirements
+  <a href="#1-requirements" title="1. Requirements" class="md-nav__link">
+    1. Requirements
   </a>
   
 </li>
@@ -584,7 +596,7 @@
                 
                 <h1 id="bdd-with-behat">BDD with Behat<a class="headerlink" href="#bdd-with-behat" title="Permanent link">&para;</a></h1>
 <p><a href="http://behat.org/">Behat</a> is an open source <code>behavior-driven development</code> (<code>BDD</code>) tool for <code>PHP</code>. You can use <code>Behat</code> to build and run automated tests for site functionality on your <code>Drupal</code> sites.</p>
-<h4 id="1-requirements">1 Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">&para;</a></h4>
+<h4 id="1-requirements">1. Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">&para;</a></h4>
 <p>From your <code>vagrant</code> machine on your <code>drupal</code> project folder, you must add the <code>Drupal</code> extension for <code>Behat</code>:</p>
 <div class="codehilite"><pre><span></span>composer require --dev drupal/drupal-extension
 </pre></div>
@@ -627,7 +639,8 @@ sudo mv geckodriver /usr/local/bin
 
 <h4 id="2-setup-behat">2. Setup Behat<a class="headerlink" href="#2-setup-behat" title="Permanent link">&para;</a></h4>
 <p>From your <code>vagrant</code> machine, on your <code>drupal</code> project folder, the following steps will help you get your first Behat tests up and running!</p>
-<p>Create a <code>behat.yml</code> file inside the <code>docroot</code> of your site (e.g. create this file alongside the rest of the <code>Drupal</code> codebase at <code>/var/www/drupalvm/drupal/behat.yml</code>), with the following contents:</p>
+<p>If your project already have the file <code>behat.yml</code> in your <code>drupal</code> docroot then skip this and jump directly to <a href="./#3-run-your-first-behat-test">Run your first Behat test</a>.</p>
+<p>Create a <code>behat.yml</code> file inside the docroot of your site (e.g. create this file alongside the rest of the <code>Drupal</code> codebase at <code>/var/www/drupalvm/drupal/behat.yml</code>), with the following contents:</p>
 <div class="codehilite"><pre><span></span>chrome:
   autoload:
     &#39;&#39;: %paths.base%/features/bootstrap
@@ -760,6 +773,10 @@ java -jar selenium-server-standalone-3.4.0.jar
 </pre></div>
 
 
+<div class="admonition note">
+<p class="admonition-title">Safari</p>
+<p>To make it works with <code>safari</code> browser you must enable, from <code>safari</code> browser, the <code>Allow Remote Automation</code> under <code>Develop</code> menu.</p>
+</div>
 <p>If everything worked out, you’ll see <code>Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
                 
                   
@@ -794,13 +811,13 @@ java -jar selenium-server-standalone-3.4.0.jar
           </a>
         
         
-          <a href="../drupal_basic_configuration/" title="Basic Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../drupal_vm_galen/" title="Responsive Testing with Galen" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Basic Configuration
+                Responsive Testing with Galen
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

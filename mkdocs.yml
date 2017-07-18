@@ -22,6 +22,7 @@ pages:
       - 'PHPUnit': 'drupal/drupal_vm_phpunit.md'
       - 'Functional Javascript Testing': 'drupal/drupal_vm_functionaljavascript.md'
       - 'BDD with Behat': 'drupal/drupal_vm_behat.md'
+      - 'Responsive Testing with Galen': 'drupal/drupal_vm_galen.md'
   - 'Basic Configuration': 'drupal/drupal_basic_configuration.md'
   - 'Using Composer': 'drupal/drupal_composer.md'
   - 'Configuration Management (CMI)': 'drupal/drupal_configuration_management.md'

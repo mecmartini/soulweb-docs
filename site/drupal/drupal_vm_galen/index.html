@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_phpunit/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_galen/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>PHPUnit - Soulweb Docs</title>
+        <title>Responsive Testing with Galen - Soulweb Docs</title>
       
     
     
@@ -91,7 +91,7 @@
                 </span>
               
             
-            PHPUnit
+            Responsive Testing with Galen
           
         </span>
       </div>
@@ -357,54 +357,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        PHPUnit
-      </label>
-    
-    <a href="./" title="PHPUnit" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../drupal_vm_phpunit/" title="PHPUnit" class="md-nav__link">
       PHPUnit
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-integrate-phpunit-in-phpstorm" title="1. Integrate PHPUnit in PhpStorm" class="md-nav__link">
-    1. Integrate PHPUnit in PhpStorm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-set-and-run-phpunit-test" title="2. Set and Run PHPUnit Test" class="md-nav__link">
-    2. Set and Run PHPUnit Test
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -436,11 +393,75 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../drupal_vm_galen/" title="Responsive Testing with Galen" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Responsive Testing with Galen
+      </label>
+    
+    <a href="./" title="Responsive Testing with Galen" class="md-nav__link md-nav__link--active">
       Responsive Testing with Galen
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-requirements" title="1. Requirements" class="md-nav__link">
+    1. Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-setup-galen" title="2. Setup Galen" class="md-nav__link">
+    2. Setup Galen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-install-galen-dependencies" title="3. Install Galen dependencies" class="md-nav__link">
+    3. Install Galen dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-run-your-first-galen-test" title="4. Run your first Galen test" class="md-nav__link">
+    4. Run your first Galen test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cross-browser-test-with-galen" title="5. Cross-Browser test with Galen" class="md-nav__link">
+    5. Cross-Browser test with Galen
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -552,15 +573,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-integrate-phpunit-in-phpstorm" title="1. Integrate PHPUnit in PhpStorm" class="md-nav__link">
-    1. Integrate PHPUnit in PhpStorm
+  <a href="#1-requirements" title="1. Requirements" class="md-nav__link">
+    1. Requirements
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-set-and-run-phpunit-test" title="2. Set and Run PHPUnit Test" class="md-nav__link">
-    2. Set and Run PHPUnit Test
+  <a href="#2-setup-galen" title="2. Setup Galen" class="md-nav__link">
+    2. Setup Galen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-install-galen-dependencies" title="3. Install Galen dependencies" class="md-nav__link">
+    3. Install Galen dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-run-your-first-galen-test" title="4. Run your first Galen test" class="md-nav__link">
+    4. Run your first Galen test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cross-browser-test-with-galen" title="5. Cross-Browser test with Galen" class="md-nav__link">
+    5. Cross-Browser test with Galen
   </a>
   
 </li>
@@ -580,39 +622,237 @@
               
                 
                 
-                <h1 id="phpunit">PHPUnit<a class="headerlink" href="#phpunit" title="Permanent link">&para;</a></h1>
-<h4 id="1-integrate-phpunit-in-phpstorm">1. Integrate PHPUnit in PhpStorm<a class="headerlink" href="#1-integrate-phpunit-in-phpstorm" title="Permanent link">&para;</a></h4>
-<p>Copy the <code>web/core/phpunit.xml.dist</code> file to <code>web/core/phpunit.xml</code> under your <code>drupal</code> installation directory.</p>
-<p>Edit the created file with your favorite editor and full fill the parameters <code>SIMPLETEST_DB</code>, <code>SIMPLETEST_BASE_URL</code> and <code>BROWSERTEST_OUTPUT_DIRECTORY</code>. See the examples provided into the file and make sure <code>BROWSERTEST_OUTPUT_DIRECTORY</code> is set as the example.</p>
-<p>Go under <code>Settings</code> &gt; <code>Language &amp; Frameworks</code> &gt; <code>PHP</code> &gt; <code>PHPUnit</code>. Click on the <code>+</code> button and select <code>By Remote Interpreter</code></p>
-<p><img alt="PhpStorm PHPUnit settings" src="../../img/drupal/phpstorm_34.png" title="PhpStorm PHPUnit settings" /></p>
-<p>Set the <code>Interpreter</code> as below. In <code>Path to script</code> and <code>Default configuration file</code> substitute the directory path of your <code>vagrant</code> machine</p>
-<p><img alt="PHPUnit By Remote Interpreter" src="../../img/drupal/phpstorm_50.png" title="PHPUnit By Remote Interpreter" /></p>
-<h4 id="2-set-and-run-phpunit-test">2. Set and Run PHPUnit Test<a class="headerlink" href="#2-set-and-run-phpunit-test" title="Permanent link">&para;</a></h4>
-<p>To run all <code>drupal</code> tests go under <code>Edit configurations</code>. Click the <code>+</code> button and select <code>PHPUnit</code></p>
-<p><img alt="PHPUnit Edit configurations" src="../../img/drupal/phpstorm_35.png" title="PHPUnit Edit configurations" /></p>
-<p><img alt="PHPUnit Add New Configuration" src="../../img/drupal/phpstorm_36.png" title="PHPUnit Add New Configuration" /></p>
-<p>Set only the <code>Name</code> and the <code>Test Scope</code> as below:</p>
-<p><img alt="PHPUnit Configuration" src="../../img/drupal/phpstorm_37.png" title="PHPUnit Configuration" /></p>
-<p>To test if it works select your <code>PHPUnit</code> config and click on <code>run</code> (<code>play button</code>)</p>
-<p><img alt="PHPUnit Run" src="../../img/drupal/phpstorm_38.png" title="PHPUnit Run" /></p>
-<p><img alt="PHPUnit in execution" src="../../img/drupal/phpstorm_39.png" title="PHPUnit in execution" /></p>
-<p>You can create as many <code>PHPUnit</code> configuration do you need, to run subset of test, setting the <code>Test Runner options</code>.</p>
-<p>The example below shows how to setup it to run only the test of the group <code>devel</code>:</p>
-<p><img alt="PHPUnit run group devel test" src="../../img/drupal/phpstorm_51.png" title="PHPUnit run group devel test" /></p>
-<p>The <code>--group devel</code> options is added to the <code>Test Runner options</code>.</p>
-<p>To run multiple groups of tests:</p>
-<div class="codehilite"><pre><span></span>--group Group1,Group2,..
+                <h1 id="responsive-testing-with-galen">Responsive Testing with Galen<a class="headerlink" href="#responsive-testing-with-galen" title="Permanent link">&para;</a></h1>
+<p><a href="http://galenframework.com/">Galen</a> is an open source layout testing tool for software applications, which helps us test the look and feel of the application.</p>
+<h4 id="1-requirements">1. Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">&para;</a></h4>
+<p>Make sure you have <code>Nvm</code> and <code>Node.js</code> installed on your <code>vagrant</code> machine. See <a href="../drupal_vm_eslint/#1-install-nodejs-using-nvm">Install Node.js using Nvm</a>.</p>
+<p>Open the <code>vagrant</code> machine <code>config.yml</code> file and add to <code>nodejs_npm_global_packages</code> the line:</p>
+<div class="codehilite"><pre><span></span>nodejs_npm_global_packages:
+  ...
+  - galenframework-cli
 </pre></div>
 
 
-<p>To exclude tests:</p>
-<div class="codehilite"><pre><span></span>--exclude-group Groupname
+<p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
+<p>Make sure you have the <code>Selenium Server</code> requirements on your host machine. See <a href="../drupal_vm_behat/#1-requirements">Behat Requirements</a>.</p>
+<h4 id="2-setup-galen">2. Setup Galen<a class="headerlink" href="#2-setup-galen" title="Permanent link">&para;</a></h4>
+<p>From your <code>vagrant</code> machine, on your <code>drupal</code> project folder, the following steps will help you get your first Galen tests up and running!</p>
+<p>If your project docroot already have the folder <code>tests/ReponsiveTests</code> in your <code>drupal</code> docroot and it contains the files <code>config.js</code> <code>galen.config</code> <code>package.json</code> then skip this and jump directly to <a href="./#3-install-galen-dependencies">Install Galen dependencies</a>.</p>
+<p>Create the folder <code>tests/ReponsiveTests/</code> under your docroot, and in this folder create the file <code>galen.config</code> which would contain the configuration parameters for Galen:</p>
+<div class="codehilite"><pre><span></span># Range approximation
+# ~~~~~~~~~~~~~~~~~~~~~
+# Defines the approximation value for ranges when using &quot;~&quot; in galen page specs
+# This value means how many pixels or percents should it take constructing a range
+# e.g. if we define approximation as 5 then the following spec:
+#   height: ~ 50 px
+# will actually be replaced by Galen with this:
+#   height: 45 to 55px
+galen.range.approximation=2
+
+
+# Custom Listeners
+# ~~~~~~~~~~~~~~~~~~~~~~~
+# A comma separated list of class paths to reporting listeners
+# The defined listeners will be picked up by Galen and used for reporting
+#
+# galen.reporting.listeners=
+
+
+# Using page urls from last checked page in HTML report
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This property enables the use of last page url in a page test
+# Needed when for some pages on the website there is no way to open it by direct url
+# galen.reporting.html.useLastPageUrls = true
+
+# Default browser
+# ~~~~~~~~~~~~~~~~~~~~~~~~
+# A browser that should be used by default in case it was not specified in galen test
+galen.default.browser=firefox
+
+
+
+# Color scheme spec precision
+# ~~~~~~~~~~~~~~~~~~~~~~~~
+# A value between 8 and 256 for color spectrum accuracy.
+spec.colorscheme.precision = 256
+
+
+# Full screenshots
+# ~~~~~~~~~~~~~~~~~~~~
+# In some browsers it is not possible to create a complete screenshot of whole page.
+# With this property enabled Galen will scroll page and make screenshots of parts of it.
+# Then it will assemble it in a one big screenshot
+#
+galen.browser.screenshots.fullPage = false
+# the following parameter is need in case the upper parameter is set to true
+# it sets the amount of time in milliseconds needed for a check that the page was scrolled when taking full page screenshots
+galen.browser.screenshots.fullPage.scrollWait = 0
+
+
+
+# Color scheme spec test color range
+# ~~~~~~~~~~~~~~~~~~~~~~~~~
+# A value between 0 and 256 which defined the range of nearby colors
+# in spectrum which will be picked up for calculating the percentage of usage
+spec.colorscheme.testrange = 6
+
+
+
+# Running in Selenium Grid
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# You can run your tests in Selenium Grid without modifying the tests.
+# Just enable the &quot;galen.browserFactory.selenium.runInGrid&quot; property
+# and Galen will always choose a Selenium Grid instead of running tests against local browsers
+# Also make sure you provide the proper url to grid
+#
+galen.browserFactory.selenium.runInGrid = true
+galen.browserFactory.selenium.grid.url = http://10.0.2.2:4444/wd/hub
+galen.browserFactory.selenium.grid.browser = chrome
+# galen.browserFactory.selenium.grid.browserVersion =
+# galen.browserFactory.selenium.grid.platform =
+
+
+# Exit with fail code in case of any failures
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# galen.use.fail.exit.code = true
+
+
+# Test file extension for standard test runner
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+galen.test.suffix=.test
+
+
+# JavaScript Test file extension for JavaScript test runner
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+galen.test.js.file.suffix=.test.js
+
+
+
+# Area finder for page elements
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Defines a method of extracting location and size of web element. By default &#39;native&#39; is used, which means
+# that Galen will use WebElement.getLocation() and WebElement.getSize() Java methods to construct area of page element.
+# But on some devices (e.g. iPhone with iOS 8.0) this would not work and there you need to switch to another method.
+# All possible methods
+# - native - Uses WebDriver methods for getting location and size
+# - jsbased - Uses JavaScript getBoundingClientRect() function in order to get area for page element.
+# - jsbased_native - Uses &#39;jsbased&#39; method but in case of error goes back to &#39;native&#39; method
+# - custom - Uses user-defined JavaScript for getting area of page element. If you use this method, you need to also
+#            provide a script via galen.browser.pageElement.areaFinder.custom.script property
+galen.browser.pageElement.areaFinder = native
 </pre></div>
 
 
-<p>To run a specific method:</p>
-<div class="codehilite"><pre><span></span>--filter=MyMethodTest
+<p>Create also the file <code>package.json</code> with this content:</p>
+<div class="codehilite"><pre><span></span>{
+  &quot;dependencies&quot;: {
+    &quot;galen-framework-handler&quot;: &quot;^0.0.9&quot;
+  },
+  &quot;devDependencies&quot;: {
+  },
+  &quot;engines&quot;: {
+    &quot;node&quot;: &quot;&gt;=5.5.0&quot;
+  },
+  &quot;keywords&quot;: [
+    &quot;galen&quot;,
+    &quot;galen framework&quot;,
+    &quot;responsive&quot;,
+    &quot;testing&quot;,
+    &quot;DrupalDevDays&quot;
+  ],
+  &quot;scripts&quot;: {}
+}
+</pre></div>
+
+
+<p>And, at the end, create also the file <code>config.js</code> that contains:</p>
+<div class="codehilite"><pre><span></span>/** Overriding the config variable defined in the galen-framework-handler **/
+config = {
+  baseURL: &quot;http://drupalvm.dev&quot;
+};
+
+/** Overriding the devices to test variable defined in the galen-framework-handler **/
+devicesToTest = {
+  iphone7: devices.iphone7,
+  ipadMini3: devices.ipadMini3,
+  desktop: devices.desktop1024
+};
+</pre></div>
+
+
+<p>Edit the <code>baseURL</code> parameter with your host URL.</p>
+<h4 id="3-install-galen-dependencies">3. Install Galen dependencies<a class="headerlink" href="#3-install-galen-dependencies" title="Permanent link">&para;</a></h4>
+<p>From your <code>vagrant</code> machine inside your <code>drupal</code> docroot run:</p>
+<div class="codehilite"><pre><span></span>npm install
+</pre></div>
+
+
+<h4 id="4-run-your-first-galen-test">4. Run your first Galen test<a class="headerlink" href="#4-run-your-first-galen-test" title="Permanent link">&para;</a></h4>
+<p>In your project docroot, under <code>tests/ReponsiveTests</code>, create the folder <code>specs</code>.</p>
+<p>Create file 'test-index.gspec' in <code>specs/</code> folder. Edit the file and add this code:</p>
+<div class="codehilite"><pre><span></span>@objects
+   # menu items
+   main-content xpath   //main[@id=&#39;content&#39;]
+
+= Main content =
+   # for all the devices
+   @on *
+       main-content:
+           visible
+</pre></div>
+
+
+<p>Under <code>tests/ReponsiveTests</code> create the folder <code>tests/suites/</code>.</p>
+<p>Create file <code>test-index.test.js</code> in <code>tests/suites/</code> folder. Edit the file and add this code:</p>
+<div class="codehilite"><pre><span></span>// important, commons should be loaded here
+load(&#39;../../node_modules/galen-framework-handler/dist/galen-framework-handler.js&#39;);
+
+load(&#39;../../config.js&#39;);
+
+forAll(devicesToTest, function (device) {
+  test(&quot;Testing on ${deviceName}&quot;, function (device) {
+
+    // here goes a test code
+    var driver = createDriver(config.baseURL, device.size);
+
+    // here is the &quot;key&quot; of the galen-framework testing
+    checkLayout(driver, &quot;specs/uew-index.gspec&quot;, device.tags);
+
+    driver.close();
+    driver.quit();
+  });
+});
+</pre></div>
+
+
+<p>You are ready to run your first test using <code>Galen</code>.</p>
+<p>From your host machine, move to the folder where you previously placed the <code>Selenium Server</code> (see <a href="./#1-requirements">Galen Requirements</a>) and run it up:</p>
+<div class="codehilite"><pre><span></span>cd /my/selenium/server/standalone/folder
+java -jar selenium-server-standalone-3.4.0.jar
+</pre></div>
+
+
+<p>From your <code>vagrant</code> machine under <code>docroot/tests/ReponsiveTests</code> run:</p>
+<div class="codehilite"><pre><span></span>galen test tests/suites/* --htmlreport reports/
+</pre></div>
+
+
+<p>If everything worked out, you’ll see <code>Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
+<h4 id="5-cross-browser-test-with-galen">5. Cross-Browser test with Galen<a class="headerlink" href="#5-cross-browser-test-with-galen" title="Permanent link">&para;</a></h4>
+<p>In our <code>galen.config</code> selenium is setup to run with <code>chrome</code> browser.</p>
+<p>To test on multiple browser we need to setup a new config file for each browser.</p>
+<p>For example, if we want to setup tests on <code>firefox</code> browser, from your <code>vagrant</code> machine under <code>docroot/tests/ReponsiveTests</code> run:</p>
+<div class="codehilite"><pre><span></span>cp galen.config galenfirefox.config
+</pre></div>
+
+
+<p>Then edit the created file <code>galenfirefox.config</code> and change the <code>galen.browserFactory.selenium.grid.browser</code> parameter as below:</p>
+<div class="codehilite"><pre><span></span>galen.browserFactory.selenium.grid.browser = firefox
+</pre></div>
+
+
+<p>No to run your test:</p>
+<div class="codehilite"><pre><span></span>galen test tests/suites/* --htmlreport reports/ --config galenfirefox.config
 </pre></div>
                 
                   
@@ -632,7 +872,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_vm_precommit/" title="Pre Commit Hook" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_vm_behat/" title="BDD with Behat" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -641,19 +881,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Pre Commit Hook
+                BDD with Behat
               </span>
             </div>
           </a>
         
         
-          <a href="../drupal_vm_functionaljavascript/" title="Functional Javascript Testing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../drupal_basic_configuration/" title="Basic Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Functional Javascript Testing
+                Basic Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -2,7 +2,7 @@
 
 [Behat](http://behat.org/) is an open source `behavior-driven development` (`BDD`) tool for `PHP`. You can use `Behat` to build and run automated tests for site functionality on your `Drupal` sites.
 
-#### 1 Requirements
+#### 1. Requirements
 
 From your `vagrant` machine on your `drupal` project folder, you must add the `Drupal` extension for `Behat`:
 
@@ -46,7 +46,9 @@ We also need to download the browser `drivers` to make `Selenium` deal with them
 
 From your `vagrant` machine, on your `drupal` project folder, the following steps will help you get your first Behat tests up and running!
 
-Create a `behat.yml` file inside the `docroot` of your site (e.g. create this file alongside the rest of the `Drupal` codebase at `/var/www/drupalvm/drupal/behat.yml`), with the following contents:
+If your project already have the file `behat.yml` in your `drupal` docroot then skip this and jump directly to [Run your first Behat test](drupal_vm_behat.md#3-run-your-first-behat-test).
+
+Create a `behat.yml` file inside the docroot of your site (e.g. create this file alongside the rest of the `Drupal` codebase at `/var/www/drupalvm/drupal/behat.yml`), with the following contents:
 
     chrome:
       autoload:
@@ -175,5 +177,8 @@ Now you can finally run your `Behat` test and see the browser in action. From yo
 
     # to run test on safari
     ./vendor/bin/behat -v -c behat.yml -p safari
+
+!!! note "Safari"
+    To make it works with `safari` browser you must enable, from `safari` browser, the `Allow Remote Automation` under `Develop` menu.
 
 If everything worked out, you’ll see `Selenium` open up a new instance of the selected browser profile and drive it through the test suites.
