@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_multisite/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_vm_behat/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Multisite - Soulweb Docs</title>
+        <title>BDD with Behat - Soulweb Docs</title>
       
     
     
@@ -83,11 +83,15 @@
             
               
                 <span class="md-header-nav__parent">
-                  Drupal 8
+                  Local Development
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  macOS
                 </span>
               
             
-            Multisite
+            BDD with Behat
           
         </span>
       </div>
@@ -239,10 +243,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2">
       Local Development
@@ -258,10 +264,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1" checked>
     
     <label class="md-nav__link" for="nav-2-2-1">
       macOS
@@ -373,11 +381,61 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../drupal_vm_behat/" title="BDD with Behat" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        BDD with Behat
+      </label>
+    
+    <a href="./" title="BDD with Behat" class="md-nav__link md-nav__link--active">
       BDD with Behat
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-requirements" title="1 Requirements" class="md-nav__link">
+    1 Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-setup-behat" title="2. Setup Behat" class="md-nav__link">
+    2. Setup Behat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-run-your-first-behat-test" title="3. Run your first Behat test" class="md-nav__link">
+    3. Run your first Behat test
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -455,68 +513,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Multisite
-      </label>
-    
-    <a href="./" title="Multisite" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../drupal_multisite/" title="Multisite" class="md-nav__link">
       Multisite
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-multisite" title="Create a Multisite" class="md-nav__link">
-    Create a Multisite
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multisite-with-shared-configuration" title="Multisite with Shared Configuration" class="md-nav__link">
-    Multisite with Shared Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-a-subsite-from-an-existing-configuration" title="Install a subsite from an existing configuration" class="md-nav__link">
-    Install a subsite from an existing configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-your-multisite-domains-and-aliases-with-sitesphp" title="Configure your multisite domains and aliases with sites.php" class="md-nav__link">
-    Configure your multisite domains and aliases with sites.php
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -546,29 +547,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-multisite" title="Create a Multisite" class="md-nav__link">
-    Create a Multisite
+  <a href="#1-requirements" title="1 Requirements" class="md-nav__link">
+    1 Requirements
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#multisite-with-shared-configuration" title="Multisite with Shared Configuration" class="md-nav__link">
-    Multisite with Shared Configuration
+  <a href="#2-setup-behat" title="2. Setup Behat" class="md-nav__link">
+    2. Setup Behat
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-a-subsite-from-an-existing-configuration" title="Install a subsite from an existing configuration" class="md-nav__link">
-    Install a subsite from an existing configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-your-multisite-domains-and-aliases-with-sitesphp" title="Configure your multisite domains and aliases with sites.php" class="md-nav__link">
-    Configure your multisite domains and aliases with sites.php
+  <a href="#3-run-your-first-behat-test" title="3. Run your first Behat test" class="md-nav__link">
+    3. Run your first Behat test
   </a>
   
 </li>
@@ -588,58 +582,185 @@
               
                 
                 
-                <h1 id="multisite">Multisite<a class="headerlink" href="#multisite" title="Permanent link">&para;</a></h1>
-<p>If you are running more than one Drupal site, you can simplify the management and can upgrade your sites by using the multi-site feature. Multi-site allows you to share a single Drupal installation (including core code, contributed modules, and themes) among several sites.</p>
-<p>This is particularly useful for managing the code since each upgrade only needs to be done once. Each site will have its own database and its own configuration settings, so each site will have its own content, settings, enabled modules, and enabled theme. However, the sites are sharing a code base and web document root, so there may be security concerns with multiple administrators. (See "<a href="https://www.drupal.org/docs/7/multisite-drupal/multi-site-sharing-the-same-code-base#security">Security Concerns</a>" for more information).</p>
-<h2 id="create-a-multisite">Create a Multisite<a class="headerlink" href="#create-a-multisite" title="Permanent link">&para;</a></h2>
-<p>You can create a new installation either from scratch or as a sub-site of an existing Drupal installation. The only thing you need is a new empty database.</p>
-<p>For a detailed list of steps, you can take a look at <a href="https://www.drupal.org/docs/7/multisite-drupal/multi-site-sharing-the-same-code-base">Drupal.org Docs about Multi-site - Sharing the same code base</a>.</p>
-<p>Using drush, you can run this simple command:</p>
-<div class="codehilite"><pre><span></span>drush site-install --db-url=mysql://db_user:db_password@localhost:port/db_name --sites-subdir=sample.subsite.com --account-name=admin --account-pass=admin -y
+                <h1 id="bdd-with-behat">BDD with Behat<a class="headerlink" href="#bdd-with-behat" title="Permanent link">&para;</a></h1>
+<p><a href="http://behat.org/">Behat</a> is an open source <code>behavior-driven development</code> (<code>BDD</code>) tool for <code>PHP</code>. You can use <code>Behat</code> to build and run automated tests for site functionality on your <code>Drupal</code> sites.</p>
+<h4 id="1-requirements">1 Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">&para;</a></h4>
+<p>From your <code>vagrant</code> machine on your <code>drupal</code> project folder, you must add the <code>Drupal</code> extension for <code>Behat</code>:</p>
+<div class="codehilite"><pre><span></span>composer require --dev drupal/drupal-extension
 </pre></div>
 
 
-<p>To install it with a different language than default (english) you can use the <code>locale</code> parameter. As example, to install it with <code>italian</code> language you can run:</p>
-<div class="codehilite"><pre><span></span>drush site-install --db-url=mysql://db_user:db_password@localhost:port/db_name --sites-subdir=sample.subsite.com --account-name=admin --account-pass=admin  -locale=it -y
+<p><a href="http://www.seleniumhq.org/">Selenium2</a> is needed to test <code>javascript</code> session. <code>Selenium2</code> gives you the ability to take full control of a real browser with a clean consistent proxy API.</p>
+<p>First ensure that you have the <code>Java Runtime Environment</code> (<code>JRE</code>) installed on your host machine, which is required to run Selenium. You may already have it installed, but can check with:</p>
+<div class="codehilite"><pre><span></span>java -version
 </pre></div>
 
 
-<h2 id="multisite-with-shared-configuration">Multisite with Shared Configuration<a class="headerlink" href="#multisite-with-shared-configuration" title="Permanent link">&para;</a></h2>
-<p>We can use <code>Configuration Management</code> (CMI) with <a href="https://www.drupal.org/project/config_split">Configuration Split</a> to share the configuration between sites (see <a href="../drupal_configuration_management/">Configuration Management</a>).</p>
-<h2 id="install-a-subsite-from-an-existing-configuration">Install a subsite from an existing configuration<a class="headerlink" href="#install-a-subsite-from-an-existing-configuration" title="Permanent link">&para;</a></h2>
-<p>With the help of <a href="https://www.drupal.org/project/config_installer">Configuration Installer</a> we can install a new subsite from an existing configuration.</p>
-<p>Add the <code>Config Installer</code> profile:</p>
-<div class="codehilite"><pre><span></span>drush dl config_installer
+<p>If you need to install or update, Google is your friend.</p>
+<p>From your host download the <code>Selenium Server</code> and place it wherever you like:</p>
+<div class="codehilite"><pre><span></span># check for the latest version at http://docs.seleniumhq.org/download/
+curl -O http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
+mv selenium-server-standalone-3.4.0.jar /wherever/you/like/folder
 </pre></div>
 
 
-<p>Install the subsite from the existing configuration:</p>
-<div class="codehilite"><pre><span></span>drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y
+<p>We also need to download the browser <code>drivers</code> to make <code>Selenium</code> deal with them:</p>
+<div class="codehilite"><pre><span></span># download chrome driver
+# check for the latest version at https://sites.google.com/a/chromium.org/chromedriver/downloads
+curl -L -O https://chromedriver.storage.googleapis.com/2.30/chromedriver_mac64.zip
+# uncompress it
+unzip chromedriver_mac64.zip
+# move it on exec folder and give exec permission
+chmod +x chromedriver
+sudo mv chromedriver /usr/local/bin
+
+# download firefox driver
+# check for the latest version at https://github.com/mozilla/geckodriver/releases
+curl -L -O https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-macos.tar.gz
+# uncompress it
+tar -zxvf geckodriver-v0.18.0-macos.tar.gz
+# move it on exec folder and give exec permission
+chmod +x geckodriver
+sudo mv geckodriver /usr/local/bin
+</pre></div>
+
+
+<h4 id="2-setup-behat">2. Setup Behat<a class="headerlink" href="#2-setup-behat" title="Permanent link">&para;</a></h4>
+<p>From your <code>vagrant</code> machine, on your <code>drupal</code> project folder, the following steps will help you get your first Behat tests up and running!</p>
+<p>Create a <code>behat.yml</code> file inside the <code>docroot</code> of your site (e.g. create this file alongside the rest of the <code>Drupal</code> codebase at <code>/var/www/drupalvm/drupal/behat.yml</code>), with the following contents:</p>
+<div class="codehilite"><pre><span></span>chrome:
+  autoload:
+    &#39;&#39;: %paths.base%/features/bootstrap
+  suites:
+    web_features:
+      paths: [ %paths.base%/features/web ]
+      contexts:
+        - WebContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      javascript_session: &#39;selenium2&#39;
+      selenium2:
+        wd_host: http://10.0.2.2:4444/wd/hub
+        browser: &#39;chrome&#39;
+      base_url: http://drupalvm.dev
+      browser_name: &#39;chrome&#39;
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: &#39;drupal&#39;
+      drupal:
+        drupal_root: &#39;/var/www/drupalvm/drupal/web&#39;
+      region_map:
+        content: &quot;#content&quot;
+
+firefox:
+  autoload:
+    &#39;&#39;: %paths.base%/features/bootstrap
+  suites:
+    web_features:
+      paths: [ %paths.base%/features/web ]
+      contexts:
+        - WebContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      javascript_session: &#39;selenium2&#39;
+      selenium2:
+        wd_host: http://10.0.2.2:4444/wd/hub
+        browser: &#39;firefox&#39;
+      base_url: http://drupalvm.dev
+      browser_name: &#39;firefox&#39;
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: &#39;drupal&#39;
+      drupal:
+        drupal_root: &#39;/var/www/drupalvm/drupal/web&#39;
+      region_map:
+        content: &quot;#content&quot;
+
+safari:
+  autoload:
+    &#39;&#39;: %paths.base%/features/bootstrap
+  suites:
+    web_features:
+      paths: [ %paths.base%/features/web ]
+      contexts:
+        - WebContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      javascript_session: &#39;selenium2&#39;
+      selenium2:
+        wd_host: http://10.0.2.2:4444/wd/hub
+        browser: &#39;safari&#39;
+      base_url: http://drupalvm.dev
+      browser_name: &#39;safari&#39;
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: &#39;drupal&#39;
+      drupal:
+        drupal_root: &#39;/var/www/drupalvm/drupal/web&#39;
+      region_map:
+        content: &quot;#content&quot;
+</pre></div>
+
+
+<p>and edit the <code>wd_host</code> and <code>drupal_root</code> parameters of the three profile (<code>chrome</code> - <code>firefox</code> - <code>safari</code>) with your parameters.</p>
+<p>To initialize the <code>Behat</code> features folder, where you will place test cases, you must run:</p>
+<div class="codehilite"><pre><span></span>./vendor/bin/behat --init
+</pre></div>
+
+
+<p>the <code>features</code> folder must be created on your <code>Drupal</code> docroot.</p>
+<h4 id="3-run-your-first-behat-test">3. Run your first Behat test<a class="headerlink" href="#3-run-your-first-behat-test" title="Permanent link">&para;</a></h4>
+<p>Open up the new <code>features/web</code> folder <code>Behat</code> just created. Inside that folder, create <code>HomeContent.feature</code> file with the following contents:</p>
+<div class="codehilite"><pre><span></span>Feature: Test DrupalContext
+  In order to prove Behat is working correctly in Drupal VM
+  As a developer
+  I need to run a simple interface test
+
+  @javascript
+  Scenario: Viewing content in a region
+    Given I am on the homepage
+    Then I should see &quot;No front page content has been created yet&quot; in the &quot;content&quot;
 </pre></div>
 
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information about <code>CMI</code> and <code>Config Installer</code> from an existing configuration see:</p>
-<ul>
-<li><a href="../drupal_vm/#build-drupal-vm-from-existing-drupal-project">Build Drupal VM from existing Drupal project</a></li>
-<li><a href="../drupal_configuration_management/">Drupal 8 Configuration Management</a></li>
-</ul>
+<p>The <code>@javascript</code> is needed to run <code>javascript</code> session, otherwise the tests will run in a <code>headless</code> browser.</p>
 </div>
-<h2 id="configure-your-multisite-domains-and-aliases-with-sitesphp">Configure your multisite domains and aliases with sites.php<a class="headerlink" href="#configure-your-multisite-domains-and-aliases-with-sitesphp" title="Permanent link">&para;</a></h2>
-<p>On your <code>drupal</code> installation, under <code>sites/default</code> copy the file <code>example.sites.php</code> in <code>sites</code> folder and configure your subsite domains and aliases as below:</p>
-<div class="codehilite"><pre><span></span>$sites = array(
-  &#39;example.dev&#39; =&gt; &#39;it.example.dev&#39;,
-  &#39;example.com&#39; =&gt; &#39;it.example.dev&#39;,
-  &#39;it.example.dev&#39; =&gt; &#39;it.example.dev&#39;,
-  &#39;it.example.com&#39; =&gt; &#39;it.example.dev&#39;,
-  &#39;es.example.dev&#39; =&gt; &#39;es.example.dev&#39;,
-  &#39;es.example.com&#39; =&gt; &#39;es.example.dev&#39;,
-);
+<p>From your host machine, move to the folder where you previously placed the <code>Selenium Server</code> and run it up:</p>
+<div class="codehilite"><pre><span></span>cd /my/selenium/server/standalone/folder
+java -jar selenium-server-standalone-3.4.0.jar
 </pre></div>
 
 
-<p>You can find more info about how to configure it in the file instead.</p>
+<p>Now you can finally run your <code>Behat</code> test and see the browser in action. From your <code>vagrant</code> machine on <code>drupal</code> docroot folder run:</p>
+<div class="codehilite"><pre><span></span># to run test on chrome
+./vendor/bin/behat -v -c behat.yml -p chrome
+
+# to run test on firefox
+./vendor/bin/behat -v -c behat.yml -p firefox
+
+# to run test on safari
+./vendor/bin/behat -v -c behat.yml -p safari
+</pre></div>
+
+
+<p>If everything worked out, you’ll see <code>Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
                 
                   
                 
@@ -658,7 +779,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_cors/" title="CORS Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_vm_functionaljavascript/" title="Functional Javascript Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -667,11 +788,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                CORS Configuration
+                Functional Javascript Testing
               </span>
             </div>
           </a>
         
+        
+          <a href="../drupal_basic_configuration/" title="Basic Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Basic Configuration
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
