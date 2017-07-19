@@ -126,7 +126,7 @@ Create the folder `tests/ReponsiveTests/` under your docroot, and in this folder
     #            provide a script via galen.browser.pageElement.areaFinder.custom.script property
     galen.browser.pageElement.areaFinder = native
 
-Create also the file `package.json` with this content:
+Create also the file `package.json`, to install the [galen-framework-handler](https://github.com/agomezmoron/galen-framework-handler) with this content:
 
     {
       "dependencies": {
