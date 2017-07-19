@@ -496,15 +496,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-drupal-core" title="Update Drupal core" class="md-nav__link">
-    Update Drupal core
+  <a href="#update-drupal-core-package" title="Update Drupal core package" class="md-nav__link">
+    Update Drupal core package
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-all-drupal-dependencies" title="Update all Drupal dependencies" class="md-nav__link">
-    Update all Drupal dependencies
+  <a href="#update-all-packages" title="Update all packages" class="md-nav__link">
+    Update all packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-package" title="Update a package" class="md-nav__link">
+    Update a package
   </a>
   
 </li>
@@ -540,6 +547,13 @@
         <li class="md-nav__item">
   <a href="#apply-patches-to-downloaded-modules" title="Apply patches to downloaded modules" class="md-nav__link">
     Apply patches to downloaded modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" title="Resources" class="md-nav__link">
+    Resources
   </a>
   
 </li>
@@ -675,15 +689,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-drupal-core" title="Update Drupal core" class="md-nav__link">
-    Update Drupal core
+  <a href="#update-drupal-core-package" title="Update Drupal core package" class="md-nav__link">
+    Update Drupal core package
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-all-drupal-dependencies" title="Update all Drupal dependencies" class="md-nav__link">
-    Update all Drupal dependencies
+  <a href="#update-all-packages" title="Update all packages" class="md-nav__link">
+    Update all packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-package" title="Update a package" class="md-nav__link">
+    Update a package
   </a>
   
 </li>
@@ -719,6 +740,13 @@
         <li class="md-nav__item">
   <a href="#apply-patches-to-downloaded-modules" title="Apply patches to downloaded modules" class="md-nav__link">
     Apply patches to downloaded modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" title="Resources" class="md-nav__link">
+    Resources
   </a>
   
 </li>
@@ -805,13 +833,26 @@
 </pre></div>
 
 
-<h2 id="update-drupal-core">Update Drupal core<a class="headerlink" href="#update-drupal-core" title="Permanent link">&para;</a></h2>
+<h2 id="update-drupal-core-package">Update Drupal core package<a class="headerlink" href="#update-drupal-core-package" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>composer update drupal/core --with-dependencies
 </pre></div>
 
 
-<h2 id="update-all-drupal-dependencies">Update all Drupal dependencies<a class="headerlink" href="#update-all-drupal-dependencies" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Leave this to the dependency manager, never run it by yourself!</p>
+</div>
+<h2 id="update-all-packages">Update all packages<a class="headerlink" href="#update-all-packages" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>composer update
+</pre></div>
+
+
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Leave this to the dependency manager, never run it by yourself!</p>
+</div>
+<h2 id="update-a-package">Update a package<a class="headerlink" href="#update-a-package" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>composer update [vendor]/[package] --with-dependencies
 </pre></div>
 
 
@@ -970,6 +1011,12 @@ composer require bower-asset/bootstrap
     }
 }
 </pre></div>
+
+
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.jeffgeerling.com/blog/2017/composer-and-drupal-are-still-strange-bedfellows">Common Problems and Solutions with Drupal + Composer</a></li>
+</ul>
                 
                   
                 

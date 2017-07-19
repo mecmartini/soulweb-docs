@@ -67,13 +67,23 @@ Update your Drupal site dependencies:
 
     composer update
 
-## Update Drupal core
+## Update Drupal core package
 
     composer update drupal/core --with-dependencies
 
-## Update all Drupal dependencies
+!!! danger "Danger"
+    Leave this to the dependency manager, never run it by yourself!
+
+## Update all packages
 
     composer update
+
+!!! danger "Danger"
+    Leave this to the dependency manager, never run it by yourself!
+
+## Update a package
+
+    composer update [vendor]/[package] --with-dependencies
 
 ## Define the directories to which Drupal projects should be downloaded
 
@@ -228,3 +238,7 @@ To add a patch to drupal module foobar insert the patches section in the extra s
             }
         }
     }
+
+## Resources
+
+* [Common Problems and Solutions with Drupal + Composer](https://www.jeffgeerling.com/blog/2017/composer-and-drupal-are-still-strange-bedfellows)
