@@ -178,7 +178,7 @@ Now you can finally run your `Behat` test and see the browser in action. From yo
     # to run test on safari
     ./vendor/bin/behat -v -c behat.yml -p safari
 
-!!! note "Safari"
+!!! note "Run with Safari"
     To make it works with `safari` browser you must enable, from `safari` browser, the `Allow Remote Automation` under `Develop` menu.
 
 If everything worked out, you’ll see `Selenium` open up a new instance of the selected browser profile and drive it through the test suites.

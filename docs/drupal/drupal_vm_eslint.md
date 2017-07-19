@@ -53,7 +53,7 @@ To do this, run the following command (entering your user's password at the prom
 
 The above command is a bit complicated, but all it's doing is copying whatever version of `node` you have active via `nvm` into the `/usr/local/` directory (where user installed global files should live on a linux `VPS`) and setting the permissions so that all users can access them.
 
-!!! note "Change node.js version"
+!!! tip "Change node.js version"
     If you ever want to change the version of `node` that's installed system wide, just do another `nvm` use `vXX.XX.XX` to switch your user's node to the version you want, and then re-run the above command to copy it to the system directory.
 
 ## Install and configure ESLint

@@ -28,7 +28,7 @@ To let `PhpStorm` find the vagrant executable run the following on your local ma
 
     sudo ln -s /usr/local/bin/vagrant /usr/bin/vagrant
 
-!!! note "Note"
+!!! tip "Tip"
     in case the executable is in a different path then `/usr/local/bin` change it, you can find the vagrant path with `whereis vagrant`
     
 To integrate `Vagrant` set the `Instance Folder` on the `Vagrant` settings:

@@ -10,7 +10,7 @@ You can specify a version from the command line with:
 
     composer require drupal/<modulename>:<version>
 
-!!! note "Tip"
+!!! tip "Tip"
     To avoid problems on different terminals/shells, surround the version using double quotes. Also, to make sure you will require versions of your dependencies that will guarantee not to break other things, try to use the best combination to constrain versions. Check an example:
 
         composer require "drupal/ctools:^3.0@alpha"

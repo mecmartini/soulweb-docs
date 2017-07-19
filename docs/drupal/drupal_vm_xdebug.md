@@ -71,7 +71,7 @@ Select you Server (see [Add GitHub repository and Initial Commit](drupal_vm_phps
 
 Install `Xdebug helper` as `Chrome` extension (also available on Firefox)
 
-!!! note "Note"
+!!! tip "Tip"
     similar extensions are available also for `Firefox` (e.g. `theeasiestxdebug`).
 
 A new icon should appear on `Chrome`. Right click on it and select `Options`.

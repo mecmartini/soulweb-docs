@@ -261,7 +261,7 @@ If you didn't change the standard `mysql` db settings in your `vagrant` machine 
 
 When it’s done, open the browser and type your `vagrant_hostname` (e.g. `drupaltest.dev`), in the address bar, to navigate on your drupal installation.
 
-!!! note "Configuration Split"
+!!! tip "Configuration Split"
     in case your `drupal` project config is split in different folder than the `default`, with [Configuration Split](https://www.drupal.org/project/config_split), and you need to import them too, for each of the split config you need to import run:
 
         drush csim split_machine_name
