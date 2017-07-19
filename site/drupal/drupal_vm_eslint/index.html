@@ -397,8 +397,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-git-ignore-eslint-files" title="2. Git ignore ESLint files" class="md-nav__link">
-    2. Git ignore ESLint files
+  <a href="#2-git-ignore-eslint-package-files" title="2. Git ignore ESLint package files" class="md-nav__link">
+    2. Git ignore ESLint package files
   </a>
   
 </li>
@@ -634,8 +634,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-git-ignore-eslint-files" title="2. Git ignore ESLint files" class="md-nav__link">
-    2. Git ignore ESLint files
+  <a href="#2-git-ignore-eslint-package-files" title="2. Git ignore ESLint package files" class="md-nav__link">
+    2. Git ignore ESLint package files
   </a>
   
 </li>
@@ -756,14 +756,12 @@
 </pre></div>
 
 
-<h4 id="2-git-ignore-eslint-files">2. Git ignore ESLint files<a class="headerlink" href="#2-git-ignore-eslint-files" title="Permanent link">&para;</a></h4>
-<p>Add to the <code>PhpStorm</code> <code>Version Control</code> <code>Ignored Files</code> the <code>ESLint</code> package files:</p>
-<p><img alt="PhpStorm Configure Ignored Files" src="../../img/drupal/phpstorm_48.png" title="PhpStorm Configure Ignored Files" /></p>
-<p><img alt="PhpStorm Add Ignored Files" src="../../img/drupal/phpstorm_49.png" title="PhpStorm Add Ignored Files" /></p>
-<p>The files to ignore are:</p>
+<h4 id="2-git-ignore-eslint-package-files">2. Git ignore ESLint package files<a class="headerlink" href="#2-git-ignore-eslint-package-files" title="Permanent link">&para;</a></h4>
+<p>Edit the main <code>.gitignore</code> file to add the <code>ESLint</code> package files.</p>
+<p>The files/folders to ignore are:</p>
 <ul>
-<li>Directory <code>web/node_modules</code></li>
-<li><code>package.json</code></li>
+<li>Folder <code>/web/node_modules/</code></li>
+<li>File <code>package.json</code></li>
 <li>All the files under <code>web/</code> named like <code>=2.x.x</code> <code>=3.x.x</code> <code>=4.x.x</code> etc.</li>
 </ul>
 <h4 id="3-integrate-eslint-in-phpstorm">3. Integrate ESLint in PhpStorm<a class="headerlink" href="#3-integrate-eslint-in-phpstorm" title="Permanent link">&para;</a></h4>

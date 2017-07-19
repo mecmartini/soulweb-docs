@@ -966,6 +966,11 @@ chmod +w sites/default/settings.shared.php
 </pre></div>
 
 
+<p>Edit the main <code>.gitignore</code> file to add the <code>private</code> folder.</p>
+<div class="codehilite"><pre><span></span>/private/
+</pre></div>
+
+
 <h2 id="from-existing-configuration">From existing configuration<a class="headerlink" href="#from-existing-configuration" title="Permanent link">&para;</a></h2>
 <h4 id="1-gitignore_1">1. .gitignore<a class="headerlink" href="#1-gitignore_1" title="Permanent link">&para;</a></h4>
 <p>Default <code>.gitignore</code> to use on our Drupal 8 projects:</p>
@@ -1095,6 +1100,11 @@ chmod +w sites/default/settings.shared.php
 <p>This directory must be absolute, outside of the Drupal installation directory and not accessible over the web.</p>
 <p>Caches need to be cleared when this value is changed to make the <code>private://</code> stream wrapper available to the system.</p>
 <div class="codehilite"><pre><span></span>drush cr
+</pre></div>
+
+
+<p>Edit the main <code>.gitignore</code> file to add the <code>private</code> folder.</p>
+<div class="codehilite"><pre><span></span>/private/
 </pre></div>
                 
                   

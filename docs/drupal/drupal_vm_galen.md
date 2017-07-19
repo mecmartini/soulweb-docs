@@ -221,7 +221,16 @@ From your `vagrant` machine under `docroot/tests/ReponsiveTests` run:
 
 If everything worked out, you’ll see `Selenium` open up a new instance of the selected browser profile and drive it through the test suites.
 
-#### 5. Cross-Browser test with Galen
+#### 5. Git ignore Galen package files
+
+Edit the main `.gitignore` file to add the `Galen` package files.
+
+The files/folders to ignore are:
+
+* Folder `/tests/ReponsiveTests/node_modules/`
+* Folder `/tests/ReponsiveTests/reports/`
+
+#### 6. Cross-Browser test with Galen
 
 In our `galen.config` selenium is setup to run with `chrome` browser.
 

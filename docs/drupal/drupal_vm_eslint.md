@@ -78,18 +78,14 @@ To ensure that ESLint is working on your machine, you can test it with the follo
 
     ./node_modules/.bin/eslint --version
 
-#### 2. Git ignore ESLint files
+#### 2. Git ignore ESLint package files
 
-Add to the `PhpStorm` `Version Control` `Ignored Files` the `ESLint` package files:
+Edit the main `.gitignore` file to add the `ESLint` package files.
 
-![PhpStorm Configure Ignored Files](../img/drupal/phpstorm_48.png "PhpStorm Configure Ignored Files")
+The files/folders to ignore are:
 
-![PhpStorm Add Ignored Files](../img/drupal/phpstorm_49.png "PhpStorm Add Ignored Files")
-
-The files to ignore are:
-
-* Directory `web/node_modules`
-* `package.json`
+* Folder `/web/node_modules/`
+* File `package.json`
 * All the files under `web/` named like `=2.x.x` `=3.x.x` `=4.x.x` etc.
 
 #### 3. Integrate ESLint in PhpStorm

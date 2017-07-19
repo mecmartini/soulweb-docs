@@ -450,8 +450,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-cross-browser-test-with-galen" title="5. Cross-Browser test with Galen" class="md-nav__link">
-    5. Cross-Browser test with Galen
+  <a href="#5-git-ignore-galen-package-files" title="5. Git ignore Galen package files" class="md-nav__link">
+    5. Git ignore Galen package files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cross-browser-test-with-galen" title="6. Cross-Browser test with Galen" class="md-nav__link">
+    6. Cross-Browser test with Galen
   </a>
   
 </li>
@@ -601,8 +608,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-cross-browser-test-with-galen" title="5. Cross-Browser test with Galen" class="md-nav__link">
-    5. Cross-Browser test with Galen
+  <a href="#5-git-ignore-galen-package-files" title="5. Git ignore Galen package files" class="md-nav__link">
+    5. Git ignore Galen package files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cross-browser-test-with-galen" title="6. Cross-Browser test with Galen" class="md-nav__link">
+    6. Cross-Browser test with Galen
   </a>
   
 </li>
@@ -838,7 +852,14 @@ java -jar selenium-server-standalone-3.4.0.jar
 
 
 <p>If everything worked out, you’ll see <code>Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
-<h4 id="5-cross-browser-test-with-galen">5. Cross-Browser test with Galen<a class="headerlink" href="#5-cross-browser-test-with-galen" title="Permanent link">&para;</a></h4>
+<h4 id="5-git-ignore-galen-package-files">5. Git ignore Galen package files<a class="headerlink" href="#5-git-ignore-galen-package-files" title="Permanent link">&para;</a></h4>
+<p>Edit the main <code>.gitignore</code> file to add the <code>Galen</code> package files.</p>
+<p>The files/folders to ignore are:</p>
+<ul>
+<li>Folder <code>/tests/ReponsiveTests/node_modules/</code></li>
+<li>Folder <code>/tests/ReponsiveTests/reports/</code></li>
+</ul>
+<h4 id="6-cross-browser-test-with-galen">6. Cross-Browser test with Galen<a class="headerlink" href="#6-cross-browser-test-with-galen" title="Permanent link">&para;</a></h4>
 <p>In our <code>galen.config</code> selenium is setup to run with <code>chrome</code> browser.</p>
 <p>To test on multiple browser we need to setup a new config file for each browser.</p>
 <p>For example, if we want to setup tests on <code>firefox</code> browser, from your <code>vagrant</code> machine under <code>docroot/tests/ReponsiveTests</code> run:</p>

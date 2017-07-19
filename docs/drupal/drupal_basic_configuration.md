@@ -198,6 +198,10 @@ Caches need to be cleared when this value is changed to make the `private://` st
 
     drush cr
 
+Edit the main `.gitignore` file to add the `private` folder.
+
+    /private/
+
 ## From existing configuration
 
 #### 1. .gitignore
@@ -327,3 +331,7 @@ This directory must be absolute, outside of the Drupal installation directory an
 Caches need to be cleared when this value is changed to make the `private://` stream wrapper available to the system.
 
     drush cr
+
+Edit the main `.gitignore` file to add the `private` folder.
+
+    /private/
