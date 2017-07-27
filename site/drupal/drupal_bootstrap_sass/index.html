@@ -9,7 +9,7 @@
         <meta name="description" content="Soulweb Documentation">
       
       
-        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_cors/">
+        <link rel="canonical" href="http://soulweb.docsvm.dev/drupal/drupal_bootstrap_sass/">
       
       
         <meta name="author" content="Soulweb Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>CORS Configuration - Soulweb Docs</title>
+        <title>Bootstrap (SASS) sub-theme - Soulweb Docs</title>
       
     
     
@@ -87,7 +87,7 @@
                 </span>
               
             
-            CORS Configuration
+            Bootstrap (SASS) sub-theme
           
         </span>
       </div>
@@ -455,68 +455,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        CORS Configuration
-      </label>
-    
-    <a href="./" title="CORS Configuration" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../drupal_cors/" title="CORS Configuration" class="md-nav__link">
       CORS Configuration
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cors-module" title="CORS Module" class="md-nav__link">
-    CORS Module
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cors-servicesyml" title="CORS services.yml" class="md-nav__link">
-    CORS services.yml
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cors-settingsenvironmentphp" title="CORS settings.environment.php" class="md-nav__link">
-    CORS settings.environment.php
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cors-multi-origin" title="CORS multi-origin" class="md-nav__link">
-    CORS multi-origin
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -536,11 +479,74 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../drupal_bootstrap_sass/" title="Bootstrap (SASS) sub-theme" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Bootstrap (SASS) sub-theme
+      </label>
+    
+    <a href="./" title="Bootstrap (SASS) sub-theme" class="md-nav__link md-nav__link--active">
       Bootstrap (SASS) sub-theme
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-machine" title="Local machine" class="md-nav__link">
+    Local machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vagrant-machine" title="Vagrant machine" class="md-nav__link">
+    Vagrant machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -570,29 +576,35 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cors-module" title="CORS Module" class="md-nav__link">
-    CORS Module
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-machine" title="Local machine" class="md-nav__link">
+    Local machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vagrant-machine" title="Vagrant machine" class="md-nav__link">
+    Vagrant machine
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cors-servicesyml" title="CORS services.yml" class="md-nav__link">
-    CORS services.yml
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cors-settingsenvironmentphp" title="CORS settings.environment.php" class="md-nav__link">
-    CORS settings.environment.php
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cors-multi-origin" title="CORS multi-origin" class="md-nav__link">
-    CORS multi-origin
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
   </a>
   
 </li>
@@ -612,65 +624,56 @@
               
                 
                 
-                <h1 id="cors-configuration">CORS Configuration<a class="headerlink" href="#cors-configuration" title="Permanent link">&para;</a></h1>
-<p><code>Cross-origin resource sharing</code> (<code>CORS</code>) is a mechanism that allows a web page to make XMLHttpRequests to another domain. Such <code>cross-domain</code> requests would otherwise be forbidden by web browsers, per the same origin security policy.</p>
-<p>To enable `CORS in your Drupal installation three methods are available:</p>
+                <h1 id="bootstrap-sass-sub-theme">Bootstrap (SASS) sub-theme<a class="headerlink" href="#bootstrap-sass-sub-theme" title="Permanent link">&para;</a></h1>
+<p>To generate a new <code>Bootstrap</code> (<code>SASS</code>) sub-theme we can use:</p>
 <ul>
-<li><a href="./#cors-module">CORS Module</a></li>
-<li><a href="./#cors-servicesyml">CORS services.yml</a></li>
-<li><a href="./#cors-settingenvironmentphp">CORS settings.environment.php</a></li>
+<li><a href="https://github.com/valeriopisapia/drupal8-bootstrap-subtheme-gen">Drupal 8 Bootstrap Subtheme generator</a></li>
 </ul>
-<h2 id="cors-module">CORS Module<a class="headerlink" href="#cors-module" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.drupal.org/project/cors">CORS</a> module provides a configuration page to map domains to paths and add the necessary Access-Control-Allow-Origin header.</p>
-<h2 id="cors-servicesyml">CORS services.yml<a class="headerlink" href="#cors-servicesyml" title="Permanent link">&para;</a></h2>
-<p><code>Drupal</code>services.yml<code>(located in</code>sites/default) contain the drupal default method to enable and configure CORS.</p>
-<p>Below a configuration example:</p>
-<div class="codehilite"><pre><span></span>   # Configure Cross-Site HTTP requests (CORS).
-   # Read https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
-   # for more information about the topic in general.
-   # Note: By default the configuration is disabled.
-  cors.config:
-    enabled: true
-    # Specify allowed headers, like &#39;x-allowed-header&#39;.
-    allowedHeaders: [&#39;Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&#39;]
-    # Specify allowed request methods, specify [&#39;*&#39;] to allow all possible ones.
-    allowedMethods: [&#39;POST,GET,PUT,DELETE,OPTIONS&#39;]
-    # Configure requests allowed from specific origins.
-    allowedOrigins: [&#39;http://example.dev&#39;]
-    # Sets the Access-Control-Expose-Headers header.
-    exposedHeaders: false
-    # Sets the Access-Control-Max-Age header.
-    maxAge: false
-    # Sets the Access-Control-Allow-Credentials header.
-    supportsCredentials: true
+<p>The script creates the <code>Bootstrap</code> sub-theme and build the <code>grunt</code> dependencies and config to process the theme files.</p>
+<p>You can choose to run it on your local machine or, if you are using <code>Drupal VM</code>, on your <code>vagrant</code> machine.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>As described on the repository instructions you need:</p>
+<ul>
+<li><code>Node.js</code></li>
+<li><code>Npm</code></li>
+<li><code>Grunt</code></li>
+</ul>
+<h4 id="local-machine">Local machine<a class="headerlink" href="#local-machine" title="Permanent link">&para;</a></h4>
+<p>To install <code>Node.js</code> and <code>Npm</code> follow the instruction at <a href="../drupal_vm_eslint/#1-install-nodejs-using-nvm">Install Node.js using Nvm</a>.</p>
+<p>Then run:</p>
+<div class="codehilite"><pre><span></span>npm install -g grunt-cli
 </pre></div>
 
 
-<h2 id="cors-settingsenvironmentphp">CORS settings.environment.php<a class="headerlink" href="#cors-settingsenvironmentphp" title="Permanent link">&para;</a></h2>
-<p>For complex <code>CORS</code> configuration you can use one of <code>settings.environment.php</code> in your Drupal installation (e.g. <code>settings.shared.php</code>, <code>settings.local.php</code>, <code>settings.dev.php</code>, etc.) to add your <code>CORS</code> configuration.</p>
-<p>Below a configuration example:</p>
-<div class="codehilite"><pre><span></span>header(&quot;Access-Control-Allow-Origin: http://example.dev&quot;);
-header(&quot;Access-Control-Allow-Credentials: true&quot;);
-header(&quot;Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS&quot;);
-header(&quot;Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&quot;);
+<h4 id="vagrant-machine">Vagrant machine<a class="headerlink" href="#vagrant-machine" title="Permanent link">&para;</a></h4>
+<p>Open the vagrant machine <code>config.yml</code> file and make sure to have the <code>nodejs</code> line uncommented on <code>installed_extras</code></p>
+<div class="codehilite"><pre><span></span>installed_extras:
+      ...
+      - nodejs
+      ...
 </pre></div>
 
 
-<h2 id="cors-multi-origin">CORS multi-origin<a class="headerlink" href="#cors-multi-origin" title="Permanent link">&para;</a></h2>
-<p>For multi-origin CORS configuration the best way is to configure it through <a href="./#cors-settingenvironmentphp">CORS settings.environment.php</a>.</p>
-<p>Below a configuration example:</p>
-<div class="codehilite"><pre><span></span>$allowed_origin = array(
-  &#39;http://example.one.dev&#39;,
-  &#39;http://example.two.dev&#39;,
-);
-
-if (in_array($_SERVER[&#39;HTTP_ORIGIN&#39;], $allowed_origin)) {
-  header(&quot;Access-Control-Allow-Origin: &quot; . $_SERVER[&#39;HTTP_ORIGIN&#39;]);
-  header(&quot;Access-Control-Allow-Credentials: true&quot;);
-  header(&quot;Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS&quot;);
-  header(&quot;Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&quot;);
-}
+<p>Add <code>grunt</code> to <code>Npm</code> global packages:</p>
+<div class="codehilite"><pre><span></span>nodejs_npm_global_packages:
+  ...
+  - grunt-cli
 </pre></div>
+
+
+<p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Follow the instructions of <code>Composer generator</code> on the link at the top.</p>
+<p>When the script is done you must delete the files:</p>
+<ul>
+<li><code>bootstrap_subtheme_composer_gen.sh</code></li>
+<li><code>get-tag.awk</code></li>
+</ul>
+<p>To process the theme files move on the created sub-theme directory and run:</p>
+<ul>
+<li><code>grunt</code> to process your file</li>
+<li><code>grunt watch</code> to watch your project files for changes</li>
+</ul>
                 
                   
                 
@@ -689,7 +692,7 @@ if (in_array($_SERVER[&#39;HTTP_ORIGIN&#39;], $allowed_origin)) {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../drupal_deploy_content/" title="Deploy Content" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../drupal_multisite/" title="Multisite" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -698,25 +701,11 @@ if (in_array($_SERVER[&#39;HTTP_ORIGIN&#39;], $allowed_origin)) {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Deploy Content
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../drupal_multisite/" title="Multisite" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
                 Multisite
               </span>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           </a>
+        
         
       </nav>
     </div>

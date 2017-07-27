@@ -29,6 +29,7 @@ pages:
   - 'Deploy Content': 'drupal/drupal_deploy_content.md'
   - 'CORS Configuration': 'drupal/drupal_cors.md'
   - 'Multisite': 'drupal/drupal_multisite.md'
+  - 'Bootstrap (SASS) sub-theme': 'drupal/drupal_bootstrap_sass.md'
 
 theme: 'material'
 
