@@ -42,7 +42,7 @@ Install the subsite from the existing configuration:
 
 ## Configure your multisite domains and aliases with sites.php
 
-On your `drupal` installation, under `sites/default` copy the file `example.sites.php` in `sites` folder and configure your subsite domains and aliases as below:
+On your `drupal` installation, under `sites` copy and past the file `example.sites.php` in the same folder, naming it `sites.php`, and configure your sub-site domains and aliases as below:
 
     $sites = array(
       'example.dev' => 'it.example.dev',
