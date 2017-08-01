@@ -16,7 +16,7 @@ Using drush, you can run this simple command:
 
 To install it with a different language than default (english) you can use the `locale` parameter. As example, to install it with `italian` language you can run:
 
-    drush site-install --db-url=mysql://db_user:db_password@localhost:port/db_name --sites-subdir=sample.subsite.com --account-name=admin --account-pass=admin  -locale=it -y
+    drush site-install --db-url=mysql://db_user:db_password@localhost:port/db_name --sites-subdir=sample.subsite.com --account-name=admin --account-pass=admin  --locale=it -y
 
 ## Multisite with Shared Configuration
 
