@@ -24,7 +24,7 @@ After running the above install script, `nvm` should have successfully installed
 
     nvm --version
 
-If you are kissing the `nvm` command, after running the install script, you may be missing a `.bash_profile`.
+If you are missing the `nvm` command, after running the install script, you may be missing a `.bash_profile`.
 
 Run `touch ~/.bash_profile` in your command line and re-run the installer script.
 
