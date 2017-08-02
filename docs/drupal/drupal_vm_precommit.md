@@ -1,5 +1,7 @@
 # Pre Commit Hook
 
+[Drupal Pre Commit Hook](https://github.com/mecmartini/drupal-pre-commit-hook/blob/master/pre-commit)
+
 The `PhpStorm` commit window already integrate the `Perform code analysis` tool but, for some reason, it's not able to run the `PHP Code Sniffer Validation` as when you launch the normal `Inspect Code`.
 
 So we need to setup an alternative way to do it properly through the git pre-commit hook.
@@ -25,17 +27,17 @@ From your `vagrant` machine on your `drupal` root directory run:
 
 #### 2. Pre Commit Hook Script
 
-The `Pre Commit Hook Plugin` looks for the `pre-commit-hook.sh` file script on your project root directory. To create it, from your drupal root directory run:
+The `Pre Commit Hook Plugin` looks for the `pre-commit-hook.sh` file script on your project root directory.
 
-    touch pre-commit-hook.sh
+To download it, in your `drupal` root directory, run:
+
+    curl -O https://raw.githubusercontent.com/mecmartini/drupal-pre-commit-hook/master/pre-commit
 
 Make sure the `pre-commit` script is executable:
 
     chmod +x pre-commit-hook.sh
 
-Populate the script with our default. Copy and paste the content of [Drupal Pre Commit Hook](https://github.com/mecmartini/drupal-pre-commit-hook/blob/master/pre-commit).
-
-This script run a [Coder Sniffer](drupal_vm_codersniffer.md) and [ESlint](drupal_vm_eslint.md) code analysis with syntax auto fix, so make sure to have them installed as required.
+This script run a [Coder Sniffer](drupal_vm_codersniffer.md) and [ESlint](drupal_vm_eslint.md) code analysis with syntax auto fix. Make sure to have them installed as required.
 
 #### 3. Run the Pre Commit Code Analysis
 

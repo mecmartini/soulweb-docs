@@ -633,6 +633,7 @@
                 
                 
                 <h1 id="pre-commit-hook">Pre Commit Hook<a class="headerlink" href="#pre-commit-hook" title="Permanent link">&para;</a></h1>
+<p><a href="https://github.com/mecmartini/drupal-pre-commit-hook/blob/master/pre-commit">Drupal Pre Commit Hook</a></p>
 <p>The <code>PhpStorm</code> commit window already integrate the <code>Perform code analysis</code> tool but, for some reason, it's not able to run the <code>PHP Code Sniffer Validation</code> as when you launch the normal <code>Inspect Code</code>.</p>
 <p>So we need to setup an alternative way to do it properly through the git pre-commit hook.</p>
 <h2 id="setup-a-git-pre-commit-hook-to-check-coding-standards">Setup a Git pre-commit hook to check Coding Standards<a class="headerlink" href="#setup-a-git-pre-commit-hook-to-check-coding-standards" title="Permanent link">&para;</a></h2>
@@ -651,8 +652,9 @@
 
 
 <h4 id="2-pre-commit-hook-script">2. Pre Commit Hook Script<a class="headerlink" href="#2-pre-commit-hook-script" title="Permanent link">&para;</a></h4>
-<p>The <code>Pre Commit Hook Plugin</code> looks for the <code>pre-commit-hook.sh</code> file script on your project root directory. To create it, from your drupal root directory run:</p>
-<div class="codehilite"><pre><span></span>touch pre-commit-hook.sh
+<p>The <code>Pre Commit Hook Plugin</code> looks for the <code>pre-commit-hook.sh</code> file script on your project root directory.</p>
+<p>To download it, in your <code>drupal</code> root directory, run:</p>
+<div class="codehilite"><pre><span></span>curl -O https://raw.githubusercontent.com/mecmartini/drupal-pre-commit-hook/master/pre-commit
 </pre></div>
 
 
@@ -661,8 +663,7 @@
 </pre></div>
 
 
-<p>Populate the script with our default. Copy and paste the content of <a href="https://github.com/mecmartini/drupal-pre-commit-hook/blob/master/pre-commit">Drupal Pre Commit Hook</a>.</p>
-<p>This script run a <a href="../drupal_vm_codersniffer/">Coder Sniffer</a> and <a href="../drupal_vm_eslint/">ESlint</a> code analysis with syntax auto fix, so make sure to have them installed as required.</p>
+<p>This script run a <a href="../drupal_vm_codersniffer/">Coder Sniffer</a> and <a href="../drupal_vm_eslint/">ESlint</a> code analysis with syntax auto fix. Make sure to have them installed as required.</p>
 <h4 id="3-run-the-pre-commit-code-analysis">3. Run the Pre Commit Code Analysis<a class="headerlink" href="#3-run-the-pre-commit-code-analysis" title="Permanent link">&para;</a></h4>
 <p>To make the <code>pre-commit</code> script work, you must run <code>git add</code> of the files to commit before the commit itself.</p>
 <p>The script is set to check only those added file to avoid to check all the modified files that could be not involved in your commit.</p>
