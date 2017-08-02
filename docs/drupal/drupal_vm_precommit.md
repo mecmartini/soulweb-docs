@@ -6,6 +6,10 @@ The `PhpStorm` commit window already integrate the `Perform code analysis` tool 
 
 So we need to setup an alternative way to do it properly through the git pre-commit hook.
 
+## Requirements
+
+* ESLint (see [ESLint docs](drupal_vm_eslint.md))
+
 ## Setup a Git pre-commit hook to check Coding Standards
 
 First of all make sure to have the [Pre Commit Hook Plugin](drupal_vm_phpstorm.md#pre-commit-hook-plugin) for `PhpStorm` installed and enabled.
