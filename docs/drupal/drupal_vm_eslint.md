@@ -54,7 +54,7 @@ To do this, run the following command (entering your user's password at the prom
 The above command is a bit complicated, but all it's doing is copying whatever version of `node` you have active via `nvm` into the `/usr/local/` directory (where user installed global files should live on a linux `VPS`) and setting the permissions so that all users can access them.
 
 !!! tip "Change node.js version"
-    If you ever want to change the version of `node` that's installed system wide, just do another `nvm` use `vXX.XX.XX` to switch your user's node to the version you want, and then re-run the above command to copy it to the system directory.
+    If you ever want to change the version of `node` that's installed system wide, just do another `nvm use vXX.XX.XX` to switch your user's node to the version you want, and then re-run the above command to copy it to the system directory.
 
 ## Install and configure ESLint
 
@@ -62,7 +62,11 @@ The above command is a bit complicated, but all it's doing is copying whatever v
 
 We are gonna install `ESLint` as part of our project build locally:
 
-Open your terminal of choice and move to local `drupal/web` direcory of your project and run:
+Open your terminal of choice and move to local `drupal/web` direcory of your project and create a `package.json` running:
+
+    npm init
+
+Install `ESLint`:
 
     npm install eslint --save-dev
 
@@ -70,9 +74,51 @@ Make sure the `ESLint` is executable:
 
     chmod +x ./node_modules/.bin/eslint
 
-You should then setup a configuration file:
+You should then setup a configuration file. Drupal is already shiped with the default configuration file `.eslintrc.json`.
 
-    ./node_modules/.bin/eslint --init
+If you don't find it in your `drupal/web` folder create it with the following content:
+
+    {
+      "extends": "eslint-config-airbnb",
+      "root": true,
+      "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+      },
+      "globals": {
+        "Drupal": true,
+        "drupalSettings": true,
+        "drupalTranslations": true,
+        "domready": true,
+        "jQuery": true,
+        "_": true,
+        "matchMedia": true,
+        "Backbone": true,
+        "Modernizr": true,
+        "CKEDITOR": true
+      },
+      "rules": {
+        "consistent-return": [0],
+        "no-underscore-dangle": [0],
+        "max-nested-callbacks": [1, 3],
+        "no-mutable-exports": [1],
+        "no-plusplus": [1, {
+          "allowForLoopAfterthoughts": true
+        }],
+        "no-param-reassign": [0],
+        "no-prototype-builtins": [0],
+        "valid-jsdoc": [1, {
+          "prefer": {
+            "returns": "return",
+            "property": "prop"
+          },
+          "requireReturn": false
+        }],
+        "brace-style": ["error", "stroustrup"],
+        "no-unused-vars": [1]
+      }
+    }
 
 To ensure that ESLint is working on your machine, you can test it with the following command:
 
@@ -86,7 +132,6 @@ The files/folders to ignore are:
 
 * Folder `/web/node_modules/`
 * File `package.json`
-* All the files under `web/` named like `=2.x.x` `=3.x.x` `=4.x.x` etc.
 
 #### 3. Integrate ESLint in PhpStorm
 
