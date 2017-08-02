@@ -33,6 +33,10 @@ To download it, in your `drupal` root directory, run:
 
     curl -O https://raw.githubusercontent.com/mecmartini/drupal-pre-commit-hook/master/pre-commit
 
+Rename it:
+
+    mv pre-commit pre-commit-hook.sh
+
 Make sure the `pre-commit` script is executable:
 
     chmod +x pre-commit-hook.sh
