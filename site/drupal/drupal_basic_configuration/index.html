@@ -1044,7 +1044,7 @@ chmod +w sites/default/settings.php
 
 
 <p>If you have more then one host (e.g. for <code>multisite</code>) add all of them.</p>
-<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add the following lines just before of <code>$databases['default']['default'] = ...</code>:</p>
 <div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;)) {
    include $app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;;
 }

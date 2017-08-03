@@ -265,7 +265,7 @@ Open the `settings.local.php` created and add your local local `host` to on `tru
 
 If you have more then one host (e.g. for `multisite`) add all of them.
 
-Open `settings.php` file in `sites/default` and add these lines to the end:
+Open `settings.php` file in `sites/default` and add the following lines just before of `$databases['default']['default'] = ...`:
 
     if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
        include $app_root . '/' . $site_path . '/settings.local.php';
