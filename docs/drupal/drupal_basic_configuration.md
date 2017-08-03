@@ -280,6 +280,7 @@ Open `settings.local.php` and make sure the following line is present and uncomm
 Uncomment these lines in `settings.local.php` to disable the render cache and disable dynamic page cache:
 
     $settings['cache']['bins']['render'] = 'cache.backend.null';
+    ...
     $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 
 Open `development.services.yml` in the sites folder and add the following block to disable the `twig` cache:
