@@ -183,9 +183,9 @@ Add the repository to `composer.json`:
 
 This repository works by transposing package information from `NPM` or `Bower` to a compatible version for `Composer`. This allows you to manage asset dependencies in a `PHP` based project very easily.
 
-To install those packages in the `drupal` libraries directory, it's needed the `drupal-library-mapping` package:
+To install those packages in the `drupal` libraries directory you needed `composer-installers-extender` and `drupal-library-mapping` packages:
 
-    composer require bmcclure/drupal-library-mapping
+    composer require oomphinc/composer-installers-extender bmcclure/drupal-library-mapping
 
 Now you can define the custom directory for the assets installation, according to the standard drupal libraries directory:
 
