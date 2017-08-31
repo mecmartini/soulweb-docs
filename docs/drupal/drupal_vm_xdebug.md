@@ -2,7 +2,7 @@
 
 #### 1. Enable Xdebug on your Vagrant machine
 
-Open the vagrant machine `config.yml` file and make sure to have the xdebug line uncommented on `installed_extras`
+Open the vagrant machine `config.yml` file and make sure to have the `xdebug` line uncommented on `installed_extras`
 
     installed_extras:
           - adminer

@@ -6,17 +6,24 @@
 
 Make sure you have `Nvm` and `Node.js` installed on your `vagrant` machine. See [Install Node.js using Nvm](drupal_vm_eslint.md#1-install-nodejs-using-nvm).
 
-Open the `vagrant` machine `config.yml` file and add to `nodejs_npm_global_packages` the line:
+Open the vagrant machine `config.yml` file and make sure to have the `java` line uncommented on `installed_extras`
 
-    nodejs_npm_global_packages:
-      ...
-      - galenframework-cli
+    installed_extras:
+          ...
+          - java
+          ...
 
 From your `terminal` go on the `vagrant` directory and run `vagrant up --provision`, to apply the changes on your `vagrant` machine, or run `vagrant provision` if your machine is already up.
 
 Make sure you have the `Selenium Server` requirements on your host machine. See [Behat Requirements](drupal_vm_behat.md#1-requirements).
 
-#### 2. Setup Galen
+#### 2. Install Galen Framework
+
+From your `vagrant` machine run:
+
+    sudo npm install -g galenframework-cli
+
+#### 3. Setup Galen
 
 From your `vagrant` machine, on your `drupal` project folder, the following steps will help you get your first Galen tests up and running!
 
@@ -163,13 +170,13 @@ And, at the end, create also the file `config.js` that contains:
 
 Edit the `baseURL` parameter with your host URL.
 
-#### 3. Install Galen dependencies
+#### 4. Install Galen dependencies
 
-From your `vagrant` machine inside your `drupal` docroot run:
+From your `vagrant` machine, in the folder `tests/ReponsiveTests/` on your `drupal` docroot, run:
 
     npm install
 
-#### 4. Run your first Galen test
+#### 5. Run your first Galen test
 
 In your project docroot, under `tests/ReponsiveTests`, create the folder `specs`.
 
@@ -221,7 +228,7 @@ From your `vagrant` machine under `docroot/tests/ReponsiveTests` run:
 
 If everything worked out, you’ll see `Selenium` open up a new instance of the selected browser profile and drive it through the test suites.
 
-#### 5. Git ignore Galen package files
+#### 6. Git ignore Galen package files
 
 Edit the main `.gitignore` file to add the `Galen` package files.
 
@@ -230,7 +237,7 @@ The files/folders to ignore are:
 * Folder `/tests/ReponsiveTests/node_modules/`
 * Folder `/tests/ReponsiveTests/reports/`
 
-#### 6. Cross-Browser test with Galen
+#### 7. Cross-Browser test with Galen
 
 In our `galen.config` selenium is setup to run with `chrome` browser.
 
@@ -244,6 +251,6 @@ Then edit the created file `galenfirefox.config` and change the `galen.browserFa
 
     galen.browserFactory.selenium.grid.browser = firefox
 
-No to run your test:
+Now to run your test:
 
     galen test tests/suites/* --htmlreport reports/ --config galenfirefox.config
