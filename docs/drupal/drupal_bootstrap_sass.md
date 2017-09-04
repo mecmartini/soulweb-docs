@@ -22,7 +22,7 @@ To install `Node.js` and `Npm` follow the instruction at [Install Node.js using 
 
 Then run:
 
-    npm install -g grunt-cli
+    sudo npm install -g grunt-cli
 
 #### Vagrant machine
 
