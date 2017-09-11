@@ -137,7 +137,7 @@ Create a `behat.yml` file inside the docroot of your site (e.g. create this file
           region_map:
             content: "#content"
 
-and edit the `wd_host` and `drupal_root` parameters of the three profile (`chrome` - `firefox` - `safari`) with your parameters.
+and edit the `base_url` and `drupal_root` parameters of the three profile (`chrome` - `firefox` - `safari`) with your parameters.
 
 To initialize the `Behat` features folder, where you will place test cases, you must run:
 
