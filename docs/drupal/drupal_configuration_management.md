@@ -30,7 +30,7 @@ Configuration split exposes a configuration entity which controls what you want 
 * `blacklist configuration`: settings or configuration entities. These will be removed from the active sync directory.
 * `graylist configuration`: settings or configuration entities. These will not be removed if they are in the active sync directory, but also not exported if they are not there yet.
 
-As default, we have `Dev` / `Stage` / `Prod` config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the `Dev` environment on your local environment to import / export is config. Open the `settings.local.php` and add this line:
+As default, we have `Dev` / `Stage` / `Prod` config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the `Dev` environment on your local environment to import / export is config. Open the `settings.dev.php` and add this line:
 
     $config['config_split.config_split.dev']['status'] = TRUE;
 

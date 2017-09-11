@@ -903,6 +903,19 @@ $settings[&#39;trusted_host_patterns&#39;] = array(
 <li><code>settings.stage.php</code></li>
 <li><code>settings.prod.php</code></li>
 </ol>
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
+<div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;)) {
+   include $app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;;
+}
+</pre></div>
+
+
+<p>Open <code>settings.dev.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
+<div class="codehilite"><pre><span></span>$config[&#39;config_split.config_split.dev&#39;][&#39;status&#39;] = TRUE;
+</pre></div>
+
+
+<p>Than see <a href="../drupal_configuration_management/#different-configurations-on-dev-stage-prod-environments">Configuration Manager Dev docs</a></p>
 <h4 id="5-create-servicesyml">5. Create services.yml<a class="headerlink" href="#5-create-servicesyml" title="Permanent link">&para;</a></h4>
 <p>You have to make the site settings directory (e.g. <code>default</code>) writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default

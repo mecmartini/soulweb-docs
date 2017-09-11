@@ -127,6 +127,18 @@ In this directory create the empty files:
 2. `settings.stage.php`
 3. `settings.prod.php`
 
+Open `settings.php` file in `sites/default` and add these lines to the end:
+
+    if (file_exists($app_root . '/' . $site_path . '/settings.dev.php')) {
+       include $app_root . '/' . $site_path . '/settings.dev.php';
+    }
+
+Open `settings.dev.php` file in `sites/default` and add these lines to the end:
+
+    $config['config_split.config_split.dev']['status'] = TRUE;
+
+Than see [Configuration Manager Dev docs](drupal_configuration_management.md#different-configurations-on-dev-stage-prod-environments)
+
 #### 5. Create services.yml
 
 You have to make the site settings directory (e.g. `default`) writable to do this. Drupal will restore permissions in a later moment:

@@ -623,7 +623,7 @@
 <li><code>blacklist configuration</code>: settings or configuration entities. These will be removed from the active sync directory.</li>
 <li><code>graylist configuration</code>: settings or configuration entities. These will not be removed if they are in the active sync directory, but also not exported if they are not there yet.</li>
 </ul>
-<p>As default, we have <code>Dev</code> / <code>Stage</code> / <code>Prod</code> config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the <code>Dev</code> environment on your local environment to import / export is config. Open the <code>settings.local.php</code> and add this line:</p>
+<p>As default, we have <code>Dev</code> / <code>Stage</code> / <code>Prod</code> config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the <code>Dev</code> environment on your local environment to import / export is config. Open the <code>settings.dev.php</code> and add this line:</p>
 <div class="codehilite"><pre><span></span>$config[&#39;config_split.config_split.dev&#39;][&#39;status&#39;] = TRUE;
 </pre></div>
 
