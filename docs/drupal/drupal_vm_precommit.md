@@ -8,6 +8,7 @@ So we need to setup an alternative way to do it properly through the git pre-com
 
 ## Requirements
 
+* Coder Sniffer (see [Coder Sniffer docs](drupal_vm_codersniffer.md))
 * ESLint (see [ESLint docs](drupal_vm_eslint.md))
 
 ## Setup a Git pre-commit hook to check Coding Standards
