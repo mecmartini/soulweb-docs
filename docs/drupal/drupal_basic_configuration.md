@@ -149,7 +149,7 @@ Copy and rename the `sites/default/default.services.yml` to `sites/default/servi
 
     cp sites/default/default.services.yml sites/default/services.yml
 
-#### 4. Disable Drupal caching
+#### 6. Disable Drupal caching
 
 Open `settings.local.php` and make sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
 
