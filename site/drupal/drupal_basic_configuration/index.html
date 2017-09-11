@@ -458,15 +458,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-create-and-enable-local-settings" title="3. Create and enable local settings" class="md-nav__link">
-    3. Create and enable local settings
+  <a href="#3-create-dev-stage-prod-settings" title="3. Create Dev / Stage / Prod settings" class="md-nav__link">
+    3. Create Dev / Stage / Prod settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-dev-stage-prod-settings" title="4. Create Dev / Stage / Prod settings" class="md-nav__link">
-    4. Create Dev / Stage / Prod settings
+  <a href="#4-create-and-enable-local-settings" title="4. Create and enable local settings" class="md-nav__link">
+    4. Create and enable local settings
   </a>
   
 </li>
@@ -520,22 +520,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-create-and-enable-local-settings_1" title="3. Create and enable local settings" class="md-nav__link">
-    3. Create and enable local settings
+  <a href="#3-enable-dev-settings" title="3. Enable dev settings" class="md-nav__link">
+    3. Enable dev settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-disable-drupal-caching_1" title="4. Disable Drupal caching" class="md-nav__link">
-    4. Disable Drupal caching
+  <a href="#4-create-and-enable-local-settings_1" title="4. Create and enable local settings" class="md-nav__link">
+    4. Create and enable local settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-private-files" title="5. Private files" class="md-nav__link">
-    5. Private files
+  <a href="#5-disable-drupal-caching" title="5. Disable Drupal caching" class="md-nav__link">
+    5. Disable Drupal caching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-private-files" title="6. Private files" class="md-nav__link">
+    6. Private files
   </a>
   
 </li>
@@ -674,15 +681,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-create-and-enable-local-settings" title="3. Create and enable local settings" class="md-nav__link">
-    3. Create and enable local settings
+  <a href="#3-create-dev-stage-prod-settings" title="3. Create Dev / Stage / Prod settings" class="md-nav__link">
+    3. Create Dev / Stage / Prod settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-dev-stage-prod-settings" title="4. Create Dev / Stage / Prod settings" class="md-nav__link">
-    4. Create Dev / Stage / Prod settings
+  <a href="#4-create-and-enable-local-settings" title="4. Create and enable local settings" class="md-nav__link">
+    4. Create and enable local settings
   </a>
   
 </li>
@@ -736,22 +743,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-create-and-enable-local-settings_1" title="3. Create and enable local settings" class="md-nav__link">
-    3. Create and enable local settings
+  <a href="#3-enable-dev-settings" title="3. Enable dev settings" class="md-nav__link">
+    3. Enable dev settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-disable-drupal-caching_1" title="4. Disable Drupal caching" class="md-nav__link">
-    4. Disable Drupal caching
+  <a href="#4-create-and-enable-local-settings_1" title="4. Create and enable local settings" class="md-nav__link">
+    4. Create and enable local settings
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-private-files" title="5. Private files" class="md-nav__link">
-    5. Private files
+  <a href="#5-disable-drupal-caching" title="5. Disable Drupal caching" class="md-nav__link">
+    5. Disable Drupal caching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-private-files" title="6. Private files" class="md-nav__link">
+    6. Private files
   </a>
   
 </li>
@@ -866,7 +880,32 @@ $settings[&#39;trusted_host_patterns&#39;] = array(
 
 
 <p>Make sure to edit the setting with your host.</p>
-<h4 id="3-create-and-enable-local-settings">3. Create and enable local settings<a class="headerlink" href="#3-create-and-enable-local-settings" title="Permanent link">&para;</a></h4>
+<h4 id="3-create-dev-stage-prod-settings">3. Create Dev / Stage / Prod settings<a class="headerlink" href="#3-create-dev-stage-prod-settings" title="Permanent link">&para;</a></h4>
+<p>You have to make the site settings directory (e.g. <code>default</code>) writable to do this. Drupal will restore permissions in a later moment:</p>
+<div class="codehilite"><pre><span></span>chmod +w sites/default
+</pre></div>
+
+
+<p>In this directory create the empty files:</p>
+<ol>
+<li><code>settings.dev.php</code></li>
+<li><code>settings.stage.php</code></li>
+<li><code>settings.prod.php</code></li>
+</ol>
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines at the end:</p>
+<div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;)) {
+   include $app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;;
+}
+</pre></div>
+
+
+<p>Open <code>settings.dev.php</code> file in <code>sites/default</code> and add these lines at the end:</p>
+<div class="codehilite"><pre><span></span>$config[&#39;config_split.config_split.dev&#39;][&#39;status&#39;] = TRUE;
+</pre></div>
+
+
+<p>Than see <a href="../drupal_configuration_management/#different-configurations-on-dev-stage-prod-environments">Configuration Manager Dev docs</a></p>
+<h4 id="4-create-and-enable-local-settings">4. Create and enable local settings<a class="headerlink" href="#4-create-and-enable-local-settings" title="Permanent link">&para;</a></h4>
 <p>You have to make the site settings directory (e.g. <code>default</code>) writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default
 </pre></div>
@@ -884,38 +923,13 @@ $settings[&#39;trusted_host_patterns&#39;] = array(
 
 
 <p>If you have more then one host (e.g. for <code>multisite</code>) add all of them.</p>
-<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines at the end:</p>
 <div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;)) {
    include $app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;;
 }
 </pre></div>
 
 
-<h4 id="4-create-dev-stage-prod-settings">4. Create Dev / Stage / Prod settings<a class="headerlink" href="#4-create-dev-stage-prod-settings" title="Permanent link">&para;</a></h4>
-<p>You have to make the site settings directory (e.g. <code>default</code>) writable to do this. Drupal will restore permissions in a later moment:</p>
-<div class="codehilite"><pre><span></span>chmod +w sites/default
-</pre></div>
-
-
-<p>In this directory create the empty files:</p>
-<ol>
-<li><code>settings.dev.php</code></li>
-<li><code>settings.stage.php</code></li>
-<li><code>settings.prod.php</code></li>
-</ol>
-<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
-<div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;)) {
-   include $app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;;
-}
-</pre></div>
-
-
-<p>Open <code>settings.dev.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
-<div class="codehilite"><pre><span></span>$config[&#39;config_split.config_split.dev&#39;][&#39;status&#39;] = TRUE;
-</pre></div>
-
-
-<p>Than see <a href="../drupal_configuration_management/#different-configurations-on-dev-stage-prod-environments">Configuration Manager Dev docs</a></p>
 <h4 id="5-create-servicesyml">5. Create services.yml<a class="headerlink" href="#5-create-servicesyml" title="Permanent link">&para;</a></h4>
 <p>You have to make the site settings directory (e.g. <code>default</code>) writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default
@@ -1031,7 +1045,7 @@ chmod +w sites/default/settings.php
 </pre></div>
 
 
-<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines to the end:</p>
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add these lines at the end:</p>
 <div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.shared.php&#39;)) {
   include $app_root . &#39;/&#39; . $site_path . &#39;/settings.shared.php&#39;;
 }
@@ -1039,7 +1053,15 @@ chmod +w sites/default/settings.php
 
 
 <p>This will include the shared settings file as part of Drupal's settings file.</p>
-<h4 id="3-create-and-enable-local-settings_1">3. Create and enable local settings<a class="headerlink" href="#3-create-and-enable-local-settings_1" title="Permanent link">&para;</a></h4>
+<h4 id="3-enable-dev-settings">3. Enable dev settings<a class="headerlink" href="#3-enable-dev-settings" title="Permanent link">&para;</a></h4>
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add the following lines at the end:</p>
+<div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;)) {
+   include $app_root . &#39;/&#39; . $site_path . &#39;/settings.dev.php&#39;;
+}
+</pre></div>
+
+
+<h4 id="4-create-and-enable-local-settings_1">4. Create and enable local settings<a class="headerlink" href="#4-create-and-enable-local-settings_1" title="Permanent link">&para;</a></h4>
 <p>You have to make the site settings directory (e.g. <code>default</code>) writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default
 </pre></div>
@@ -1057,14 +1079,14 @@ chmod +w sites/default/settings.php
 
 
 <p>If you have more then one host (e.g. for <code>multisite</code>) add all of them.</p>
-<p>Open <code>settings.php</code> file in <code>sites/default</code> and add the following lines just before of <code>$databases['default']['default'] = ...</code>:</p>
+<p>Open <code>settings.php</code> file in <code>sites/default</code> and add the following lines at the end:</p>
 <div class="codehilite"><pre><span></span>if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;)) {
    include $app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;;
 }
 </pre></div>
 
 
-<h4 id="4-disable-drupal-caching_1">4. Disable Drupal caching<a class="headerlink" href="#4-disable-drupal-caching_1" title="Permanent link">&para;</a></h4>
+<h4 id="5-disable-drupal-caching">5. Disable Drupal caching<a class="headerlink" href="#5-disable-drupal-caching" title="Permanent link">&para;</a></h4>
 <p>Open <code>settings.local.php</code> and make sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:</p>
 <div class="codehilite"><pre><span></span>$settings[&#39;container_yamls&#39;][] = DRUPAL_ROOT . &#39;/sites/development.services.yml&#39;;
 </pre></div>
@@ -1110,7 +1132,7 @@ services:
 </pre></div>
 
 
-<h4 id="5-private-files">5. Private files<a class="headerlink" href="#5-private-files" title="Permanent link">&para;</a></h4>
+<h4 id="6-private-files">6. Private files<a class="headerlink" href="#6-private-files" title="Permanent link">&para;</a></h4>
 <p>To use private files on <code>drupal</code> you must edit your <code>settings.shared.php</code>.</p>
 <p>You have to make the site settings directory (e.g. <code>default</code>) and is <code>settings.shared.php</code> writable to do this. Drupal will restore permissions in a later moment:</p>
 <div class="codehilite"><pre><span></span>chmod +w sites/default

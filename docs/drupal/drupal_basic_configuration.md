@@ -91,7 +91,31 @@ In `sites/default` create the file `settings.shared.php` with this code:
 
 Make sure to edit the setting with your host.
 
-#### 3. Create and enable local settings
+#### 3. Create Dev / Stage / Prod settings
+
+You have to make the site settings directory (e.g. `default`) writable to do this. Drupal will restore permissions in a later moment:
+
+    chmod +w sites/default
+
+In this directory create the empty files:
+
+1. `settings.dev.php`
+2. `settings.stage.php`
+3. `settings.prod.php`
+
+Open `settings.php` file in `sites/default` and add these lines at the end:
+
+    if (file_exists($app_root . '/' . $site_path . '/settings.dev.php')) {
+       include $app_root . '/' . $site_path . '/settings.dev.php';
+    }
+
+Open `settings.dev.php` file in `sites/default` and add these lines at the end:
+
+    $config['config_split.config_split.dev']['status'] = TRUE;
+
+Than see [Configuration Manager Dev docs](drupal_configuration_management.md#different-configurations-on-dev-stage-prod-environments)
+
+#### 4. Create and enable local settings
 
 You have to make the site settings directory (e.g. `default`) writable to do this. Drupal will restore permissions in a later moment:
 
@@ -109,35 +133,11 @@ Open the `settings.local.php` created and add your local local `host` to on `tru
 
 If you have more then one host (e.g. for `multisite`) add all of them.
 
-Open `settings.php` file in `sites/default` and add these lines to the end:
+Open `settings.php` file in `sites/default` and add these lines at the end:
 
     if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
        include $app_root . '/' . $site_path . '/settings.local.php';
     }
-
-#### 4. Create Dev / Stage / Prod settings
-
-You have to make the site settings directory (e.g. `default`) writable to do this. Drupal will restore permissions in a later moment:
-
-    chmod +w sites/default
-
-In this directory create the empty files:
-
-1. `settings.dev.php`
-2. `settings.stage.php`
-3. `settings.prod.php`
-
-Open `settings.php` file in `sites/default` and add these lines to the end:
-
-    if (file_exists($app_root . '/' . $site_path . '/settings.dev.php')) {
-       include $app_root . '/' . $site_path . '/settings.dev.php';
-    }
-
-Open `settings.dev.php` file in `sites/default` and add these lines to the end:
-
-    $config['config_split.config_split.dev']['status'] = TRUE;
-
-Than see [Configuration Manager Dev docs](drupal_configuration_management.md#different-configurations-on-dev-stage-prod-environments)
 
 #### 5. Create services.yml
 
@@ -251,7 +251,7 @@ You have to make the site settings directory (e.g. `default`) and is `settings.p
     chmod +w sites/default
     chmod +w sites/default/settings.php
 
-Open `settings.php` file in `sites/default` and add these lines to the end:
+Open `settings.php` file in `sites/default` and add these lines at the end:
 
     if (file_exists($app_root . '/' . $site_path . '/settings.shared.php')) {
       include $app_root . '/' . $site_path . '/settings.shared.php';
@@ -259,7 +259,15 @@ Open `settings.php` file in `sites/default` and add these lines to the end:
 
 This will include the shared settings file as part of Drupal's settings file.
 
-#### 3. Create and enable local settings
+#### 3. Enable dev settings
+
+Open `settings.php` file in `sites/default` and add the following lines at the end:
+
+    if (file_exists($app_root . '/' . $site_path . '/settings.dev.php')) {
+       include $app_root . '/' . $site_path . '/settings.dev.php';
+    }
+
+#### 4. Create and enable local settings
 
 You have to make the site settings directory (e.g. `default`) writable to do this. Drupal will restore permissions in a later moment:
 
@@ -277,13 +285,13 @@ Open the `settings.local.php` created and add your local local `host` to on `tru
 
 If you have more then one host (e.g. for `multisite`) add all of them.
 
-Open `settings.php` file in `sites/default` and add the following lines just before of `$databases['default']['default'] = ...`:
+Open `settings.php` file in `sites/default` and add the following lines at the end:
 
     if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
        include $app_root . '/' . $site_path . '/settings.local.php';
     }
 
-#### 4. Disable Drupal caching
+#### 5. Disable Drupal caching
 
 Open `settings.local.php` and make sure the following line is present and uncommented to enable the null cache service, otherwise add it to the end of the file:
 
@@ -326,7 +334,7 @@ Your final `development.services.yml` should look as follows (mind the indentati
       cache.backend.null:
         class: Drupal\Core\Cache\NullBackendFactory
 
-#### 5. Private files
+#### 6. Private files
 
 To use private files on `drupal` you must edit your `settings.shared.php`.
 
