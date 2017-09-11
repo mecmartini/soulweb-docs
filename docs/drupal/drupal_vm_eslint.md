@@ -131,7 +131,7 @@ Edit the main `.gitignore` file to add the `ESLint` package files.
 The files/folders to ignore are:
 
 * Folder `/web/node_modules/`
-* File `package.json`
+* File `/web/package.json`
 
 #### 3. Integrate ESLint in PhpStorm
 
