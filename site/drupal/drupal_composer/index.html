@@ -988,14 +988,6 @@ composer require oomphinc/composer-installers-extender
 </pre></div>
 
 
-<p>Adding a dependency on an asset, you must add the asset to the property require of the <code>composer.json</code> of your project.</p>
-<p>It must be prefixed with <code>{asset-type}-asset/</code>:</p>
-<div class="codehilite"><pre><span></span>composer require npm-asset/bootstrap
-...
-composer require bower-asset/bootstrap
-</pre></div>
-
-
 <p>To avoid the download of dependencies already present in <code>drupal</code> core:</p>
 <div class="codehilite"><pre><span></span>&quot;replace&quot;: {
     &quot;bower-asset/jquery&quot;: &quot;*&quot;,
@@ -1009,6 +1001,14 @@ composer require bower-asset/bootstrap
     &quot;npm-asset/backbone&quot;: &quot;*&quot;,
     &quot;npm-asset/underscore&quot;: &quot;*&quot;
 },
+</pre></div>
+
+
+<p>Adding a dependency on an asset, you must add the asset to the property require of the <code>composer.json</code> of your project.</p>
+<p>It must be prefixed with <code>{asset-type}-asset/</code>:</p>
+<div class="codehilite"><pre><span></span>composer require npm-asset/bootstrap
+...
+composer require bower-asset/bootstrap
 </pre></div>
 
 

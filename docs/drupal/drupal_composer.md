@@ -202,14 +202,6 @@ Now you can define the custom directory for the assets installation, according t
         }
     }
 
-Adding a dependency on an asset, you must add the asset to the property require of the `composer.json` of your project.
-
-It must be prefixed with `{asset-type}-asset/`:
-
-    composer require npm-asset/bootstrap
-    ...
-    composer require bower-asset/bootstrap
-
 To avoid the download of dependencies already present in `drupal` core:
 
     "replace": {
@@ -224,6 +216,14 @@ To avoid the download of dependencies already present in `drupal` core:
         "npm-asset/backbone": "*",
         "npm-asset/underscore": "*"
     },
+
+Adding a dependency on an asset, you must add the asset to the property require of the `composer.json` of your project.
+
+It must be prefixed with `{asset-type}-asset/`:
+
+    composer require npm-asset/bootstrap
+    ...
+    composer require bower-asset/bootstrap
 
 ## Apply patches to downloaded modules
 
