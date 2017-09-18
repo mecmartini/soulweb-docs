@@ -24,7 +24,7 @@ Enter in your `vagrant` machine (`vagrant ssh`) and edit the file `/home/vagrant
 
 Once you've got `PhantomJS` you need start it to run your tests.
 
-From your vagrant machine move to your `drupal` webroot (i.e. `/var/www/drupaltestvm/drupal/web`) and run:
+From your vagrant machine move to your `drupal` directory (i.e. `/var/www/drupaltestvm/drupal`) and run:
 
     phantomjs --ssl-protocol=any --ignore-ssl-errors=true vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768
 
