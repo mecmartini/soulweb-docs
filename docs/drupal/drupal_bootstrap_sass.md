@@ -2,7 +2,7 @@
 
 To generate a new `Bootstrap` (`SASS`) sub-theme we can use:
 
-* [Drupal 8 Bootstrap Subtheme generator](https://github.com/valeriopisapia/drupal8-bootstrap-subtheme-gen)
+* [Drupal 8 Bootstrap Subtheme generator](https://github.com/mecmartini/drupal8-bootstrap-subtheme-gen)
 
 The script creates the `Bootstrap` sub-theme and build the `grunt` dependencies and config to process the theme files.
 
