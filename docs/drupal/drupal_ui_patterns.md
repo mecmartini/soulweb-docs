@@ -16,6 +16,8 @@ The `Drupal` modules required are:
 * [Paragraphs](https://www.drupal.org/project/paragraphs)
 * [UI Patterns](https://www.drupal.org/project/ui_patterns)
 
+## Build component library
+
 #### 1. Create the components library
 
 We must define our components library into the `[THEME_NAME].info.yml` of our theme:
@@ -24,7 +26,7 @@ We must define our components library into the `[THEME_NAME].info.yml` of our th
       atoms:
         paths:
           - components/atoms
-      paragraphs:
+      paragraphs_component:
         paths:
           - components/paragraphs
 
@@ -45,21 +47,16 @@ Let's create, inside our theme directory, the file `[THEME_NAME].ui_patterns.yml
       label: Button one
       description: A button template.
       fields:
-        button_label:
+        button_one_label:
           type: string
           label: Button label
           description: The label to print into the button.
           preview: Label
-        button_url:
-          type: string
-          label: Button URL
-          description: The URL for the button.
-          preview: http://www.soulweb.it
       use: '@atoms/buttons/button-one/button-one.html.twig'
 
 We must now create the template file declared above. So, in our component library directory (`component/atoms`), let's create the folder `buttons/button-one` and create the file `button-one.html.twig` inside it.
 
-#### 2. Create the component paragraph-one
+#### 3. Create the component paragraph-one
 
 Let's add to `[THEME_NAME].ui_patterns.yml` the definition of `paragraph-one` component:
 
@@ -73,7 +70,7 @@ Let's add to `[THEME_NAME].ui_patterns.yml` the definition of `paragraph-one` co
           description: An image.
           preview: '<img src="http://lorempixel.com/640/480/nature/1/" title="An image" />'
         text:
-          type: string
+          type: text
           label: Text
           description: A text.
           preview: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget vulputate tellus, vel aliquam sapien. Donec convallis nibh eu volutpat egestas. Nullam enim metus, placerat eleifend condimentum id, sodales in arcu. Quisque vel lacus odio. Nullam vel massa quis lectus ullamcorper placerat. Cras at turpis nec nisl porttitor posuere quis et massa. Etiam mattis leo nec laoreet venenatis. Donec dictum nunc eget tristique molestie. Duis vel mi justo. Vivamus sagittis justo erat, eu tempor elit malesuada in. Praesent sem lorem, aliquet lobortis rhoncus sed, sagittis vitae nunc. Phasellus convallis dui a augue hendrerit, non scelerisque augue mollis. Vivamus congue, mi sit amet rhoncus finibus, nisi nisi posuere mi, id dictum nibh augue nec arcu.
@@ -82,24 +79,107 @@ Let's add to `[THEME_NAME].ui_patterns.yml` the definition of `paragraph-one` co
           label: Button label
           description: The label to print into the button.
           preview: Label
-        button_url:
-          type: string
-          label: Button URL
-          description: The URL for the button.
-          preview: http://www.soulweb.it
-      use: '@paragraphs/paragraph-one/paragraph-one.html.twig'
+      use: '@paragraphs_component/paragraph-one/paragraph-one.html.twig'
 
 We must now create the template file declared above. So, in our component library directory (`component/paragraphs`), let's create the folder `paragraph-one` and create the file `paragraph-one.html.twig` inside it.
 
-#### 4. Create asset library for component button-one
+#### 4. Create the asset library for component button-one
 
 We must define our asset library into the `[THEME_NAME].libraries.yml` of our theme:
 
-    button-one:
+    button.one:
       version: 1.x
       css:
-        theme:
+        component:
           components/atoms/buttons/button-one.css: {}
       js:
         components/atoms/buttons/button-one.js: {}
+      dependencies:
+        - core/jquery
+        - core/jquery.once
 
+We must now create the asset files for `button-one.css` and `button-one.js` inside the theme directory declared above.
+
+Finally, let's add the defined asset to the component `button-one` defined in `[THEME_NAME].ui_patterns.yml` adding the `libraries` parameter. So our component pattern definition must look like:
+
+    button_one:
+      label: Button one
+      description: A button template.
+      fields:
+        button_one_label:
+          type: string
+          label: Button label
+          description: The label to print into the button.
+          preview: Label
+      libraries:
+        - [THEME_NAME]/button.one
+      use: '@atoms/buttons/button-one/button-one.html.twig'
+
+#### 5. Code for the component button-one
+
+Let's add the code to the `button-one` component template `button-one.html.twig`:
+
+    <button class="btn-one" type="button">{{ button_one_label }}</button>
+
+where `{{ button_label }}` is the variable declared in our component pattern.
+
+Let's add the `css` code to `button-one.css`:
+
+    .btn-one {
+      background: #666666;
+      color: #ffffff;
+      display: inline-block;
+      padding: 10px 5px;
+    }
+
+Let's add the `javascript` to `button-one.js`:
+
+    (function($, Drupal, drupalSettings) {
+      'use strict';
+
+      Drupal.behaviors.buttonOne = {
+
+        /**
+         * Drupal attach behavior.
+         */
+        attach: function(context, settings) {
+          $('.button-one').once('button-one-click').click(function() {
+            $("<div>You clicked on button one!</div>").dialog();
+          });
+        }
+      };
+
+    }(jQuery, Drupal, drupalSettings));
+
+
+#### 6. Code for the component paragraph-one
+
+Let's add the code to the `paragraph-one` component template `paragraph-one.html.twig`:
+
+    <div class="paragraph-one">
+      <div>{{ image }}</div>
+      <div>{{ text }}</div>
+      <div>{{ pattern('button_one', {button_one_label: button_label}) }}</div>
+    </div>
+
+With `{{ pattern('button_one', {button_one_label: button_label}) }}` we are able to re-use the component pattern `button-one` to print the paragraph button.
+
+#### 7. Create the paragraph
+
+First of all let's clean the `Drupal` cache to register the defined libraries:
+
+    drush cr
+
+Now, from the `Drupal` UI, let's create the paragraph `Paragraph Example One`:
+
+![Paragraph Example One](../img/drupal/paragraph_1.png "Paragraph Example One")
+
+Let's associate to it the pattern `Paragraph one` we created:
+
+![Paragraph Example One Pattern](../img/drupal/paragraph_2.png "Paragraph Example One Pattern")
+
+As you can see we associated the created pattern, in the `Select a layout` section (below the screen), and we mapped the paragraph fields to the pattern fields.
+
+Finally we can create a content with the created paragraph that must look like:
+
+![Paragraph Example One Content](../img/drupal/paragraph_3.png "Paragraph Example One Content")

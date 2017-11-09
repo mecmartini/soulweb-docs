@@ -549,6 +549,13 @@
     Requirements
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-component-library" title="Build component library" class="md-nav__link">
+    Build component library
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -567,15 +574,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-the-component-paragraph-one" title="2. Create the component paragraph-one" class="md-nav__link">
-    2. Create the component paragraph-one
+  <a href="#3-create-the-component-paragraph-one" title="3. Create the component paragraph-one" class="md-nav__link">
+    3. Create the component paragraph-one
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-asset-library-for-component-button-one" title="4. Create asset library for component button-one" class="md-nav__link">
-    4. Create asset library for component button-one
+  <a href="#4-create-the-asset-library-for-component-button-one" title="4. Create the asset library for component button-one" class="md-nav__link">
+    4. Create the asset library for component button-one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-code-for-the-component-button-one" title="5. Code for the component button-one" class="md-nav__link">
+    5. Code for the component button-one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-code-for-the-component-paragraph-one" title="6. Code for the component paragraph-one" class="md-nav__link">
+    6. Code for the component paragraph-one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-create-the-paragraph" title="7. Create the paragraph" class="md-nav__link">
+    7. Create the paragraph
   </a>
   
 </li>
@@ -629,6 +657,13 @@
     Requirements
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-component-library" title="Build component library" class="md-nav__link">
+    Build component library
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -647,15 +682,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-the-component-paragraph-one" title="2. Create the component paragraph-one" class="md-nav__link">
-    2. Create the component paragraph-one
+  <a href="#3-create-the-component-paragraph-one" title="3. Create the component paragraph-one" class="md-nav__link">
+    3. Create the component paragraph-one
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-asset-library-for-component-button-one" title="4. Create asset library for component button-one" class="md-nav__link">
-    4. Create asset library for component button-one
+  <a href="#4-create-the-asset-library-for-component-button-one" title="4. Create the asset library for component button-one" class="md-nav__link">
+    4. Create the asset library for component button-one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-code-for-the-component-button-one" title="5. Code for the component button-one" class="md-nav__link">
+    5. Code for the component button-one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-code-for-the-component-paragraph-one" title="6. Code for the component paragraph-one" class="md-nav__link">
+    6. Code for the component paragraph-one
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-create-the-paragraph" title="7. Create the paragraph" class="md-nav__link">
+    7. Create the paragraph
   </a>
   
 </li>
@@ -695,13 +751,14 @@
 <li><a href="https://www.drupal.org/project/paragraphs">Paragraphs</a></li>
 <li><a href="https://www.drupal.org/project/ui_patterns">UI Patterns</a></li>
 </ul>
+<h2 id="build-component-library">Build component library<a class="headerlink" href="#build-component-library" title="Permanent link">&para;</a></h2>
 <h4 id="1-create-the-components-library">1. Create the components library<a class="headerlink" href="#1-create-the-components-library" title="Permanent link">&para;</a></h4>
 <p>We must define our components library into the <code>[THEME_NAME].info.yml</code> of our theme:</p>
 <div class="codehilite"><pre><span></span>component-libraries:
   atoms:
     paths:
       - components/atoms
-  paragraphs:
+  paragraphs_component:
     paths:
       - components/paragraphs
 </pre></div>
@@ -720,22 +777,17 @@
   label: Button one
   description: A button template.
   fields:
-    button_label:
+    button_one_label:
       type: string
       label: Button label
       description: The label to print into the button.
       preview: Label
-    button_url:
-      type: string
-      label: Button URL
-      description: The URL for the button.
-      preview: http://www.soulweb.it
   use: &#39;@atoms/buttons/button-one/button-one.html.twig&#39;
 </pre></div>
 
 
 <p>We must now create the template file declared above. So, in our component library directory (<code>component/atoms</code>), let's create the folder <code>buttons/button-one</code> and create the file <code>button-one.html.twig</code> inside it.</p>
-<h4 id="2-create-the-component-paragraph-one">2. Create the component paragraph-one<a class="headerlink" href="#2-create-the-component-paragraph-one" title="Permanent link">&para;</a></h4>
+<h4 id="3-create-the-component-paragraph-one">3. Create the component paragraph-one<a class="headerlink" href="#3-create-the-component-paragraph-one" title="Permanent link">&para;</a></h4>
 <p>Let's add to <code>[THEME_NAME].ui_patterns.yml</code> the definition of <code>paragraph-one</code> component:</p>
 <div class="codehilite"><pre><span></span>paragraph_one:
   label: Paragraph one
@@ -747,7 +799,7 @@
       description: An image.
       preview: &#39;&lt;img src=&quot;http://lorempixel.com/640/480/nature/1/&quot; title=&quot;An image&quot; /&gt;&#39;
     text:
-      type: string
+      type: text
       label: Text
       description: A text.
       preview: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget vulputate tellus, vel aliquam sapien. Donec convallis nibh eu volutpat egestas. Nullam enim metus, placerat eleifend condimentum id, sodales in arcu. Quisque vel lacus odio. Nullam vel massa quis lectus ullamcorper placerat. Cras at turpis nec nisl porttitor posuere quis et massa. Etiam mattis leo nec laoreet venenatis. Donec dictum nunc eget tristique molestie. Duis vel mi justo. Vivamus sagittis justo erat, eu tempor elit malesuada in. Praesent sem lorem, aliquet lobortis rhoncus sed, sagittis vitae nunc. Phasellus convallis dui a augue hendrerit, non scelerisque augue mollis. Vivamus congue, mi sit amet rhoncus finibus, nisi nisi posuere mi, id dictum nibh augue nec arcu.
@@ -756,26 +808,104 @@
       label: Button label
       description: The label to print into the button.
       preview: Label
-    button_url:
-      type: string
-      label: Button URL
-      description: The URL for the button.
-      preview: http://www.soulweb.it
-  use: &#39;@paragraphs/paragraph-one/paragraph-one.html.twig&#39;
+  use: &#39;@paragraphs_component/paragraph-one/paragraph-one.html.twig&#39;
 </pre></div>
 
 
 <p>We must now create the template file declared above. So, in our component library directory (<code>component/paragraphs</code>), let's create the folder <code>paragraph-one</code> and create the file <code>paragraph-one.html.twig</code> inside it.</p>
-<h4 id="4-create-asset-library-for-component-button-one">4. Create asset library for component button-one<a class="headerlink" href="#4-create-asset-library-for-component-button-one" title="Permanent link">&para;</a></h4>
+<h4 id="4-create-the-asset-library-for-component-button-one">4. Create the asset library for component button-one<a class="headerlink" href="#4-create-the-asset-library-for-component-button-one" title="Permanent link">&para;</a></h4>
 <p>We must define our asset library into the <code>[THEME_NAME].libraries.yml</code> of our theme:</p>
-<div class="codehilite"><pre><span></span>button-one:
+<div class="codehilite"><pre><span></span>button.one:
   version: 1.x
   css:
-    theme:
+    component:
       components/atoms/buttons/button-one.css: {}
   js:
     components/atoms/buttons/button-one.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
 </pre></div>
+
+
+<p>We must now create the asset files for <code>button-one.css</code> and <code>button-one.js</code> inside the theme directory declared above.</p>
+<p>Finally, let's add the defined asset to the component <code>button-one</code> defined in <code>[THEME_NAME].ui_patterns.yml</code> adding the <code>libraries</code> parameter. So our component pattern definition must look like:</p>
+<div class="codehilite"><pre><span></span>button_one:
+  label: Button one
+  description: A button template.
+  fields:
+    button_one_label:
+      type: string
+      label: Button label
+      description: The label to print into the button.
+      preview: Label
+  libraries:
+    - [THEME_NAME]/button.one
+  use: &#39;@atoms/buttons/button-one/button-one.html.twig&#39;
+</pre></div>
+
+
+<h4 id="5-code-for-the-component-button-one">5. Code for the component button-one<a class="headerlink" href="#5-code-for-the-component-button-one" title="Permanent link">&para;</a></h4>
+<p>Let's add the code to the <code>button-one</code> component template <code>button-one.html.twig</code>:</p>
+<div class="codehilite"><pre><span></span>&lt;button class=&quot;btn-one&quot; type=&quot;button&quot;&gt;{{ button_one_label }}&lt;/button&gt;
+</pre></div>
+
+
+<p>where <code>{{ button_label }}</code> is the variable declared in our component pattern.</p>
+<p>Let's add the <code>css</code> code to <code>button-one.css</code>:</p>
+<div class="codehilite"><pre><span></span>.btn-one {
+  background: #666666;
+  color: #ffffff;
+  display: inline-block;
+  padding: 10px 5px;
+}
+</pre></div>
+
+
+<p>Let's add the <code>javascript</code> to <code>button-one.js</code>:</p>
+<div class="codehilite"><pre><span></span>(function($, Drupal, drupalSettings) {
+  &#39;use strict&#39;;
+
+  Drupal.behaviors.buttonOne = {
+
+    /**
+     * Drupal attach behavior.
+     */
+    attach: function(context, settings) {
+      $(&#39;.button-one&#39;).once(&#39;button-one-click&#39;).click(function() {
+        $(&quot;&lt;div&gt;You clicked on button one!&lt;/div&gt;&quot;).dialog();
+      });
+    }
+  };
+
+}(jQuery, Drupal, drupalSettings));
+</pre></div>
+
+
+<h4 id="6-code-for-the-component-paragraph-one">6. Code for the component paragraph-one<a class="headerlink" href="#6-code-for-the-component-paragraph-one" title="Permanent link">&para;</a></h4>
+<p>Let's add the code to the <code>paragraph-one</code> component template <code>paragraph-one.html.twig</code>:</p>
+<div class="codehilite"><pre><span></span>&lt;div class=&quot;paragraph-one&quot;&gt;
+  &lt;div&gt;{{ image }}&lt;/div&gt;
+  &lt;div&gt;{{ text }}&lt;/div&gt;
+  &lt;div&gt;{{ pattern(&#39;button_one&#39;, {button_one_label: button_label}) }}&lt;/div&gt;
+&lt;/div&gt;
+</pre></div>
+
+
+<p>With <code>{{ pattern('button_one', {button_one_label: button_label}) }}</code> we are able to re-use the component pattern <code>button-one</code> to print the paragraph button.</p>
+<h4 id="7-create-the-paragraph">7. Create the paragraph<a class="headerlink" href="#7-create-the-paragraph" title="Permanent link">&para;</a></h4>
+<p>First of all let's clean the <code>Drupal</code> cache to register the defined libraries:</p>
+<div class="codehilite"><pre><span></span>drush cr
+</pre></div>
+
+
+<p>Now, from the <code>Drupal</code> UI, let's create the paragraph <code>Paragraph Example One</code>:</p>
+<p><img alt="Paragraph Example One" src="../../img/drupal/paragraph_1.png" title="Paragraph Example One" /></p>
+<p>Let's associate to it the pattern <code>Paragraph one</code> we created:</p>
+<p><img alt="Paragraph Example One Pattern" src="../../img/drupal/paragraph_2.png" title="Paragraph Example One Pattern" /></p>
+<p>As you can see we associated the created pattern, in the <code>Select a layout</code> section (below the screen), and we mapped the paragraph fields to the pattern fields.</p>
+<p>Finally we can create a content with the created paragraph that must look like:</p>
+<p><img alt="Paragraph Example One Content" src="../../img/drupal/paragraph_3.png" title="Paragraph Example One Content" /></p>
                 
                   
                 
