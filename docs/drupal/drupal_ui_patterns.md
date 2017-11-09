@@ -2,6 +2,11 @@
 
 [UI Patterns](https://www.drupal.org/project/ui_patterns) can expose stand-alone theme components (patterns) to Drupal and enables them to be used with the core Layout and Views module and well-known contrib modules like Field Group, Display Suite and Panels.
 
+Here is explained how to create a component library by an example that includes two components:
+
+* `Button One`
+* `Paragraph One` (include `Button One`)
+
 ## Requirements
 
 The `Drupal` modules required are:
