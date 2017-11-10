@@ -200,7 +200,7 @@ Finally we can create a content with the created paragraph that must look like:
 
 ## Summary
 
-The whole process is summarized in the following diagram;
+The whole process is summarized in the following diagram:
 
 ![Component based theme using UI-Patterns diagram](../img/drupal/uipatterns-diagram-1.png "Component based theme using UI-Patterns diagram")
 
