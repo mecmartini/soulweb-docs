@@ -649,7 +649,7 @@
                 
                 
                 <h1 id="cors-configuration">CORS Configuration<a class="headerlink" href="#cors-configuration" title="Permanent link">&para;</a></h1>
-<p><code>Cross-origin resource sharing</code> (<code>CORS</code>) is a mechanism that allows a web page to make XMLHttpRequests to another domain. Such <code>cross-domain</code> requests would otherwise be forbidden by web browsers, per the same origin security policy.</p>
+<p><code class="codehilite">Cross-origin resource sharing</code> (<code class="codehilite">CORS</code>) is a mechanism that allows a web page to make XMLHttpRequests to another domain. Such <code class="codehilite">cross-domain</code> requests would otherwise be forbidden by web browsers, per the same origin security policy.</p>
 <p>To enable `CORS in your Drupal installation three methods are available:</p>
 <ul>
 <li><a href="./#cors-module">CORS Module</a></li>
@@ -659,7 +659,7 @@
 <h2 id="cors-module">CORS Module<a class="headerlink" href="#cors-module" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.drupal.org/project/cors">CORS</a> module provides a configuration page to map domains to paths and add the necessary Access-Control-Allow-Origin header.</p>
 <h2 id="cors-servicesyml">CORS services.yml<a class="headerlink" href="#cors-servicesyml" title="Permanent link">&para;</a></h2>
-<p><code>Drupal</code>services.yml<code>(located in</code>sites/default) contain the drupal default method to enable and configure CORS.</p>
+<p><code class="codehilite">Drupal</code>services.yml<code class="codehilite">(located in</code>sites/default) contain the drupal default method to enable and configure CORS.</p>
 <p>Below a configuration example:</p>
 <div class="codehilite"><pre><span></span>   # Configure Cross-Site HTTP requests (CORS).
    # Read https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
@@ -683,29 +683,29 @@
 
 
 <h2 id="cors-settingsenvironmentphp">CORS settings.environment.php<a class="headerlink" href="#cors-settingsenvironmentphp" title="Permanent link">&para;</a></h2>
-<p>For complex <code>CORS</code> configuration you can use one of <code>settings.environment.php</code> in your Drupal installation (e.g. <code>settings.shared.php</code>, <code>settings.local.php</code>, <code>settings.dev.php</code>, etc.) to add your <code>CORS</code> configuration.</p>
+<p>For complex <code class="codehilite">CORS</code> configuration you can use one of <code class="codehilite">settings.environment.php</code> in your Drupal installation (e.g. <code class="codehilite">settings.shared.php</code>, <code class="codehilite">settings.local.php</code>, <code class="codehilite">settings.dev.php</code>, etc.) to add your <code class="codehilite">CORS</code> configuration.</p>
 <p>Below a configuration example:</p>
-<div class="codehilite"><pre><span></span>header(&quot;Access-Control-Allow-Origin: http://example.dev&quot;);
-header(&quot;Access-Control-Allow-Credentials: true&quot;);
-header(&quot;Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS&quot;);
-header(&quot;Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&quot;);
+<div class="codehilite"><pre><span></span><span class="nt">header</span><span class="o">(</span><span class="s2">&quot;Access-Control-Allow-Origin: http://example.dev&quot;</span><span class="o">);</span>
+<span class="nt">header</span><span class="o">(</span><span class="s2">&quot;Access-Control-Allow-Credentials: true&quot;</span><span class="o">);</span>
+<span class="nt">header</span><span class="o">(</span><span class="s2">&quot;Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS&quot;</span><span class="o">);</span>
+<span class="nt">header</span><span class="o">(</span><span class="s2">&quot;Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&quot;</span><span class="o">);</span>
 </pre></div>
 
 
 <h2 id="cors-multi-origin">CORS multi-origin<a class="headerlink" href="#cors-multi-origin" title="Permanent link">&para;</a></h2>
 <p>For multi-origin CORS configuration the best way is to configure it through <a href="./#cors-settingenvironmentphp">CORS settings.environment.php</a>.</p>
 <p>Below a configuration example:</p>
-<div class="codehilite"><pre><span></span>$allowed_origin = array(
-  &#39;http://example.one.dev&#39;,
-  &#39;http://example.two.dev&#39;,
-);
+<div class="codehilite"><pre><span></span><span class="o">$</span><span class="nt">allowed_origin</span> <span class="o">=</span> <span class="nt">array</span><span class="o">(</span>
+  <span class="s1">&#39;http://example.one.dev&#39;</span><span class="o">,</span>
+  <span class="s1">&#39;http://example.two.dev&#39;</span><span class="o">,</span>
+<span class="o">);</span>
 
-if (in_array($_SERVER[&#39;HTTP_ORIGIN&#39;], $allowed_origin)) {
-  header(&quot;Access-Control-Allow-Origin: &quot; . $_SERVER[&#39;HTTP_ORIGIN&#39;]);
-  header(&quot;Access-Control-Allow-Credentials: true&quot;);
-  header(&quot;Access-Control-Allow-Methods: POST,GET,PUT,DELETE,OPTIONS&quot;);
-  header(&quot;Access-Control-Allow-Headers: Content-Type,X-Auth-Token,X-Requested-With,Origin,Authorization,Accept,X-CSRF-Token&quot;);
-}
+<span class="nt">if</span> <span class="o">(</span><span class="nt">in_array</span><span class="o">($</span><span class="nt">_SERVER</span><span class="cp">[</span><span class="s1">&#39;HTTP_ORIGIN&#39;</span><span class="cp">]</span><span class="o">,</span> <span class="o">$</span><span class="nt">allowed_origin</span><span class="o">))</span> <span class="p">{</span>
+  <span class="err">header(&quot;</span><span class="n">Access-Control-Allow-Origin</span><span class="p">:</span> <span class="s2">&quot; . $_SERVER</span><span class="cp">[</span><span class="s1">&#39;HTTP_ORIGIN&#39;</span><span class="cp">]</span><span class="s2">);</span>
+<span class="s2">  header(&quot;</span><span class="n">Access-Control-Allow-Credentials</span><span class="o">:</span> <span class="n">true</span><span class="s2">&quot;);</span>
+<span class="s2">  header(&quot;</span><span class="n">Access-Control-Allow-Methods</span><span class="o">:</span> <span class="n">POST</span><span class="p">,</span><span class="n">GET</span><span class="p">,</span><span class="n">PUT</span><span class="p">,</span><span class="n">DELETE</span><span class="p">,</span><span class="n">OPTIONS</span><span class="s2">&quot;);</span>
+<span class="s2">  header(&quot;</span><span class="n">Access-Control-Allow-Headers</span><span class="o">:</span> <span class="n">Content-Type</span><span class="p">,</span><span class="n">X-Auth-Token</span><span class="p">,</span><span class="n">X-Requested-With</span><span class="p">,</span><span class="n">Origin</span><span class="p">,</span><span class="n">Authorization</span><span class="p">,</span><span class="n">Accept</span><span class="p">,</span><span class="n">X-CSRF-Token</span><span class="err">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
                 
                   

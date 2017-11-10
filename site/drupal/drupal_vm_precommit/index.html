@@ -684,7 +684,7 @@
                 
                 <h1 id="pre-commit-hook">Pre Commit Hook<a class="headerlink" href="#pre-commit-hook" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/mecmartini/drupal-pre-commit-hook/blob/master/pre-commit">Drupal Pre Commit Hook</a></p>
-<p>The <code>PhpStorm</code> commit window already integrate the <code>Perform code analysis</code> tool but, for some reason, it's not able to run the <code>PHP Code Sniffer Validation</code> as when you launch the normal <code>Inspect Code</code>.</p>
+<p>The <code class="codehilite">PhpStorm</code> commit window already integrate the <code class="codehilite">Perform code analysis</code> tool but, for some reason, it's not able to run the <code class="codehilite">PHP Code Sniffer Validation</code> as when you launch the normal <code class="codehilite">Inspect Code</code>.</p>
 <p>So we need to setup an alternative way to do it properly through the git pre-commit hook.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
@@ -692,23 +692,23 @@
 <li>ESLint (see <a href="../drupal_vm_eslint/">ESLint docs</a>)</li>
 </ul>
 <h2 id="setup-a-git-pre-commit-hook-to-check-coding-standards">Setup a Git pre-commit hook to check Coding Standards<a class="headerlink" href="#setup-a-git-pre-commit-hook-to-check-coding-standards" title="Permanent link">&para;</a></h2>
-<p>First of all make sure to have the <a href="../drupal_vm_phpstorm/#pre-commit-hook-plugin">Pre Commit Hook Plugin</a> for <code>PhpStorm</code> installed and enabled.</p>
-<p>The following instructions are to setup the <code>pre-commit</code> hook script at the init of the project. If you are not sure that your project was already init for it you must check for:</p>
+<p>First of all make sure to have the <a href="../drupal_vm_phpstorm/#pre-commit-hook-plugin">Pre Commit Hook Plugin</a> for <code class="codehilite">PhpStorm</code> installed and enabled.</p>
+<p>The following instructions are to setup the <code class="codehilite">pre-commit</code> hook script at the init of the project. If you are not sure that your project was already init for it you must check for:</p>
 <ul>
-<li>your <code>composer.json</code> and look for the package <code>jover_be/drupal-code-check</code> (probably it's under <code>require-dev</code>)</li>
-<li>your <code>drupal</code> root directory and look for the <code>pre-commit-hook.sh</code> file</li>
+<li>your <code class="codehilite">composer.json</code> and look for the package <code class="codehilite">jover_be/drupal-code-check</code> (probably it's under <code class="codehilite">require-dev</code>)</li>
+<li>your <code class="codehilite">drupal</code> root directory and look for the <code class="codehilite">pre-commit-hook.sh</code> file</li>
 </ul>
 <p>If you have both you can jump directly to <a href="../drupal_vm_codersniffer/#3-run-the-pre-commit-code-analysis">Run the Pre Commit Code Analysis</a>.</p>
 <h4 id="1-install-drupal-code-check-package">1. Install Drupal Code Check Package<a class="headerlink" href="#1-install-drupal-code-check-package" title="Permanent link">&para;</a></h4>
 <p><a href="https://packagist.org/packages/jover_be/drupal-code-check">Drupal Code CHeck</a></p>
-<p>From your <code>vagrant</code> machine on your <code>drupal</code> root directory run:</p>
+<p>From your <code class="codehilite">vagrant</code> machine on your <code class="codehilite">drupal</code> root directory run:</p>
 <div class="codehilite"><pre><span></span>composer require --dev jover_be/drupal-code-check
 </pre></div>
 
 
 <h4 id="2-pre-commit-hook-script">2. Pre Commit Hook Script<a class="headerlink" href="#2-pre-commit-hook-script" title="Permanent link">&para;</a></h4>
-<p>The <code>Pre Commit Hook Plugin</code> looks for the <code>pre-commit-hook.sh</code> file script on your project root directory.</p>
-<p>To download it, in your <code>drupal</code> root directory, run:</p>
+<p>The <code class="codehilite">Pre Commit Hook Plugin</code> looks for the <code class="codehilite">pre-commit-hook.sh</code> file script on your project root directory.</p>
+<p>To download it, in your <code class="codehilite">drupal</code> root directory, run:</p>
 <div class="codehilite"><pre><span></span>curl -O https://raw.githubusercontent.com/mecmartini/drupal-pre-commit-hook/master/pre-commit
 </pre></div>
 
@@ -718,20 +718,20 @@
 </pre></div>
 
 
-<p>Make sure the <code>pre-commit</code> script is executable:</p>
+<p>Make sure the <code class="codehilite">pre-commit</code> script is executable:</p>
 <div class="codehilite"><pre><span></span>chmod +x pre-commit-hook.sh
 </pre></div>
 
 
 <p>This script run a <a href="../drupal_vm_codersniffer/">Coder Sniffer</a> and <a href="../drupal_vm_eslint/">ESlint</a> code analysis with syntax auto fix. Make sure to have them installed as required.</p>
 <h4 id="3-run-the-pre-commit-code-analysis">3. Run the Pre Commit Code Analysis<a class="headerlink" href="#3-run-the-pre-commit-code-analysis" title="Permanent link">&para;</a></h4>
-<p>To make the <code>pre-commit</code> script work, you must run <code>git add</code> of the files to commit before the commit itself.</p>
+<p>To make the <code class="codehilite">pre-commit</code> script work, you must run <code class="codehilite">git add</code> of the files to commit before the commit itself.</p>
 <p>The script is set to check only those added file to avoid to check all the modified files that could be not involved in your commit.</p>
-<p>To <code>git add</code> the files of your commit in <code>PhpStorm</code>:</p>
+<p>To <code class="codehilite">git add</code> the files of your commit in <code class="codehilite">PhpStorm</code>:</p>
 <p><img alt="PhpStorm Git Add" src="../../img/drupal/phpstorm_47.png" title="PhpStorm Git Add" /></p>
-<p>If everything is well set, when you perform a commit, <code>PhpStorm</code> auto-run the Code Analysis and, in case of <code>errors</code>/<code>warnings</code>, it's gonna show you something like this:</p>
+<p>If everything is well set, when you perform a commit, <code class="codehilite">PhpStorm</code> auto-run the Code Analysis and, in case of <code class="codehilite">errors</code>/<code class="codehilite">warnings</code>, it's gonna show you something like this:</p>
 <p><img alt="PHP Code Sniffer Validation" src="../../img/drupal/phpstorm_46.png" title="PHP Code Sniffer Validation" /></p>
-<p>In case of <code>errors</code>/<code>warnings</code> it's suggested to undone the commit and manually run the <code>Inspect Code</code> to fix all the possible issues. A better workflow is to manually run the <code>Inspect Code</code> before to commit.</p>
+<p>In case of <code class="codehilite">errors</code>/<code class="codehilite">warnings</code> it's suggested to undone the commit and manually run the <code class="codehilite">Inspect Code</code> to fix all the possible issues. A better workflow is to manually run the <code class="codehilite">Inspect Code</code> before to commit.</p>
                 
                   
                 

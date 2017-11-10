@@ -667,28 +667,28 @@
                 
                 
                 <h1 id="bootstrap-sass-sub-theme">Bootstrap (SASS) sub-theme<a class="headerlink" href="#bootstrap-sass-sub-theme" title="Permanent link">&para;</a></h1>
-<p>To generate a new <code>Bootstrap</code> (<code>SASS</code>) sub-theme we can use:</p>
+<p>To generate a new <code class="codehilite">Bootstrap</code> (<code class="codehilite">SASS</code>) sub-theme we can use:</p>
 <ul>
 <li><a href="https://github.com/mecmartini/drupal8-bootstrap-subtheme-gen">Drupal 8 Bootstrap Subtheme generator</a></li>
 </ul>
-<p>The script creates the <code>Bootstrap</code> sub-theme and build the <code>grunt</code> dependencies and config to process the theme files.</p>
-<p>You can choose to run it on your local machine or, if you are using <code>Drupal VM</code>, on your <code>vagrant</code> machine.</p>
+<p>The script creates the <code class="codehilite">Bootstrap</code> sub-theme and build the <code class="codehilite">grunt</code> dependencies and config to process the theme files.</p>
+<p>You can choose to run it on your local machine or, if you are using <code class="codehilite">Drupal VM</code>, on your <code class="codehilite">vagrant</code> machine.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>As described on the repository instructions you need:</p>
 <ul>
-<li><code>Node.js</code></li>
-<li><code>Npm</code></li>
-<li><code>Grunt</code></li>
+<li><code class="codehilite">Node.js</code></li>
+<li><code class="codehilite">Npm</code></li>
+<li><code class="codehilite">Grunt</code></li>
 </ul>
 <h4 id="local-machine">Local machine<a class="headerlink" href="#local-machine" title="Permanent link">&para;</a></h4>
-<p>To install <code>Node.js</code> and <code>Npm</code> follow the instruction at <a href="../drupal_vm_eslint/#1-install-nodejs-using-nvm">Install Node.js using Nvm</a>.</p>
+<p>To install <code class="codehilite">Node.js</code> and <code class="codehilite">Npm</code> follow the instruction at <a href="../drupal_vm_eslint/#1-install-nodejs-using-nvm">Install Node.js using Nvm</a>.</p>
 <p>Then run:</p>
 <div class="codehilite"><pre><span></span>sudo npm install -g grunt-cli
 </pre></div>
 
 
 <h4 id="vagrant-machine">Vagrant machine<a class="headerlink" href="#vagrant-machine" title="Permanent link">&para;</a></h4>
-<p>Open the vagrant machine <code>config.yml</code> file and make sure to have the <code>nodejs</code> line uncommented on <code>installed_extras</code></p>
+<p>Open the vagrant machine <code class="codehilite">config.yml</code> file and make sure to have the <code class="codehilite">nodejs</code> line uncommented on <code class="codehilite">installed_extras</code></p>
 <div class="codehilite"><pre><span></span>installed_extras:
       ...
       - nodejs
@@ -696,25 +696,25 @@
 </pre></div>
 
 
-<p>Add <code>grunt</code> to <code>Npm</code> global packages:</p>
+<p>Add <code class="codehilite">grunt</code> to <code class="codehilite">Npm</code> global packages:</p>
 <div class="codehilite"><pre><span></span>nodejs_npm_global_packages:
   ...
   - grunt-cli
 </pre></div>
 
 
-<p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
+<p>From your <code class="codehilite">terminal</code> go on the <code class="codehilite">vagrant</code> directory and run <code class="codehilite">vagrant up --provision</code>, to apply the changes on your <code class="codehilite">vagrant</code> machine, or run <code class="codehilite">vagrant provision</code> if your machine is already up.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>Follow the instructions of <code>Composer generator</code> on the link at the top.</p>
+<p>Follow the instructions of <code class="codehilite">Composer generator</code> on the link at the top.</p>
 <p>When the script is done you must delete the files:</p>
 <ul>
-<li><code>bootstrap_subtheme_composer_gen.sh</code></li>
-<li><code>get-tag.awk</code></li>
+<li><code class="codehilite">bootstrap_subtheme_composer_gen.sh</code></li>
+<li><code class="codehilite">get-tag.awk</code></li>
 </ul>
 <p>To process the theme files move on the created sub-theme directory and run:</p>
 <ul>
-<li><code>grunt</code> to process your file</li>
-<li><code>grunt watch</code> to watch your project files for changes</li>
+<li><code class="codehilite">grunt</code> to process your file</li>
+<li><code class="codehilite">grunt watch</code> to watch your project files for changes</li>
 </ul>
                 
                   

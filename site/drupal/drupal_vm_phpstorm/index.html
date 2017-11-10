@@ -754,33 +754,33 @@
 <p>Make sure to have the latest <a href="https://www.jetbrains.com/phpstorm/download">PhpStorm</a> available for a better support.</p>
 <h2 id="create-new-project-vagrant-based">Create new project Vagrant based<a class="headerlink" href="#create-new-project-vagrant-based" title="Permanent link">&para;</a></h2>
 <h4 id="1-create-new-project">1. Create new project<a class="headerlink" href="#1-create-new-project" title="Permanent link">&para;</a></h4>
-<p>Open <code>PhpStorm</code> and select <code>Create New Project from Existing File</code></p>
+<p>Open <code class="codehilite">PhpStorm</code> and select <code class="codehilite">Create New Project from Existing File</code></p>
 <p><img alt="Create New Project from Existing File" src="../../img/drupal/phpstorm_1.png" title="Create New Project from Existing File" /></p>
-<p>Select <code>Sources file are in a local directory, no Web server is yet configured.</code></p>
+<p>Select <code class="codehilite">Sources file are in a local directory, no Web server is yet configured.</code></p>
 <p><img alt="Sources file are in a local directory, no Web server is yet configured" src="../../img/drupal/phpstorm_2.png" title="Sources file are in a local directory, no Web server is yet configured" /></p>
-<p>Select your <code>Drupal</code> installation directory on the local machine, make it the <code>Project Root</code> and click on <code>Finish</code> button</p>
+<p>Select your <code class="codehilite">Drupal</code> installation directory on the local machine, make it the <code class="codehilite">Project Root</code> and click on <code class="codehilite">Finish</code> button</p>
 <p><img alt="Choose Project Directory" src="../../img/drupal/phpstorm_3.png" title="Choose Project Directory" /></p>
-<p>Once the project is created, <code>PhpStorm</code> will index your project files and must recognise it as a <code>Drupal</code> project. It should ask to enable the <code>Drupal</code> support. If not, enable it by yourself:</p>
+<p>Once the project is created, <code class="codehilite">PhpStorm</code> will index your project files and must recognise it as a <code class="codehilite">Drupal</code> project. It should ask to enable the <code class="codehilite">Drupal</code> support. If not, enable it by yourself:</p>
 <p><img alt="Enable Drupal support" src="../../img/drupal/phpstorm_4.png" title="Enable Drupal support" /></p>
 <h4 id="2-integrate-vagrant">2. Integrate Vagrant<a class="headerlink" href="#2-integrate-vagrant" title="Permanent link">&para;</a></h4>
-<p>To let <code>PhpStorm</code> find the vagrant executable run the following on your local machine:</p>
+<p>To let <code class="codehilite">PhpStorm</code> find the vagrant executable run the following on your local machine:</p>
 <div class="codehilite"><pre><span></span>sudo ln -s /usr/local/bin/vagrant /usr/bin/vagrant
 </pre></div>
 
 
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>in case the executable is in a different path then <code>/usr/local/bin</code> change it, you can find the vagrant path with <code>whereis vagrant</code></p>
+<p>in case the executable is in a different path then <code class="codehilite">/usr/local/bin</code> change it, you can find the vagrant path with <code class="codehilite">whereis vagrant</code></p>
 </div>
-<p>To integrate <code>Vagrant</code> set the <code>Instance Folder</code> on the <code>Vagrant</code> settings:</p>
+<p>To integrate <code class="codehilite">Vagrant</code> set the <code class="codehilite">Instance Folder</code> on the <code class="codehilite">Vagrant</code> settings:</p>
 <p><img alt="Vagrant settings" src="../../img/drupal/phpstorm_5.png" title="Vagrant settings" /></p>
-<p>Then select the <code>Current Vagrant</code> on <code>SSH Terminal</code> settings:</p>
+<p>Then select the <code class="codehilite">Current Vagrant</code> on <code class="codehilite">SSH Terminal</code> settings:</p>
 <p><img alt="SSH Terminal settings" src="../../img/drupal/phpstorm_6.png" title="SSH Terminal settings" /></p>
-<p>Create the new Vagrant <code>Deployment</code> server clicking on <code>+</code> button in the following settings:</p>
+<p>Create the new Vagrant <code class="codehilite">Deployment</code> server clicking on <code class="codehilite">+</code> button in the following settings:</p>
 <p><img alt="Deployment server" src="../../img/drupal/phpstorm_7.png" title="Deployment server" /></p>
-<p>Enter a <code>Name</code> and select Type <code>SFTP</code>:</p>
+<p>Enter a <code class="codehilite">Name</code> and select Type <code class="codehilite">SFTP</code>:</p>
 <p><img alt="Add server" src="../../img/drupal/phpstorm_8.png" title="Add server" /></p>
-<p>Click <code>OK</code> button and configure the rest as:</p>
+<p>Click <code class="codehilite">OK</code> button and configure the rest as:</p>
 <div class="codehilite"><pre><span></span>SFTP host: your vagrant_hostname
 Root path: your Drupal installation path on the vagrant machine
 Username: vagrant 
@@ -788,40 +788,40 @@ Password: vagrant
 </pre></div>
 
 
-<p>Go on the <code>Mappings</code> tab and set only the <code>Deployment path on server</code> with your <code>Drupal</code> installation path on the <code>vagrant machine</code></p>
+<p>Go on the <code class="codehilite">Mappings</code> tab and set only the <code class="codehilite">Deployment path on server</code> with your <code class="codehilite">Drupal</code> installation path on the <code class="codehilite">vagrant machine</code></p>
 <p><img alt="Deployment path on server" src="../../img/drupal/phpstorm_9.png" title="Deployment path on server" /></p>
-<p>Set your vagrant <code>PHP interpreter</code>. From the following click on <code>…</code> of <code>CLI Interpreter</code>:</p>
+<p>Set your vagrant <code class="codehilite">PHP interpreter</code>. From the following click on <code class="codehilite">…</code> of <code class="codehilite">CLI Interpreter</code>:</p>
 <p><img alt="CLI Interpreter" src="../../img/drupal/phpstorm_10.png" title="CLI Interpreter" /></p>
-<p>Click on <code>+</code> button and select <code>Remote</code>. Set the interpreter as below, selecting <code>Vagrant</code> and setting the <code>Vagrant Instance Folder</code> to your <code>Vagrant</code> folder:</p>
+<p>Click on <code class="codehilite">+</code> button and select <code class="codehilite">Remote</code>. Set the interpreter as below, selecting <code class="codehilite">Vagrant</code> and setting the <code class="codehilite">Vagrant Instance Folder</code> to your <code class="codehilite">Vagrant</code> folder:</p>
 <p><img alt="CLI Interpreter settings" src="../../img/drupal/phpstorm_11.png" title="CLI Interpreter settings" /></p>
-<p>Go to <code>Settings</code> -&gt; <code>PHP</code> -&gt; <code>Servers</code> and click on <code>+</code> button:</p>
+<p>Go to <code class="codehilite">Settings</code> -&gt; <code class="codehilite">PHP</code> -&gt; <code class="codehilite">Servers</code> and click on <code class="codehilite">+</code> button:</p>
 <p><img alt="Vagrant server settings" src="../../img/drupal/phpstorm_12.png" title="Vagrant server settings" /></p>
-<p>Set your <code>Name</code> and <code>Host</code>. Check <code>Use path mappings</code> and enter the <code>Absolute path on the server</code> to your <code>drupal</code> installation on vagrant machine.</p>
+<p>Set your <code class="codehilite">Name</code> and <code class="codehilite">Host</code>. Check <code class="codehilite">Use path mappings</code> and enter the <code class="codehilite">Absolute path on the server</code> to your <code class="codehilite">drupal</code> installation on vagrant machine.</p>
 <h2 id="add-github-repository-and-initial-commit">Add GitHub repository and Initial Commit<a class="headerlink" href="#add-github-repository-and-initial-commit" title="Permanent link">&para;</a></h2>
-<p>Share the project on <code>GitHub</code>:</p>
+<p>Share the project on <code class="codehilite">GitHub</code>:</p>
 <p><img alt="Share github project" src="../../img/drupal/phpstorm_13.png" title="Share github project" /></p>
-<p>Write the <code>New repository name</code>, select <code>private</code>, if needed, and click on <code>Share</code></p>
+<p>Write the <code class="codehilite">New repository name</code>, select <code class="codehilite">private</code>, if needed, and click on <code class="codehilite">Share</code></p>
 <p><img alt="Share github project" src="../../img/drupal/phpstorm_14.png" title="Share github project" /></p>
-<p>Add files for <code>initial commit</code> and <code>push</code> on git by clicking on <code>OK</code> button</p>
+<p>Add files for <code class="codehilite">initial commit</code> and <code class="codehilite">push</code> on git by clicking on <code class="codehilite">OK</code> button</p>
 <p><img alt="Initial commit" src="../../img/drupal/phpstorm_15.png" title="Initial commit" /></p>
 <h2 id="import-to-existing-github-repository-and-initial-commit">Import to existing GitHub repository and Initial Commit<a class="headerlink" href="#import-to-existing-github-repository-and-initial-commit" title="Permanent link">&para;</a></h2>
 <p>Enable version control integration from PHPSTORM:</p>
 <p><img alt="Enable version control integrations" src="../../img/drupal/phpstorm_16.png" title="Enable version control integrations" /></p>
-<p>Set the <code>Remote</code> origin of the existing <code>git</code> repository adding the repository <code>url</code> (e.g. <code>https://github.com/mecmartini/soulweb-docs.git</code>)</p>
+<p>Set the <code class="codehilite">Remote</code> origin of the existing <code class="codehilite">git</code> repository adding the repository <code class="codehilite">url</code> (e.g. <code class="codehilite">https://github.com/mecmartini/soulweb-docs.git</code>)</p>
 <p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_17.png" title="Set git remote origin" /></p>
 <p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_18.png" title="Set git remote origin" /></p>
 <p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_19.png" title="Set git remote origin" /></p>
 <p><img alt="Set git remote origin" src="../../img/drupal/phpstorm_20.png" title="Set git remote origin" /></p>
-<p>Push the <code>initial commit</code> (see <a href="./#3-add-github-repository-and-initial-commit">Add GitHub repository and Initial Commit</a>).</p>
+<p>Push the <code class="codehilite">initial commit</code> (see <a href="./#3-add-github-repository-and-initial-commit">Add GitHub repository and Initial Commit</a>).</p>
 <h2 id="plugin-requirements">Plugin Requirements<a class="headerlink" href="#plugin-requirements" title="Permanent link">&para;</a></h2>
 <p>Here are listed the required PhpStorm plugins for our development workflow.</p>
 <h4 id="installenable-phpstorm-plugin">Install/Enable PhpStorm Plugin<a class="headerlink" href="#installenable-phpstorm-plugin" title="Permanent link">&para;</a></h4>
-<p>From your project <code>settings</code> go to <code>Plugin</code>:</p>
+<p>From your project <code class="codehilite">settings</code> go to <code class="codehilite">Plugin</code>:</p>
 <p><img alt="PhpStorm Plugin Settings" src="../../img/drupal/phpstorm_40.png" title="PhpStorm Plugin Settings" /></p>
-<p>Search the required <code>plugin</code> on the list and enable it (click on the right checkbox of the <code>plugin</code> name).</p>
-<p>If it's not listed  you must install it. Press on <code>Browse Repositories</code>, search for your <code>plugin</code>, select it and click on <code>Install</code> on the right side:</p>
+<p>Search the required <code class="codehilite">plugin</code> on the list and enable it (click on the right checkbox of the <code class="codehilite">plugin</code> name).</p>
+<p>If it's not listed  you must install it. Press on <code class="codehilite">Browse Repositories</code>, search for your <code class="codehilite">plugin</code>, select it and click on <code class="codehilite">Install</code> on the right side:</p>
 <p><img alt="PhpStorm Plugin Browse Repositories" src="../../img/drupal/phpstorm_41.png" title="PhpStorm Plugin Browse Repositories" /></p>
-<p>Close the <code>Browse Repositories</code> window. Now you'll find it on the list to enable it.</p>
+<p>Close the <code class="codehilite">Browse Repositories</code> window. Now you'll find it on the list to enable it.</p>
 <h4 id="drupal-symfony-bridge-plugin">Drupal Symfony Bridge Plugin<a class="headerlink" href="#drupal-symfony-bridge-plugin" title="Permanent link">&para;</a></h4>
 <p><a href="https://github.com/Haehnchen/idea-php-drupal-symfony2-bridge">Drupal Symfony Bridge Plugin</a></p>
 <p>Provides Symfony components support for Drupal in PhpStorm.</p>

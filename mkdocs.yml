@@ -43,10 +43,18 @@ extra:
 
 markdown_extensions:
   - admonition
-  - codehilite(guess_lang=false)
+  - codehilite
   - footnotes
   - meta
   - toc(permalink=true)
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
 
 copyright: 'Copyright &copy; 2017 Soulweb Solutions Ltd.'
 google_analytics: ['UA-99054399-1', 'soulwebdocs.udpdev.com']

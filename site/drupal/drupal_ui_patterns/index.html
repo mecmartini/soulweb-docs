@@ -620,6 +620,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -735,6 +742,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -752,13 +766,14 @@
                 
                 <h1 id="component-based-theme-using-ui-patterns">Component based theme using UI-Patterns<a class="headerlink" href="#component-based-theme-using-ui-patterns" title="Permanent link">&para;</a></h1>
 <p><a href="https://www.drupal.org/project/ui_patterns">UI Patterns</a> can expose stand-alone theme components (patterns) to Drupal and enables them to be used with the core Layout and Views module and well-known contrib modules like Field Group, Display Suite and Panels.</p>
+<p><img alt="UI Patterns" src="../../img/drupal/uipatterns.jpg" title="UI Patterns" /></p>
 <p>Here we explain how to create a component library, in a custom theme, by an example that includes two components:</p>
 <ul>
-<li><code>Button One</code></li>
-<li><code>Paragraph One</code> (include <code>Button One</code>)</li>
+<li><code class="codehilite">Button One</code></li>
+<li><code class="codehilite">Paragraph One</code> (include <code class="codehilite">Button One</code>)</li>
 </ul>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>The <code>Drupal</code> modules required are:</p>
+<p>The <code class="codehilite">Drupal</code> modules required are:</p>
 <ul>
 <li><a href="https://www.drupal.org/project/components">Component Libraries</a></li>
 <li><a href="https://www.drupal.org/project/ds">Display Suite</a></li>
@@ -767,15 +782,15 @@
 </ul>
 <p>The following modules must be enabled:</p>
 <ul>
-<li>Display Suite (<code>ds</code>)</li>
-<li>UI Patterns (<code>ui_patterns</code>)</li>
-<li>UI Patterns Dsiplay Suite (<code>ui_patterns_ds</code>)</li>
-<li>UI Patterns Layout (<code>ui_patterns_layouts</code>)</li>
-<li>Ui Patterns Library (<code>ui_patterns_library</code>)</li>
+<li>Display Suite (<code class="codehilite">ds</code>)</li>
+<li>UI Patterns (<code class="codehilite">ui_patterns</code>)</li>
+<li>UI Patterns Dsiplay Suite (<code class="codehilite">ui_patterns_ds</code>)</li>
+<li>UI Patterns Layout (<code class="codehilite">ui_patterns_layouts</code>)</li>
+<li>Ui Patterns Library (<code class="codehilite">ui_patterns_library</code>)</li>
 </ul>
 <h2 id="build-component-library">Build component library<a class="headerlink" href="#build-component-library" title="Permanent link">&para;</a></h2>
 <h4 id="1-create-the-components-library">1. Create the components library<a class="headerlink" href="#1-create-the-components-library" title="Permanent link">&para;</a></h4>
-<p>We must define our components library into the <code>[THEME_NAME].info.yml</code> of our theme:</p>
+<p>We must define our components library into the <code class="codehilite">[THEME_NAME].info.yml</code> of our theme:</p>
 <div class="codehilite"><pre><span></span>component-libraries:
   atoms:
     paths:
@@ -786,57 +801,57 @@
 </pre></div>
 
 
-<p>where <code>atoms</code> and <code>paragraphs</code> are the names of the component libraries we are defining, and in <code>paths</code> we define the folder that contains the components of the library.</p>
+<p>where <code class="codehilite">atoms</code> and <code class="codehilite">paragraphs</code> are the names of the component libraries we are defining, and in <code class="codehilite">paths</code> we define the folder that contains the components of the library.</p>
 <p>Then we must create the folders of the paths defined above. So, inside our theme directory, create the folders:</p>
 <ul>
 <li>components/atoms</li>
 <li>components/paragraphs</li>
 </ul>
 <h4 id="2-create-the-component-button-one">2. Create the component button-one<a class="headerlink" href="#2-create-the-component-button-one" title="Permanent link">&para;</a></h4>
-<p>A <code>.ui_patterns.yml</code> file is used to define the components provided by a theme or a module and expose them to <code>Drupal</code>. <code>UI Patterns</code> will use all <code>.ui_patterns.yml</code> files it finds in a theme’s or module’s directory structure, so it is possible to create component-specific files!</p>
-<p>Let's create, inside our theme directory, the file <code>[THEME_NAME].ui_patterns.yml</code> with the following content to define the <code>button-one</code> component:</p>
-<div class="codehilite"><pre><span></span>button_one:
-  label: Button one
-  description: A button template.
-  fields:
-    button_one_label:
-      type: string
-      label: Button label
-      description: The label to print into the button.
-      preview: Label
-  use: &#39;@atoms/buttons/button-one/button-one.html.twig&#39;
+<p>A <code class="codehilite"><span class="na">.ui_patterns.yml</span></code> file is used to define the components provided by a theme or a module and expose them to <code class="codehilite">Drupal</code>. <code class="codehilite">UI Patterns</code> will use all <code class="codehilite"><span class="na">.ui_patterns.yml</span></code> files it finds in a theme’s or module’s directory structure, so it is possible to create component-specific files!</p>
+<p>Let's create, inside our theme directory, the file <code class="codehilite">[THEME_NAME].ui_patterns.yml</code> with the following content to define the <code class="codehilite">button-one</code> component:</p>
+<div class="codehilite"><pre><span></span><span class="n">button_one</span><span class="o">:</span>
+  <span class="n">label</span><span class="o">:</span> <span class="n">Button</span> <span class="n">one</span>
+  <span class="n">description</span><span class="o">:</span> <span class="n">A</span> <span class="n">button</span> <span class="n">template</span><span class="o">.</span>
+  <span class="n">fields</span><span class="o">:</span>
+    <span class="n">button_one_label</span><span class="o">:</span>
+      <span class="n">type</span><span class="o">:</span> <span class="n">string</span>
+      <span class="n">label</span><span class="o">:</span> <span class="n">Button</span> <span class="n">label</span>
+      <span class="n">description</span><span class="o">:</span> <span class="n">The</span> <span class="n">label</span> <span class="n">to</span> <span class="n">print</span> <span class="n">into</span> <span class="n">the</span> <span class="n">button</span><span class="o">.</span>
+      <span class="n">preview</span><span class="o">:</span> <span class="n">Label</span>
+  <span class="n">use</span><span class="o">:</span> <span class="s1">&#39;@atoms/buttons/button-one/button-one.html.twig&#39;</span>
 </pre></div>
 
 
-<p>We must now create the template file declared above. So, in our component library directory (<code>component/atoms</code>), let's create the folder <code>buttons/button-one</code> and create the file <code>button-one.html.twig</code> inside it.</p>
+<p>We must now create the template file declared above. So, in our component library directory (<code class="codehilite">component/atoms</code>), let's create the folder <code class="codehilite">buttons/button-one</code> and create the file <code class="codehilite">button-one.html.twig</code> inside it.</p>
 <h4 id="3-create-the-component-paragraph-one">3. Create the component paragraph-one<a class="headerlink" href="#3-create-the-component-paragraph-one" title="Permanent link">&para;</a></h4>
-<p>Let's add to <code>[THEME_NAME].ui_patterns.yml</code> the definition of <code>paragraph-one</code> component:</p>
-<div class="codehilite"><pre><span></span>paragraph_one:
-  label: Paragraph one
-  description: A paragraph template.
-  fields:
-    image:
-      type: image
-      label: Image
-      description: An image.
-      preview: &#39;&lt;img src=&quot;http://lorempixel.com/640/480/nature/1/&quot; title=&quot;An image&quot; /&gt;&#39;
-    text:
-      type: text
-      label: Text
-      description: A text.
-      preview: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget vulputate tellus, vel aliquam sapien. Donec convallis nibh eu volutpat egestas. Nullam enim metus, placerat eleifend condimentum id, sodales in arcu. Quisque vel lacus odio. Nullam vel massa quis lectus ullamcorper placerat. Cras at turpis nec nisl porttitor posuere quis et massa. Etiam mattis leo nec laoreet venenatis. Donec dictum nunc eget tristique molestie. Duis vel mi justo. Vivamus sagittis justo erat, eu tempor elit malesuada in. Praesent sem lorem, aliquet lobortis rhoncus sed, sagittis vitae nunc. Phasellus convallis dui a augue hendrerit, non scelerisque augue mollis. Vivamus congue, mi sit amet rhoncus finibus, nisi nisi posuere mi, id dictum nibh augue nec arcu.
-    button_label:
-      type: string
-      label: Button label
-      description: The label to print into the button.
-      preview: Label
-  use: &#39;@paragraphs_component/paragraph-one/paragraph-one.html.twig&#39;
+<p>Let's add to <code class="codehilite">[THEME_NAME].ui_patterns.yml</code> the definition of <code class="codehilite">paragraph-one</code> component:</p>
+<div class="codehilite"><pre><span></span><span class="n">paragraph_one</span><span class="o">:</span>
+  <span class="n">label</span><span class="o">:</span> <span class="n">Paragraph</span> <span class="n">one</span>
+  <span class="n">description</span><span class="o">:</span> <span class="n">A</span> <span class="n">paragraph</span> <span class="n">template</span><span class="o">.</span>
+  <span class="n">fields</span><span class="o">:</span>
+    <span class="n">image</span><span class="o">:</span>
+      <span class="n">type</span><span class="o">:</span> <span class="n">image</span>
+      <span class="n">label</span><span class="o">:</span> <span class="n">Image</span>
+      <span class="n">description</span><span class="o">:</span> <span class="n">An</span> <span class="n">image</span><span class="o">.</span>
+      <span class="n">preview</span><span class="o">:</span> <span class="s1">&#39;&lt;img src=&quot;http://lorempixel.com/640/480/nature/1/&quot; title=&quot;An image&quot; /&gt;&#39;</span>
+    <span class="n">text</span><span class="o">:</span>
+      <span class="n">type</span><span class="o">:</span> <span class="n">text</span>
+      <span class="n">label</span><span class="o">:</span> <span class="n">Text</span>
+      <span class="n">description</span><span class="o">:</span> <span class="n">A</span> <span class="n">text</span><span class="o">.</span>
+      <span class="n">preview</span><span class="o">:</span> <span class="n">Lorem</span> <span class="n">ipsum</span> <span class="n">dolor</span> <span class="n">sit</span> <span class="n">amet</span><span class="o">,</span> <span class="n">consectetur</span> <span class="n">adipiscing</span> <span class="n">elit</span><span class="o">.</span> <span class="n">Duis</span> <span class="n">eget</span> <span class="n">vulputate</span> <span class="n">tellus</span><span class="o">,</span> <span class="n">vel</span> <span class="n">aliquam</span> <span class="n">sapien</span><span class="o">.</span> <span class="n">Donec</span> <span class="n">convallis</span> <span class="n">nibh</span> <span class="n">eu</span> <span class="n">volutpat</span> <span class="n">egestas</span><span class="o">.</span> <span class="n">Nullam</span> <span class="n">enim</span> <span class="n">metus</span><span class="o">,</span> <span class="n">placerat</span> <span class="n">eleifend</span> <span class="n">condimentum</span> <span class="n">id</span><span class="o">,</span> <span class="n">sodales</span> <span class="k">in</span> <span class="n">arcu</span><span class="o">.</span> <span class="n">Quisque</span> <span class="n">vel</span> <span class="n">lacus</span> <span class="n">odio</span><span class="o">.</span> <span class="n">Nullam</span> <span class="n">vel</span> <span class="n">massa</span> <span class="n">quis</span> <span class="n">lectus</span> <span class="n">ullamcorper</span> <span class="n">placerat</span><span class="o">.</span> <span class="n">Cras</span> <span class="n">at</span> <span class="n">turpis</span> <span class="n">nec</span> <span class="n">nisl</span> <span class="n">porttitor</span> <span class="n">posuere</span> <span class="n">quis</span> <span class="n">et</span> <span class="n">massa</span><span class="o">.</span> <span class="n">Etiam</span> <span class="n">mattis</span> <span class="n">leo</span> <span class="n">nec</span> <span class="n">laoreet</span> <span class="n">venenatis</span><span class="o">.</span> <span class="n">Donec</span> <span class="n">dictum</span> <span class="n">nunc</span> <span class="n">eget</span> <span class="n">tristique</span> <span class="n">molestie</span><span class="o">.</span> <span class="n">Duis</span> <span class="n">vel</span> <span class="n">mi</span> <span class="n">justo</span><span class="o">.</span> <span class="n">Vivamus</span> <span class="n">sagittis</span> <span class="n">justo</span> <span class="n">erat</span><span class="o">,</span> <span class="n">eu</span> <span class="n">tempor</span> <span class="n">elit</span> <span class="n">malesuada</span> <span class="k">in</span><span class="o">.</span> <span class="n">Praesent</span> <span class="n">sem</span> <span class="n">lorem</span><span class="o">,</span> <span class="n">aliquet</span> <span class="n">lobortis</span> <span class="n">rhoncus</span> <span class="n">sed</span><span class="o">,</span> <span class="n">sagittis</span> <span class="n">vitae</span> <span class="n">nunc</span><span class="o">.</span> <span class="n">Phasellus</span> <span class="n">convallis</span> <span class="n">dui</span> <span class="n">a</span> <span class="n">augue</span> <span class="n">hendrerit</span><span class="o">,</span> <span class="n">non</span> <span class="n">scelerisque</span> <span class="n">augue</span> <span class="n">mollis</span><span class="o">.</span> <span class="n">Vivamus</span> <span class="n">congue</span><span class="o">,</span> <span class="n">mi</span> <span class="n">sit</span> <span class="n">amet</span> <span class="n">rhoncus</span> <span class="n">finibus</span><span class="o">,</span> <span class="n">nisi</span> <span class="n">nisi</span> <span class="n">posuere</span> <span class="n">mi</span><span class="o">,</span> <span class="n">id</span> <span class="n">dictum</span> <span class="n">nibh</span> <span class="n">augue</span> <span class="n">nec</span> <span class="n">arcu</span><span class="o">.</span>
+    <span class="n">button_label</span><span class="o">:</span>
+      <span class="n">type</span><span class="o">:</span> <span class="n">string</span>
+      <span class="n">label</span><span class="o">:</span> <span class="n">Button</span> <span class="n">label</span>
+      <span class="n">description</span><span class="o">:</span> <span class="n">The</span> <span class="n">label</span> <span class="n">to</span> <span class="n">print</span> <span class="n">into</span> <span class="n">the</span> <span class="n">button</span><span class="o">.</span>
+      <span class="n">preview</span><span class="o">:</span> <span class="n">Label</span>
+  <span class="n">use</span><span class="o">:</span> <span class="s1">&#39;@paragraphs_component/paragraph-one/paragraph-one.html.twig&#39;</span>
 </pre></div>
 
 
-<p>We must now create the template file declared above. So, in our component library directory (<code>component/paragraphs</code>), let's create the folder <code>paragraph-one</code> and create the file <code>paragraph-one.html.twig</code> inside it.</p>
+<p>We must now create the template file declared above. So, in our component library directory (<code class="codehilite">component/paragraphs</code>), let's create the folder <code class="codehilite">paragraph-one</code> and create the file <code class="codehilite">paragraph-one.html.twig</code> inside it.</p>
 <h4 id="4-create-the-asset-library-for-component-button-one">4. Create the asset library for component button-one<a class="headerlink" href="#4-create-the-asset-library-for-component-button-one" title="Permanent link">&para;</a></h4>
-<p>We must define our asset library into the <code>[THEME_NAME].libraries.yml</code> of our theme:</p>
+<p>We must define our asset library into the <code class="codehilite">[THEME_NAME].libraries.yml</code> of our theme:</p>
 <div class="codehilite"><pre><span></span>button.one:
   version: 1.x
   css:
@@ -851,87 +866,96 @@
 </pre></div>
 
 
-<p>We must now create the asset files for <code>button-one.css</code> and <code>button-one.js</code> inside the theme directory declared above.</p>
-<p>Finally, let's add the defined asset to the component <code>button-one</code> defined in <code>[THEME_NAME].ui_patterns.yml</code> adding the <code>libraries</code> parameter. So our component pattern definition must look like:</p>
-<div class="codehilite"><pre><span></span>button_one:
-  label: Button one
-  description: A button template.
-  fields:
-    button_one_label:
-      type: string
-      label: Button label
-      description: The label to print into the button.
-      preview: Label
-  libraries:
-    - [THEME_NAME]/button.one
-  use: &#39;@atoms/buttons/button-one/button-one.html.twig&#39;
+<p>We must now create the asset files for <code class="codehilite">button-one.css</code> and <code class="codehilite">button-one.js</code> inside the theme directory declared above.</p>
+<p>Finally, let's add the defined asset to the component <code class="codehilite">button-one</code> defined in <code class="codehilite">[THEME_NAME].ui_patterns.yml</code> adding the <code class="codehilite">libraries</code> parameter. So our component pattern definition must look like:</p>
+<div class="codehilite"><pre><span></span><span class="n">button_one</span><span class="o">:</span>
+  <span class="n">label</span><span class="o">:</span> <span class="n">Button</span> <span class="n">one</span>
+  <span class="n">description</span><span class="o">:</span> <span class="n">A</span> <span class="n">button</span> <span class="n">template</span><span class="o">.</span>
+  <span class="n">fields</span><span class="o">:</span>
+    <span class="n">button_one_label</span><span class="o">:</span>
+      <span class="n">type</span><span class="o">:</span> <span class="n">string</span>
+      <span class="n">label</span><span class="o">:</span> <span class="n">Button</span> <span class="n">label</span>
+      <span class="n">description</span><span class="o">:</span> <span class="n">The</span> <span class="n">label</span> <span class="n">to</span> <span class="n">print</span> <span class="n">into</span> <span class="n">the</span> <span class="n">button</span><span class="o">.</span>
+      <span class="n">preview</span><span class="o">:</span> <span class="n">Label</span>
+  <span class="n">libraries</span><span class="o">:</span>
+    <span class="o">-</span> <span class="o">[</span><span class="n">THEME_NAME</span><span class="o">]/</span><span class="n">button</span><span class="o">.</span><span class="na">one</span>
+  <span class="n">use</span><span class="o">:</span> <span class="s1">&#39;@atoms/buttons/button-one/button-one.html.twig&#39;</span>
 </pre></div>
 
 
 <h4 id="5-code-for-the-component-button-one">5. Code for the component button-one<a class="headerlink" href="#5-code-for-the-component-button-one" title="Permanent link">&para;</a></h4>
-<p>Let's add the code to the <code>button-one</code> component template <code>button-one.html.twig</code>:</p>
-<div class="codehilite"><pre><span></span>&lt;button class=&quot;btn-one&quot; type=&quot;button&quot;&gt;{{ button_one_label }}&lt;/button&gt;
+<p>Let's add the code to the <code class="codehilite">button-one</code> component template <code class="codehilite">button-one.html.twig</code>:</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn-one&quot;</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span> <span class="nv">button_one_label</span> <span class="cp">}}</span><span class="nt">&lt;/button&gt;</span>
 </pre></div>
 
 
-<p>where <code>{{ button_label }}</code> is the variable declared in our component pattern.</p>
-<p>Let's add the <code>css</code> code to <code>button-one.css</code>:</p>
-<div class="codehilite"><pre><span></span>.btn-one {
-  background: #666666;
-  color: #ffffff;
-  display: inline-block;
-  padding: 5px 10px;
-  border: none;
-  margin: 10px 0;
-}
+<p>where <code class="codehilite"><span class="cp">{{</span> <span class="nv">button_label</span> <span class="cp">}}</span><span class="x"></span></code> is the variable declared in our component pattern.</p>
+<p>Let's add the <code class="codehilite">css</code> code to <code class="codehilite">button-one.css</code>:</p>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">btn-one</span> <span class="p">{</span>
+  <span class="k">background</span><span class="p">:</span> <span class="mh">#666666</span><span class="p">;</span>
+  <span class="k">color</span><span class="p">:</span> <span class="mh">#ffffff</span><span class="p">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+  <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+  <span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p>Let's add the <code>javascript</code> to <code>button-one.js</code>:</p>
-<div class="codehilite"><pre><span></span>(function($, Drupal, drupalSettings) {
-  &#39;use strict&#39;;
+<p>Let's add the <code class="codehilite">javascript</code> to <code class="codehilite">button-one.js</code>:</p>
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">Drupal</span><span class="p">,</span> <span class="nx">drupalSettings</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
-  Drupal.behaviors.buttonOne = {
+  <span class="nx">Drupal</span><span class="p">.</span><span class="nx">behaviors</span><span class="p">.</span><span class="nx">buttonOne</span> <span class="o">=</span> <span class="p">{</span>
 
-    /**
-     * Drupal attach behavior.
-     */
-    attach: function(context, settings) {
-      $(&#39;.btn-one&#39;).once(&#39;btn-one-click&#39;).click(function() {
-        $(&quot;&lt;div&gt;You clicked on button one!&lt;/div&gt;&quot;).dialog();
-      });
-    }
-  };
+    <span class="cm">/**</span>
+<span class="cm">     * Drupal attach behavior.</span>
+<span class="cm">     */</span>
+    <span class="nx">attach</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.btn-one&#39;</span><span class="p">).</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;btn-one-click&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;You clicked on button one!&lt;/div&gt;&quot;</span><span class="p">).</span><span class="nx">dialog</span><span class="p">();</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
 
-}(jQuery, Drupal, drupalSettings));
+<span class="p">}(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="nx">Drupal</span><span class="p">,</span> <span class="nx">drupalSettings</span><span class="p">));</span>
 </pre></div>
 
 
 <h4 id="6-code-for-the-component-paragraph-one">6. Code for the component paragraph-one<a class="headerlink" href="#6-code-for-the-component-paragraph-one" title="Permanent link">&para;</a></h4>
-<p>Let's add the code to the <code>paragraph-one</code> component template <code>paragraph-one.html.twig</code>:</p>
-<div class="codehilite"><pre><span></span>&lt;div class=&quot;paragraph-one&quot;&gt;
-  &lt;div&gt;{{ image }}&lt;/div&gt;
-  &lt;div&gt;{{ text }}&lt;/div&gt;
-  &lt;div&gt;{{ pattern(&#39;button_one&#39;, {button_one_label: button_label}) }}&lt;/div&gt;
-&lt;/div&gt;
+<p>Let's add the code to the <code class="codehilite">paragraph-one</code> component template <code class="codehilite">paragraph-one.html.twig</code>:</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;paragraph-one&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span><span class="cp">{{</span> <span class="nv">image</span> <span class="cp">}}</span><span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span><span class="cp">{{</span> <span class="nv">text</span> <span class="cp">}}</span><span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span><span class="cp">{{</span> <span class="nv">pattern</span><span class="o">(</span><span class="s1">&#39;button_one&#39;</span><span class="o">,</span> <span class="o">{</span><span class="nv">button_one_label</span><span class="o">:</span> <span class="nv">button_label</span><span class="o">})</span> <span class="cp">}}</span><span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
 
-<p>With <code>{{ pattern('button_one', {button_one_label: button_label}) }}</code> we are able to re-use the component pattern <code>button-one</code> to print the paragraph button.</p>
+<p>With <code class="codehilite"><span class="cp">{{</span> <span class="nv">pattern</span><span class="o">(</span><span class="s1">&#39;button_one&#39;</span><span class="o">,</span> <span class="o">{</span><span class="nv">button_one_label</span><span class="o">:</span> <span class="nv">button_label</span><span class="o">})</span> <span class="cp">}}</span><span class="x"></span></code> we are able to re-use the component pattern <code class="codehilite">button-one</code> to print the paragraph button.</p>
 <h4 id="7-create-the-paragraph">7. Create the paragraph<a class="headerlink" href="#7-create-the-paragraph" title="Permanent link">&para;</a></h4>
-<p>First of all let's clean the <code>Drupal</code> cache to register the defined libraries:</p>
+<p>First of all let's clean the <code class="codehilite">Drupal</code> cache to register the defined libraries:</p>
 <div class="codehilite"><pre><span></span>drush cr
 </pre></div>
 
 
-<p>Now, from the <code>Drupal</code> UI, let's create the paragraph <code>Paragraph Example One</code>:</p>
+<p>Now, from the <code class="codehilite">Drupal</code> UI, let's create the paragraph <code class="codehilite">Paragraph Example One</code>:</p>
 <p><img alt="Paragraph Example One" src="../../img/drupal/paragraph_1.png" title="Paragraph Example One" /></p>
-<p>Let's associate to it the pattern <code>Paragraph one</code> we created:</p>
+<p>Let's associate to it the pattern <code class="codehilite">Paragraph one</code> we created:</p>
 <p><img alt="Paragraph Example One Pattern" src="../../img/drupal/paragraph_2.png" title="Paragraph Example One Pattern" /></p>
-<p>As you can see we associated the created pattern, in the <code>Select a layout</code> section (below the screen), and we mapped the paragraph fields to the pattern fields.</p>
+<p>As you can see we associated the created pattern, in the <code class="codehilite">Select a layout</code> section (below the screen), and we mapped the paragraph fields to the pattern fields.</p>
 <p>Finally we can create a content with the created paragraph that must look like:</p>
 <p><img alt="Paragraph Example One Content" src="../../img/drupal/paragraph_3.png" title="Paragraph Example One Content" /></p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>The whole process is summarized in the following diagram;</p>
+<p><img alt="Component based theme using UI-Patterns diagram" src="../../img/drupal/uipatterns-diagram-1.png" title="Component based theme using UI-Patterns diagram" /></p>
+<p>The finally theme structure must look like this:</p>
+<p><img alt="Theme Structure" src="../../img/drupal/paragraph_4.png" title="Theme Structure" /></p>
+<p>The whole structure is connected like in the following diagram:</p>
+<p><img alt="Component based theme using UI-Patterns structure diagram" src="../../img/drupal/uipatterns-diagram-2.png" title="Component based theme using UI-Patterns structure diagram" /></p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>UI Patterns showcase theme based on the Bootstrap Drupal 8 theme:</p>
+<p><a href="https://github.com/mecmartini/Drupal-component-based-theme-using-UI-Patterns">Drupal component based theme using UI Patterns</a></p>
                 
                   
                 

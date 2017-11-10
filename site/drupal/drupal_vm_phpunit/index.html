@@ -630,25 +630,25 @@
                 
                 <h1 id="phpunit">PHPUnit<a class="headerlink" href="#phpunit" title="Permanent link">&para;</a></h1>
 <h4 id="1-integrate-phpunit-in-phpstorm">1. Integrate PHPUnit in PhpStorm<a class="headerlink" href="#1-integrate-phpunit-in-phpstorm" title="Permanent link">&para;</a></h4>
-<p>Copy the <code>web/core/phpunit.xml.dist</code> file to <code>web/core/phpunit.xml</code> under your <code>drupal</code> installation directory.</p>
-<p>Edit the created file with your favorite editor and full fill the parameters <code>SIMPLETEST_DB</code>, <code>SIMPLETEST_BASE_URL</code> and <code>BROWSERTEST_OUTPUT_DIRECTORY</code>. See the examples provided into the file and make sure <code>BROWSERTEST_OUTPUT_DIRECTORY</code> is set as the example.</p>
-<p>Go under <code>Settings</code> &gt; <code>Language &amp; Frameworks</code> &gt; <code>PHP</code> &gt; <code>PHPUnit</code>. Click on the <code>+</code> button and select <code>By Remote Interpreter</code></p>
+<p>Copy the <code class="codehilite">web/core/phpunit.xml.dist</code> file to <code class="codehilite">web/core/phpunit.xml</code> under your <code class="codehilite">drupal</code> installation directory.</p>
+<p>Edit the created file with your favorite editor and full fill the parameters <code class="codehilite">SIMPLETEST_DB</code>, <code class="codehilite">SIMPLETEST_BASE_URL</code> and <code class="codehilite">BROWSERTEST_OUTPUT_DIRECTORY</code>. See the examples provided into the file and make sure <code class="codehilite">BROWSERTEST_OUTPUT_DIRECTORY</code> is set as the example.</p>
+<p>Go under <code class="codehilite">Settings</code> &gt; <code class="codehilite">Language &amp; Frameworks</code> &gt; <code class="codehilite">PHP</code> &gt; <code class="codehilite">PHPUnit</code>. Click on the <code class="codehilite">+</code> button and select <code class="codehilite">By Remote Interpreter</code></p>
 <p><img alt="PhpStorm PHPUnit settings" src="../../img/drupal/phpstorm_34.png" title="PhpStorm PHPUnit settings" /></p>
-<p>Set the <code>Interpreter</code> as below. In <code>Path to script</code> and <code>Default configuration file</code> substitute the directory path of your <code>vagrant</code> machine</p>
+<p>Set the <code class="codehilite">Interpreter</code> as below. In <code class="codehilite">Path to script</code> and <code class="codehilite">Default configuration file</code> substitute the directory path of your <code class="codehilite">vagrant</code> machine</p>
 <p><img alt="PHPUnit By Remote Interpreter" src="../../img/drupal/phpstorm_50.png" title="PHPUnit By Remote Interpreter" /></p>
 <h4 id="2-set-and-run-phpunit-test">2. Set and Run PHPUnit Test<a class="headerlink" href="#2-set-and-run-phpunit-test" title="Permanent link">&para;</a></h4>
-<p>To run all <code>drupal</code> tests go under <code>Edit configurations</code>. Click the <code>+</code> button and select <code>PHPUnit</code></p>
+<p>To run all <code class="codehilite">drupal</code> tests go under <code class="codehilite">Edit configurations</code>. Click the <code class="codehilite">+</code> button and select <code class="codehilite">PHPUnit</code></p>
 <p><img alt="PHPUnit Edit configurations" src="../../img/drupal/phpstorm_35.png" title="PHPUnit Edit configurations" /></p>
 <p><img alt="PHPUnit Add New Configuration" src="../../img/drupal/phpstorm_36.png" title="PHPUnit Add New Configuration" /></p>
-<p>Set only the <code>Name</code> and the <code>Test Scope</code> as below:</p>
+<p>Set only the <code class="codehilite">Name</code> and the <code class="codehilite">Test Scope</code> as below:</p>
 <p><img alt="PHPUnit Configuration" src="../../img/drupal/phpstorm_37.png" title="PHPUnit Configuration" /></p>
-<p>To test if it works select your <code>PHPUnit</code> config and click on <code>run</code> (<code>play button</code>)</p>
+<p>To test if it works select your <code class="codehilite">PHPUnit</code> config and click on <code class="codehilite">run</code> (<code class="codehilite">play button</code>)</p>
 <p><img alt="PHPUnit Run" src="../../img/drupal/phpstorm_38.png" title="PHPUnit Run" /></p>
 <p><img alt="PHPUnit in execution" src="../../img/drupal/phpstorm_39.png" title="PHPUnit in execution" /></p>
-<p>You can create as many <code>PHPUnit</code> configuration do you need, to run subset of test, setting the <code>Test Runner options</code>.</p>
-<p>The example below shows how to setup it to run only the test of the group <code>devel</code>:</p>
+<p>You can create as many <code class="codehilite">PHPUnit</code> configuration do you need, to run subset of test, setting the <code class="codehilite">Test Runner options</code>.</p>
+<p>The example below shows how to setup it to run only the test of the group <code class="codehilite">devel</code>:</p>
 <p><img alt="PHPUnit run group devel test" src="../../img/drupal/phpstorm_51.png" title="PHPUnit run group devel test" /></p>
-<p>The <code>--group devel</code> options is added to the <code>Test Runner options</code>.</p>
+<p>The <code class="codehilite">--group devel</code> options is added to the <code class="codehilite">Test Runner options</code>.</p>
 <p>To run multiple groups of tests:</p>
 <div class="codehilite"><pre><span></span>--group Group1,Group2,..
 </pre></div>

@@ -644,7 +644,7 @@
                 
                 <h1 id="xdebug">Xdebug<a class="headerlink" href="#xdebug" title="Permanent link">&para;</a></h1>
 <h4 id="1-enable-xdebug-on-your-vagrant-machine">1. Enable Xdebug on your Vagrant machine<a class="headerlink" href="#1-enable-xdebug-on-your-vagrant-machine" title="Permanent link">&para;</a></h4>
-<p>Open the vagrant machine <code>config.yml</code> file and make sure to have the <code>xdebug</code> line uncommented on <code>installed_extras</code></p>
+<p>Open the vagrant machine <code class="codehilite">config.yml</code> file and make sure to have the <code class="codehilite">xdebug</code> line uncommented on <code class="codehilite">installed_extras</code></p>
 <div class="codehilite"><pre><span></span>installed_extras:
       - adminer
       # - blackfire
@@ -676,7 +676,7 @@ php_xdebug_coverage_enable: 1
 </pre></div>
 
 
-<p>Add the port <code>9000</code> to <code>firewall_allowed_tcp_ports</code></p>
+<p>Add the port <code class="codehilite">9000</code> to <code class="codehilite">firewall_allowed_tcp_ports</code></p>
 <div class="codehilite"><pre><span></span>firewall_allowed_tcp_ports:
   - &quot;22&quot;
   - &quot;25&quot;
@@ -694,43 +694,43 @@ php_xdebug_coverage_enable: 1
 </pre></div>
 
 
-<p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
+<p>From your <code class="codehilite">terminal</code> go on the <code class="codehilite">vagrant</code> directory and run <code class="codehilite">vagrant up --provision</code>, to apply the changes on your <code class="codehilite">vagrant</code> machine, or run <code class="codehilite">vagrant provision</code> if your machine is already up.</p>
 <h4 id="2-integrate-xdebug-in-phpstorm">2. Integrate Xdebug in PhpStorm<a class="headerlink" href="#2-integrate-xdebug-in-phpstorm" title="Permanent link">&para;</a></h4>
-<p>On <code>PhpStorm</code> go to <code>settings</code>.</p>
-<p>Make sure to have <code>Xdebug</code> -&gt; <code>Debug port</code> set to <code>9000</code>:</p>
+<p>On <code class="codehilite">PhpStorm</code> go to <code class="codehilite">settings</code>.</p>
+<p>Make sure to have <code class="codehilite">Xdebug</code> -&gt; <code class="codehilite">Debug port</code> set to <code class="codehilite">9000</code>:</p>
 <p><img alt="PhpStorm debug port" src="../../img/drupal/phpstorm_21.png" title="PhpStorm debug port" /></p>
-<p>From <code>PhpStorm</code> click on <code>Edit Configurations…</code>:</p>
+<p>From <code class="codehilite">PhpStorm</code> click on <code class="codehilite">Edit Configurations…</code>:</p>
 <p><img alt="PhpStorm debug edit configuration" src="../../img/drupal/phpstorm_22.png" title="PhpStorm debug edit configuration" /></p>
-<p>Click on <code>+</code> button and select <code>PHP Remote Debug</code>:</p>
+<p>Click on <code class="codehilite">+</code> button and select <code class="codehilite">PHP Remote Debug</code>:</p>
 <p><img alt="PHP Remote Debug" src="../../img/drupal/phpstorm_23.png" title="PHP Remote Debug" /></p>
-<p>Select you Server (see <a href="../drupal_vm_phpstorm/#2-integrate-vagrant">Add GitHub repository and Initial Commit</a>) and set <code>Ide key</code> to <code>PHPSTORM</code>.</p>
-<p>Install <code>Xdebug helper</code> as <code>Chrome</code> extension (also available on Firefox)</p>
+<p>Select you Server (see <a href="../drupal_vm_phpstorm/#2-integrate-vagrant">Add GitHub repository and Initial Commit</a>) and set <code class="codehilite">Ide key</code> to <code class="codehilite">PHPSTORM</code>.</p>
+<p>Install <code class="codehilite">Xdebug helper</code> as <code class="codehilite">Chrome</code> extension (also available on Firefox)</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>similar extensions are available also for <code>Firefox</code> (e.g. <code>theeasiestxdebug</code>).</p>
+<p>similar extensions are available also for <code class="codehilite">Firefox</code> (e.g. <code class="codehilite">theeasiestxdebug</code>).</p>
 </div>
-<p>A new icon should appear on <code>Chrome</code>. Right click on it and select <code>Options</code>.</p>
+<p>A new icon should appear on <code class="codehilite">Chrome</code>. Right click on it and select <code class="codehilite">Options</code>.</p>
 <p><img alt="Xdebug helper" src="../../img/drupal/phpstorm_24.png" title="Xdebug helper" /></p>
-<p>Select <code>PhpStorm</code> on <code>IDE key</code> and save it</p>
+<p>Select <code class="codehilite">PhpStorm</code> on <code class="codehilite">IDE key</code> and save it</p>
 <p><img alt="Xdebug helper IDE key" src="../../img/drupal/phpstorm_25.png" title="Xdebug helper IDE key" /></p>
-<p>Click on <code>Xdebug helper</code> icon and select <code>Debug</code></p>
+<p>Click on <code class="codehilite">Xdebug helper</code> icon and select <code class="codehilite">Debug</code></p>
 <p><img alt="Xdebug helper debug" src="../../img/drupal/phpstorm_26.png" title="Xdebug helper debug" /></p>
-<p>Now you should be ready to debug. Set a breakpoint on your Drupal <code>index.php</code> clicking on the right of the code row number. A red point must appear.</p>
+<p>Now you should be ready to debug. Set a breakpoint on your Drupal <code class="codehilite">index.php</code> clicking on the right of the code row number. A red point must appear.</p>
 <p><img alt="Xdebug breakpoint" src="../../img/drupal/phpstorm_27.png" title="Xdebug helper breakpoint" /></p>
-<p>To start to <code>debug</code> click on the <code>bug</code> icon</p>
+<p>To start to <code class="codehilite">debug</code> click on the <code class="codehilite">bug</code> icon</p>
 <p><img alt="Xdebug start debug" src="../../img/drupal/phpstorm_28.png" title="Xdebug stert debug" /></p>
-<p>Then navigate on your <code>Drupal</code> installation from the browser and you will see the debugger in action</p>
+<p>Then navigate on your <code class="codehilite">Drupal</code> installation from the browser and you will see the debugger in action</p>
 <p><img alt="Xdebug in action" src="../../img/drupal/phpstorm_29.png" title="Xdebug in action" /></p>
-<p>To continue the execution of <code>Drupal</code> after the <code>breakpoint</code> click on <code>Resume Program</code> (<code>play</code> button on the left of <code>Debugger</code> tab).</p>
-<p>To stop the debugger click on <code>Stop</code> (<code>stop</code> button on the left of <code>Debugger</code> tab).</p>
+<p>To continue the execution of <code class="codehilite">Drupal</code> after the <code class="codehilite">breakpoint</code> click on <code class="codehilite">Resume Program</code> (<code class="codehilite">play</code> button on the left of <code class="codehilite">Debugger</code> tab).</p>
+<p>To stop the debugger click on <code class="codehilite">Stop</code> (<code class="codehilite">stop</code> button on the left of <code class="codehilite">Debugger</code> tab).</p>
 <h4 id="3-xdebug-and-twig">3. Xdebug and Twig<a class="headerlink" href="#3-xdebug-and-twig" title="Permanent link">&para;</a></h4>
-<p>To use <code>Xdebug</code> on <code>Twig</code> templates make sure that:</p>
+<p>To use <code class="codehilite">Xdebug</code> on <code class="codehilite">Twig</code> templates make sure that:</p>
 <ol>
-<li>you have installed and enabled the contrib <code>module</code> <a href="https://www.drupal.org/project/devel">devel</a> (installed by default on <code>DrupalVM</code>)</li>
-<li><code>Twig</code> debug is enabled (see <a href="../drupal_basic_configuration/#4-disable-drupal-caching">Disable Drupal Caching</a>)</li>
+<li>you have installed and enabled the contrib <code class="codehilite"><span class="k">module</span></code> <a href="https://www.drupal.org/project/devel">devel</a> (installed by default on <code class="codehilite">DrupalVM</code>)</li>
+<li><code class="codehilite">Twig</code> debug is enabled (see <a href="../drupal_basic_configuration/#4-disable-drupal-caching">Disable Drupal Caching</a>)</li>
 </ol>
 <p>Then set a breakpoint into your template adding:</p>
-<div class="codehilite"><pre><span></span>{{ devel_breakpoint() }}
+<div class="codehilite"><pre><span></span><span class="cp">{{</span> <span class="nv">devel_breakpoint</span><span class="o">()</span> <span class="cp">}}</span><span class="x"></span>
 </pre></div>
 
 

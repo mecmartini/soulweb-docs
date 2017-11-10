@@ -655,45 +655,45 @@
 <p>This can be achieved by using the <a href="https://www.drupal.org/project/config_split">Configuration Split</a> module.</p>
 <p>Configuration split exposes a configuration entity which controls what you want to split off. Currently you can</p>
 <ul>
-<li><code>blacklist modules</code>: any configuration that this module owns will automatically be blacklisted too.</li>
-<li><code>blacklist configuration</code>: settings or configuration entities. These will be removed from the active sync directory.</li>
-<li><code>graylist configuration</code>: settings or configuration entities. These will not be removed if they are in the active sync directory, but also not exported if they are not there yet.</li>
+<li><code class="codehilite">blacklist modules</code>: any configuration that this module owns will automatically be blacklisted too.</li>
+<li><code class="codehilite">blacklist configuration</code>: settings or configuration entities. These will be removed from the active sync directory.</li>
+<li><code class="codehilite">graylist configuration</code>: settings or configuration entities. These will not be removed if they are in the active sync directory, but also not exported if they are not there yet.</li>
 </ul>
-<p>As default, we have <code>Dev</code> / <code>Stage</code> / <code>Prod</code> config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the <code>Dev</code> environment on your local environment to import / export is config. Open the <code>settings.dev.php</code> and add this line:</p>
+<p>As default, we have <code class="codehilite">Dev</code> / <code class="codehilite">Stage</code> / <code class="codehilite">Prod</code> config environments already set up and configured on our drupal projects. Those are set to inactive. You must enable the <code class="codehilite">Dev</code> environment on your local environment to import / export is config. Open the <code class="codehilite">settings.dev.php</code> and add this line:</p>
 <div class="codehilite"><pre><span></span>$config[&#39;config_split.config_split.dev&#39;][&#39;status&#39;] = TRUE;
 </pre></div>
 
 
-<p>If those config environments are not yet set, you can create them when needed but make sure to name them with the following <code>machine name</code>:</p>
+<p>If those config environments are not yet set, you can create them when needed but make sure to name them with the following <code class="codehilite">machine name</code>:</p>
 <ul>
-<li><code>dev</code></li>
-<li><code>stage</code></li>
-<li><code>prod</code></li>
+<li><code class="codehilite">dev</code></li>
+<li><code class="codehilite">stage</code></li>
+<li><code class="codehilite">prod</code></li>
 </ul>
 <p>as those are the defaults for our projects.</p>
-<p>Now you can use normal <code>drush</code> import /export commands and <code>Configuration Split</code> we'll do the magic for you:</p>
-<div class="codehilite"><pre><span></span># To export configuration
-drush cex -y
-# To import configuration
-drush cim -y
+<p>Now you can use normal <code class="codehilite">drush</code> import /export commands and <code class="codehilite">Configuration Split</code> we'll do the magic for you:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># To export configuration</span>
+<span class="n">drush</span> <span class="n">cex</span> <span class="o">-</span><span class="n">y</span>
+<span class="c1"># To import configuration</span>
+<span class="n">drush</span> <span class="n">cim</span> <span class="o">-</span><span class="n">y</span>
 </pre></div>
 
 
 <h2 id="override-configuration">Override Configuration<a class="headerlink" href="#override-configuration" title="Permanent link">&para;</a></h2>
 <p>In development, it's convenient to have different configuration then on the production site (e.g. different error reporting, different API keys, different site email, etc.):</p>
 <p>These customizations are not to be exported.</p>
-<p>The <code>$config</code> array allows run-time overriding: configuration is still there, but it gets overridden.</p>
+<p>The <code class="codehilite">$config</code> array allows run-time overriding: configuration is still there, but it gets overridden.</p>
 <p>These customizations must be added to:</p>
 <ul>
-<li><code>settings.local.php</code> if they are needed only for your local environment (see <a href="../drupal_basic_configuration/#3-create-and-enable-local-settings">Create and enable local settings</a>)</li>
-<li><code>settings.dev.php</code> if they are needed for all dev environments (already available on the repository)</li>
+<li><code class="codehilite">settings.local.php</code> if they are needed only for your local environment (see <a href="../drupal_basic_configuration/#3-create-and-enable-local-settings">Create and enable local settings</a>)</li>
+<li><code class="codehilite">settings.dev.php</code> if they are needed for all dev environments (already available on the repository)</li>
 </ul>
 <p>As example, to enable verbose error logging on your instance add:</p>
 <div class="codehilite"><pre><span></span>$config[&#39;system.logging&#39;][&#39;error_level&#39;] = &#39;verbose&#39;;
 </pre></div>
 
 
-<p>After the override, the <code>drupal</code> backend UI still shows the original (non-overridden) settings. This is wanted to prevent you from submitting overriden configuration. So, even after the override, <code>drupal</code> exports the original settings.</p>
+<p>After the override, the <code class="codehilite">drupal</code> backend UI still shows the original (non-overridden) settings. This is wanted to prevent you from submitting overriden configuration. So, even after the override, <code class="codehilite">drupal</code> exports the original settings.</p>
                 
                   
                 

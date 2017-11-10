@@ -659,35 +659,35 @@
 </pre></div>
 
 
-<p>To install it with a different language than default (english) you can use the <code>locale</code> parameter. As example, to install it with <code>italian</code> language you can run:</p>
+<p>To install it with a different language than default (english) you can use the <code class="codehilite">locale</code> parameter. As example, to install it with <code class="codehilite">italian</code> language you can run:</p>
 <div class="codehilite"><pre><span></span>drush site-install --db-url=mysql://db_user:db_password@localhost:port/db_name --sites-subdir=sample.subsite.com --account-name=admin --account-pass=admin  --locale=it -y
 </pre></div>
 
 
 <h2 id="multisite-with-shared-configuration">Multisite with Shared Configuration<a class="headerlink" href="#multisite-with-shared-configuration" title="Permanent link">&para;</a></h2>
-<p>We can use <code>Configuration Management</code> (CMI) with <a href="https://www.drupal.org/project/config_split">Configuration Split</a> to share the configuration between sites (see <a href="../drupal_configuration_management/">Configuration Management</a>).</p>
+<p>We can use <code class="codehilite">Configuration Management</code> (CMI) with <a href="https://www.drupal.org/project/config_split">Configuration Split</a> to share the configuration between sites (see <a href="../drupal_configuration_management/">Configuration Management</a>).</p>
 <h2 id="install-a-subsite-from-an-existing-configuration">Install a subsite from an existing configuration<a class="headerlink" href="#install-a-subsite-from-an-existing-configuration" title="Permanent link">&para;</a></h2>
 <p>With the help of <a href="https://www.drupal.org/project/config_installer">Configuration Installer</a> we can install a new subsite from an existing configuration.</p>
-<p>Add the <code>Config Installer</code> profile:</p>
+<p>Add the <code class="codehilite">Config Installer</code> profile:</p>
 <div class="codehilite"><pre><span></span>drush dl config_installer
 </pre></div>
 
 
 <p>Install the subsite from the existing configuration:</p>
-<div class="codehilite"><pre><span></span>drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y
+<div class="codehilite"><pre><span></span><span class="n">drush</span> <span class="n">site</span><span class="o">-</span><span class="n">install</span> <span class="n">config_installer</span> <span class="n">config_installer_sync_configure_form</span><span class="p">.</span><span class="n">sync_directory</span><span class="o">=</span><span class="p">..</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">sync</span> <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="nl">mysql</span><span class="p">:</span><span class="c1">//dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y</span>
 </pre></div>
 
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information about <code>CMI</code> and <code>Config Installer</code> from an existing configuration see:</p>
+<p>For more information about <code class="codehilite">CMI</code> and <code class="codehilite">Config Installer</code> from an existing configuration see:</p>
 <ul>
 <li><a href="../drupal_vm/#build-drupal-vm-from-existing-drupal-project">Build Drupal VM from existing Drupal project</a></li>
 <li><a href="../drupal_configuration_management/">Drupal 8 Configuration Management</a></li>
 </ul>
 </div>
 <h2 id="configure-your-multisite-domains-and-aliases-with-sitesphp">Configure your multisite domains and aliases with sites.php<a class="headerlink" href="#configure-your-multisite-domains-and-aliases-with-sitesphp" title="Permanent link">&para;</a></h2>
-<p>On your <code>drupal</code> installation, under <code>sites</code> copy and past the file <code>example.sites.php</code> in the same folder, naming it <code>sites.php</code>, and configure your sub-site domains and aliases as below:</p>
+<p>On your <code class="codehilite">drupal</code> installation, under <code class="codehilite">sites</code> copy and past the file <code class="codehilite">example.sites.php</code> in the same folder, naming it <code class="codehilite">sites.php</code>, and configure your sub-site domains and aliases as below:</p>
 <div class="codehilite"><pre><span></span>$sites = array(
   &#39;example.dev&#39; =&gt; &#39;it.example.dev&#39;,
   &#39;example.com&#39; =&gt; &#39;it.example.dev&#39;,

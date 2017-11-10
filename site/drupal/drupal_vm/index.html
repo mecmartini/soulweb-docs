@@ -901,21 +901,21 @@
 <h4 id="2-xcode">2. Xcode<a class="headerlink" href="#2-xcode" title="Permanent link">&para;</a></h4>
 <p>Install <a href="https://developer.apple.com/xcode/">Xcode</a>.</p>
 <h4 id="3-ansible">3. Ansible<a class="headerlink" href="#3-ansible" title="Permanent link">&para;</a></h4>
-<p>Install <a href="https://valdhaus.co/writings/ansible-mac-osx/">Ansible</a> via <code>pip</code>.</p>
-<p>Open a <code>Terminal</code> and run:</p>
+<p>Install <a href="https://valdhaus.co/writings/ansible-mac-osx/">Ansible</a> via <code class="codehilite">pip</code>.</p>
+<p>Open a <code class="codehilite">Terminal</code> and run:</p>
 <div class="codehilite"><pre><span></span>sudo easy_install pip
 sudo pip install ansible --quiet
 </pre></div>
 
 
-<p>To update <code>Ansible</code>:</p>
+<p>To update <code class="codehilite">Ansible</code>:</p>
 <div class="codehilite"><pre><span></span>sudo pip install ansible --upgrade
 </pre></div>
 
 
 <h4 id="4-vagrant-plugins">4. Vagrant Plugins<a class="headerlink" href="#4-vagrant-plugins" title="Permanent link">&para;</a></h4>
 <p>Install the needed Vagrant plugins.</p>
-<p>From the <code>Terminal</code> run:</p>
+<p>From the <code class="codehilite">Terminal</code> run:</p>
 <div class="codehilite"><pre><span></span>vagrant plugin install vagrant-vbguest
 vagrant plugin install vagrant-hostsupdater
 vagrant plugin install vagrant-auto_network
@@ -925,23 +925,23 @@ vagrant plugin install vagrant-cachier
 
 <h2 id="build-drupal-vm-from-scratch">Build Drupal VM from scratch<a class="headerlink" href="#build-drupal-vm-from-scratch" title="Permanent link">&para;</a></h2>
 <h4 id="1-download">1. Download<a class="headerlink" href="#1-download" title="Permanent link">&para;</a></h4>
-<p>Clone the <code>Drupal VM</code> project. From the <code>Terminal</code> run:</p>
+<p>Clone the <code class="codehilite">Drupal VM</code> project. From the <code class="codehilite">Terminal</code> run:</p>
 <div class="codehilite"><pre><span></span>git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
 </pre></div>
 
 
-<p>Enter on the created folder <code>yourprojectnamevm</code>.</p>
+<p>Enter on the created folder <code class="codehilite">yourprojectnamevm</code>.</p>
 <h4 id="2-configyml">2. config.yml<a class="headerlink" href="#2-configyml" title="Permanent link">&para;</a></h4>
-<p>The main configuration file of the project. Commonly this is a copy of <code>default.config.yml</code> with the values tweaked to your own project.</p>
-<p>Copy <code>default.config.yml</code> as <code>config.yml</code>.</p>
-<p>Open the <code>config.yml</code> with your favorite editor and edit the following lines:</p>
-<div class="codehilite"><pre><span></span>vagrant_hostname: yourprojectnamevm.dev
-vagrant_machine_name: yourprojectnamevm
-vagrant_ip: 0.0.0.0
+<p>The main configuration file of the project. Commonly this is a copy of <code class="codehilite">default.config.yml</code> with the values tweaked to your own project.</p>
+<p>Copy <code class="codehilite">default.config.yml</code> as <code class="codehilite">config.yml</code>.</p>
+<p>Open the <code class="codehilite">config.yml</code> with your favorite editor and edit the following lines:</p>
+<div class="codehilite"><pre><span></span><span class="n">vagrant_hostname</span><span class="o">:</span> <span class="n">yourprojectnamevm</span><span class="o">.</span><span class="na">dev</span>
+<span class="n">vagrant_machine_name</span><span class="o">:</span> <span class="n">yourprojectnamevm</span>
+<span class="n">vagrant_ip</span><span class="o">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>
 </pre></div>
 
 
-<p>Set the <code>local</code> and <code>remote</code> (<em>vagrant</em>) folders to sync:</p>
+<p>Set the <code class="codehilite">local</code> and <code class="codehilite">remote</code> (<em>vagrant</em>) folders to sync:</p>
 <div class="codehilite"><pre><span></span>vagrant_synced_folders:
   # The first synced folder will be used for the default Drupal installation, if
   # any of the build_* settings are &#39;true&#39;. By default the folder is set to
@@ -953,12 +953,12 @@ vagrant_ip: 0.0.0.0
 </pre></div>
 
 
-<p>Configure the <code>drupal composer install dir</code> to the directory destination of above:</p>
+<p>Configure the <code class="codehilite">drupal composer install dir</code> to the directory destination of above:</p>
 <div class="codehilite"><pre><span></span>drupal_composer_install_dir: &quot;/var/www/yourprojectnamevm/drupal”
 </pre></div>
 
 
-<p>By default, the <code>Drupal VM</code> includes extras packages listed under <code>installed_extras</code>. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:</p>
+<p>By default, the <code class="codehilite">Drupal VM</code> includes extras packages listed under <code class="codehilite">installed_extras</code>. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:</p>
 <div class="codehilite"><pre><span></span>installed_extras:
   - adminer
   # - blackfire
@@ -983,12 +983,12 @@ vagrant_ip: 0.0.0.0
 </pre></div>
 
 
-<p>Select the desidered php version. Currently-supported versions: <code>5.6</code>, <code>7.0</code>, <code>7.1</code>. Our default for  <code>Drupal 8</code> projects is <code>7.1</code>:</p>
+<p>Select the desidered php version. Currently-supported versions: <code class="codehilite">5.6</code>, <code class="codehilite">7.0</code>, <code class="codehilite">7.1</code>. Our default for  <code class="codehilite">Drupal 8</code> projects is <code class="codehilite">7.1</code>:</p>
 <div class="codehilite"><pre><span></span>php_version: “7.1&quot;
 </pre></div>
 
 
-<p>Set <code>php memory limit</code> at least to <code>256M</code>:</p>
+<p>Set <code class="codehilite">php memory limit</code> at least to <code class="codehilite">256M</code>:</p>
 <div class="codehilite"><pre><span></span>php_memory_limit: &quot;256M&quot;
 php_opcache_memory_consumption: &quot;256&quot;
 </pre></div>
@@ -996,36 +996,36 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 <p>Continue to modify config.yml to your liking.</p>
 <h4 id="3-build-up">3. Build up<a class="headerlink" href="#3-build-up" title="Permanent link">&para;</a></h4>
-<p>Open Terminal, <code>cd</code> to the vagrant directory (containing the Vagrantfile and the config.yml file).</p>
-<p>Type in <code>vagrant up</code>, and let <code>Vagrant</code> do its magic.</p>
-<p>When it’s done, open the browser and type your <code>vagrant_hostname</code> (e.g. <code>drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
-<p>Default Drupal credentials to login are specified in your <code>config.yml</code></p>
-<div class="codehilite"><pre><span></span>drupal_account_name: admin
-drupal_account_pass: admin
+<p>Open Terminal, <code class="codehilite">cd</code> to the vagrant directory (containing the Vagrantfile and the config.yml file).</p>
+<p>Type in <code class="codehilite">vagrant up</code>, and let <code class="codehilite">Vagrant</code> do its magic.</p>
+<p>When it’s done, open the browser and type your <code class="codehilite">vagrant_hostname</code> (e.g. <code class="codehilite">drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
+<p>Default Drupal credentials to login are specified in your <code class="codehilite">config.yml</code></p>
+<div class="codehilite"><pre><span></span><span class="n">drupal_account_name</span><span class="o">:</span> <span class="n">admin</span>
+<span class="n">drupal_account_pass</span><span class="o">:</span> <span class="n">admin</span>
 </pre></div>
 
 
-<p>At the address <code>dashboard.your_vagrant_hostname.dev</code> (e.g. <code>dashboard.drupaltest.dev</code>) you can see your <code>DrupalVM</code> dashboard.</p>
+<p>At the address <code class="codehilite">dashboard.your_vagrant_hostname.dev</code> (e.g. <code class="codehilite">dashboard.drupaltest.dev</code>) you can see your <code class="codehilite">DrupalVM</code> dashboard.</p>
 <h2 id="build-drupal-vm-from-existing-drupal-project">Build Drupal VM from existing Drupal project<a class="headerlink" href="#build-drupal-vm-from-existing-drupal-project" title="Permanent link">&para;</a></h2>
-<p>This is in the scenario where you have an existing existing drupal project (<code>composer</code> based) on <code>git</code> and you want to start a new <code>Drupal VM</code> to local development.</p>
+<p>This is in the scenario where you have an existing existing drupal project (<code class="codehilite">composer</code> based) on <code class="codehilite">git</code> and you want to start a new <code class="codehilite">Drupal VM</code> to local development.</p>
 <h4 id="1-download_1">1. Download<a class="headerlink" href="#1-download_1" title="Permanent link">&para;</a></h4>
-<p>Clone the <code>Drupal VM</code> project. From the <code>Terminal</code> run:</p>
+<p>Clone the <code class="codehilite">Drupal VM</code> project. From the <code class="codehilite">Terminal</code> run:</p>
 <div class="codehilite"><pre><span></span>git clone https://github.com/geerlingguy/drupal-vm.git yourprojectnamevm
 </pre></div>
 
 
-<p>Enter on the created folder <code>yourprojectnamevm</code>.</p>
+<p>Enter on the created folder <code class="codehilite">yourprojectnamevm</code>.</p>
 <h4 id="2-configyml_1">2. config.yml<a class="headerlink" href="#2-configyml_1" title="Permanent link">&para;</a></h4>
-<p>The main configuration file of the project. Commonly this is a copy of <code>default.config.yml</code> with the values tweaked to your own project.</p>
-<p>Copy <code>default.config.yml</code> as <code>config.yml</code>.</p>
-<p>Open the <code>config.yml</code> with your favorite editor and edit the following lines:</p>
-<div class="codehilite"><pre><span></span>vagrant_hostname: yourprojectnamevm.dev
-vagrant_machine_name: yourprojectnamevm
-vagrant_ip: 0.0.0.0
+<p>The main configuration file of the project. Commonly this is a copy of <code class="codehilite">default.config.yml</code> with the values tweaked to your own project.</p>
+<p>Copy <code class="codehilite">default.config.yml</code> as <code class="codehilite">config.yml</code>.</p>
+<p>Open the <code class="codehilite">config.yml</code> with your favorite editor and edit the following lines:</p>
+<div class="codehilite"><pre><span></span><span class="n">vagrant_hostname</span><span class="o">:</span> <span class="n">yourprojectnamevm</span><span class="o">.</span><span class="na">dev</span>
+<span class="n">vagrant_machine_name</span><span class="o">:</span> <span class="n">yourprojectnamevm</span>
+<span class="n">vagrant_ip</span><span class="o">:</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>
 </pre></div>
 
 
-<p>Set the <code>local</code> and <code>remote</code> (<em>vagrant</em>) folders to sync:</p>
+<p>Set the <code class="codehilite">local</code> and <code class="codehilite">remote</code> (<em>vagrant</em>) folders to sync:</p>
 <div class="codehilite"><pre><span></span>vagrant_synced_folders:
   # The first synced folder will be used for the default Drupal installation, if
   # any of the build_* settings are &#39;true&#39;. By default the folder is set to
@@ -1037,29 +1037,29 @@ vagrant_ip: 0.0.0.0
 </pre></div>
 
 
-<p>Configure the <code>drupal composer install dir</code> to the directory destination of above:</p>
+<p>Configure the <code class="codehilite">drupal composer install dir</code> to the directory destination of above:</p>
 <div class="codehilite"><pre><span></span>drupal_composer_install_dir: &quot;/var/www/yourprojectnamevm/drupal”
 </pre></div>
 
 
-<p>Set <code>Drupal VM</code> to use your <code>composer.json</code> in order to automatically install your <code>composer</code> dependencies:</p>
-<div class="codehilite"><pre><span></span>drupal_build_makefile: false
-...
-drupal_composer_path: false
-...
-drupal_build_composer: false
-...
-drupal_build_composer_project: false
+<p>Set <code class="codehilite">Drupal VM</code> to use your <code class="codehilite">composer.json</code> in order to automatically install your <code class="codehilite">composer</code> dependencies:</p>
+<div class="codehilite"><pre><span></span><span class="n">drupal_build_makefile</span><span class="o">:</span> <span class="kc">false</span>
+<span class="o">...</span>
+<span class="n">drupal_composer_path</span><span class="o">:</span> <span class="kc">false</span>
+<span class="o">...</span>
+<span class="n">drupal_build_composer</span><span class="o">:</span> <span class="kc">false</span>
+<span class="o">...</span>
+<span class="n">drupal_build_composer_project</span><span class="o">:</span> <span class="kc">false</span>
 </pre></div>
 
 
 <p>We need to disable the automatic drupal install site because, for now, in this scenario it doesn't work:</p>
-<div class="codehilite"><pre><span></span>drupal_install_site: false
+<div class="codehilite"><pre><span></span><span class="n">drupal_install_site</span><span class="o">:</span> <span class="kc">false</span>
 </pre></div>
 
 
 <p>We'll manually install it later (see <a href="./#5-manually-install-drupal-site">Manually install Drupal site</a>)</p>
-<p>By default, the <code>Drupal VM</code> includes extras packages listed under <code>installed_extras</code>. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:</p>
+<p>By default, the <code class="codehilite">Drupal VM</code> includes extras packages listed under <code class="codehilite">installed_extras</code>. If you don't want or need one or more of those extras, just comment out/in them from the list. Our default list is:</p>
 <div class="codehilite"><pre><span></span>installed_extras:
   - adminer
   # - blackfire
@@ -1084,12 +1084,12 @@ drupal_build_composer_project: false
 </pre></div>
 
 
-<p>Select the desidered php version. Currently-supported versions: <code>5.6</code>, <code>7.0</code>, <code>7.1</code>. Our default for  <code>Drupal 8</code> projects is <code>7.1</code>:</p>
+<p>Select the desidered php version. Currently-supported versions: <code class="codehilite">5.6</code>, <code class="codehilite">7.0</code>, <code class="codehilite">7.1</code>. Our default for  <code class="codehilite">Drupal 8</code> projects is <code class="codehilite">7.1</code>:</p>
 <div class="codehilite"><pre><span></span>php_version: “7.1&quot;
 </pre></div>
 
 
-<p>Set <code>php memory limit</code> at least to <code>256M</code>:</p>
+<p>Set <code class="codehilite">php memory limit</code> at least to <code class="codehilite">256M</code>:</p>
 <div class="codehilite"><pre><span></span>php_memory_limit: &quot;256M&quot;
 php_opcache_memory_consumption: &quot;256&quot;
 </pre></div>
@@ -1097,7 +1097,7 @@ php_opcache_memory_consumption: &quot;256&quot;
 
 <p>Continue to modify config.yml to your liking.</p>
 <h4 id="3-download-your-drupal-project-site">3. Download your Drupal project site<a class="headerlink" href="#3-download-your-drupal-project-site" title="Permanent link">&para;</a></h4>
-<p>Create, on your local machine, the folder where to clone the  <code>Drupal</code> project site into the directory set as <code>local_path</code> on your <code>config.yml</code> (e.g. <code>~/Sites/yourprojectnamevm</code>). The folder name must match the one set on your <code>config.yml</code> at the line:</p>
+<p>Create, on your local machine, the folder where to clone the  <code class="codehilite">Drupal</code> project site into the directory set as <code class="codehilite">local_path</code> on your <code class="codehilite">config.yml</code> (e.g. <code class="codehilite">~/Sites/yourprojectnamevm</code>). The folder name must match the one set on your <code class="codehilite">config.yml</code> at the line:</p>
 <div class="codehilite"><pre><span></span>drupal_composer_install_dir: &quot;/var/www/yourprojectnamevm/drupal&quot;
 </pre></div>
 
@@ -1109,24 +1109,24 @@ cd yourprojectnamevm
 </pre></div>
 
 
-<p>Clone your <code>Drupal</code> project site into the created folder:</p>
+<p>Clone your <code class="codehilite">Drupal</code> project site into the created folder:</p>
 <div class="codehilite"><pre><span></span>git clone https://github.com/yourrepository/projectname.git drupal
 </pre></div>
 
 
 <h4 id="4-build-up">4. Build up<a class="headerlink" href="#4-build-up" title="Permanent link">&para;</a></h4>
-<p>Open Terminal, <code>cd</code> to the vagrant directory (containing the Vagrantfile and the config.yml file).</p>
-<p>Type in <code>vagrant up</code>, and let <code>Vagrant</code> do its magic.</p>
+<p>Open Terminal, <code class="codehilite">cd</code> to the vagrant directory (containing the Vagrantfile and the config.yml file).</p>
+<p>Type in <code class="codehilite">vagrant up</code>, and let <code class="codehilite">Vagrant</code> do its magic.</p>
 <h4 id="5-manually-install-drupal-site">5. Manually install Drupal site<a class="headerlink" href="#5-manually-install-drupal-site" title="Permanent link">&para;</a></h4>
-<p>When the <code>VM</code> is up and running, enter on it (<code>vagrant ssh</code>).</p>
-<p>Install the <code>composer</code> dependencies:</p>
+<p>When the <code class="codehilite">VM</code> is up and running, enter on it (<code class="codehilite">vagrant ssh</code>).</p>
+<p>Install the <code class="codehilite">composer</code> dependencies:</p>
 <div class="codehilite"><pre><span></span>cd /var/www/yourprojectnamevm/drupal
 composer install
 </pre></div>
 
 
 <p>We'll use the <a href="https://www.drupal.org/project/config_installer">Configuration Installer</a> profile to install your drupal site with your configuration.</p>
-<p>Make sure to already have it in your <code>Drupal</code> project as <code>composer</code> dependencies (check the <code>composer.json</code>). If not, add it to your <code>composer</code> requirements:</p>
+<p>Make sure to already have it in your <code class="codehilite">Drupal</code> project as <code class="codehilite">composer</code> dependencies (check the <code class="codehilite">composer.json</code>). If not, add it to your <code class="codehilite">composer</code> requirements:</p>
 <div class="codehilite"><pre><span></span>composer require drupal/config_installer
 </pre></div>
 
@@ -1136,54 +1136,54 @@ composer install
 </pre></div>
 
 
-<p>Run the <code>drupal</code> installation (replace the <code>db</code> parameters) from your <code>vagrant</code> machine:</p>
-<div class="codehilite"><pre><span></span>drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y
+<p>Run the <code class="codehilite">drupal</code> installation (replace the <code class="codehilite">db</code> parameters) from your <code class="codehilite">vagrant</code> machine:</p>
+<div class="codehilite"><pre><span></span><span class="n">drush</span> <span class="n">site</span><span class="o">-</span><span class="n">install</span> <span class="n">config_installer</span> <span class="n">config_installer_sync_configure_form</span><span class="p">.</span><span class="n">sync_directory</span><span class="o">=</span><span class="p">..</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">sync</span> <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="nl">mysql</span><span class="p">:</span><span class="c1">//dbuser:dbpass@127.0.0.1:dbport/dbname --account-name=admin --account-pass=admin -y</span>
 </pre></div>
 
 
-<p>where <code>config_installer_sync_configure_form.sync_directory</code> is set to the folder that contains your <code>drupal</code> default configuration. Our projects <code>default</code> is <code>../config/sync</code>.</p>
-<p>If you didn't change the standard <code>mysql</code> db settings in your <code>vagrant</code> machine the command should be:</p>
-<div class="codehilite"><pre><span></span>drush site-install config_installer config_installer_sync_configure_form.sync_directory=../config/sync --db-url=mysql://drupal:drupal@127.0.0.1/drupal --account-name=admin --account-pass=admin -y
+<p>where <code class="codehilite">config_installer_sync_configure_form.sync_directory</code> is set to the folder that contains your <code class="codehilite">drupal</code> default configuration. Our projects <code class="codehilite">default</code> is <code class="codehilite"><span class="cp">../config/sync</span></code>.</p>
+<p>If you didn't change the standard <code class="codehilite">mysql</code> db settings in your <code class="codehilite">vagrant</code> machine the command should be:</p>
+<div class="codehilite"><pre><span></span><span class="n">drush</span> <span class="n">site</span><span class="o">-</span><span class="n">install</span> <span class="n">config_installer</span> <span class="n">config_installer_sync_configure_form</span><span class="p">.</span><span class="n">sync_directory</span><span class="o">=</span><span class="p">..</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">sync</span> <span class="o">--</span><span class="n">db</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="nl">mysql</span><span class="p">:</span><span class="c1">//drupal:drupal@127.0.0.1/drupal --account-name=admin --account-pass=admin -y</span>
 </pre></div>
 
 
-<p>When it’s done, open the browser and type your <code>vagrant_hostname</code> (e.g. <code>drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
+<p>When it’s done, open the browser and type your <code class="codehilite">vagrant_hostname</code> (e.g. <code class="codehilite">drupaltest.dev</code>), in the address bar, to navigate on your drupal installation.</p>
 <div class="admonition tip">
 <p class="admonition-title">Configuration Split</p>
-<p>in case your <code>drupal</code> project config is split in different folder than the <code>default</code>, with <a href="https://www.drupal.org/project/config_split">Configuration Split</a>, and you need to import them too, for each of the split config you need to import run:</p>
+<p>in case your <code class="codehilite">drupal</code> project config is split in different folder than the <code class="codehilite">default</code>, with <a href="https://www.drupal.org/project/config_split">Configuration Split</a>, and you need to import them too, for each of the split config you need to import run:</p>
 <div class="codehilite"><pre><span></span>drush csim split_machine_name
 </pre></div>
 
 
-<p>Replace <code>split_machine_name</code> with your configuration split <code>machine name</code></p>
+<p>Replace <code class="codehilite">split_machine_name</code> with your configuration split <code class="codehilite">machine name</code></p>
 </div>
-<p>Default Drupal credentials to login are specified in your <code>config.yml</code></p>
-<div class="codehilite"><pre><span></span>drupal_account_name: admin
-drupal_account_pass: admin
+<p>Default Drupal credentials to login are specified in your <code class="codehilite">config.yml</code></p>
+<div class="codehilite"><pre><span></span><span class="n">drupal_account_name</span><span class="o">:</span> <span class="n">admin</span>
+<span class="n">drupal_account_pass</span><span class="o">:</span> <span class="n">admin</span>
 </pre></div>
 
 
-<p>At the address <code>dashboard.your_vagrant_hostname.dev</code> (e.g. <code>dashboard.drupaltest.dev</code>) you can see your <code>DrupalVM</code> dashboard.</p>
+<p>At the address <code class="codehilite">dashboard.your_vagrant_hostname.dev</code> (e.g. <code class="codehilite">dashboard.drupaltest.dev</code>) you can see your <code class="codehilite">DrupalVM</code> dashboard.</p>
 <h2 id="build-drupal-vm-for-multisite">Build Drupal VM for multisite<a class="headerlink" href="#build-drupal-vm-for-multisite" title="Permanent link">&para;</a></h2>
-<p>For <code>multisite</code> installations, make the changes outlined above, but, using the <code>apache_vhosts</code> variable, configure as many domains pointing to the same <code>docroot</code> as you need:</p>
-<div class="codehilite"><pre><span></span>apache_vhosts:
-  # Drupal VM&#39;s default domain, evaluating to whatever `vagrant_hostname` is set to (drupalvm.dev by default).
-  - servername: &quot;{{ drupal_domain }}&quot;
-    serveralias: &quot;www.{{ drupal_domain }}&quot;
-    documentroot: &quot;{{ drupal_core_path }}&quot;
-    extra_parameters: &quot;{{ apache_vhost_php_fpm_parameters }}&quot;
+<p>For <code class="codehilite">multisite</code> installations, make the changes outlined above, but, using the <code class="codehilite">apache_vhosts</code> variable, configure as many domains pointing to the same <code class="codehilite">docroot</code> as you need:</p>
+<div class="codehilite"><pre><span></span><span class="x">apache_vhosts:</span>
+<span class="x">  # Drupal VM&#39;s default domain, evaluating to whatever `vagrant_hostname` is set to (drupalvm.dev by default).</span>
+<span class="x">  - servername: &quot;</span><span class="cp">{{</span> <span class="nv">drupal_domain</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">    serveralias: &quot;www.</span><span class="cp">{{</span> <span class="nv">drupal_domain</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">    documentroot: &quot;</span><span class="cp">{{</span> <span class="nv">drupal_core_path</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">    extra_parameters: &quot;</span><span class="cp">{{</span> <span class="nv">apache_vhost_php_fpm_parameters</span> <span class="cp">}}</span><span class="x">&quot;</span>
 
-  - servername: &quot;local.second-drupal-site.com&quot;
-    documentroot: &quot;{{ drupal_core_path }}&quot;
-    extra_parameters: &quot;{{ apache_vhost_php_fpm_parameters }}&quot;
+<span class="x">  - servername: &quot;local.second-drupal-site.com&quot;</span>
+<span class="x">    documentroot: &quot;</span><span class="cp">{{</span> <span class="nv">drupal_core_path</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">    extra_parameters: &quot;</span><span class="cp">{{</span> <span class="nv">apache_vhost_php_fpm_parameters</span> <span class="cp">}}</span><span class="x">&quot;</span>
 
-  - servername: &quot;local.third-drupal-site.com&quot;
-    documentroot: &quot;{{ drupal_core_path }}&quot;
-    extra_parameters: &quot;{{ apache_vhost_php_fpm_parameters }}&quot;
+<span class="x">  - servername: &quot;local.third-drupal-site.com&quot;</span>
+<span class="x">    documentroot: &quot;</span><span class="cp">{{</span> <span class="nv">drupal_core_path</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">    extra_parameters: &quot;</span><span class="cp">{{</span> <span class="nv">apache_vhost_php_fpm_parameters</span> <span class="cp">}}</span><span class="x">&quot;</span>
 </pre></div>
 
 
-<p>If you need additional databases and database users, add them to the list of <code>mysql_databases</code> and <code>mysql_users</code>:</p>
+<p>If you need additional databases and database users, add them to the list of <code class="codehilite">mysql_databases</code> and <code class="codehilite">mysql_users</code>:</p>
 <div class="codehilite"><pre><span></span>mysql_databases:
   - name: drupal
     encoding: utf8
@@ -1204,23 +1204,23 @@ mysql_users:
 </pre></div>
 
 
-<p>If you let the <code>VM</code> to install your main <code>drupal</code> site (<code>drupal_install_site: true</code>), make sure to set the appropriate <code>drupal</code> host and database for the installation:</p>
-<div class="codehilite"><pre><span></span>drupal_domain: &quot;{{ vagrant_hostname }}&quot;
-...
-drupal_db_user: drupal
-drupal_db_password: drupal
-drupal_db_name: drupal
+<p>If you let the <code class="codehilite">VM</code> to install your main <code class="codehilite">drupal</code> site (<code class="codehilite"><span class="n">drupal_install_site</span><span class="o">:</span> <span class="kc">true</span></code>), make sure to set the appropriate <code class="codehilite">drupal</code> host and database for the installation:</p>
+<div class="codehilite"><pre><span></span><span class="x">drupal_domain: &quot;</span><span class="cp">{{</span> <span class="nv">vagrant_hostname</span> <span class="cp">}}</span><span class="x">&quot;</span>
+<span class="x">...</span>
+<span class="x">drupal_db_user: drupal</span>
+<span class="x">drupal_db_password: drupal</span>
+<span class="x">drupal_db_name: drupal</span>
 </pre></div>
 
 
 <h2 id="updating-drupal-vm">Updating Drupal VM<a class="headerlink" href="#updating-drupal-vm" title="Permanent link">&para;</a></h2>
 <p>Drupal VM follows semantic versioning, which means your configuration should continue working (potentially with very minor modifications) throughout a major release cycle. Here is the process to follow when updating Drupal VM between minor releases:</p>
 <ol>
-<li>Read through the <a href="https://github.com/geerlingguy/drupal-vm/releases">release notes</a> and add/modify <code>config.yml</code> variables mentioned therein.</li>
-<li>Do a diff of your <code>config.yml</code> with the updated <code>default.config.yml</code> (e.g. <code>curl https://raw.githubusercontent.com/geerlingguy/drupal-vm/master/default.config.yml | git diff --no-index config.yml -</code>).</li>
-<li>Run <code>vagrant provision</code> to provision the VM, incorporating all the latest changes.</li>
+<li>Read through the <a href="https://github.com/geerlingguy/drupal-vm/releases">release notes</a> and add/modify <code class="codehilite">config.yml</code> variables mentioned therein.</li>
+<li>Do a diff of your <code class="codehilite">config.yml</code> with the updated <code class="codehilite">default.config.yml</code> (e.g. <code class="codehilite">curl https://raw.githubusercontent.com/geerlingguy/drupal-vm/master/default.config.yml | git diff --no-index config.yml -</code>).</li>
+<li>Run <code class="codehilite">vagrant provision</code> to provision the VM, incorporating all the latest changes.</li>
 </ol>
-<p>For major version upgrades (e.g. 3.x.x to 4.x.x), it may be simpler to destroy the VM (<code>vagrant destroy</code>) then build a fresh new VM (<code>vagrant up</code>) using the new version of Drupal VM.</p>
+<p>For major version upgrades (e.g. 3.x.x to 4.x.x), it may be simpler to destroy the VM (<code class="codehilite">vagrant destroy</code>) then build a fresh new VM (<code class="codehilite">vagrant up</code>) using the new version of Drupal VM.</p>
                 
                   
                 

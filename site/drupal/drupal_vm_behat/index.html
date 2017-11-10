@@ -643,28 +643,28 @@
                 
                 
                 <h1 id="bdd-with-behat">BDD with Behat<a class="headerlink" href="#bdd-with-behat" title="Permanent link">&para;</a></h1>
-<p><a href="http://behat.org/">Behat</a> is an open source <code>behavior-driven development</code> (<code>BDD</code>) tool for <code>PHP</code>. You can use <code>Behat</code> to build and run automated tests for site functionality on your <code>Drupal</code> sites.</p>
+<p><a href="http://behat.org/">Behat</a> is an open source <code class="codehilite">behavior-driven development</code> (<code class="codehilite">BDD</code>) tool for <code class="codehilite">PHP</code>. You can use <code class="codehilite">Behat</code> to build and run automated tests for site functionality on your <code class="codehilite">Drupal</code> sites.</p>
 <h4 id="1-requirements">1. Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">&para;</a></h4>
-<p>From your <code>vagrant</code> machine on your <code>drupal</code> project folder, you must add the <code>Drupal</code> extension for <code>Behat</code>:</p>
+<p>From your <code class="codehilite">vagrant</code> machine on your <code class="codehilite">drupal</code> project folder, you must add the <code class="codehilite">Drupal</code> extension for <code class="codehilite">Behat</code>:</p>
 <div class="codehilite"><pre><span></span>composer require --dev drupal/drupal-extension
 </pre></div>
 
 
-<p><a href="http://www.seleniumhq.org/">Selenium2</a> is needed to test <code>javascript</code> session. <code>Selenium2</code> gives you the ability to take full control of a real browser with a clean consistent proxy API.</p>
-<p>First ensure that you have the <code>Java Runtime Environment</code> (<code>JRE</code>) installed on your host machine, which is required to run Selenium. You may already have it installed, but can check with:</p>
+<p><a href="http://www.seleniumhq.org/">Selenium2</a> is needed to test <code class="codehilite">javascript</code> session. <code class="codehilite">Selenium2</code> gives you the ability to take full control of a real browser with a clean consistent proxy API.</p>
+<p>First ensure that you have the <code class="codehilite">Java Runtime Environment</code> (<code class="codehilite">JRE</code>) installed on your host machine, which is required to run Selenium. You may already have it installed, but can check with:</p>
 <div class="codehilite"><pre><span></span>java -version
 </pre></div>
 
 
 <p>If you need to install or update, Google is your friend.</p>
-<p>From your host download the <code>Selenium Server</code> and place it wherever you like:</p>
+<p>From your host download the <code class="codehilite">Selenium Server</code> and place it wherever you like:</p>
 <div class="codehilite"><pre><span></span># check for the latest version at http://docs.seleniumhq.org/download/
 curl -O http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
 mv selenium-server-standalone-3.4.0.jar /wherever/you/like/folder
 </pre></div>
 
 
-<p>We also need to download the browser <code>drivers</code> to make <code>Selenium</code> deal with them:</p>
+<p>We also need to download the browser <code class="codehilite">drivers</code> to make <code class="codehilite">Selenium</code> deal with them:</p>
 <div class="codehilite"><pre><span></span># download chrome driver
 # check for the latest version at https://sites.google.com/a/chromium.org/chromedriver/downloads
 curl -L -O https://chromedriver.storage.googleapis.com/2.30/chromedriver_mac64.zip
@@ -686,130 +686,130 @@ sudo mv geckodriver /usr/local/bin
 
 
 <h4 id="2-setup-behat">2. Setup Behat<a class="headerlink" href="#2-setup-behat" title="Permanent link">&para;</a></h4>
-<p>From your <code>vagrant</code> machine, on your <code>drupal</code> project folder, the following steps will help you get your first Behat tests up and running!</p>
-<p>If your project already have the file <code>behat.yml</code> in your <code>drupal</code> docroot then skip this and jump directly to <a href="./#3-run-your-first-behat-test">Run your first Behat test</a>.</p>
-<p>Create a <code>behat.yml</code> file inside the docroot of your site (e.g. create this file alongside the rest of the <code>Drupal</code> codebase at <code>/var/www/drupalvm/drupal/behat.yml</code>), with the following contents:</p>
-<div class="codehilite"><pre><span></span>chrome:
-  autoload:
-    &#39;&#39;: %paths.base%/features/bootstrap
-  suites:
-    web_features:
-      paths: [ %paths.base%/features/web ]
-      contexts:
-        - WebContext
-        - Drupal\DrupalExtension\Context\DrupalContext
-        - Drupal\DrupalExtension\Context\MinkContext
-        - Drupal\DrupalExtension\Context\MessageContext
-        - Drupal\DrupalExtension\Context\DrushContext
-  extensions:
-    Behat\MinkExtension:
-      goutte: ~
-      javascript_session: &#39;selenium2&#39;
-      selenium2:
-        wd_host: http://10.0.2.2:4444/wd/hub
-        browser: &#39;chrome&#39;
-      base_url: http://drupalvm.dev
-      browser_name: &#39;chrome&#39;
-    Drupal\DrupalExtension:
-      blackbox: ~
-      api_driver: &#39;drupal&#39;
-      drupal:
-        drupal_root: &#39;/var/www/drupalvm/drupal/web&#39;
-      region_map:
-        content: &quot;#content&quot;
+<p>From your <code class="codehilite">vagrant</code> machine, on your <code class="codehilite">drupal</code> project folder, the following steps will help you get your first Behat tests up and running!</p>
+<p>If your project already have the file <code class="codehilite">behat.yml</code> in your <code class="codehilite">drupal</code> docroot then skip this and jump directly to <a href="./#3-run-your-first-behat-test">Run your first Behat test</a>.</p>
+<p>Create a <code class="codehilite">behat.yml</code> file inside the docroot of your site (e.g. create this file alongside the rest of the <code class="codehilite">Drupal</code> codebase at <code class="codehilite">/var/www/drupalvm/drupal/behat.yml</code>), with the following contents:</p>
+<div class="codehilite"><pre><span></span><span class="n">chrome</span><span class="o">:</span>
+  <span class="n">autoload</span><span class="o">:</span>
+    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="o">%</span><span class="n">paths</span><span class="o">.</span><span class="na">base</span><span class="o">%/</span><span class="n">features</span><span class="o">/</span><span class="n">bootstrap</span>
+  <span class="n">suites</span><span class="o">:</span>
+    <span class="n">web_features</span><span class="o">:</span>
+      <span class="n">paths</span><span class="o">:</span> <span class="o">[</span> <span class="o">%</span><span class="n">paths</span><span class="o">.</span><span class="na">base</span><span class="o">%/</span><span class="n">features</span><span class="o">/</span><span class="n">web</span> <span class="o">]</span>
+      <span class="n">contexts</span><span class="o">:</span>
+        <span class="o">-</span> <span class="n">WebContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">DrupalContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">MinkContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">MessageContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">DrushContext</span>
+  <span class="n">extensions</span><span class="o">:</span>
+    <span class="n">Behat</span><span class="o">\</span><span class="n">MinkExtension</span><span class="o">:</span>
+      <span class="n">goutte</span><span class="o">:</span> <span class="o">~</span>
+      <span class="n">javascript_session</span><span class="o">:</span> <span class="s1">&#39;selenium2&#39;</span>
+      <span class="n">selenium2</span><span class="o">:</span>
+        <span class="n">wd_host</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="mf">10.0</span><span class="o">.</span><span class="mf">2.2</span><span class="o">:</span><span class="mi">4444</span><span class="sr">/wd/</span><span class="n">hub</span>
+        <span class="n">browser</span><span class="o">:</span> <span class="s1">&#39;chrome&#39;</span>
+      <span class="n">base_url</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="n">drupalvm</span><span class="o">.</span><span class="na">dev</span>
+      <span class="n">browser_name</span><span class="o">:</span> <span class="s1">&#39;chrome&#39;</span>
+    <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">:</span>
+      <span class="n">blackbox</span><span class="o">:</span> <span class="o">~</span>
+      <span class="n">api_driver</span><span class="o">:</span> <span class="s1">&#39;drupal&#39;</span>
+      <span class="n">drupal</span><span class="o">:</span>
+        <span class="n">drupal_root</span><span class="o">:</span> <span class="s1">&#39;/var/www/drupalvm/drupal/web&#39;</span>
+      <span class="n">region_map</span><span class="o">:</span>
+        <span class="n">content</span><span class="o">:</span> <span class="s2">&quot;#content&quot;</span>
 
-firefox:
-  autoload:
-    &#39;&#39;: %paths.base%/features/bootstrap
-  suites:
-    web_features:
-      paths: [ %paths.base%/features/web ]
-      contexts:
-        - WebContext
-        - Drupal\DrupalExtension\Context\DrupalContext
-        - Drupal\DrupalExtension\Context\MinkContext
-        - Drupal\DrupalExtension\Context\MessageContext
-        - Drupal\DrupalExtension\Context\DrushContext
-  extensions:
-    Behat\MinkExtension:
-      goutte: ~
-      javascript_session: &#39;selenium2&#39;
-      selenium2:
-        wd_host: http://10.0.2.2:4444/wd/hub
-        browser: &#39;firefox&#39;
-      base_url: http://drupalvm.dev
-      browser_name: &#39;firefox&#39;
-    Drupal\DrupalExtension:
-      blackbox: ~
-      api_driver: &#39;drupal&#39;
-      drupal:
-        drupal_root: &#39;/var/www/drupalvm/drupal/web&#39;
-      region_map:
-        content: &quot;#content&quot;
+<span class="n">firefox</span><span class="o">:</span>
+  <span class="n">autoload</span><span class="o">:</span>
+    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="o">%</span><span class="n">paths</span><span class="o">.</span><span class="na">base</span><span class="o">%/</span><span class="n">features</span><span class="o">/</span><span class="n">bootstrap</span>
+  <span class="n">suites</span><span class="o">:</span>
+    <span class="n">web_features</span><span class="o">:</span>
+      <span class="n">paths</span><span class="o">:</span> <span class="o">[</span> <span class="o">%</span><span class="n">paths</span><span class="o">.</span><span class="na">base</span><span class="o">%/</span><span class="n">features</span><span class="o">/</span><span class="n">web</span> <span class="o">]</span>
+      <span class="n">contexts</span><span class="o">:</span>
+        <span class="o">-</span> <span class="n">WebContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">DrupalContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">MinkContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">MessageContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">DrushContext</span>
+  <span class="n">extensions</span><span class="o">:</span>
+    <span class="n">Behat</span><span class="o">\</span><span class="n">MinkExtension</span><span class="o">:</span>
+      <span class="n">goutte</span><span class="o">:</span> <span class="o">~</span>
+      <span class="n">javascript_session</span><span class="o">:</span> <span class="s1">&#39;selenium2&#39;</span>
+      <span class="n">selenium2</span><span class="o">:</span>
+        <span class="n">wd_host</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="mf">10.0</span><span class="o">.</span><span class="mf">2.2</span><span class="o">:</span><span class="mi">4444</span><span class="sr">/wd/</span><span class="n">hub</span>
+        <span class="n">browser</span><span class="o">:</span> <span class="s1">&#39;firefox&#39;</span>
+      <span class="n">base_url</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="n">drupalvm</span><span class="o">.</span><span class="na">dev</span>
+      <span class="n">browser_name</span><span class="o">:</span> <span class="s1">&#39;firefox&#39;</span>
+    <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">:</span>
+      <span class="n">blackbox</span><span class="o">:</span> <span class="o">~</span>
+      <span class="n">api_driver</span><span class="o">:</span> <span class="s1">&#39;drupal&#39;</span>
+      <span class="n">drupal</span><span class="o">:</span>
+        <span class="n">drupal_root</span><span class="o">:</span> <span class="s1">&#39;/var/www/drupalvm/drupal/web&#39;</span>
+      <span class="n">region_map</span><span class="o">:</span>
+        <span class="n">content</span><span class="o">:</span> <span class="s2">&quot;#content&quot;</span>
 
-safari:
-  autoload:
-    &#39;&#39;: %paths.base%/features/bootstrap
-  suites:
-    web_features:
-      paths: [ %paths.base%/features/web ]
-      contexts:
-        - WebContext
-        - Drupal\DrupalExtension\Context\DrupalContext
-        - Drupal\DrupalExtension\Context\MinkContext
-        - Drupal\DrupalExtension\Context\MessageContext
-        - Drupal\DrupalExtension\Context\DrushContext
-  extensions:
-    Behat\MinkExtension:
-      goutte: ~
-      javascript_session: &#39;selenium2&#39;
-      selenium2:
-        wd_host: http://10.0.2.2:4444/wd/hub
-        browser: &#39;safari&#39;
-      base_url: http://drupalvm.dev
-      browser_name: &#39;safari&#39;
-    Drupal\DrupalExtension:
-      blackbox: ~
-      api_driver: &#39;drupal&#39;
-      drupal:
-        drupal_root: &#39;/var/www/drupalvm/drupal/web&#39;
-      region_map:
-        content: &quot;#content&quot;
+<span class="n">safari</span><span class="o">:</span>
+  <span class="n">autoload</span><span class="o">:</span>
+    <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="o">%</span><span class="n">paths</span><span class="o">.</span><span class="na">base</span><span class="o">%/</span><span class="n">features</span><span class="o">/</span><span class="n">bootstrap</span>
+  <span class="n">suites</span><span class="o">:</span>
+    <span class="n">web_features</span><span class="o">:</span>
+      <span class="n">paths</span><span class="o">:</span> <span class="o">[</span> <span class="o">%</span><span class="n">paths</span><span class="o">.</span><span class="na">base</span><span class="o">%/</span><span class="n">features</span><span class="o">/</span><span class="n">web</span> <span class="o">]</span>
+      <span class="n">contexts</span><span class="o">:</span>
+        <span class="o">-</span> <span class="n">WebContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">DrupalContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">MinkContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">MessageContext</span>
+        <span class="o">-</span> <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">\</span><span class="n">Context</span><span class="o">\</span><span class="n">DrushContext</span>
+  <span class="n">extensions</span><span class="o">:</span>
+    <span class="n">Behat</span><span class="o">\</span><span class="n">MinkExtension</span><span class="o">:</span>
+      <span class="n">goutte</span><span class="o">:</span> <span class="o">~</span>
+      <span class="n">javascript_session</span><span class="o">:</span> <span class="s1">&#39;selenium2&#39;</span>
+      <span class="n">selenium2</span><span class="o">:</span>
+        <span class="n">wd_host</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="mf">10.0</span><span class="o">.</span><span class="mf">2.2</span><span class="o">:</span><span class="mi">4444</span><span class="sr">/wd/</span><span class="n">hub</span>
+        <span class="n">browser</span><span class="o">:</span> <span class="s1">&#39;safari&#39;</span>
+      <span class="n">base_url</span><span class="o">:</span> <span class="n">http</span><span class="o">://</span><span class="n">drupalvm</span><span class="o">.</span><span class="na">dev</span>
+      <span class="n">browser_name</span><span class="o">:</span> <span class="s1">&#39;safari&#39;</span>
+    <span class="n">Drupal</span><span class="o">\</span><span class="n">DrupalExtension</span><span class="o">:</span>
+      <span class="n">blackbox</span><span class="o">:</span> <span class="o">~</span>
+      <span class="n">api_driver</span><span class="o">:</span> <span class="s1">&#39;drupal&#39;</span>
+      <span class="n">drupal</span><span class="o">:</span>
+        <span class="n">drupal_root</span><span class="o">:</span> <span class="s1">&#39;/var/www/drupalvm/drupal/web&#39;</span>
+      <span class="n">region_map</span><span class="o">:</span>
+        <span class="n">content</span><span class="o">:</span> <span class="s2">&quot;#content&quot;</span>
 </pre></div>
 
 
-<p>and edit the <code>base_url</code> and <code>drupal_root</code> parameters of the three profile (<code>chrome</code> - <code>firefox</code> - <code>safari</code>) with your parameters.</p>
-<p>To initialize the <code>Behat</code> features folder, where you will place test cases, you must run:</p>
+<p>and edit the <code class="codehilite">base_url</code> and <code class="codehilite">drupal_root</code> parameters of the three profile (<code class="codehilite">chrome</code> - <code class="codehilite">firefox</code> - <code class="codehilite">safari</code>) with your parameters.</p>
+<p>To initialize the <code class="codehilite">Behat</code> features folder, where you will place test cases, you must run:</p>
 <div class="codehilite"><pre><span></span>./vendor/bin/behat --init
 </pre></div>
 
 
-<p>the <code>features</code> folder must be created on your <code>Drupal</code> docroot.</p>
+<p>the <code class="codehilite">features</code> folder must be created on your <code class="codehilite">Drupal</code> docroot.</p>
 <h4 id="3-run-your-first-behat-test">3. Run your first Behat test<a class="headerlink" href="#3-run-your-first-behat-test" title="Permanent link">&para;</a></h4>
-<p>Open up the new <code>features/web</code> folder <code>Behat</code> just created. Inside that folder, create <code>HomeContent.feature</code> file with the following contents:</p>
-<div class="codehilite"><pre><span></span>Feature: Test DrupalContext
-  In order to prove Behat is working correctly in Drupal VM
-  As a developer
-  I need to run a simple interface test
+<p>Open up the new <code class="codehilite">features/web</code> folder <code class="codehilite">Behat</code> just created. Inside that folder, create <code class="codehilite">HomeContent.feature</code> file with the following contents:</p>
+<div class="codehilite"><pre><span></span><span class="n">Feature</span><span class="o">:</span> <span class="n">Test</span> <span class="n">DrupalContext</span>
+  <span class="n">In</span> <span class="n">order</span> <span class="n">to</span> <span class="n">prove</span> <span class="n">Behat</span> <span class="k">is</span> <span class="n">working</span> <span class="n">correctly</span> <span class="k">in</span> <span class="n">Drupal</span> <span class="n">VM</span>
+  <span class="n">As</span> <span class="n">a</span> <span class="n">developer</span>
+  <span class="n">I</span> <span class="n">need</span> <span class="n">to</span> <span class="n">run</span> <span class="n">a</span> <span class="n">simple</span> <span class="kd">interface</span> <span class="n">test</span>
 
-  @javascript
-  Scenario: Viewing content in a region
-    Given I am on the homepage
-    Then I should see &quot;No front page content has been created yet&quot; in the &quot;content&quot;
+  <span class="err">@</span><span class="n">javascript</span>
+  <span class="n">Scenario</span><span class="o">:</span> <span class="n">Viewing</span> <span class="n">content</span> <span class="k">in</span> <span class="n">a</span> <span class="n">region</span>
+    <span class="n">Given</span> <span class="n">I</span> <span class="n">am</span> <span class="n">on</span> <span class="n">the</span> <span class="n">homepage</span>
+    <span class="n">Then</span> <span class="n">I</span> <span class="n">should</span> <span class="n">see</span> <span class="s2">&quot;No front page content has been created yet&quot;</span> <span class="k">in</span> <span class="n">the</span> <span class="s2">&quot;content&quot;</span>
 </pre></div>
 
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>@javascript</code> is needed to run <code>javascript</code> session, otherwise the tests will run in a <code>headless</code> browser.</p>
+<p>The <code class="codehilite">@javascript</code> is needed to run <code class="codehilite">javascript</code> session, otherwise the tests will run in a <code class="codehilite">headless</code> browser.</p>
 </div>
-<p>From your host machine, move to the folder where you previously placed the <code>Selenium Server</code> and run it up:</p>
+<p>From your host machine, move to the folder where you previously placed the <code class="codehilite">Selenium Server</code> and run it up:</p>
 <div class="codehilite"><pre><span></span>cd /my/selenium/server/standalone/folder
 java -jar selenium-server-standalone-3.4.0.jar
 </pre></div>
 
 
-<p>Now you can finally run your <code>Behat</code> test and see the browser in action. From your <code>vagrant</code> machine on <code>drupal</code> docroot folder run:</p>
+<p>Now you can finally run your <code class="codehilite">Behat</code> test and see the browser in action. From your <code class="codehilite">vagrant</code> machine on <code class="codehilite">drupal</code> docroot folder run:</p>
 <div class="codehilite"><pre><span></span># to run test on chrome
 ./vendor/bin/behat -v -c behat.yml -p chrome
 
@@ -823,9 +823,9 @@ java -jar selenium-server-standalone-3.4.0.jar
 
 <div class="admonition note">
 <p class="admonition-title">Run with Safari</p>
-<p>To make it works with <code>safari</code> browser you must enable, from <code>safari</code> browser, the <code>Allow Remote Automation</code> under <code>Develop</code> menu.</p>
+<p>To make it works with <code class="codehilite">safari</code> browser you must enable, from <code class="codehilite">safari</code> browser, the <code class="codehilite">Allow Remote Automation</code> under <code class="codehilite">Develop</code> menu.</p>
 </div>
-<p>If everything worked out, you’ll see <code>Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
+<p>If everything worked out, you’ll see <code class="codehilite">Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
                 
                   
                 

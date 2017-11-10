@@ -816,7 +816,7 @@
                 
                 <h1 id="using-composer">Using Composer<a class="headerlink" href="#using-composer" title="Permanent link">&para;</a></h1>
 <h2 id="add-contrib-modules">Add Contrib Modules<a class="headerlink" href="#add-contrib-modules" title="Permanent link">&para;</a></h2>
-<p>Default method to add <code>Drupal</code> module through is:</p>
+<p>Default method to add <code class="codehilite">Drupal</code> module through is:</p>
 <div class="codehilite"><pre><span></span>composer require drupal/&lt;modulename&gt;
 </pre></div>
 
@@ -834,7 +834,7 @@
 
 
 </div>
-<p>If you wish to select the <code>module</code> version:</p>
+<p>If you wish to select the <code class="codehilite"><span class="k">module</span></code> version:</p>
 <div class="codehilite"><pre><span></span>composer require drupal/&lt;modulename&gt; --prefer-dist
 </pre></div>
 
@@ -852,15 +852,15 @@
 </pre></div>
 
 
-<p>In case you are adding a drupal contrib module, remember to exclude it's drupal configuration from the default sync folder through <code>Configuration Split</code></p>
+<p>In case you are adding a drupal contrib module, remember to exclude it's drupal configuration from the default sync folder through <code class="codehilite">Configuration Split</code></p>
 <h2 id="managing-dependencies-for-a-custom-project-module-theme-profile-etc">Managing dependencies for a custom project (module, theme, profile, etc.)<a class="headerlink" href="#managing-dependencies-for-a-custom-project-module-theme-profile-etc" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.drupal.org/node/2822349">Managing dependencies for a custom project</a></p>
 <p>You can use Composer to manage dependencies for your custom modules.</p>
 <h4 id="1-add-composerjson-to-your-project">1. Add composer.json to your project<a class="headerlink" href="#1-add-composerjson-to-your-project" title="Permanent link">&para;</a></h4>
-<p>Add a <code>composer.json</code> file to your custom project where you can define your custom library dependencies.</p>
+<p>Add a <code class="codehilite">composer.json</code> file to your custom project where you can define your custom library dependencies.</p>
 <h4 id="2-merging-in-additional-composerjson-files">2. Merging in additional composer.json files<a class="headerlink" href="#2-merging-in-additional-composerjson-files" title="Permanent link">&para;</a></h4>
 <p>To do this, your Drupal site's composer.json (located in the repo root) must have a way to read your custom project's composer.json file. Since your custom project is not hosted on Packagist or Drupal.org, you must use the wikimedia/composer-merge-plugin` package to accomplish this.</p>
-<p>Require the <code>wikimedia/composer-merge-pluginin</code> your Drupal site's <code>composer.json</code> (located in the repo root).</p>
+<p>Require the <code class="codehilite">wikimedia/composer-merge-pluginin</code> your Drupal site's <code class="codehilite">composer.json</code> (located in the repo root).</p>
 <div class="codehilite"><pre><span></span>composer require wikimedia/composer-merge-plugin
 </pre></div>
 
@@ -905,19 +905,19 @@
 
 
 <h2 id="define-the-directories-to-which-drupal-projects-should-be-downloaded">Define the directories to which Drupal projects should be downloaded<a class="headerlink" href="#define-the-directories-to-which-drupal-projects-should-be-downloaded" title="Permanent link">&para;</a></h2>
-<p>By default, Composer will download all packages to the <code>vendor</code> directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:</p>
-<div class="codehilite"><pre><span></span>&quot;extra&quot;: {
-    &quot;installer-paths&quot;: {
-        &quot;core&quot;: [&quot;type:drupal-core&quot;],
-        &quot;libraries/{$name}&quot;: [&quot;type:drupal-library&quot;],
-        &quot;modules/contrib/{$name}&quot;: [&quot;type:drupal-module&quot;],
-        &quot;profiles/contrib/{$name}&quot;: [&quot;type:drupal-profile&quot;],
-        &quot;themes/contrib/{$name}&quot;: [&quot;type:drupal-theme&quot;],
-        &quot;drush/{$name}&quot;: [&quot;type:drupal-drush&quot;],
-        &quot;modules/custom/{$name}&quot;: [&quot;type:drupal-custom-module&quot;],
-        &quot;themes/custom/{$name}&quot;: [&quot;type:drupal-custom-theme&quot;]
-    }
-}
+<p>By default, Composer will download all packages to the <code class="codehilite">vendor</code> directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:</p>
+<div class="codehilite"><pre><span></span><span class="x">&quot;extra&quot;: </span><span class="cp">{</span>
+    <span class="s2">&quot;installer-paths&quot;</span><span class="o">:</span> <span class="cp">{</span>
+        <span class="s2">&quot;core&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-core&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;libraries/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-library&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;modules/contrib/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-module&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;profiles/contrib/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-profile&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;themes/contrib/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-theme&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;drush/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-drush&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;modules/custom/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-custom-module&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;themes/custom/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-custom-theme&quot;</span><span class="o">]</span>
+    <span class="cp">}</span>
+<span class="cp">}</span><span class="x"></span>
 </pre></div>
 
 
@@ -928,20 +928,20 @@
 
 
 <p>For instance, if you'd like to place the Dropzone package (which does not have a type of drupal-library) in the same directory as other Drupal libraries, you would first composer require oomphinc/composer-installers-extender, then add the following configuration to your composer.json file:</p>
-<div class="codehilite"><pre><span></span>&quot;extra&quot;: {
-    &quot;installer-paths&quot;: {
-        &quot;libraries/{$name}&quot;: [
-            &quot;type:drupal-library&quot;,
-            &quot;enyo/dropzone&quot;
-        ],
-    }
-}
+<div class="codehilite"><pre><span></span><span class="x">&quot;extra&quot;: </span><span class="cp">{</span>
+    <span class="s2">&quot;installer-paths&quot;</span><span class="o">:</span> <span class="cp">{</span>
+        <span class="s2">&quot;libraries/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span>
+            <span class="s2">&quot;type:drupal-library&quot;</span><span class="o">,</span>
+            <span class="s2">&quot;enyo/dropzone&quot;</span>
+        <span class="o">],</span>
+    <span class="cp">}</span>
+<span class="cp">}</span><span class="x"></span>
 </pre></div>
 
 
 <p>Finally, you would composer require enyo/dropzone.</p>
-<h2 id="define-a-3rd-party-library-as-a-custom-composer-package">Define a 3rd party library as a custom composer package<a class="headerlink" href="#define-a-3rd-party-library-as-a-custom-composer-package" title="Permanent link">&para;</a></h2>
-<p>If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the <code>Composer Installers Extender</code>:</p>
+<h2 id="define-a-3rd-party-library-as-a-custom-composer-package">Define a 3<sup>rd</sup> party library as a custom composer package<a class="headerlink" href="#define-a-3rd-party-library-as-a-custom-composer-package" title="Permanent link">&para;</a></h2>
+<p>If you would like to place an arbitrary library, that doesn't have a composer repository, as a custom composer package, you may use the <code class="codehilite">Composer Installers Extender</code>:</p>
 <div class="codehilite"><pre><span></span>composer require composer/installers
 composer require oomphinc/composer-installers-extender
 </pre></div>
@@ -974,13 +974,13 @@ composer require oomphinc/composer-installers-extender
 
 
 <p>Make sure to have set the libraries installer path:</p>
-<div class="codehilite"><pre><span></span>&quot;installer-paths&quot;: {
-    ...
-    &quot;web/libraries/{$name}&quot;: [
-                &quot;type:drupal-library&quot;
-            ],
-    ...
-}
+<div class="codehilite"><pre><span></span><span class="x">&quot;installer-paths&quot;: </span><span class="cp">{</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;web/libraries/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span>
+                <span class="s2">&quot;type:drupal-library&quot;</span>
+            <span class="o">],</span>
+    <span class="o">...</span>
+<span class="cp">}</span><span class="x"></span>
 </pre></div>
 
 
@@ -990,8 +990,8 @@ composer require oomphinc/composer-installers-extender
 
 
 <h2 id="manage-project-assets-from-npm-or-bower">Manage project assets from NPM or Bower<a class="headerlink" href="#manage-project-assets-from-npm-or-bower" title="Permanent link">&para;</a></h2>
-<p>If you would like to manage your project <code>assets</code> (css, js, etc.) in your <code>composer.json</code> without installing <code>NPM</code> or <code>Bower</code>, you may user the <code>composer</code> repository <a href="https://asset-packagist.org/">Asset Packagist</a>.</p>
-<p>Add the repository to <code>composer.json</code>:</p>
+<p>If you would like to manage your project <code class="codehilite">assets</code> (css, js, etc.) in your <code class="codehilite">composer.json</code> without installing <code class="codehilite">NPM</code> or <code class="codehilite">Bower</code>, you may user the <code class="codehilite">composer</code> repository <a href="https://asset-packagist.org/">Asset Packagist</a>.</p>
+<p>Add the repository to <code class="codehilite">composer.json</code>:</p>
 <div class="codehilite"><pre><span></span>&quot;repositories&quot;: [
     ...
     {
@@ -1002,29 +1002,29 @@ composer require oomphinc/composer-installers-extender
 </pre></div>
 
 
-<p>This repository works by transposing package information from <code>NPM</code> or <code>Bower</code> to a compatible version for <code>Composer</code>. This allows you to manage asset dependencies in a <code>PHP</code> based project very easily.</p>
-<p>To install those packages in the <code>drupal</code> libraries directory you needed <code>composer-installers-extender</code> and <code>drupal-library-mapping</code> packages:</p>
+<p>This repository works by transposing package information from <code class="codehilite">NPM</code> or <code class="codehilite">Bower</code> to a compatible version for <code class="codehilite">Composer</code>. This allows you to manage asset dependencies in a <code class="codehilite">PHP</code> based project very easily.</p>
+<p>To install those packages in the <code class="codehilite">drupal</code> libraries directory you needed <code class="codehilite">composer-installers-extender</code> and <code class="codehilite">drupal-library-mapping</code> packages:</p>
 <div class="codehilite"><pre><span></span>composer require oomphinc/composer-installers-extender bmcclure/drupal-library-mapping
 </pre></div>
 
 
 <p>Now you can define the custom directory for the assets installation, according to the standard drupal libraries directory:</p>
-<div class="codehilite"><pre><span></span>&quot;extra&quot;: {
-    &quot;installer-types&quot;: [&quot;library&quot;, &quot;drupal-library&quot;, &quot;bower-asset&quot;, &quot;npm-asset&quot;],
-    &quot;installer-paths&quot;: {
-        &quot;web/core&quot;: [&quot;type:drupal-core&quot;],
-        &quot;web/libraries/{$name}&quot;: [
-            &quot;type:drupal-library&quot;,
-            &quot;type:bower-asset&quot;,
-            &quot;type:npm-asset&quot;
-        ],
-        ...
-    }
-}
+<div class="codehilite"><pre><span></span><span class="x">&quot;extra&quot;: </span><span class="cp">{</span>
+    <span class="s2">&quot;installer-types&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;library&quot;</span><span class="o">,</span> <span class="s2">&quot;drupal-library&quot;</span><span class="o">,</span> <span class="s2">&quot;bower-asset&quot;</span><span class="o">,</span> <span class="s2">&quot;npm-asset&quot;</span><span class="o">],</span>
+    <span class="s2">&quot;installer-paths&quot;</span><span class="o">:</span> <span class="cp">{</span>
+        <span class="s2">&quot;web/core&quot;</span><span class="o">:</span> <span class="o">[</span><span class="s2">&quot;type:drupal-core&quot;</span><span class="o">],</span>
+        <span class="s2">&quot;web/libraries/{$name}&quot;</span><span class="o">:</span> <span class="o">[</span>
+            <span class="s2">&quot;type:drupal-library&quot;</span><span class="o">,</span>
+            <span class="s2">&quot;type:bower-asset&quot;</span><span class="o">,</span>
+            <span class="s2">&quot;type:npm-asset&quot;</span>
+        <span class="o">],</span>
+        <span class="o">...</span>
+    <span class="cp">}</span>
+<span class="cp">}</span><span class="x"></span>
 </pre></div>
 
 
-<p>To avoid the download of dependencies already present in <code>drupal</code> core:</p>
+<p>To avoid the download of dependencies already present in <code class="codehilite">drupal</code> core:</p>
 <div class="codehilite"><pre><span></span>&quot;replace&quot;: {
     &quot;bower-asset/jquery&quot;: &quot;*&quot;,
     &quot;bower-asset/jqueryui&quot;: &quot;*&quot;,
@@ -1040,8 +1040,8 @@ composer require oomphinc/composer-installers-extender
 </pre></div>
 
 
-<p>Adding a dependency on an asset, you must add the asset to the property require of the <code>composer.json</code> of your project.</p>
-<p>It must be prefixed with <code>{asset-type}-asset/</code>:</p>
+<p>Adding a dependency on an asset, you must add the asset to the property require of the <code class="codehilite">composer.json</code> of your project.</p>
+<p>It must be prefixed with <code class="codehilite">{asset-type}-asset/</code>:</p>
 <div class="codehilite"><pre><span></span>composer require npm-asset/bootstrap
 ...
 composer require bower-asset/bootstrap

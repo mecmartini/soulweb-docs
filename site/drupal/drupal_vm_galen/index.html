@@ -701,8 +701,8 @@
                 <h1 id="responsive-testing-with-galen">Responsive Testing with Galen<a class="headerlink" href="#responsive-testing-with-galen" title="Permanent link">&para;</a></h1>
 <p><a href="http://galenframework.com/">Galen</a> is an open source layout testing tool for software applications, which helps us test the look and feel of the application.</p>
 <h4 id="1-requirements">1. Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">&para;</a></h4>
-<p>Make sure you have <code>Nvm</code> and <code>Node.js</code> installed on your <code>vagrant</code> machine. See <a href="../drupal_vm_eslint/#1-install-nodejs-using-nvm">Install Node.js using Nvm</a>.</p>
-<p>Open the vagrant machine <code>config.yml</code> file and make sure to have the <code>java</code> line uncommented on <code>installed_extras</code></p>
+<p>Make sure you have <code class="codehilite">Nvm</code> and <code class="codehilite">Node.js</code> installed on your <code class="codehilite">vagrant</code> machine. See <a href="../drupal_vm_eslint/#1-install-nodejs-using-nvm">Install Node.js using Nvm</a>.</p>
+<p>Open the vagrant machine <code class="codehilite">config.yml</code> file and make sure to have the <code class="codehilite">java</code> line uncommented on <code class="codehilite">installed_extras</code></p>
 <div class="codehilite"><pre><span></span>installed_extras:
       ...
       - java
@@ -710,18 +710,18 @@
 </pre></div>
 
 
-<p>From your <code>terminal</code> go on the <code>vagrant</code> directory and run <code>vagrant up --provision</code>, to apply the changes on your <code>vagrant</code> machine, or run <code>vagrant provision</code> if your machine is already up.</p>
-<p>Make sure you have the <code>Selenium Server</code> requirements on your host machine. See <a href="../drupal_vm_behat/#1-requirements">Behat Requirements</a>.</p>
+<p>From your <code class="codehilite">terminal</code> go on the <code class="codehilite">vagrant</code> directory and run <code class="codehilite">vagrant up --provision</code>, to apply the changes on your <code class="codehilite">vagrant</code> machine, or run <code class="codehilite">vagrant provision</code> if your machine is already up.</p>
+<p>Make sure you have the <code class="codehilite">Selenium Server</code> requirements on your host machine. See <a href="../drupal_vm_behat/#1-requirements">Behat Requirements</a>.</p>
 <h4 id="2-install-galen-framework">2. Install Galen Framework<a class="headerlink" href="#2-install-galen-framework" title="Permanent link">&para;</a></h4>
-<p>From your <code>vagrant</code> machine run:</p>
+<p>From your <code class="codehilite">vagrant</code> machine run:</p>
 <div class="codehilite"><pre><span></span>sudo npm install -g galenframework-cli
 </pre></div>
 
 
 <h4 id="3-setup-galen">3. Setup Galen<a class="headerlink" href="#3-setup-galen" title="Permanent link">&para;</a></h4>
-<p>From your <code>vagrant</code> machine, on your <code>drupal</code> project folder, the following steps will help you get your first Galen tests up and running!</p>
-<p>If your project docroot already have the folder <code>tests/ReponsiveTests</code> in your <code>drupal</code> docroot and it contains the files <code>config.js</code> <code>galen.config</code> <code>package.json</code> then skip this and jump directly to <a href="./#3-install-galen-dependencies">Install Galen dependencies</a>.</p>
-<p>Create the folder <code>tests/ReponsiveTests/</code> under your docroot, and in this folder create the file <code>galen.config</code> which would contain the configuration parameters for Galen:</p>
+<p>From your <code class="codehilite">vagrant</code> machine, on your <code class="codehilite">drupal</code> project folder, the following steps will help you get your first Galen tests up and running!</p>
+<p>If your project docroot already have the folder <code class="codehilite">tests/ReponsiveTests</code> in your <code class="codehilite">drupal</code> docroot and it contains the files <code class="codehilite">config.js</code> <code class="codehilite">galen.config</code> <code class="codehilite">package.json</code> then skip this and jump directly to <a href="./#3-install-galen-dependencies">Install Galen dependencies</a>.</p>
+<p>Create the folder <code class="codehilite">tests/ReponsiveTests/</code> under your docroot, and in this folder create the file <code class="codehilite">galen.config</code> which would contain the configuration parameters for Galen:</p>
 <div class="codehilite"><pre><span></span># Range approximation
 # ~~~~~~~~~~~~~~~~~~~~~
 # Defines the approximation value for ranges when using &quot;~&quot; in galen page specs
@@ -826,7 +826,7 @@ galen.browser.pageElement.areaFinder = native
 </pre></div>
 
 
-<p>Create also the file <code>package.json</code>, to install the <a href="https://github.com/agomezmoron/galen-framework-handler">galen-framework-handler</a> with this content:</p>
+<p>Create also the file <code class="codehilite">package.json</code>, to install the <a href="https://github.com/agomezmoron/galen-framework-handler">galen-framework-handler</a> with this content:</p>
 <div class="codehilite"><pre><span></span>{
   &quot;dependencies&quot;: {
     &quot;galen-framework-handler&quot;: &quot;^0.0.9&quot;
@@ -848,31 +848,31 @@ galen.browser.pageElement.areaFinder = native
 </pre></div>
 
 
-<p>And, at the end, create also the file <code>config.js</code> that contains:</p>
-<div class="codehilite"><pre><span></span>/** Overriding the config variable defined in the galen-framework-handler **/
-config = {
-  baseURL: &quot;http://drupalvm.dev&quot;
-};
+<p>And, at the end, create also the file <code class="codehilite">config.js</code> that contains:</p>
+<div class="codehilite"><pre><span></span><span class="cm">/** Overriding the config variable defined in the galen-framework-handler **/</span><span class="w"></span>
+config<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="nl">baseURL</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;http://drupalvm.dev&quot;</span><span class="w"></span>
+<span class="err">};</span><span class="w"></span>
 
-/** Overriding the devices to test variable defined in the galen-framework-handler **/
-devicesToTest = {
-  iphone7: devices.iphone7,
-  ipadMini3: devices.ipadMini3,
-  desktop: devices.desktop1024
-};
+<span class="cm">/** Overriding the devices to test variable defined in the galen-framework-handler **/</span><span class="w"></span>
+devicesToTest<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="nl">iphone7</span><span class="o">:</span><span class="w"> </span>devices<span class="o">.</span>iphone7<span class="o">,</span><span class="w"></span>
+<span class="w">  </span><span class="nl">ipadMini3</span><span class="o">:</span><span class="w"> </span>devices<span class="o">.</span>ipadMini3<span class="o">,</span><span class="w"></span>
+<span class="w">  </span><span class="nl">desktop</span><span class="o">:</span><span class="w"> </span>devices<span class="o">.</span>desktop1024<span class="w"></span>
+<span class="err">};</span><span class="w"></span>
 </pre></div>
 
 
-<p>Edit the <code>baseURL</code> parameter with your host URL.</p>
+<p>Edit the <code class="codehilite">baseURL</code> parameter with your host URL.</p>
 <h4 id="4-install-galen-dependencies">4. Install Galen dependencies<a class="headerlink" href="#4-install-galen-dependencies" title="Permanent link">&para;</a></h4>
-<p>From your <code>vagrant</code> machine, in the folder <code>tests/ReponsiveTests/</code> on your <code>drupal</code> docroot, run:</p>
+<p>From your <code class="codehilite">vagrant</code> machine, in the folder <code class="codehilite">tests/ReponsiveTests/</code> on your <code class="codehilite">drupal</code> docroot, run:</p>
 <div class="codehilite"><pre><span></span>npm install
 </pre></div>
 
 
 <h4 id="5-run-your-first-galen-test">5. Run your first Galen test<a class="headerlink" href="#5-run-your-first-galen-test" title="Permanent link">&para;</a></h4>
-<p>In your project docroot, under <code>tests/ReponsiveTests</code>, create the folder <code>specs</code>.</p>
-<p>Create file 'test-index.gspec' in <code>specs/</code> folder. Edit the file and add this code:</p>
+<p>In your project docroot, under <code class="codehilite">tests/ReponsiveTests</code>, create the folder <code class="codehilite">specs</code>.</p>
+<p>Create file 'test-index.gspec' in <code class="codehilite">specs/</code> folder. Edit the file and add this code:</p>
 <div class="codehilite"><pre><span></span>@objects
    # menu items
    main-content xpath   //main[@id=&#39;content&#39;]
@@ -885,15 +885,15 @@ devicesToTest = {
 </pre></div>
 
 
-<p>Under <code>tests/ReponsiveTests</code> create the folder <code>tests/suites/</code>.</p>
-<p>Create file <code>test-index.test.js</code> in <code>tests/suites/</code> folder. Edit the file and add this code:</p>
+<p>Under <code class="codehilite">tests/ReponsiveTests</code> create the folder <code class="codehilite">tests/suites/</code>.</p>
+<p>Create file <code class="codehilite">test-index.test.js</code> in <code class="codehilite">tests/suites/</code> folder. Edit the file and add this code:</p>
 <div class="codehilite"><pre><span></span>// important, commons should be loaded here
 load(&#39;../../node_modules/galen-framework-handler/dist/galen-framework-handler.js&#39;);
 
 load(&#39;../../config.js&#39;);
 
 forAll(devicesToTest, function (device) {
-  test(&quot;Testing on ${deviceName}&quot;, function (device) {
+  test(&quot;Testing on <span class="cp">${</span><span class="n">deviceName</span><span class="cp">}</span>&quot;, function (device) {
 
     // here goes a test code
     var driver = createDriver(config.baseURL, device.size);
@@ -908,35 +908,35 @@ forAll(devicesToTest, function (device) {
 </pre></div>
 
 
-<p>You are ready to run your first test using <code>Galen</code>.</p>
-<p>From your host machine, move to the folder where you previously placed the <code>Selenium Server</code> (see <a href="./#1-requirements">Galen Requirements</a>) and run it up:</p>
+<p>You are ready to run your first test using <code class="codehilite">Galen</code>.</p>
+<p>From your host machine, move to the folder where you previously placed the <code class="codehilite">Selenium Server</code> (see <a href="./#1-requirements">Galen Requirements</a>) and run it up:</p>
 <div class="codehilite"><pre><span></span>cd /my/selenium/server/standalone/folder
 java -jar selenium-server-standalone-3.4.0.jar
 </pre></div>
 
 
-<p>From your <code>vagrant</code> machine under <code>docroot/tests/ReponsiveTests</code> run:</p>
+<p>From your <code class="codehilite">vagrant</code> machine under <code class="codehilite">docroot/tests/ReponsiveTests</code> run:</p>
 <div class="codehilite"><pre><span></span>galen test tests/suites/* --htmlreport reports/
 </pre></div>
 
 
-<p>If everything worked out, you’ll see <code>Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
+<p>If everything worked out, you’ll see <code class="codehilite">Selenium</code> open up a new instance of the selected browser profile and drive it through the test suites.</p>
 <h4 id="6-git-ignore-galen-package-files">6. Git ignore Galen package files<a class="headerlink" href="#6-git-ignore-galen-package-files" title="Permanent link">&para;</a></h4>
-<p>Edit the main <code>.gitignore</code> file to add the <code>Galen</code> package files.</p>
+<p>Edit the main <code class="codehilite"><span class="na">.gitignore</span></code> file to add the <code class="codehilite">Galen</code> package files.</p>
 <p>The files/folders to ignore are:</p>
 <ul>
-<li>Folder <code>/tests/ReponsiveTests/node_modules/</code></li>
-<li>Folder <code>/tests/ReponsiveTests/reports/</code></li>
+<li>Folder <code class="codehilite">/tests/ReponsiveTests/node_modules/</code></li>
+<li>Folder <code class="codehilite">/tests/ReponsiveTests/reports/</code></li>
 </ul>
 <h4 id="7-cross-browser-test-with-galen">7. Cross-Browser test with Galen<a class="headerlink" href="#7-cross-browser-test-with-galen" title="Permanent link">&para;</a></h4>
-<p>In our <code>galen.config</code> selenium is setup to run with <code>chrome</code> browser.</p>
+<p>In our <code class="codehilite">galen.config</code> selenium is setup to run with <code class="codehilite">chrome</code> browser.</p>
 <p>To test on multiple browser we need to setup a new config file for each browser.</p>
-<p>For example, if we want to setup tests on <code>firefox</code> browser, from your <code>vagrant</code> machine under <code>docroot/tests/ReponsiveTests</code> run:</p>
+<p>For example, if we want to setup tests on <code class="codehilite">firefox</code> browser, from your <code class="codehilite">vagrant</code> machine under <code class="codehilite">docroot/tests/ReponsiveTests</code> run:</p>
 <div class="codehilite"><pre><span></span>cp galen.config galenfirefox.config
 </pre></div>
 
 
-<p>Then edit the created file <code>galenfirefox.config</code> and change the <code>galen.browserFactory.selenium.grid.browser</code> parameter as below:</p>
+<p>Then edit the created file <code class="codehilite">galenfirefox.config</code> and change the <code class="codehilite">galen.browserFactory.selenium.grid.browser</code> parameter as below:</p>
 <div class="codehilite"><pre><span></span>galen.browserFactory.selenium.grid.browser = firefox
 </pre></div>
 

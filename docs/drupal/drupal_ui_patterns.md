@@ -2,6 +2,8 @@
 
 [UI Patterns](https://www.drupal.org/project/ui_patterns) can expose stand-alone theme components (patterns) to Drupal and enables them to be used with the core Layout and Views module and well-known contrib modules like Field Group, Display Suite and Panels.
 
+![UI Patterns](../img/drupal/uipatterns.jpg "UI Patterns")
+
 Here we explain how to create a component library, in a custom theme, by an example that includes two components:
 
 * `Button One`
@@ -145,6 +147,7 @@ Let's add the `css` code to `button-one.css`:
 
 Let's add the `javascript` to `button-one.js`:
 
+    :::javascript
     (function($, Drupal, drupalSettings) {
       'use strict';
 
@@ -194,4 +197,24 @@ As you can see we associated the created pattern, in the `Select a layout` secti
 Finally we can create a content with the created paragraph that must look like:
 
 ![Paragraph Example One Content](../img/drupal/paragraph_3.png "Paragraph Example One Content")
+
+## Summary
+
+The whole process is summarized in the following diagram;
+
+![Component based theme using UI-Patterns diagram](../img/drupal/uipatterns-diagram-1.png "Component based theme using UI-Patterns diagram")
+
+The finally theme structure must look like this:
+
+![Theme Structure](../img/drupal/paragraph_4.png "Theme Structure")
+
+The whole structure is connected like in the following diagram:
+
+![Component based theme using UI-Patterns structure diagram](../img/drupal/uipatterns-diagram-2.png "Component based theme using UI-Patterns structure diagram")
+
+## References
+
+UI Patterns showcase theme based on the Bootstrap Drupal 8 theme:
+
+[Drupal component based theme using UI Patterns](https://github.com/mecmartini/Drupal-component-based-theme-using-UI-Patterns)
 
