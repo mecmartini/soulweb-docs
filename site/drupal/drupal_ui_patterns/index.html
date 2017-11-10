@@ -613,6 +613,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -721,6 +728,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#summary" title="Summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -738,7 +752,7 @@
                 
                 <h1 id="component-based-theme-using-ui-patterns">Component based theme using UI-Patterns<a class="headerlink" href="#component-based-theme-using-ui-patterns" title="Permanent link">&para;</a></h1>
 <p><a href="https://www.drupal.org/project/ui_patterns">UI Patterns</a> can expose stand-alone theme components (patterns) to Drupal and enables them to be used with the core Layout and Views module and well-known contrib modules like Field Group, Display Suite and Panels.</p>
-<p>Here is explained how to create a component library by an example that includes two components:</p>
+<p>Here we explain how to create a component library, in a custom theme, by an example that includes two components:</p>
 <ul>
 <li><code>Button One</code></li>
 <li><code>Paragraph One</code> (include <code>Button One</code>)</li>
@@ -750,6 +764,14 @@
 <li><a href="https://www.drupal.org/project/ds">Display Suite</a></li>
 <li><a href="https://www.drupal.org/project/paragraphs">Paragraphs</a></li>
 <li><a href="https://www.drupal.org/project/ui_patterns">UI Patterns</a></li>
+</ul>
+<p>The following modules must be enabled:</p>
+<ul>
+<li>Display Suite (<code>ds</code>)</li>
+<li>UI Patterns (<code>ui_patterns</code>)</li>
+<li>UI Patterns Dsiplay Suite (<code>ui_patterns_ds</code>)</li>
+<li>UI Patterns Layout (<code>ui_patterns_layouts</code>)</li>
+<li>Ui Patterns Library (<code>ui_patterns_library</code>)</li>
 </ul>
 <h2 id="build-component-library">Build component library<a class="headerlink" href="#build-component-library" title="Permanent link">&para;</a></h2>
 <h4 id="1-create-the-components-library">1. Create the components library<a class="headerlink" href="#1-create-the-components-library" title="Permanent link">&para;</a></h4>
@@ -819,12 +841,13 @@
   version: 1.x
   css:
     component:
-      components/atoms/buttons/button-one.css: {}
+      components/atoms/buttons/button-one/button-one.css: {}
   js:
-    components/atoms/buttons/button-one.js: {}
+    components/atoms/buttons/button-one/button-one.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
+    - core/jquery.ui.dialog
 </pre></div>
 
 
@@ -857,7 +880,9 @@
   background: #666666;
   color: #ffffff;
   display: inline-block;
-  padding: 10px 5px;
+  padding: 5px 10px;
+  border: none;
+  margin: 10px 0;
 }
 </pre></div>
 
@@ -872,7 +897,7 @@
      * Drupal attach behavior.
      */
     attach: function(context, settings) {
-      $(&#39;.button-one&#39;).once(&#39;button-one-click&#39;).click(function() {
+      $(&#39;.btn-one&#39;).once(&#39;btn-one-click&#39;).click(function() {
         $(&quot;&lt;div&gt;You clicked on button one!&lt;/div&gt;&quot;).dialog();
       });
     }
@@ -906,6 +931,7 @@
 <p>As you can see we associated the created pattern, in the <code>Select a layout</code> section (below the screen), and we mapped the paragraph fields to the pattern fields.</p>
 <p>Finally we can create a content with the created paragraph that must look like:</p>
 <p><img alt="Paragraph Example One Content" src="../../img/drupal/paragraph_3.png" title="Paragraph Example One Content" /></p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
                 
                   
                 

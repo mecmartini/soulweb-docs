@@ -2,7 +2,7 @@
 
 [UI Patterns](https://www.drupal.org/project/ui_patterns) can expose stand-alone theme components (patterns) to Drupal and enables them to be used with the core Layout and Views module and well-known contrib modules like Field Group, Display Suite and Panels.
 
-Here is explained how to create a component library by an example that includes two components:
+Here we explain how to create a component library, in a custom theme, by an example that includes two components:
 
 * `Button One`
 * `Paragraph One` (include `Button One`)
@@ -15,6 +15,14 @@ The `Drupal` modules required are:
 * [Display Suite](https://www.drupal.org/project/ds)
 * [Paragraphs](https://www.drupal.org/project/paragraphs)
 * [UI Patterns](https://www.drupal.org/project/ui_patterns)
+
+The following modules must be enabled:
+
+* Display Suite (`ds`)
+* UI Patterns (`ui_patterns`)
+* UI Patterns Dsiplay Suite (`ui_patterns_ds`)
+* UI Patterns Layout (`ui_patterns_layouts`)
+* Ui Patterns Library (`ui_patterns_library`)
 
 ## Build component library
 
@@ -91,12 +99,13 @@ We must define our asset library into the `[THEME_NAME].libraries.yml` of our th
       version: 1.x
       css:
         component:
-          components/atoms/buttons/button-one.css: {}
+          components/atoms/buttons/button-one/button-one.css: {}
       js:
-        components/atoms/buttons/button-one.js: {}
+        components/atoms/buttons/button-one/button-one.js: {}
       dependencies:
         - core/jquery
         - core/jquery.once
+        - core/jquery.ui.dialog
 
 We must now create the asset files for `button-one.css` and `button-one.js` inside the theme directory declared above.
 
@@ -129,7 +138,9 @@ Let's add the `css` code to `button-one.css`:
       background: #666666;
       color: #ffffff;
       display: inline-block;
-      padding: 10px 5px;
+      padding: 5px 10px;
+      border: none;
+      margin: 10px 0;
     }
 
 Let's add the `javascript` to `button-one.js`:
@@ -143,7 +154,7 @@ Let's add the `javascript` to `button-one.js`:
          * Drupal attach behavior.
          */
         attach: function(context, settings) {
-          $('.button-one').once('button-one-click').click(function() {
+          $('.btn-one').once('btn-one-click').click(function() {
             $("<div>You clicked on button one!</div>").dialog();
           });
         }
@@ -183,3 +194,4 @@ As you can see we associated the created pattern, in the `Select a layout` secti
 Finally we can create a content with the created paragraph that must look like:
 
 ![Paragraph Example One Content](../img/drupal/paragraph_3.png "Paragraph Example One Content")
+
