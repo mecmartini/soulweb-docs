@@ -1,3 +1,4 @@
+# Development Workflow
 # Develpment Workflow
 
 In this section is described the development workflow to adopt to handle the parallel development on our projects.
@@ -17,17 +18,35 @@ The central repository will have two main branches:
 
 Before to start developing a feature, you need an isolated branch to work on. You can request a new branch with the following command:
 
-    git checkout -b issue-#1060 develop
+    git checkout -b issue-title-#1060 develop
 
-This checks out a branch called `issue-#1060` based on `develop`, and the -b flag tells `Git` to create the branch if it doesn’t already exist.
+This checks out a branch called `[issue-title]-#[ID]` based on `develop`, and the -b flag tells `Git` to create the branch if it doesn’t already exist.
 
 Note that the feature branch should have descriptive names:
 
-* `issue` the title of the issue on your ticketing system
-* `#1060` the ID of the issue on your ticketing system
+* `[issue-title]` si the title of the issue on your ticketing system
+* `[ID]` si the ID of the issue on your ticketing system
 
-As example:
-
+When you need to start developing a feature you must follow a safe sequence to make sure that, once you are done, you can than merge it without breaking the code and your local `drupal` installation:
+    
+    # set your repo branch to develop
+    git checkout develop
+    # make sure to not break permissions
+    chmod 755 web/sites/default
+    chmod 644 web/sites/default/settings.* web/sites/default/services.*
+    # update repo
+    git pull origin develop
+    chmod 444 web/sites/default/settings.* web/sites/default/services.*
+    chmod 555 web/sites/default
+    # update dependencies
+    composer install
+    # update database
+    drush updb -y --entity-updates (actualizo el DB de Drupal)
+    # import drupal configuration
+    drush cim -y
+    # clear drupal cache
+    drush cr
+    # create new feature branch on repo
     git checkout -b animated-main-menu-#8091 develop
 
 ### 2. Developing a feature
@@ -46,7 +65,7 @@ When you need to commit your code you must follow a safe sequence to make sure t
     # update dependencies
     composer install
     # clear drush cache
-    drush cc drush
+    drush cr
     # update database
     drush updb -y --entity-updates
     # import drupal configuration
