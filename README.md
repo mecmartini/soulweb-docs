@@ -4,3 +4,7 @@ Builded up with [MkDocs](http://www.mkdocs.org/) and [Material Design](http://sq
 
 Site available at:
 [http://soulweb.docsvm.dev](http://soulweb.docsvm.dev)
+
+## Build
+
+`mkdocs build`
