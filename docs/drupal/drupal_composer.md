@@ -69,7 +69,7 @@ Update your Drupal site dependencies:
 
 ## Update Drupal core package
 
-    composer update drupal/core --with-dependencies
+    composer update drupal/core webflo/drupal-core-require-dev --with-dependencies
 
 !!! danger "Danger"
     Leave this to the dependency manager, never run it by yourself!
@@ -84,6 +84,20 @@ Update your Drupal site dependencies:
 ## Update a package
 
     composer update [vendor]/[package] --with-dependencies
+    
+## Update blocking dependencies workaround
+
+If you run the `composer update` command on `drupal/package` but it is not updated, there might be another dependency holding back the Drupal upgrade.
+
+You can check for blocking dependencies using the command `composer prohibits`.
+
+For example, if you are trying to upgrade `drupal/core` from `8.7.7` to `8.8.0`, you can run:
+
+    composer prohibits drupal/core:8.5.0
+    
+and it should give a list of dependencies blocking the upgrade.
+
+Update those dependencies along with `drupal/core` and it should work (e.g. `composer update drupal/core "symfony/*" --with-dependencies`).
 
 ## Define the directories to which Drupal projects should be downloaded
 
