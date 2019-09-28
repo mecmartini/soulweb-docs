@@ -517,6 +517,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#update-blocking-dependencies-workaround" title="Update blocking dependencies workaround" class="md-nav__link">
+    Update blocking dependencies workaround
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#define-the-directories-to-which-drupal-projects-should-be-downloaded" title="Define the directories to which Drupal projects should be downloaded" class="md-nav__link">
     Define the directories to which Drupal projects should be downloaded
   </a>
@@ -758,6 +765,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#update-blocking-dependencies-workaround" title="Update blocking dependencies workaround" class="md-nav__link">
+    Update blocking dependencies workaround
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#define-the-directories-to-which-drupal-projects-should-be-downloaded" title="Define the directories to which Drupal projects should be downloaded" class="md-nav__link">
     Define the directories to which Drupal projects should be downloaded
   </a>
@@ -882,7 +896,7 @@
 
 
 <h2 id="update-drupal-core-package">Update Drupal core package<a class="headerlink" href="#update-drupal-core-package" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>composer update drupal/core --with-dependencies
+<div class="codehilite"><pre><span></span>composer update drupal/core webflo/drupal-core-require-dev --with-dependencies
 </pre></div>
 
 
@@ -904,6 +918,16 @@
 </pre></div>
 
 
+<h2 id="update-blocking-dependencies-workaround">Update blocking dependencies workaround<a class="headerlink" href="#update-blocking-dependencies-workaround" title="Permanent link">&para;</a></h2>
+<p>If you run the <code class="codehilite">composer update</code> command on <code class="codehilite">drupal/package</code> but it is not updated, there might be another dependency holding back the Drupal upgrade.</p>
+<p>You can check for blocking dependencies using the command <code class="codehilite">composer prohibits</code>.</p>
+<p>For example, if you are trying to upgrade <code class="codehilite">drupal/core</code> from <code class="codehilite">8.7.7</code> to <code class="codehilite">8.8.0</code>, you can run:</p>
+<div class="codehilite"><pre><span></span>composer prohibits drupal/core:8.5.0
+</pre></div>
+
+
+<p>and it should give a list of dependencies blocking the upgrade.</p>
+<p>Update those dependencies along with <code class="codehilite">drupal/core</code> and it should work (e.g. <code class="codehilite">composer update drupal/core &quot;symfony/*&quot; --with-dependencies</code>).</p>
 <h2 id="define-the-directories-to-which-drupal-projects-should-be-downloaded">Define the directories to which Drupal projects should be downloaded<a class="headerlink" href="#define-the-directories-to-which-drupal-projects-should-be-downloaded" title="Permanent link">&para;</a></h2>
 <p>By default, Composer will download all packages to the <code class="codehilite">vendor</code> directory. Clearly, this doesn't jibe with Drupal modules, themes, profiles, and libraries. To ensure that packages are downloaded to the correct path, Drupal uses the composer/installers package and ships with configuration for the directories for your Drupal site. The drupal/drupal template does not ship with drupal-libary configuration, but you can just add it to your composer.json:</p>
 <div class="codehilite"><pre><span></span><span class="x">&quot;extra&quot;: </span><span class="cp">{</span>
