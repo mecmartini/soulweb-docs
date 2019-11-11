@@ -1,8 +1,8 @@
 site_name: 'Soulweb Docs'
-site_url: 'http://soulweb.docsvm.dev'
+site_url: 'http://docs.soulweb.it'
 
-site_description: 'Soulweb Documentation'
-site_author: 'Soulweb Team'
+site_description: 'Soulweb Team Documentation'
+site_author: 'Soulweb Solutions Ltd.'
 
 repo_name: 'mecmartini/soulweb-docs'
 repo_url: 'https://github.com/mecmartini/soulweb-docs'
@@ -10,28 +10,33 @@ repo_url: 'https://github.com/mecmartini/soulweb-docs'
 pages:
 - Home: 'index.md'
 - Drupal 8:
-  - 'Development Workflow': 'drupal/drupal_development_workflow.md'
-  - 'Local Development':
-    - 'macOS':
-      - 'Drupal VM': 'drupal/drupal_vm.md'
-      - 'PhpStorm': 'drupal/drupal_vm_phpstorm.md'
-      - 'Xdebug': 'drupal/drupal_vm_xdebug.md'
-      - 'Coder Sniffer': 'drupal/drupal_vm_codersniffer.md'
-      - 'ESLint': 'drupal/drupal_vm_eslint.md'
-      - 'Pre Commit Hook': 'drupal/drupal_vm_precommit.md'
-      - 'PHPUnit': 'drupal/drupal_vm_phpunit.md'
-      - 'Functional Javascript Testing': 'drupal/drupal_vm_functionaljavascript.md'
-      - 'BDD with Behat': 'drupal/drupal_vm_behat.md'
-      - 'Responsive Testing with Galen': 'drupal/drupal_vm_galen.md'
-  - 'Basic Configuration': 'drupal/drupal_basic_configuration.md'
-  - 'Using Composer': 'drupal/drupal_composer.md'
-  - 'Configuration Management (CMI)': 'drupal/drupal_configuration_management.md'
-  - 'Deploy Content': 'drupal/drupal_deploy_content.md'
-  - 'CORS Configuration': 'drupal/drupal_cors.md'
-  - 'Multisite': 'drupal/drupal_multisite.md'
-  - 'Theme Development':
-    - 'Bootstrap (SASS) sub-theme': 'drupal/drupal_bootstrap_sass.md'
-    - 'Component based theme using UI-Patterns': 'drupal/drupal_ui_patterns.md'
+  - Development Workflow: 'drupal/drupal_development_workflow.md'
+  - Local Development:
+    - macOS:
+      - Vagrant:
+        - Drupal VM: 'drupal/drupal_vm.md'
+        - PhpStorm: 'drupal/drupal_vm_phpstorm.md'
+        - Xdebug: 'drupal/drupal_vm_xdebug.md'
+        - Coder Sniffer: 'drupal/drupal_vm_codersniffer.md'
+        - ESLint: 'drupal/drupal_vm_eslint.md'
+        - Pre Commit Hook: 'drupal/drupal_vm_precommit.md'
+        - PHPUnit: 'drupal/drupal_vm_phpunit.md'
+        - Functional Javascript Testing: 'drupal/drupal_vm_functionaljavascript.md'
+        - BDD with Behat: 'drupal/drupal_vm_behat.md'
+        - Responsive Testing with Galen: 'drupal/drupal_vm_galen.md'
+    - Docker:
+      - Setup:
+        - Ubuntu: 'drupal/docker/setup-ubuntu.md'
+        - MacOs: 'drupal/docker/setup-macos.md'
+  - Basic Configuration: 'drupal/drupal_basic_configuration.md'
+  - Using Composer: 'drupal/drupal_composer.md'
+  - Configuration Management (CMI): 'drupal/drupal_configuration_management.md'
+  - Deploy Content: 'drupal/drupal_deploy_content.md'
+  - CORS Configuration: 'drupal/drupal_cors.md'
+  - Multisite: 'drupal/drupal_multisite.md'
+  - Theme Development:
+    - Bootstrap (SASS) sub-theme: 'drupal/drupal_bootstrap_sass.md'
+    - Component based theme using UI-Patterns: 'drupal/drupal_ui_patterns.md'
 
 theme: 'material'
 
@@ -46,7 +51,8 @@ markdown_extensions:
   - codehilite
   - footnotes
   - meta
-  - toc(permalink=true)
+  - toc:
+      permalink: True
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.inlinehilite
@@ -57,4 +63,4 @@ markdown_extensions:
   - pymdownx.tilde
 
 copyright: 'Copyright &copy; 2017 Soulweb Solutions Ltd.'
-google_analytics: ['UA-99054399-1', 'soulwebdocs.udpdev.com']
+google_analytics: ['UA-99054399-1', 'docs.soulweb.it']
